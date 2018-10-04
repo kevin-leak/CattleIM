@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">lang</string>
+    <string name="login">登入</string>
+    <string name="register">注册</string>
 </resources>

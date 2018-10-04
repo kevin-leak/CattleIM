@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--状态栏高度-->
+    <dimen name="statusBarSize">25dp</dimen>
+    <!--状态栏和标题栏高度一起-->
+    <dimen name="actionBarWithStatusBarSize">73dp</dimen>
+
+</resources>

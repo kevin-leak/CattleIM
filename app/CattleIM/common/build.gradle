@@ -33,4 +33,13 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':face-res')
     implementation project(':lang')
+
+    implementation "com.android.support:recyclerview-v7:$rootProject.ext.supportVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportVersion"
+
+
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+
+    implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeCompilerVesion"
 }

@@ -25,3 +25,13 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext{
+
+    supportVersion = '28.0.0'
+
+    retrofitVersion = '2.4.0'
+
+    butterknifeVersion = '8.5.1'
+    butterknifeCompilerVesion = '8.8.1'
+}

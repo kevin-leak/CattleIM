@@ -2,64 +2,115 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="509c59fd-5367-4c15-8502-a8823ad7a708" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-xxxhdpi/cattle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/values-v19/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/androidTest/java/com/example/common/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/test/java/com/example/common/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/androidTest/java/com/example/face_res/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/java/com/example/face_res/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/test/java/com/example/face_res/ExampleUnitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/layout/activity_account.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-xxhdpi/account_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-xxhdpi/cattle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/java/com/example/common/Common.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/java/com/example/common/app/BaseActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/java/com/example/common/app/BaseFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/java/com/example/common/widget/ViewPager/BaseFragmentPageAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/java/com/example/common/widget/recycler/AdapterCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/java/com/example/common/widget/recycler/RecyclerAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/values/dimens.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/values/ids.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IM软件资料/app框架.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../IM软件资料/app框架.xmind" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/LaunchActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/LaunchActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/AccountActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/layout/activity_launch.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/layout/activity_launch.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-xxxhdpi/cattle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/values-v19/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/values/colors.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/common/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/common/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/java/com/example/face_res/MainActivity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/face-res/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/factory/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/java/com/example/lang/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/java/com/example/lang/LangActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIM/lang/src/main/res/values/styles.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../app/CattleIm/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIm/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../app/CattleIm/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIm/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../app/CattleIm/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIm/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../app/CattleIm/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIm/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../app/CattleIm/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../app/CattleIm/app/src/main/AndroidManifest.xml" afterDir="false" />
@@ -75,10 +126,11 @@
     <session id="1800599051">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.69" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -99,7 +151,7 @@
         <entry file="file://$PROJECT_DIR$/CattleIMWeb/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -130,7 +182,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
+    <option name="y" value="23" />
     <option name="width" value="1386" />
     <option name="height" value="788" />
   </component>
@@ -140,6 +192,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,7 +204,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,9 +265,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18986385" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19288956" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -248,7 +299,7 @@
     <entry file="file://$PROJECT_DIR$/CattleIMWeb/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>

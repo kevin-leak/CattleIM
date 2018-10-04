@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#0099A7</color>
+    <color name="colorPrimaryDark">#008C99</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="colorEggBlue">#1AD1CC</color>
+
+    <color name="windowsBackground">#f6f6f6</color>
+    <color name="colorWhite">#FFFFFF</color>
 </resources>
