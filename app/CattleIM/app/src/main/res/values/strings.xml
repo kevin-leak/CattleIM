@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">CattleIM</string>
     <string name="cattle_chat">Cattle Chat</string>
+    <string name="re_password">rePassword</string>
 </resources>

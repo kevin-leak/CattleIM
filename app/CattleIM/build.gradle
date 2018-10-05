@@ -34,4 +34,7 @@ ext{
 
     butterknifeVersion = '8.5.1'
     butterknifeCompilerVesion = '8.8.1'
+
+    glideVersion = '3.7.0'
+    circleimageviewVersion = '2.1.0'
 }

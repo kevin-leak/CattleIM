@@ -1,12 +1,12 @@
 package com.example.thinkpad.cattleim;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 
 import com.example.common.app.BaseActivity;
+import com.example.thinkpad.cattleim.activities.account.AccountActivity;
 
 public class LaunchActivity extends BaseActivity {
 

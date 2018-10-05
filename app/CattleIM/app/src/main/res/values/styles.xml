@@ -17,6 +17,9 @@
 
     <style name="AppTheme.AccountActivity" parent="AppTheme">
         <item name="android:windowFullscreen">?android:windowNoTitle</item>
+        <item name="android:editTextColor">@color/black_edit</item>
+        <item name="android:windowBackground">@color/colorWhite</item>
+
     </style>
 
 

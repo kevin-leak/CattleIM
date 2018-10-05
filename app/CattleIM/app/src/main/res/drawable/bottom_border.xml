@@ -4,7 +4,7 @@
     <item  android:gravity="center_horizontal"
         tools:ignore="UnusedAttribute">
         <shape >                <!--    边框颜色 -->
-            <solid android:color="#E9E9E9" />
+            <solid android:color="@color/bottomBorder" />
             <corners android:radius="2dp"/>
         </shape>
     </item>    <!-- 给View的上 左  右设置8dp的边框 -->

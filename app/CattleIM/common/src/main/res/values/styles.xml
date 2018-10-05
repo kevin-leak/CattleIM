@@ -11,6 +11,12 @@
         <!--背景色-->
         <item name="android:windowBackground">@color/windowsBackground</item>
 
+        <!-- common style -->
+        <item name="android:textColorHint">@color/hint</item>
+        <item name="android:textSize">@dimen/font_18</item>
+
+
+
         <!--设置没有Title-->
         <item name="windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>

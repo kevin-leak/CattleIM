@@ -1,4 +1,4 @@
-package com.example.thinkpad.cattleim;
+package com.example.thinkpad.cattleim.activities.account;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,8 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.common.app.BaseFragment;
+import com.example.thinkpad.cattleim.R;
 
-public class RegisterFragment extends BaseFragment {
+public class LoginFragment extends BaseFragment{
 
     @Nullable
     @Override
@@ -20,6 +21,6 @@ public class RegisterFragment extends BaseFragment {
 
     @Override
     protected int getContentLayoutId() {
-        return R.layout.activtiy_register;
+        return R.layout.activtiy_login;
     }
 }

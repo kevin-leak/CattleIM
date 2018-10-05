@@ -2,4 +2,8 @@
     <string name="app_name">lang</string>
     <string name="login">登入</string>
     <string name="register">注册</string>
+    <string name="keep_sign_in">Keep Sign in</string>
+    <string name="password">password</string>
+    <string name="phone">phone</string>
+    <string name="commit">提交</string>
 </resources>

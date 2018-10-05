@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">common</string>
-    <string name="password">password</string>
-    <string name="phone">phone</string>
-    <string name="commit">提交</string>
+    <string name="forget_password">Forget Password ?</string>
 </resources>
