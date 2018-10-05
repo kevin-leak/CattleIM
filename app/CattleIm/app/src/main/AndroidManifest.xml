@@ -20,13 +20,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.account.AccountActivity"
+        <activity android:name=".activities.AccountActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.AccountActivity">
         </activity>
 
         <activity android:name=".activities.MainActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.MainActivity">
 
         </activity>
 

@@ -38,7 +38,7 @@
             android:drawableLeft="@drawable/ic_password"
             android:drawablePadding="10dp"
             android:lines="1"
-            android:hint="@string/re_password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:background="@drawable/bottom_border"
             android:drawableStart="@drawable/ic_password" />

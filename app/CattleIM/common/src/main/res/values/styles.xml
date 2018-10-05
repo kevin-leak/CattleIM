@@ -13,7 +13,6 @@
 
         <!-- common style -->
         <item name="android:textColorHint">@color/hint</item>
-        <item name="android:textSize">@dimen/font_18</item>
 
 
 

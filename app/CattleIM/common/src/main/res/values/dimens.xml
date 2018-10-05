@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="font_18">18sp</dimen>
+    <dimen name="len_52">52dp</dimen>
+    <dimen name="len_55">55dp</dimen>
+    <dimen name="len_4">4dp</dimen>
+    <dimen name="len_8">8dp</dimen>
+    <dimen name="font_14">14sp</dimen>
 </resources>

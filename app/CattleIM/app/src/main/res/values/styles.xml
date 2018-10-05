@@ -19,9 +19,15 @@
         <item name="android:windowFullscreen">?android:windowNoTitle</item>
         <item name="android:editTextColor">@color/black_edit</item>
         <item name="android:windowBackground">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/font_18</item>
 
     </style>
 
+    <style name="AppTheme.MainActivity" parent="AppTheme">
+        <item name="android:windowBackground">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/font_14</item>
+
+    </style>
 
 
 </resources>

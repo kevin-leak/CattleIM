@@ -6,7 +6,7 @@ import android.os.Handler;
 import android.support.annotation.Nullable;
 
 import com.example.common.app.BaseActivity;
-import com.example.thinkpad.cattleim.activities.account.AccountActivity;
+import com.example.thinkpad.cattleim.activities.AccountActivity;
 
 public class LaunchActivity extends BaseActivity {
 

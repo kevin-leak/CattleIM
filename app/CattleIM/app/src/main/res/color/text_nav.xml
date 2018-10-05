@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--点击时候图标下面的文字颜色变化-->
+    <item android:color="@color/textPrimary" android:state_checked="true" />
+    <item android:color="@color/textSecond" />
+</selector>

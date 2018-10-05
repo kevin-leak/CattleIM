@@ -2,4 +2,8 @@
     <string name="app_name">CattleIM</string>
     <string name="cattle_chat">Cattle Chat</string>
     <string name="re_password">rePassword</string>
+    <string name="action_todo">todo</string>
+    <string name="action_schedule">schedule</string>
+    <string name="action_contact">contact</string>
+    <string name="action_circle">business</string>
 </resources>

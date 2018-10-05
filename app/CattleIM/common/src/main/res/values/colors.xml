@@ -8,4 +8,10 @@
 
     <color name="windowsBackground">#f6f6f6</color>
     <color name="colorWhite">#FFFFFF</color>
+
+    <!--字体颜色-->
+    <color name="textPrimary">#4e5864</color>
+    <color name="textSecond">#8d9ca9</color>
+    <color name="textAccent">@color/colorAccent</color>
+    <color name="textDark">#202020</color>
 </resources>
