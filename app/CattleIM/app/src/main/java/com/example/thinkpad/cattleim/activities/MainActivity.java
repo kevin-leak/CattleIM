@@ -50,14 +50,20 @@ public class MainActivity extends BaseActivity implements
     protected void initWidget() {
         super.initWidget();
 
+
+        bindFragment();
+    }
+
+    @Override
+    protected void initData() {
+        super.initData();
+
         //初始化设置第一个fragment显示
 
         // 从底部导中接管我们的Menu，然后进行手动的触发第一次点击
         Menu menu = mNavigation.getMenu();
         // 触发首次选中Home
         menu.performIdentifierAction(R.id.action_todo, 0);
-
-        bindFragment();
     }
 
     /**

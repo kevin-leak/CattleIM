@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@drawable/ic_timeline"
+        app:showAsAction="ifRoom"
+        android:title="" />
+    <item
+        android:icon="@drawable/ic_contact"
+        app:showAsAction="ifRoom"
+        android:title="" />
+    <item
+        android:icon="@drawable/ic_schedule"
+        app:showAsAction="ifRoom"
+        android:title="" />
+</menu>

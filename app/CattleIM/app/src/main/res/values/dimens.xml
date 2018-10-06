@@ -5,6 +5,15 @@
     <dimen name="statusBarSize">25dp</dimen>
     <!--状态栏和标题栏高度一起-->
     <dimen name="actionBarWithStatusBarSize">73dp</dimen>
+    <dimen name="len_40">40dp</dimen>
+    <dimen name="len_240">240dp</dimen>
+    <dimen name="len_30">30dp</dimen>
+    <dimen name="len_20">20dp</dimen>
+    <dimen name="len_10">10dp</dimen>
+    <dimen name="len_100">100dp</dimen>
+    <dimen name="len_60">60dp</dimen>
+    <dimen name="len_50">50dp</dimen>
+    <dimen name="todoHeadSize">123dp</dimen>
 
 
 </resources>

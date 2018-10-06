@@ -23,11 +23,26 @@
 
     </style>
 
-    <style name="AppTheme.MainActivity" parent="AppTheme">
+    <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base"/>
+
+    <style name="AppTheme.MainActivity" parent="AppTheme.TransStatusBar">
+
+        <item name="colorControlHighlight">@color/textSecond</item>
         <item name="android:windowBackground">@color/colorWhite</item>
         <item name="android:textSize">@dimen/font_14</item>
 
     </style>
+
+    <style name="todoNav">
+        <item name="elevation">0dp</item>
+        <item name="itemBackground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="itemHorizontalTranslationEnabled">true</item>
+        <item name="labelVisibilityMode">unlabeled</item>
+        <item name="android:windowElevation" tools:targetApi="lollipop">0dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:iconTint" tools:ignore="NewApi">@color/colorWhite</item>
+    </style>
+
 
 
 </resources>
