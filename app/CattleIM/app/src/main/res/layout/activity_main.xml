@@ -13,6 +13,20 @@
         android:layout_marginBottom="@dimen/len_52"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fa_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_add"
+        app:borderWidth="0dp"
+        app:rippleColor="#33728dff"
+        app:elevation="8dp"
+        app:pressedTranslationZ="16dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginBottom="@dimen/len_80"
+        android:layout_marginRight="@dimen/len_20"/>
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
@@ -27,5 +41,6 @@
         app:menu="@menu/navigation_items"
         tools:targetApi="lollipop"
         tools:visibility="invisible" />
+
 
 </android.support.design.widget.CoordinatorLayout>

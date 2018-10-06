@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_todo"
-        android:icon="@drawable/ic_timeline"
+        android:icon="@drawable/ic_todo"
         android:title="@string/action_todo"
         app:showAsAction="ifRoom" />
     <item
@@ -21,5 +21,11 @@
         android:id="@+id/action_circle"
         android:icon="@drawable/ic_business_circle"
         android:title="@string/action_circle"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/action_settings"
         app:showAsAction="ifRoom" />
 </menu>

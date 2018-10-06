@@ -27,7 +27,6 @@ public class TodoFragment extends BaseFragment {
     @Override
     protected void initData() {
         super.initData();
-
     }
 
 }

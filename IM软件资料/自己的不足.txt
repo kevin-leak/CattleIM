@@ -1,1 +1,21 @@
 自己的不足，以后需要做的事情：
+涉及的包：
+		design.widget.BottomNavigationView
+		design.widget.FloatingActionButton
+		de.hdodenhof.circleimageview.CircleImageView
+		android.support.constraint.ConstraintLayout
+		android.support.constraint.ConstraintLayout
+
+ids.xml 的作用
+
+依赖关系，中版本导入的处理，理解着整个app启动的架构
+
+FragmentManager 的调度问题
+getFragmentManager().findFragmentByTag(“b”);
+FragmentManager的工作原理
+
+对于这种可扩张的参数，泛型参Class、Class<?>、Class<？ extends xx>要有一定的了解
+
+SparseArray 可以对性能进行一个优化，对优化这方面一定要有了解
+
+attrs_base.xml 与theme之间的调用关系

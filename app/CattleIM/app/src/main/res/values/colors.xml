@@ -3,4 +3,5 @@
     <color name="bottomBorder">#E9E9E9</color>
     <color name="hint">#d6d6d6</color>
     <color name="black_edit">#302E2A</color>
+    <color name="colorWhiteDark">#F6F6F6</color>
 </resources>

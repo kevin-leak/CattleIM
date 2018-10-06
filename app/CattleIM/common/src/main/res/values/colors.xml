@@ -14,4 +14,6 @@
     <color name="textSecond">#8d9ca9</color>
     <color name="textAccent">@color/colorAccent</color>
     <color name="textDark">#202020</color>
+
+    <color name="white_alpha_48">#30ffffff</color>
 </resources>

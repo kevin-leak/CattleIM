@@ -26,9 +26,10 @@
     <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base"/>
 
     <style name="AppTheme.MainActivity" parent="AppTheme.TransStatusBar">
-
+        <item name="toolbarTitleColor">@color/colorWhite</item>
+        <item name="toolbarMenuIconColor">@color/colorWhite</item>
         <item name="colorControlHighlight">@color/textSecond</item>
-        <item name="android:windowBackground">@color/colorWhite</item>
+        <item name="android:windowBackground">@color/colorWhiteDark</item>
         <item name="android:textSize">@dimen/font_14</item>
 
     </style>
@@ -44,5 +45,17 @@
     </style>
 
 
+    <style name="settingsTextStyle">
+        <item name="android:drawablePadding">@dimen/len_12</item>
+        <item name="android:textColor" >@color/colorPrimary</item>
+        <item name="android:padding" >@dimen/len_12</item>
+        <item name="android:textSize" >@dimen/font_20</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:elevation" tools:ignore="NewApi">@dimen/len_2</item>
+    </style>
 
+
+    <dimen name="len_12">12dp</dimen>
 </resources>
