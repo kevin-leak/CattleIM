@@ -6,6 +6,6 @@ import com.example.thinkpad.cattleim.R;
 public class ScheduleFragment extends BaseFragment {
     @Override
     protected int getContentLayoutId() {
-        return R.layout.activity_schedule;
+        return R.layout.fragment_schedule;
     }
 }

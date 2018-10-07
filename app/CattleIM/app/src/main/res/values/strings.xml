@@ -14,6 +14,11 @@
     <string name="notification">Notification</string>
     <string name="about">About</string>
     <string name="payment">payment</string>
+    <string name="language">language</string>
+    <string name="wristband">Wristband</string>
+    <string name="timeline">timeline</string>
+    <string name="linkTasks">link tasks</string>
+    <string name="eventMessage">event message</string>
 
 
 </resources>

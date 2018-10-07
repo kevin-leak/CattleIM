@@ -6,6 +6,6 @@ import com.example.thinkpad.cattleim.R;
 public class ContactFragment extends BaseFragment {
     @Override
     protected int getContentLayoutId() {
-        return R.layout.activity_contact;
+        return R.layout.fragment_contact;
     }
 }

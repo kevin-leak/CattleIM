@@ -10,7 +10,6 @@
         android:id="@+id/lay_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/len_52"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     <android.support.design.widget.FloatingActionButton
@@ -35,6 +34,7 @@
         android:background="@color/colorWhite"
         android:elevation="@dimen/len_4"
         android:outlineProvider="bounds"
+        android:layout_marginTop="0dp"
         android:translationZ="@dimen/len_8"
         app:itemIconTint="@color/hint"
         app:itemTextColor="@color/text_nav"

@@ -1,6 +1,5 @@
 package com.example.thinkpad.cattleim.frags.main;
 
-import android.os.Build;
 import android.view.View;
 
 import com.example.common.app.BaseFragment;
@@ -17,7 +16,7 @@ public class SettingsFragment extends BaseFragment{
 
     @Override
     protected int getContentLayoutId() {
-        return R.layout.activity_settings;
+        return R.layout.fragment_settings;
     }
 
     @Override

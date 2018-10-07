@@ -62,9 +62,9 @@
             </FrameLayout>
 
             <android.support.design.widget.BottomNavigationView
+                android:id="@+id/todo_nav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
                 android:theme="@style/todoNav"
                 app:elevation="0dp"
                 app:insetForeground="@android:color/transparent"
@@ -81,10 +81,12 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v7.widget.AppCompatImageView
+    <FrameLayout
+        android:id="@+id/todo_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@mipmap/todo_item"/>
+        android:layout_marginBottom="@dimen/len_52"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
 </android.support.design.widget.CoordinatorLayout>

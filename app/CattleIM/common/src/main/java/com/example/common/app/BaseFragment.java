@@ -40,6 +40,7 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
             // 将attachRoot 设置为false， 等activity 后面进行一个插入
             View root = inflater.inflate(getContentLayoutId(), container, false);
             initWidgets(root);
+            initData();
             mRoot = root;
         }else {
             // 如果用缓存，那么将我们以前的跟布局一出，再将我们的缓冲的mRoot 返回
@@ -54,7 +55,6 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initData();
 
     }
 

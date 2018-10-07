@@ -1,32 +1,101 @@
 package com.example.thinkpad.cattleim.frags.main;
 
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
-import android.support.v7.widget.Toolbar;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import com.example.common.app.BaseFragment;
 import com.example.thinkpad.cattleim.R;
+import com.example.thinkpad.cattleim.frags.main.todo.EventFragment;
+import com.example.thinkpad.cattleim.frags.main.todo.LinkTaskFragment;
+import com.example.thinkpad.cattleim.frags.main.todo.TimeLineFragment;
+import com.example.thinkpad.cattleim.helper.NavHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import de.hdodenhof.circleimageview.CircleImageView;
 
-public class TodoFragment extends BaseFragment {
+public class TodoFragment extends BaseFragment implements
+        BottomNavigationView.OnNavigationItemSelectedListener,
+        NavHelper.OnNavChangeListener {
 
 
+    @BindView(R.id.todo_nav)
+    BottomNavigationView todoNav;
+    @BindView(R.id.todo_container)
+    FrameLayout todoContainer;
+    Unbinder unbinder;
+    private NavHelper mHelper;
+    private FragmentActivity mActivity;
+
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        mActivity = getActivity();
+        unbinder = ButterKnife.bind(this, super.onCreateView(inflater, container, savedInstanceState));
+        return super.onCreateView(inflater, container, savedInstanceState);
+
+    }
 
     @Override
     protected int getContentLayoutId() {
-        return R.layout.activity_todo;
+        return R.layout.fragment_todo;
     }
 
     @Override
     protected void initData() {
         super.initData();
+        // 从底部导中接管我们的Menu，然后进行手动的触发第一次点击
+        Menu menu = todoNav.getMenu();
+        // 触发首次选中Home
+        menu.performIdentifierAction(R.id.timeline, 0);
+
     }
 
+    @Override
+    protected void initWidgets(View root) {
+        super.initWidgets(root);
+
+
+        bindFragment();
+    }
+
+    /**
+     * fragment 与tab相互绑定
+     */
+    private void bindFragment() {
+
+        mHelper = new NavHelper(mActivity, R.id.todo_container, mActivity.getSupportFragmentManager(), this);
+        mHelper.add(R.id.timeline, new NavHelper.Tab(TimeLineFragment.class, R.string.timeline))
+                .add(R.id.link_tasks, new NavHelper.Tab(LinkTaskFragment.class, R.string.linkTasks))
+                .add(R.id.message_event, new NavHelper.Tab(EventFragment.class, R.string.eventMessage));
+
+
+        todoNav.setOnNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        return mHelper.performClickMenu(menuItem.getItemId());
+    }
+
+    @Override
+    public void OnNavChanged(NavHelper.Tab newTab, NavHelper.Tab oldTab) {
+
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
 }

@@ -21,6 +21,6 @@ public class RegisterFragment extends BaseFragment {
 
     @Override
     protected int getContentLayoutId() {
-        return R.layout.activtiy_register;
+        return R.layout.fragment_register;
     }
 }

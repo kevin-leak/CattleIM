@@ -6,6 +6,6 @@ import com.example.thinkpad.cattleim.R;
 public class BusinessFragment extends BaseFragment {
     @Override
     protected int getContentLayoutId() {
-        return R.layout.activity_business;
+        return R.layout.fragment_business;
     }
 }

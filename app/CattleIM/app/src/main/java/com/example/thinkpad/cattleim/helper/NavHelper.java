@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.util.SparseArray;
 
 /**
@@ -63,8 +64,7 @@ public class NavHelper<T> {
         // 如果有则进行处理
         Tab<T> tab = tabs.get(menuId);
         if (tab != null) {
-            doSelect(tab);
-            return true;
+            doSelect(tab);            return true;
         }
 
         return false;

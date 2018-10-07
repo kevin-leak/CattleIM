@@ -21,6 +21,6 @@ public class LoginFragment extends BaseFragment{
 
     @Override
     protected int getContentLayoutId() {
-        return R.layout.activtiy_login;
+        return R.layout.fragment_login;
     }
 }

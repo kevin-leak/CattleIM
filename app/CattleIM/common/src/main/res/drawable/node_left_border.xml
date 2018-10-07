@@ -1,13 +1,13 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape > <!--边框颜色-->
-            <solid android:color="@color/colorWhiteDark" />
+            <solid android:color="@color/nodeLine" />
         </shape>
     </item>
 
-    <item android:bottom="1dp" android:gravity="center_horizontal">
+    <item android:right="@dimen/len_2" android:gravity="center_horizontal">
         <shape >
-            <solid android:color="@color/colorWhite" />
+            <solid android:color="@color/windowsBackground" />
         </shape>
     </item>
 

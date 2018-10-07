@@ -16,4 +16,5 @@
     <color name="textDark">#202020</color>
 
     <color name="white_alpha_48">#30ffffff</color>
+    <color name="nodeLine">#d6d6d6</color>
 </resources>

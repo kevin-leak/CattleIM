@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="展示：当天日程，设计课表，计划，会议，遗留 ===== 输入文字时候的监控，打开其他软件"-->
+        <!--android:textColor="@color/colorPrimary"/>-->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <include layout="@layout/time_line_item"/>
+
+            <include layout="@layout/time_line_item"/>
+
+            <include layout="@layout/time_line_item"/>
+
+            <include layout="@layout/time_line_item"/>
+
+            <include layout="@layout/time_line_item"/>
+
+            <include layout="@layout/time_line_item"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</android.support.constraint.ConstraintLayout>

@@ -17,10 +17,12 @@
     <dimen name="font_55">55sp</dimen>
     <dimen name="font_35">35sp</dimen>
     <dimen name="len_80">80dp</dimen>
-    <dimen name="settingsNavHeight">160dp</dimen>
+    <dimen name="settingsNavHeight">170dp</dimen>
     <dimen name="font_20">20sp</dimen>
     <dimen name="len_15">15dp</dimen>
     <dimen name="len_5">5dp</dimen>
+    <dimen name="len_18">18dp</dimen>
+    <dimen name="settingsBarSize">40dp</dimen>
 
 
 </resources>
