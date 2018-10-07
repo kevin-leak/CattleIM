@@ -7,6 +7,14 @@
     <dimen name="len_8">8dp</dimen>
     <dimen name="font_14">14sp</dimen>
     <dimen name="len_2">2dp</dimen>
+    <dimen name="len_300">300dp</dimen>
+    <dimen name="len_200">200dp</dimen>
+    <dimen name="len_10">10dp</dimen>
+    <dimen name="nodeHeight">150dp</dimen>
+    <dimen name="len_20">20dp</dimen>
+    <dimen name="len_18">18dp</dimen>
+    <dimen name="len_60">60dp</dimen>
+    <dimen name="len_40">40dp</dimen>
 
 
     <!-- Default screen margins, per the Android Design guidelines. -->
@@ -15,8 +23,13 @@
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="len_10">10dp</dimen>
-    <dimen name="nodeHeight">150dp</dimen>
-    <dimen name="len_20">20dp</dimen>
-    <dimen name="len_18">18dp</dimen>
+    <dimen name="len_250">250dp</dimen>
+    <dimen name="len_30">30dp</dimen>
+    <dimen name="len_25">25dp</dimen>
+    <dimen name="len_50">50dp</dimen>
+    <dimen name="font_16">16sp</dimen>
+    <dimen name="len_5">5dp</dimen>
+    <dimen name="font_20">20sp</dimen>
+    <dimen name="font_12">12sp</dimen>
+
 </resources>

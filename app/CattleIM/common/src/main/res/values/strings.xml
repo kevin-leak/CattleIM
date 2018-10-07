@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">common</string>
     <string name="forget_password">Forget Password ?</string>
+    <string name="link_text">FragmentManager 的调度问题 getFragmentManager().findFragmentByTag(“b”); FragmentManager的工作原理</string>
+    <string name="ack">ack</string>
+    <string name="question">question</string>
+    <string name="link_commit">commit</string>
+    <string name="userName">Kevinleak</string>
+    <string name="fromWhere">来自信安161</string>
+    <string name="Recycle">recycle</string>
 </resources>

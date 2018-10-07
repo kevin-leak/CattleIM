@@ -17,4 +17,5 @@
 
     <color name="white_alpha_48">#30ffffff</color>
     <color name="nodeLine">#d6d6d6</color>
+    <color name="taskInfoColor">#9f9f9f</color>
 </resources>
