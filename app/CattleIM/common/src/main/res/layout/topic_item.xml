@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/len_250"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorWhite"
     android:layout_margin="10dp"
     android:elevation="@dimen/len_4"
@@ -50,6 +50,13 @@
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="@dimen/len_60dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/topic_badge"
+                android:text="@string/topic"
+                android:textColor="@color/colorWhite"
+                android:gravity="center"/>
 
 
         </LinearLayout>
@@ -77,13 +84,19 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <ImageView
+            <com.varunest.sparkbutton.SparkButton
+                android:id="@+id/spark_button"
                 android:layout_width="@dimen/len_18"
                 android:layout_height="@dimen/len_18"
-                android:background="@drawable/link_ack_ico"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="@dimen/len_5"
-                tools:ignore="RtlHardcoded" />
+                tools:ignore="RtlHardcoded"
+                app:sparkbutton_activeImage="@drawable/active_ack"
+                app:sparkbutton_inActiveImage="@drawable/inactive_ack"
+                app:sparkbutton_primaryColor="@color/colorWhite"
+                app:sparkbutton_secondaryColor="@color/activeSecondColor"
+                app:sparkbutton_iconSize="@dimen/len_18" />
+
 
             <TextView
                 android:layout_width="match_parent"

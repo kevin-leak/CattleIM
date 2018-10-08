@@ -8,4 +8,6 @@
     <string name="userName">Kevinleak</string>
     <string name="fromWhere">来自信安161</string>
     <string name="Recycle">recycle</string>
+    <string name="topic">Topic</string>
+    <string name="notice">Notice</string>
 </resources>

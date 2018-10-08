@@ -31,5 +31,12 @@
     <dimen name="len_5">5dp</dimen>
     <dimen name="font_20">20sp</dimen>
     <dimen name="font_12">12sp</dimen>
+    <dimen name="len_100dp">100dp</dimen>
+    <dimen name="len_60dp">60dp</dimen>
+    <dimen name="len_16">16dp</dimen>
+    <dimen name="len_24">24dp</dimen>
+    <dimen name="fontNameSize">15sp</dimen>
+    <dimen name="portraitSize">@dimen/len_40</dimen>
+    <dimen name="len_1">1dp</dimen>
 
 </resources>

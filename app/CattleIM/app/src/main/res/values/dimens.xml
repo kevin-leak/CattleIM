@@ -23,6 +23,7 @@
     <dimen name="len_5">5dp</dimen>
     <dimen name="len_18">18dp</dimen>
     <dimen name="settingsBarSize">40dp</dimen>
+    <dimen name="len_12">12dp</dimen>
 
 
 </resources>

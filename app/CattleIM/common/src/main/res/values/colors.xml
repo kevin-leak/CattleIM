@@ -18,4 +18,9 @@
     <color name="white_alpha_48">#30ffffff</color>
     <color name="nodeLine">#d6d6d6</color>
     <color name="taskInfoColor">#9f9f9f</color>
+    <color name="receiveSecondColor">#56AF1A</color>
+    <color name="commitSecondColor">#296d0b</color>
+    <color name="activeSecondColor">#d81e06</color>
+    <color name="black_alpha_16">#10000000</color>
+    <color name="black_alpha_32">#20000000</color>
 </resources>

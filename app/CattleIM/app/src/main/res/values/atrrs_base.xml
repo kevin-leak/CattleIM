@@ -3,4 +3,15 @@
     <attr name="toolbarTitleColor" format="color" />
     <attr name="toolbarMenuIconColor" format="color" />
     <attr name="toolbarTitleSize" format="dimension" />
+
+
+    <!--spark button-->
+    <attr name="sparkbutton_iconSize" format="dimension|reference" />
+    <attr name="sparkbutton_activeImage" format="reference" />
+    <attr name="sparkbutton_disabledImage" format="reference" />
+    <attr name="sparkbutton_primaryColor" format="reference" />
+    <attr name="sparkbutton_secondaryColor" format="reference" />
+    <attr name="sparkbutton_pressOnTouch" format="boolean" />
+    <attr name="sparkbutton_animationSpeed" format="float" />
+
 </resources>

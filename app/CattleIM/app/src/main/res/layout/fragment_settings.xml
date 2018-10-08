@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/windowsBackground"
     android:orientation="vertical">
 
     <android.support.design.widget.AppBarLayout
@@ -84,9 +85,12 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/len_4"
         android:background="@color/colorWhite"
-        android:orientation="vertical">
+        android:elevation="@dimen/len_2"
+        android:orientation="vertical"
+        tools:ignore="UnusedAttribute">
 
         <!--todo  加入一个border -->
 
