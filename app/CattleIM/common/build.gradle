@@ -46,6 +46,9 @@ dependencies {
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeCompilerVesion"
 
+//    日历
+    implementation 'com.haibin:calendarview:3.4.7'
+
 //    徽章库
     implementation 'com.mikhaellopez:circularfillableloaders:1.3.2'
 //    spark按钮

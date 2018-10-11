@@ -19,3 +19,5 @@ FragmentManager的工作原理
 SparseArray 可以对性能进行一个优化，对优化这方面一定要有了解
 
 attrs_base.xml 与theme之间的调用关系
+
+tools:text 布局文件中的作用

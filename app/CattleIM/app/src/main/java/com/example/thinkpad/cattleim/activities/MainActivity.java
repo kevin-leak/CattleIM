@@ -127,7 +127,7 @@ public class MainActivity extends BaseActivity implements
     private void setStatusTextColor(NavHelper.Tab newTab) {
         //字体设置为亮色
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-        if (newTab.clx == SettingsFragment.class){
+        if (newTab.clx == SettingsFragment.class || newTab.clx == ScheduleFragment.class){
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
     }
