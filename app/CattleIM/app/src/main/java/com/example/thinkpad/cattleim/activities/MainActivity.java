@@ -1,28 +1,40 @@
 package com.example.thinkpad.cattleim.activities;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.example.common.app.BaseActivity;
 import com.example.thinkpad.cattleim.R;
+import com.example.thinkpad.cattleim.frags.assist.NotificationsUtils;
 import com.example.thinkpad.cattleim.frags.main.BusinessFragment;
 import com.example.thinkpad.cattleim.frags.main.ContactFragment;
 import com.example.thinkpad.cattleim.frags.main.ScheduleFragment;
 import com.example.thinkpad.cattleim.frags.main.SettingsFragment;
 import com.example.thinkpad.cattleim.frags.main.TodoFragment;
 import com.example.thinkpad.cattleim.helper.NavHelper;
+
+import java.util.ArrayList;
 
 import butterknife.BindView;
 
@@ -63,6 +75,7 @@ public class MainActivity extends BaseActivity implements
     protected void initWindows() {
         super.initWindows();
 
+        initPermission();
     }
 
     @Override
@@ -130,5 +143,82 @@ public class MainActivity extends BaseActivity implements
         if (newTab.clx == SettingsFragment.class || newTab.clx == ScheduleFragment.class){
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
         }
+    }
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    private void initPermission() {
+        String permissions[] = {
+                Manifest.permission.RECORD_AUDIO,
+                Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.ACCESS_NETWORK_STATE,
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.MODIFY_AUDIO_SETTINGS,
+                Manifest.permission.ACCESS_WIFI_STATE,
+                Manifest.permission.WAKE_LOCK,
+                Manifest.permission.CAMERA,
+                Manifest.permission.SYSTEM_ALERT_WINDOW,
+                Manifest.permission.RECEIVE_BOOT_COMPLETED
+        };
+
+        ArrayList<String> toApplyList = new ArrayList<String>();
+
+        for (String perm : permissions) {
+            if (PackageManager.PERMISSION_GRANTED != ContextCompat.checkSelfPermission(this, perm)) {
+                toApplyList.add(perm);
+                //进入到这里代表没有权限.
+                Log.e("--------->", "没有权限");
+            } else {
+
+                Log.e("--------->", "已经被授权");
+            }
+        }
+        String tmpList[] = new String[toApplyList.size()];
+        if (!toApplyList.isEmpty()) {
+            ActivityCompat.requestPermissions(this, toApplyList.toArray(tmpList), 123);
+        }
+
+
+        if (!NotificationsUtils.isNotificationEnabled(this)) {
+            final AlertDialog dialog = new AlertDialog.Builder(this).create();
+            dialog.show();
+
+            View view = View.inflate(this, R.layout.dialog, null);
+            dialog.setContentView(view);
+
+            TextView context = (TextView) view.findViewById(R.id.tv_dialog_context);
+            context.setText("检测到您没有打开通知权限，是否去打开");
+
+            TextView confirm = (TextView) view.findViewById(R.id.btn_confirm);
+            confirm.setText("确定");
+            confirm.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    dialog.cancel();
+                    Intent localIntent = new Intent();
+                    localIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    if (Build.VERSION.SDK_INT >= 9) {
+                        localIntent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+                        localIntent.setData(Uri.fromParts("package", MainActivity.this.getPackageName(), null));
+                    } else if (Build.VERSION.SDK_INT <= 8) {
+                        localIntent.setAction(Intent.ACTION_VIEW);
+
+                        localIntent.setClassName("com.android.settings",
+                                "com.android.settings.InstalledAppDetails");
+
+                        localIntent.putExtra("com.android.settings.ApplicationPkgName",
+                                MainActivity.this.getPackageName());
+                    }
+                    startActivity(localIntent);
+                }
+            });
+
+            TextView cancel = (TextView) view.findViewById(R.id.btn_off);
+            cancel.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    dialog.cancel();
+                }
+            });
+        }
+
+
     }
 }

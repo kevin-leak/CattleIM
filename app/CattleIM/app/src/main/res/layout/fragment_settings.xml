@@ -83,182 +83,188 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/len_4"
-        android:background="@color/colorWhite"
-        android:elevation="@dimen/len_2"
-        android:orientation="vertical"
-        tools:ignore="UnusedAttribute">
-
-        <!--todo  加入一个border -->
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="@dimen/len_60"
-            android:layout_marginTop="@dimen/len_5"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_4"
+            android:background="@color/colorWhite"
             android:elevation="@dimen/len_2"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             tools:ignore="UnusedAttribute">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/len_12"
-                android:orientation="horizontal"
-                android:background="@drawable/setting_text_style"
-                tools:ignore="RtlHardcoded">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/len_60"
-                    android:layout_weight="1"
-                    android:drawableLeft="@drawable/ic_theme"
-                    android:drawableStart="@drawable/ic_theme"
-                    android:text="@string/theme"
-                    tools:ignore="SpUsage"
-                    android:theme="@style/settingsTextStyle"/>
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:layout_width="@dimen/len_50"
-                    android:layout_height="@dimen/len_50"
-                    android:layout_gravity="center_vertical"
-                    android:paddingRight="@dimen/len_10"
-                    android:src="@drawable/ic_day" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/len_2"
-            android:orientation="horizontal"
-            tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute">
+            <!--todo  加入一个border -->
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/len_12"
+                android:layout_height="@dimen/len_60"
+                android:layout_marginTop="@dimen/len_5"
+                android:elevation="@dimen/len_2"
                 android:orientation="horizontal"
-                android:background="@drawable/setting_text_style">
+                tools:ignore="UnusedAttribute">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/len_60"
-                    android:drawableLeft="@drawable/ic_notification"
-                    android:drawableStart="@drawable/ic_notification"
-                    android:text="@string/notification"
-                    android:theme="@style/settingsTextStyle" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/len_12"
+                    android:orientation="horizontal"
+                    android:background="@drawable/setting_text_style"
+                    tools:ignore="RtlHardcoded">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/len_60"
+                        android:layout_weight="1"
+                        android:drawableLeft="@drawable/ic_theme"
+                        android:drawableStart="@drawable/ic_theme"
+                        android:text="@string/theme"
+                        tools:ignore="SpUsage"
+                        android:theme="@style/settingsTextStyle"/>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="@dimen/len_50"
+                        android:layout_height="@dimen/len_50"
+                        android:layout_gravity="center_vertical"
+                        android:paddingRight="@dimen/len_10"
+                        android:src="@drawable/ic_day" />
+                </LinearLayout>
+
             </LinearLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/len_2"
-            android:orientation="horizontal"
-            tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/len_12"
+                android:elevation="@dimen/len_2"
                 android:orientation="horizontal"
-                android:background="@drawable/setting_text_style">
+                tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/len_60"
-                    android:drawableLeft="@drawable/ic_wristband"
-                    android:drawableStart="@drawable/ic_wristband"
-                    android:text="@string/wristband"
-                    android:theme="@style/settingsTextStyle" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/len_12"
+                    android:orientation="horizontal"
+                    android:background="@drawable/setting_text_style">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/len_60"
+                        android:drawableLeft="@drawable/ic_notification"
+                        android:drawableStart="@drawable/ic_notification"
+                        android:text="@string/notification"
+                        android:theme="@style/settingsTextStyle" />
+                </LinearLayout>
+
             </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/len_2"
-            android:orientation="horizontal"
-            tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/len_12"
+                android:elevation="@dimen/len_2"
                 android:orientation="horizontal"
-                android:background="@drawable/setting_text_style">
+                tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/len_60"
-                    android:drawableLeft="@drawable/ic_payment"
-                    android:drawableStart="@drawable/ic_payment"
-                    android:text="@string/payment"
-                    android:theme="@style/settingsTextStyle" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/len_12"
+                    android:orientation="horizontal"
+                    android:background="@drawable/setting_text_style">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/len_60"
+                        android:drawableLeft="@drawable/ic_wristband"
+                        android:drawableStart="@drawable/ic_wristband"
+                        android:text="@string/wristband"
+                        android:theme="@style/settingsTextStyle" />
+                </LinearLayout>
+
             </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/len_2"
-            android:orientation="horizontal"
-            tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/len_12"
+                android:elevation="@dimen/len_2"
                 android:orientation="horizontal"
-                android:background="@drawable/setting_text_style">
+                tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/len_60"
-                    android:drawableLeft="@drawable/ic_language"
-                    android:drawableStart="@drawable/ic_language"
-                    android:text="@string/language"
-                    android:theme="@style/settingsTextStyle" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/len_12"
+                    android:orientation="horizontal"
+                    android:background="@drawable/setting_text_style">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/len_60"
+                        android:drawableLeft="@drawable/ic_payment"
+                        android:drawableStart="@drawable/ic_payment"
+                        android:text="@string/payment"
+                        android:theme="@style/settingsTextStyle" />
+                </LinearLayout>
+
             </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/len_2"
-            android:orientation="horizontal"
-            tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/len_12"
+                android:elevation="@dimen/len_2"
                 android:orientation="horizontal"
-                android:background="@drawable/setting_text_style">
+                tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/len_60"
-                    android:drawableLeft="@drawable/ic_about"
-                    android:drawableStart="@drawable/ic_about"
-                    android:text="@string/about"
-                    android:theme="@style/settingsTextStyle" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/len_12"
+                    android:orientation="horizontal"
+                    android:background="@drawable/setting_text_style">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/len_60"
+                        android:drawableLeft="@drawable/ic_language"
+                        android:drawableStart="@drawable/ic_language"
+                        android:text="@string/language"
+                        android:theme="@style/settingsTextStyle" />
+                </LinearLayout>
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/len_2"
+                android:orientation="horizontal"
+                tools:ignore="RtlHardcoded,RtlSymmetry,UnusedAttribute">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/len_12"
+                    android:orientation="horizontal"
+                    android:background="@drawable/setting_text_style">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/len_60"
+                        android:drawableLeft="@drawable/ic_about"
+                        android:drawableStart="@drawable/ic_about"
+                        android:text="@string/about"
+                        android:theme="@style/settingsTextStyle" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
         </LinearLayout>
 
-
-    </LinearLayout>
+    </ScrollView>
 
 
 </android.support.v7.widget.LinearLayoutCompat>

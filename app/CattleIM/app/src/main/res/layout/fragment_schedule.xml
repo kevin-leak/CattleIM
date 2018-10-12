@@ -20,13 +20,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/statusBarSize"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:paddingLeft="@dimen/len_4"
             android:paddingRight="@dimen/len_4">
 
             <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
 
                 <RelativeLayout
                     android:id="@+id/rl_tool"
@@ -37,7 +38,7 @@
 
                     <TextView
                         android:id="@+id/tv_month_day"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"
                         android:paddingLeft="16dp"
@@ -77,51 +78,37 @@
                             tools:ignore="SmallSp" />
                     </LinearLayout>
 
-                    <FrameLayout
-                        android:id="@+id/fl_current"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="12dp"
-                        android:background="@drawable/bg_ripple">
 
-                        <ImageView
-                            android:id="@+id/ib_calendar"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:contentDescription="@string/app_name"
-                            android:scaleType="centerInside"
-                            android:src="@mipmap/ic_calendar"
-                            android:tint="#000000" />
-
-                        <TextView
-                            android:id="@+id/tv_current_day"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="2dp"
-                            android:gravity="center"
-                            android:text="13"
-                            android:textColor="#000000"
-                            android:textSize="12sp" />
-                    </FrameLayout>
                 </RelativeLayout>
 
-
-                <ImageView
-                    android:id="@+id/im_search"
-                    android:layout_width="@dimen/len_40"
-                    android:layout_height="@dimen/len_40"
-                    android:layout_gravity="end|center_vertical"
-                    android:layout_margin="@dimen/len_4"
-                    android:contentDescription="@string/app_name"
-                    android:foreground="@drawable/ic_touch_menu"
-                    android:padding="@dimen/len_10"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/ic_schedule_search" />
-
             </FrameLayout>
+
+            <ImageView
+                android:layout_width="@dimen/len_40"
+                android:layout_height="@dimen/len_40"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/len_10"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_course" />
+
+            <ImageView
+                android:layout_width="@dimen/len_40"
+                android:layout_height="@dimen/len_40"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/len_10"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_plan" />
+
+            <ImageView
+                android:id="@+id/im_search"
+                android:layout_width="@dimen/len_40"
+                android:layout_height="@dimen/len_40"
+                android:layout_margin="@dimen/len_4"
+                android:contentDescription="@string/app_name"
+                android:foreground="@drawable/ic_touch_menu"
+                android:padding="@dimen/len_10"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_schedule_search" />
 
         </LinearLayout>
 
@@ -174,8 +161,9 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/len_1"
-                android:background="@color/windowsBackground"/>
+                android:layout_height="1dp"
+                android:elevation="@dimen/len_2"
+                android:background="@color/colorWhite"/>
 
             <android.support.v7.widget.RecyclerView
                 android:layout_width="match_parent"

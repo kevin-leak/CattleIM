@@ -24,6 +24,8 @@
     <dimen name="len_18">18dp</dimen>
     <dimen name="settingsBarSize">40dp</dimen>
     <dimen name="len_12">12dp</dimen>
+    <dimen name="len_150">150dp</dimen>
+    <dimen name="len_180">180dp</dimen>
 
 
 </resources>

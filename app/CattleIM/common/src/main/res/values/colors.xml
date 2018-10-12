@@ -23,4 +23,5 @@
     <color name="activeSecondColor">#d81e06</color>
     <color name="black_alpha_16">#10000000</color>
     <color name="black_alpha_32">#20000000</color>
+    <color name="black_alpha_0">#00000000</color>
 </resources>

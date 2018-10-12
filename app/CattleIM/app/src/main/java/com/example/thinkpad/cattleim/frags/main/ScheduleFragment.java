@@ -38,12 +38,6 @@ public class ScheduleFragment extends BaseFragment
     TextView mTextYear;
     @BindView(R.id.tv_lunar)
     TextView mTextLunar;
-    @BindView(R.id.ib_calendar)
-    ImageView ibCalendar;
-    @BindView(R.id.tv_current_day)
-    TextView mTextCurrentDay;
-    @BindView(R.id.fl_current)
-    FrameLayout flCurrent;
     @BindView(R.id.rl_tool)
     RelativeLayout mRelativeTool;
     @BindView(R.id.calendarView)
@@ -81,12 +75,6 @@ public class ScheduleFragment extends BaseFragment
             }
         });
 
-        flCurrent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mCalendarView.scrollToCurrent();
-            }
-        });
 
         mCalendarView.setOnCalendarSelectListener(this);
         mCalendarView.setOnYearChangeListener(this);
@@ -98,7 +86,6 @@ public class ScheduleFragment extends BaseFragment
         mYear = mCalendarView.getCurYear();
         mTextMonthDay.setText(mCalendarView.getCurMonth() + "月" + mCalendarView.getCurDay() + "日");
         mTextLunar.setText("今日");
-        mTextCurrentDay.setText(String.valueOf(mCalendarView.getCurDay()));
     }
 
 
