@@ -23,6 +23,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.common.app.BaseActivity;
 import com.example.thinkpad.cattleim.R;
@@ -127,23 +128,27 @@ public class MainActivity extends BaseActivity implements
     public void OnNavChanged(NavHelper.Tab newTab, NavHelper.Tab oldTab) {
         //此处表现为已经进行fragment的切换处理
 
-        faAdd.setVisibility(View.VISIBLE);
 
-        if (newTab.clx == SettingsFragment.class || newTab.clx == BusinessFragment.class){
-            faAdd.setVisibility(View.GONE);
+        faAdd.setVisibility(View.GONE);
+
+        if (newTab.clx == TodoFragment.class || newTab.clx == ScheduleFragment.class){
+            faAdd.setVisibility(View.VISIBLE);
         }
-        setStatusTextColor(newTab);
 
+        setStatusTextColor(newTab);
 
     }
 
     private void setStatusTextColor(NavHelper.Tab newTab) {
-        //字体设置为亮色
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
-        if (newTab.clx == SettingsFragment.class || newTab.clx == ScheduleFragment.class){
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        if (newTab.clx == TodoFragment.class || newTab.clx == BusinessFragment.class){
+            //字体设置为亮色
+            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
         }
     }
+
+
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void initPermission() {
         String permissions[] = {

@@ -19,6 +19,10 @@
     <string name="timeline">timeline</string>
     <string name="linkTasks">link tasks</string>
     <string name="eventMessage">event message</string>
+    <string name="add">添加</string>
+    <string name="group">group</string>
+    <string name="tag">tag</string>
+    <string name="database">database</string>
 
 
 </resources>

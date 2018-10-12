@@ -5,4 +5,5 @@
     <color name="black_edit">#302E2A</color>
     <color name="colorWhiteDark">#F6F6F6</color>
     <color name="stepDialogBack">#90010c13</color>
+    <color name="searchBack">#edf1f1f1</color>
 </resources>

@@ -1,9 +1,21 @@
-<resources>
-    <string name="app_name">lang</string>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="DuplicateDefinition">lang</string>
     <string name="login">登入</string>
     <string name="register">注册</string>
     <string name="keep_sign_in">Keep Sign in</string>
     <string name="password">password</string>
     <string name="phone">phone</string>
     <string name="commit">提交</string>
+    <string name="forget_password">Forget Password ?</string>
+    <string name="link_text">FragmentManager 的调度问题 getFragmentManager().findFragmentByTag(“b”); FragmentManager的工作原理</string>
+    <string name="ack">ack</string>
+    <string name="question">question</string>
+    <string name="link_commit">commit</string>
+    <string name="userName">Kevinleak</string>
+    <string name="fromWhere">来自信安161</string>
+    <string name="Recycle">recycle</string>
+    <string name="topic">Topic</string>
+    <string name="notice">Notice</string>
+    <string name="contact">Contact</string>
+    <string name="business">商场</string>
 </resources>

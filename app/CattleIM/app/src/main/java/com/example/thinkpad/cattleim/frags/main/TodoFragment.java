@@ -32,7 +32,6 @@ public class TodoFragment extends BaseFragment implements
     BottomNavigationView todoNav;
     @BindView(R.id.todo_container)
     FrameLayout todoContainer;
-    Unbinder unbinder;
     private NavHelper mHelper;
     private FragmentActivity mActivity;
 
@@ -41,7 +40,6 @@ public class TodoFragment extends BaseFragment implements
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mActivity = getActivity();
-        unbinder = ButterKnife.bind(this, super.onCreateView(inflater, container, savedInstanceState));
         return super.onCreateView(inflater, container, savedInstanceState);
 
     }
@@ -93,9 +91,4 @@ public class TodoFragment extends BaseFragment implements
 
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
 }

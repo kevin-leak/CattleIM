@@ -44,6 +44,16 @@
         <item name="android:iconTint" tools:ignore="NewApi">@color/colorWhite</item>
     </style>
 
+    <style name="contactNav">
+        <item name="elevation">0dp</item>
+        <item name="itemBackground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="itemHorizontalTranslationEnabled">true</item>
+        <item name="labelVisibilityMode">unlabeled</item>
+        <item name="android:windowElevation" tools:targetApi="lollipop">0dp</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:iconTint" tools:ignore="NewApi">@color/colorWhite</item>
+    </style>
+
 
     <style name="settingsTextStyle">
         <item name="android:layout_margin">10dp</item>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/group"
+        android:icon="@mipmap/ic_group"
+        android:title="@null" />
+    <item
+        android:id="@+id/tag"
+        android:icon="@mipmap/ic_tag"
+        android:title="@null" />
+    <item
+        android:id="@+id/database"
+        android:icon="@mipmap/ic_database"
+        android:title="@null" />
+</menu>
