@@ -1,17 +1,20 @@
 package com.example.thinkpad.cattleim.frags.main;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.example.common.app.BaseFragment;
 import com.example.thinkpad.cattleim.R;
@@ -33,6 +36,11 @@ public class ContactFragment extends BaseFragment implements
     AppBarLayout appbar;
     @BindView(R.id.bnv_contactNav)
     BottomNavigationView bnvContactNav;
+    @BindView(R.id.sv_contact)
+    SearchView svContact;
+    @BindView(R.id.contact_container)
+    FrameLayout contactContainer;
+    Unbinder unbinder;
     private FragmentActivity mActivity;
     private NavHelper mHelper;
 
@@ -61,9 +69,19 @@ public class ContactFragment extends BaseFragment implements
     protected void initWidgets(View root) {
         super.initWidgets(root);
 
+
+        changeSearchTextColor();
+
         // 设置底边ico显示自己的颜色
         bnvContactNav.setItemIconTintList(null);
         bindFragment();
+    }
+
+    /**
+     * 修改输入框的文字颜色     */
+    private void changeSearchTextColor() {
+        SearchView.SearchAutoComplete textView = svContact.findViewById(R.id.search_src_text);
+        textView.setTextColor(Color.parseColor("#000000"));
     }
 
     /**

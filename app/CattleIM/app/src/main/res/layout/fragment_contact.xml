@@ -54,18 +54,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@color/colorWhite"
-        android:layout_marginTop="@dimen/actionBarWithStatusBarSize">
+        android:background="@color/windowsBackground"
+        android:layout_marginTop="76dp">
 
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/len_10"
+            android:paddingRight="@dimen/len_10"
             android:paddingTop="@dimen/len_10"
-            android:layout_marginLeft="@dimen/len_10"
+            android:background="@color/colorWhite"
+            android:paddingLeft="@dimen/len_10"
             android:paddingBottom="@dimen/len_10">
             <android.support.v7.widget.SearchView
+                android:id="@+id/sv_contact"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/len_40"
                 android:paddingRight="@dimen/len_10"
@@ -88,13 +90,17 @@
             app:labelVisibilityMode="unlabeled"
             app:menu="@menu/contact_items"
             tools:targetApi="lollipop"
-            tools:visibility="invisible"/>
+            tools:visibility="invisible"
+            android:background="@color/colorWhite"/>
+
 
         <FrameLayout
+            android:layout_marginTop="@dimen/len_1"
             android:id="@+id/contact_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="@dimen/len_52"
+            android:background="@color/colorWhite"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </LinearLayout>
