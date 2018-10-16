@@ -44,4 +44,12 @@ ext{
 
     easyPMVersion = "0.3.0"
     ucropVersion = "2.2.0-native"
+
+    ossVersion = '2.3.0'
+
+    gsonVersion = '2.8.0'
+    getuiVersion = '2.9.3.0'
+    dbflowVersion = "4.0.0-beta7"
+    airpanelVersion = "1.1.0"
+    lameVersion = "1.0.0"
 }
