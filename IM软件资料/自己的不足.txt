@@ -29,3 +29,6 @@ windows 与view 之间的继承关系
 处理权限问题
 
 处理windowmanager
+
+hashset的作用于其他集合的关系。
+

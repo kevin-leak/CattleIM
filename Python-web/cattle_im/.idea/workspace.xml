@@ -2,167 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58bc5b7c-d96f-43e0-96e8-2ecdae3f6be4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/cattle_im.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/avatars/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/avatars/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/groupPicture/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/groupPicture/ic_launcher_HtBUjYz.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/.idea/CattleIM.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/.idea/dataSources/2d7cab19-0dc2-4636-b545-5c3d66f634a0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/.idea/dataSources/f0ec3e41-4f1b-4d86-b6b7-730afea1bc2b.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/CattleIM/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/CattleIM/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/CattleIM/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/CattleIM/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/DB/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/DB/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/DB/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/DB/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/DB/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/DB/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/androidEdge/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/androidEdge/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/media/avatars/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/media/avatars/default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/media/groupPicture/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/media/groupPicture/ic_launcher_HtBUjYz.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/autocomplete.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/base.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/changelists.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/fonts.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/forms.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/responsive_rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/rtl.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/vendor/select2/LICENSE-SELECT2.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/vendor/select2/select2.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/vendor/select2/select2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/css/widgets.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/fonts/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/fonts/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/fonts/Roboto-Bold-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/fonts/Roboto-Light-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/fonts/Roboto-Regular-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/calendar-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/gis/move_vertex_off.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/gis/move_vertex_on.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/icon-addlink.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/icon-alert.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/icon-calendar.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/icon-changelink.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/icon-clock.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/icon-deletelink.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/icon-no.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/icon-unknown-alt.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/icon-unknown.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/icon-viewlink.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/icon-yes.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/inline-delete.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/search.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/selector-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/sorting-icons.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/tooltag-add.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/img/tooltag-arrowright.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/SelectBox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/SelectFilter2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/actions.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/actions.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/admin/DateTimeShortcuts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/admin/RelatedObjectLookups.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/autocomplete.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/calendar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/cancel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/change_form.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/collapse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/collapse.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/inlines.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/inlines.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/jquery.init.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/popup_response.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/prepopulate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/prepopulate.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/prepopulate_init.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/timeparse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/urlify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/jquery/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/jquery/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/jquery/jquery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/ar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/az.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/bg.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/ca.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/cs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/da.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/de.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/el.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/es.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/et.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/eu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/fa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/fi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/fr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/gl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/he.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/hi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/hr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/hu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/id.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/is.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/it.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/ja.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/km.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/ko.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/lv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/mk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/ms.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/nb.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/nl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/pl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/pt-BR.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/pt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/ro.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/ru.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/sk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/sr-Cyrl.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/sr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/sv.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/th.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/tr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/uk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/vi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/zh-CN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/i18n/zh-TW.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/select2.full.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/select2/select2.full.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/xregexp/LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CattleIM/static/admin/js/vendor/xregexp/xregexp.min.js" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/java/com/example/factory/model/AccountModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/java/com/example/factory/net/Interceptor/ReceiveInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/java/com/example/factory/net/Interceptor/SendInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/java/com/example/factory/net/NetInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/java/com/example/factory/net/Network.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/api/factory/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/api/wraper/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/views/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/android/views/test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface_api.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/runConfigurations.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/LaunchActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/LaunchActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/activities/AccountActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/activities/AccountActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/frags/account/LoginFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/frags/account/LoginFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/layout/fragment_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/layout/fragment_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/Common.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/app/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/app/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/widget/ViewPager/BaseFragmentPageAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/widget/ViewPager/BaseFragmentPageAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/java/com/example/factory/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/java/com/example/factory/Factory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/java/com/example/factory/net/APi.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/java/com/example/factory/net/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IM软件资料/知识点记录.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../IM软件资料/知识点记录.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IM软件资料/自己的不足.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../IM软件资料/自己的不足.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/cattle_im.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cattle_im.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/android/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/android/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/android/views/account.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cattle_im/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cattle_im/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cattle_im/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/cattle_im/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/cattle_im$tests.coverage" NAME="tests Coverage Results" MODIFIED="1540136631160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/android" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="558477410">
@@ -196,46 +96,160 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1266313493">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.18" value="2" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="7" />
+          <entry key="html" value="4" />
+          <entry key="json" value="4" />
+          <entry key="md" value="433" />
+          <entry key="py" value="944" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="HTML" value="4" />
+          <entry key="JSON" value="4" />
+          <entry key="Markdown" value="433" />
+          <entry key="PLAIN_TEXT" value="7" />
+          <entry key="Python" value="944" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="1" />
+          <entry key="interface_api" value="1" />
+          <entry key="json" value="2" />
+          <entry key="md" value="1" />
+          <entry key="py" value="28" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="1" />
+          <entry key="JSON" value="2" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="1" />
+          <entry key="Python" value="28" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/models.py">
+        <entry file="file://$PROJECT_DIR$/android/views/account.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+            <state relative-caret-position="17">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#223#2239#0" />
-                <element signature="e#2292#2740#0" />
-                <element signature="e#2774#3192#0" />
-                <element signature="e#3232#3779#0" />
-                <element signature="e#3844#4247#0" />
-                <element signature="e#4285#4554#0" />
-                <element signature="e#4591#4960#0" />
-                <element signature="e#4997#5642#0" />
-                <element signature="e#5681#6052#0" />
-                <element signature="e#6092#6596#0" />
-                <element signature="e#6637#6906#0" />
-                <element signature="e#6952#7690#0" />
-                <element signature="e#7766#8205#0" />
-                <element signature="e#8208#8269#0" />
-                <element signature="e#8413#9039#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/cattle_im/settings.py">
+        <entry file="file://$PROJECT_DIR$/android/views/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="117">
-              <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+            <state relative-caret-position="207">
+              <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/crypto/decryptoapp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-306" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/crypto/library/cryptor.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/shortcuts.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/template/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2108">
+              <caret line="141" column="8" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/views.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cattle_im/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+              <folding>
+                <element signature="e#633#665#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -244,7 +258,21 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/db/models.py" />
+        <option value="$PROJECT_DIR$/cattle_im/urls.py" />
+        <option value="$PROJECT_DIR$/db/admin.py" />
+        <option value="$PROJECT_DIR$/interface_api.md" />
+        <option value="$PROJECT_DIR$/android/api/__init__.py" />
+        <option value="$PROJECT_DIR$/android/__init__.py" />
+        <option value="$PROJECT_DIR$/db/__init__.py" />
+        <option value="$PROJECT_DIR$/web/__init__.py" />
         <option value="$PROJECT_DIR$/cattle_im/settings.py" />
+        <option value="$PROJECT_DIR$/web/views.py" />
+        <option value="$PROJECT_DIR$/venv/index.html" />
+        <option value="$PROJECT_DIR$/templates/index.html" />
+        <option value="$PROJECT_DIR$/android/tests.py" />
+        <option value="$PROJECT_DIR$/android/urls.py" />
+        <option value="$PROJECT_DIR$/android/views/account.py" />
+        <option value="$PROJECT_DIR$/android/views/test.py" />
       </list>
     </option>
   </component>
@@ -255,10 +283,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="3" />
-    <option name="width" value="1225" />
-    <option name="height" value="680" />
+    <option name="x" value="28" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -274,6 +301,37 @@
               <item name="cattle_im" type="b2602c69:ProjectViewProjectNode" />
               <item name="cattle_im" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="cattle_im" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cattle_im" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cattle_im" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cattle_im" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cattle_im" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cattle_im" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cattle_im" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cattle_im" type="462c0819:PsiDirectoryNode" />
+              <item name="cattle_im" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cattle_im" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cattle_im" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cattle_im" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -281,14 +339,20 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../git/web/crabglory" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Users\ThinkPad\Documents\GitHub\CattleIM\Python-web\cattle_im" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Users\KevinLeak\Documents\GitHub\CattleIM\Python-web\cattle_im\templates" />
+      <recent name="E:\Users\KevinLeak\Documents\GitHub\CattleIM\Python-web\cattle_im\android\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -303,8 +367,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="cattle_im" type="Python.DjangoServer" factoryName="Django server">
+  <component name="RunManager" selected="Django server.cattle_im">
+    <configuration name="tests" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="cattle_im" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -312,8 +376,31 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/android" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/android/tests.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cattle_im" type="Python.DjangoServer" factoryName="Django server">
+      <module name="cattle_im" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="cattle_im.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
@@ -327,6 +414,15 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Django server.cattle_im" />
+      <item itemvalue="Python.tests" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.tests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -341,30 +437,40 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2526475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" weight="0.32840723" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32840723" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="SciView" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32840723" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32786885" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32676518" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" order="13" weight="0.32840723" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32980332" />
+      <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,41 +480,180 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js">
+    <entry file="file://$PROJECT_DIR$/static/admin/js/admin/DateTimeShortcuts.js" />
+    <entry file="file://$PROJECT_DIR$/android/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cattle_im/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/android/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="28" selection-end-column="28" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
+        <state relative-caret-position="102">
           <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#223#2239#0" />
-            <element signature="e#2292#2740#0" />
-            <element signature="e#2774#3192#0" />
-            <element signature="e#3232#3779#0" />
-            <element signature="e#3844#4247#0" />
-            <element signature="e#4285#4554#0" />
-            <element signature="e#4591#4960#0" />
-            <element signature="e#4997#5642#0" />
-            <element signature="e#5681#6052#0" />
-            <element signature="e#6092#6596#0" />
-            <element signature="e#6637#6906#0" />
-            <element signature="e#6952#7690#0" />
-            <element signature="e#7766#8205#0" />
-            <element signature="e#8208#8269#0" />
-            <element signature="e#8413#9039#0" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/web/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/api/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cattle_im/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="71" column="1" lean-forward="true" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+        <state relative-caret-position="-1141">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interface_api.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="19">
+            <caret line="11" selection-start-line="11" selection-end-line="11" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/urls/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/http/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7701">
+          <caret line="471" column="6" selection-start-line="471" selection-start-column="6" selection-end-line="471" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/template/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2108">
+          <caret line="141" column="8" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cattle_im/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+          <folding>
+            <element signature="e#633#665#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/crypto/library/cryptor.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/crypto/decryptoapp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/pyDes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12903" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/shortcuts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/views/account.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/views/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -17,6 +17,7 @@
 
 
         <EditText
+            android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
@@ -30,6 +31,7 @@
             android:drawableStart="@drawable/ic_phone" />
 
         <EditText
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="20dp"
@@ -57,6 +59,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tv_forget"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:gravity="center"

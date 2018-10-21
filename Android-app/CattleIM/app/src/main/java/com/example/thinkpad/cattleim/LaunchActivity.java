@@ -8,12 +8,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.common.app.BaseActivity;
+import com.example.factory.net.Network;
 import com.example.thinkpad.cattleim.activities.AccountActivity;
 
+import okhttp3.ResponseBody;
 import pub.devrel.easypermissions.EasyPermissions;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class LaunchActivity extends BaseActivity {
 
@@ -32,12 +38,33 @@ public class LaunchActivity extends BaseActivity {
         }
         new Handler().postDelayed(new Runnable() {
             public void run() {
+                getToken();
                 Intent intent = new Intent(LaunchActivity.this, AccountActivity.class);
                 startActivity(intent);
                 finish();
             }
         }, 1000);
+
+
     }
+
+    /**
+     * 第一次访问获取token值
+     */
+    private void getToken() {
+        Network.getConnect().getCall().enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+    }
+
+
 
 
     @Override

@@ -35,6 +35,8 @@ public class BaseFragmentPageAdapter extends FragmentPagerAdapter {
         return fragmentList.get(i);
     }
 
+
+
     @Override
     public int getCount() {
         return fragmentList.size();
