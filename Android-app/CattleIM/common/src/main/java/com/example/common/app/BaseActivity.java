@@ -1,5 +1,6 @@
 package com.example.common.app;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,15 +14,17 @@ import butterknife.ButterKnife;
  * @author kevin
  * 事件 --> 窗口变化 --> 是否跳转, 数据 --> 界面初始化 --> 控件初始化 --> 数据初始化 --> 处理退出 --> 结束事件
  * 根据来处理：
- *  1. 初始化窗口
- *  2. 不跳转不初始化
- *  3. 获取布局文件，初始化布局控件
- *  4. 初始化数据
- *  5. 处理销毁
- *  6. 处理多个fragment退出时的情况
- * */
+ * 1. 初始化窗口
+ * 2. 不跳转不初始化
+ * 3. 获取布局文件，初始化布局控件
+ * 4. 初始化数据
+ * 5. 处理销毁
+ * 6. 处理多个fragment退出时的情况
+ */
 
-public abstract class BaseActivity extends AppCompatActivity{
+public abstract class BaseActivity extends AppCompatActivity {
+
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,7 +37,7 @@ public abstract class BaseActivity extends AppCompatActivity{
             setContentView(contentLayoutId);
             initWidget();
             initData();
-        }else {
+        } else {
             finish();
         }
 
@@ -57,10 +60,11 @@ public abstract class BaseActivity extends AppCompatActivity{
 
     /**
      * 用来判断是否应该跳转，以及activity的消息传递
+     *
      * @param bundle 参数Bundle
      * @return 如果参数正确返回True，错误返回False
      */
-    protected boolean initArgs( Bundle bundle) {
+    protected boolean initArgs(Bundle bundle) {
         return true;
     }
 
@@ -90,11 +94,11 @@ public abstract class BaseActivity extends AppCompatActivity{
     @Override
     public void onBackPressed() {
         List<Fragment> fragments = getSupportFragmentManager().getFragments();
-        if (fragments != null && fragments.size() > 0){
-            for (Fragment fragment: fragments){
-                if (fragment instanceof  com.example.common.app.BaseFragment){
+        if (fragments != null && fragments.size() > 0) {
+            for (Fragment fragment : fragments) {
+                if (fragment instanceof com.example.common.app.BaseFragment) {
                     // 如果已经处理则会返回正确，如果没有，则有activity 处理
-                    if (((BaseFragment) fragment).onBackPressed()){
+                    if (((BaseFragment) fragment).onBackPressed()) {
                         return;
                     }
                 }
@@ -103,4 +107,17 @@ public abstract class BaseActivity extends AppCompatActivity{
         super.onBackPressed();
         finish();
     }
+
+    public void showDailog() {
+        if (progressDialog == null) {
+            progressDialog = new ProgressDialog(this);
+        }
+        progressDialog.show();
+    }
+
+    public void stopDailog(){
+        progressDialog.cancel();
+    }
+
+
 }

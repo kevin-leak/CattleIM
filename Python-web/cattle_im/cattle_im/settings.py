@@ -50,6 +50,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+from django.middleware.csrf import CsrfViewMiddleware
+
 ROOT_URLCONF = 'cattle_im.urls'
 
 TEMPLATES = [

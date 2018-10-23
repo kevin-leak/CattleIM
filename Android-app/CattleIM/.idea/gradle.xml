@@ -10,9 +10,10 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/common" />
-            <option value="$PROJECT_DIR$/face-res" />
+            <option value="$PROJECT_DIR$/emoticon" />
             <option value="$PROJECT_DIR$/factory" />
             <option value="$PROJECT_DIR$/lang" />
+            <option value="$PROJECT_DIR$/netkit" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

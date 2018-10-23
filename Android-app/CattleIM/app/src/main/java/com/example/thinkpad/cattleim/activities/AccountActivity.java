@@ -1,12 +1,15 @@
 package com.example.thinkpad.cattleim.activities;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
+import android.text.Editable;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,8 +17,6 @@ import com.example.common.app.BaseActivity;
 import com.example.common.app.BaseFragment;
 import com.example.common.tools.UITools;
 import com.example.common.widget.ViewPager.BaseFragmentPageAdapter;
-import com.example.factory.net.NetInterface;
-import com.example.factory.net.Network;
 import com.example.thinkpad.cattleim.R;
 import com.example.thinkpad.cattleim.frags.account.LoginFragment;
 import com.example.thinkpad.cattleim.frags.account.RegisterFragment;
@@ -44,6 +45,12 @@ public class AccountActivity extends BaseActivity {
     CircleImageView profileImage;
     @BindView(R.id.fab_go)
     FloatingActionButton fabGo;
+    @BindView(R.id.et_user_name)
+    EditText etUserName;
+    @BindView(R.id.btn_login)
+    TextView btnLogin;
+    @BindView(R.id.btn_register)
+    TextView btnRegister;
 
 
     private List<BaseFragment> fragmentList;
@@ -69,15 +76,22 @@ public class AccountActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                if (CURRENT_CONTENT == 0){
-                    if (loginFragment != null){
+                if (CURRENT_CONTENT == 0) {
+                    if (loginFragment != null) {
                         loginFragment.login();
+                    }
+                }else {
+                    if (registerFragment != null){
+                        String username = etUserName.getText().toString();
+                        registerFragment.register("avatar", username);
+
                     }
                 }
 
-                Intent intent = new Intent( AccountActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
+
+//                        Intent intent = new Intent(AccountActivity.this, MainActivity.class);
+//                        startActivity(intent);
+//                        finish();
             }
         });
 
@@ -123,9 +137,11 @@ public class AccountActivity extends BaseActivity {
                 navigationList.get(i).setBackgroundResource(R.drawable.top_border);
                 if (fragmentList.get(i) instanceof RegisterFragment) {
                     profileImage.setVisibility(View.VISIBLE);
+                    etUserName.setVisibility(View.VISIBLE);
                     ivBackground.setImageResource(R.mipmap.register_background);
                 } else {
                     profileImage.setVisibility(View.GONE);
+                    etUserName.setVisibility(View.GONE);
                     ivBackground.setImageResource(R.mipmap.login_background);
                 }
 

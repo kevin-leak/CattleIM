@@ -23,6 +23,7 @@
     <string name="group">group</string>
     <string name="tag">tag</string>
     <string name="database">database</string>
+    <string name="editName">username</string>
 
 
 </resources>

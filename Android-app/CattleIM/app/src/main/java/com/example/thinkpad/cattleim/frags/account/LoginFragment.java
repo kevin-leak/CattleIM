@@ -1,27 +1,16 @@
 package com.example.thinkpad.cattleim.frags.account;
 
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.common.app.BaseFragment;
-import com.example.factory.model.AccountModel;
-import com.example.factory.net.NetInterface;
-import com.example.factory.net.Network;
+import com.example.netKit.piece.account.AccountPiece;
+import com.example.netKit.net.NetInterface;
+import com.example.netKit.net.Network;
 import com.example.thinkpad.cattleim.R;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -46,12 +35,11 @@ public class LoginFragment extends BaseFragment {
 
     public void login(){
         NetInterface connect = Network.getConnect();
-        Call<AccountModel> login = connect.login(etPhone.getText().toString(), etPassword.getText().toString());
-        login.enqueue(new Callback<AccountModel>() {
+        Call<AccountPiece> login = connect.login(etPhone.getText().toString(), etPassword.getText().toString());
+        login.enqueue(new Callback<AccountPiece>() {
             @Override
-            public void onResponse(Call<AccountModel> call, Response<AccountModel> response) {
+            public void onResponse(Call<AccountPiece> call, Response<AccountPiece> response) {
                 assert response.body() != null;
-                Log.e("----->",  response.body().getToken());
                 Log.e("----->",  response.body().getAvatar());
                 Log.e("----->",  response.body().getName());
                 Log.e("----->",  response.body().getStatus() + " ");
@@ -59,7 +47,7 @@ public class LoginFragment extends BaseFragment {
             }
 
             @Override
-            public void onFailure(Call<AccountModel> call, Throwable t) {
+            public void onFailure(Call<AccountPiece> call, Throwable t) {
 
             }
         });

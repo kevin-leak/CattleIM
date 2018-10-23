@@ -1,5 +1,6 @@
 package com.example.common.app;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -24,6 +25,7 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
 
     private View mRoot;
     private Unbinder unbinder;
+    private ProgressDialog progressDialog;
 
     @Override
     public void onAttach(Context context) {
@@ -81,5 +83,18 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
      */
     public boolean onBackPressed() {
         return false;
+    }
+
+
+
+    public void showDailog() {
+        if (progressDialog == null) {
+            progressDialog = new ProgressDialog(getActivity());
+        }
+        progressDialog.show();
+    }
+
+    public void stopDailog(){
+        progressDialog.cancel();
     }
 }

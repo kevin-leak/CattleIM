@@ -7,8 +7,11 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST, require_GET
 
+from android.api.wraper import account
 
-@csrf_exempt
+
+@require_POST
+@account.login_wrap
 def login(request):
     print(request.POST)
     dic = {
@@ -21,6 +24,17 @@ def login(request):
     return HttpResponse(json.dumps(dic))
 
 
-@require_GET
+@require_POST
+@account.register_wrap
 def register(request):
-    return None
+
+    dic = {
+        "status": 0,
+        "name": "lkk",
+        "avatar": "asfklsajflkdsja",
+        "token": "asjfklsjdkfjaslksa"
+    }
+
+    return HttpResponse(json.dumps(dic))
+
+
