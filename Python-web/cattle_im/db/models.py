@@ -6,6 +6,7 @@ from django.core.mail import send_mail
 from django.db import models
 from django.utils import timezone
 
+
 # Create your models here.
 
 
@@ -214,5 +215,7 @@ class PushHistory(models.Model):
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
 
-
 # todo 及客户资料表， 以及课表，月计划，归档问题处理，event中id的修改不自动生成（56）
+
+
+# todo 处理avatar的问题，是以字符串存还是图像本省

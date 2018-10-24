@@ -5,6 +5,7 @@ import android.util.Log;
 import android.widget.EditText;
 
 import com.example.common.app.BaseFragment;
+import com.example.netKit.piece.RspPiece;
 import com.example.netKit.piece.account.AccountPiece;
 import com.example.netKit.piece.account.RegisterPiece;
 import com.example.netKit.net.NetInterface;
@@ -38,16 +39,16 @@ public class RegisterFragment extends BaseFragment {
         NetInterface connect = Network.getConnect();
         RegisterPiece registerModel = new RegisterPiece(phone, username, password, avatar);
         Log.e("TAG", "register: " + registerModel.getPhone());
-        Call<AccountPiece> register = connect.register(registerModel);
-        register.enqueue(new Callback<AccountPiece>() {
+        Call<RspPiece<AccountPiece>> register = connect.register(registerModel);
+        register.enqueue(new Callback<RspPiece<AccountPiece>>() {
             @Override
-            public void onResponse(@NonNull Call<AccountPiece> call, Response<AccountPiece> response) {
+            public void onResponse(Call<RspPiece<AccountPiece>> call, Response<RspPiece<AccountPiece>> response) {
                 assert response.body() != null;
-                Log.e("register", response.body().getName());
+                Log.e("register", response.body().getStatus() + "");
             }
 
             @Override
-            public void onFailure(@NonNull Call<AccountPiece> call, Throwable t) {
+            public void onFailure(Call<RspPiece<AccountPiece>> call, Throwable t) {
 
             }
         });

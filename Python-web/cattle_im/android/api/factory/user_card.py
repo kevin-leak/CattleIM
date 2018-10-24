@@ -47,15 +47,17 @@ class Card(object):
         return json_info
 
 
-bokeyuan = {"b": 1,
-            "o": 2,
-            "k": 3,
-            "e": 4,
-            "y": 5,
-            "u": 6,
-            "a": 7,
-            "n": 8,
-            }
+if __name__ == '__main__':
 
-Card.__dict__.update(bokeyuan)
-print(Card().__dict__.items())
+    bokeyuan = {"b": 1,
+                "o": 2,
+                "k": 3,
+                "e": 4,
+                "y": 5,
+                "u": 6,
+                "a": 7,
+                "n": 8,
+                }
+
+    Card.__dict__.update(bokeyuan)
+    print(Card().__dict__.items())

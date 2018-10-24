@@ -6,36 +6,22 @@ package com.example.netKit.piece.account;
  */
 public class AccountPiece {
 
-
     /**
-     * status : 0
-     * name : lkk
-     * phone : 18870742138
-     * avatar : asfklsajflkdsja
+     * name : username
+     * phone : 188707421
+     * avatar : 999asfdasdfsafdsadsafdasfasklnasklxm aksdkljaskldjfklsa
      */
 
-    private int status;
-    private String name;
-    /**
-     * 当数据返回正确，我们由当地缓存
-     */
+    private String username;
     private String phone;
     private String avatar;
 
-    public int getStatus() {
-        return status;
+    public String getUsername() {
+        return username;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPhone() {

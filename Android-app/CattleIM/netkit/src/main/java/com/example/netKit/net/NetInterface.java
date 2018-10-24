@@ -1,6 +1,8 @@
 package com.example.netKit.net;
 
+import com.example.netKit.piece.RspPiece;
 import com.example.netKit.piece.account.AccountPiece;
+import com.example.netKit.piece.account.LoginPiece;
 import com.example.netKit.piece.account.RegisterPiece;
 
 import okhttp3.ResponseBody;
@@ -20,13 +22,12 @@ public interface NetInterface {
     @GET("get_test/")
     Call<ResponseBody> getCall();
 
-    @FormUrlEncoded
     @POST("login/")
-    Call<AccountPiece> login(@Field("phone") String name, @Field("password") String password);
+    Call<RspPiece<AccountPiece>> login(@Body LoginPiece piece);
 
 
 
     @POST("register/")
-    Call<AccountPiece> register(@Body RegisterPiece model); // 此处，后端需要request里面的body接受数据
+    Call<RspPiece<AccountPiece>> register(@Body RegisterPiece piece); // 此处，后端需要request里面的body接受数据
 
 }
