@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * @author kevin
+ * @author kevinleak
  * 事件 --> 数据跳转 --> 初始化布局 --> 初始化控件 --> 初始化布局 --> 回退
  * 处理一个root复用问题
  * 处理fragment返回问题
@@ -25,7 +25,6 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
 
     private View mRoot;
     private Unbinder unbinder;
-    private ProgressDialog progressDialog;
 
     @Override
     public void onAttach(Context context) {
@@ -86,15 +85,4 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
     }
 
 
-
-    public void showDailog() {
-        if (progressDialog == null) {
-            progressDialog = new ProgressDialog(getActivity());
-        }
-        progressDialog.show();
-    }
-
-    public void stopDailog(){
-        progressDialog.cancel();
-    }
 }

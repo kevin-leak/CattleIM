@@ -59,7 +59,6 @@ def login(request):
 
 
 @require_POST
-# @dict_switch
 def register(request):
     """
     {

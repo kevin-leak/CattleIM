@@ -11,7 +11,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 
 /**
- * @author kevin
+ * @author kevinleak
  * 事件 --> 窗口变化 --> 是否跳转, 数据 --> 界面初始化 --> 控件初始化 --> 数据初始化 --> 处理退出 --> 结束事件
  * 根据来处理：
  * 1. 初始化窗口
@@ -23,8 +23,6 @@ import butterknife.ButterKnife;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-
-    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -107,17 +105,5 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
-
-    public void showDailog() {
-        if (progressDialog == null) {
-            progressDialog = new ProgressDialog(this);
-        }
-        progressDialog.show();
-    }
-
-    public void stopDailog(){
-        progressDialog.cancel();
-    }
-
 
 }
