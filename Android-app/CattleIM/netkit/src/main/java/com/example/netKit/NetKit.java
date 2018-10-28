@@ -1,6 +1,9 @@
 package com.example.netKit;
 
 import com.example.common.app.Application;
+import com.example.netKit.db.DbTest;
+import com.raizlabs.android.dbflow.config.FlowConfig;
+import com.raizlabs.android.dbflow.config.FlowManager;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -47,6 +50,16 @@ public class NetKit {
 
     public static Application app(){
         return Application.getInstance();
+    }
+
+    public static void initDb(){
+        // 初始化数据库
+        FlowManager.init(new FlowConfig.Builder(app())
+                .openDatabasesOnInit(true) // 数据库初始化的时候就开始打开
+                .build());
+        DbTest.getInfo(new DbTest().user);
+
+        // 持久化的数据进行初始化
     }
 
 }

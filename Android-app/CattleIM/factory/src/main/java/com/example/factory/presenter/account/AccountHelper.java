@@ -8,4 +8,5 @@ package com.example.factory.presenter.account;
  */
 public class AccountHelper {
     //TODO 后期加入对储存的优化，进行对本地数据的缓存
+
 }

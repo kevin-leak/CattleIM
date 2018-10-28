@@ -1,6 +1,5 @@
 package com.example.thinkpad.cattleim.frags.account;
 
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.EditText;
 
@@ -9,7 +8,7 @@ import com.example.netKit.piece.RspPiece;
 import com.example.netKit.piece.account.AccountPiece;
 import com.example.netKit.piece.account.RegisterPiece;
 import com.example.netKit.net.NetInterface;
-import com.example.netKit.net.Network;
+import com.example.netKit.net.NetWorker;
 import com.example.thinkpad.cattleim.R;
 
 import butterknife.BindView;
@@ -36,7 +35,7 @@ public class RegisterFragment extends BaseFragment {
         String password = etPassword.getText().toString();
         String phone = etPhone.getText().toString();
         String rePsd = etRePsd.getText().toString();
-        NetInterface connect = Network.getConnect();
+        NetInterface connect = NetWorker.getConnect();
         RegisterPiece registerModel = new RegisterPiece(phone, username, password, avatar);
         Log.e("TAG", "register: " + registerModel.getPhone());
         Call<RspPiece<AccountPiece>> register = connect.register(registerModel);

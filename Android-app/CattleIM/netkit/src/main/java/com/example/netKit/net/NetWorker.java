@@ -15,19 +15,22 @@ import retrofit2.converter.gson.GsonConverterFactory;
  *
  * @author KevinLeak
  */
-public class Network {
+public class NetWorker {
 
-    private static Network instance;
+    private static NetWorker instance;
     private Retrofit retrofit;
     private OkHttpClient client;
 
     static {
-        instance = new Network();
+        instance = new NetWorker();
     }
 
-    private Network() {
+    private NetWorker() {
     }
 
+    /**
+     * @return 返回单例模式的netWorker
+     */
     public static OkHttpClient getClient() {
 
         if (instance.client != null) {
@@ -52,7 +55,7 @@ public class Network {
                 .addConverterFactory(GsonConverterFactory.create())
                 //设置网络请求的Url地址
                 .baseUrl(Common.Constance.BASE_URL)
-                .client(Network.getClient())
+                .client(NetWorker.getClient())
                 .build();
 
         return instance.retrofit;
@@ -65,7 +68,7 @@ public class Network {
      */
     public static NetInterface getConnect() {
 
-        return Network.getRetrofit().create(NetInterface.class);
+        return NetWorker.getRetrofit().create(NetInterface.class);
     }
 
 }

@@ -20,10 +20,6 @@ public class ReceiveInterceptor implements Interceptor {
     @Override
     public Response intercept(Interceptor.Chain chain) throws IOException {
         Response originalResponse = chain.proceed(chain.request());
-        if (originalResponse.request().body() != null) {
-
-        }
-
 
         List<String> headers = originalResponse.headers("Set-Cookie");
 

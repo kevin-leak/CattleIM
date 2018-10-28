@@ -8,7 +8,7 @@ import com.example.common.app.BaseFragment;
 import com.example.netKit.piece.RspPiece;
 import com.example.netKit.piece.account.AccountPiece;
 import com.example.netKit.net.NetInterface;
-import com.example.netKit.net.Network;
+import com.example.netKit.net.NetWorker;
 import com.example.netKit.piece.account.LoginPiece;
 import com.example.thinkpad.cattleim.R;
 
@@ -36,7 +36,7 @@ public class LoginFragment extends BaseFragment {
 
 
     public void login(){
-        NetInterface connect = Network.getConnect();
+        NetInterface connect = NetWorker.getConnect();
         Call<RspPiece<AccountPiece>> login = connect.login(new LoginPiece(etPhone.getText().toString(), etPassword.getText().toString()));
         login.enqueue(new Callback<RspPiece<AccountPiece>>() {
             @Override

@@ -27,7 +27,7 @@ import com.example.thinkpad.cattleim.services.StepService;
 
 import java.lang.reflect.Field;
 
-import pub.devrel.easypermissions.EasyPermissions;
+
 
 
 // todo 此处类等以后修改，现在主要实现了，一开始进入，在桌面出现步骤框
