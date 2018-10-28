@@ -23,6 +23,8 @@ public class User extends BaseDdModel<User> implements Profile {
     private String id;
     @Column
     private String name;
+    @Column
+    private String avatar;
 
 
     public String getId() {
@@ -39,5 +41,13 @@ public class User extends BaseDdModel<User> implements Profile {
 
     public String getName() {
         return name;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }

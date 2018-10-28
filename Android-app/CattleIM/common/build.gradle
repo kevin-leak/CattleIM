@@ -41,7 +41,7 @@ dependencies {
     implementation "com.android.support:design:$rootProject.ext.supportVersion"
 
 
-    implementation "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    api "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
 
     implementation "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.ext.butterknifeCompilerVesion"

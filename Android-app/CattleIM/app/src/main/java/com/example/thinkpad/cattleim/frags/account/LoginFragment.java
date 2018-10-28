@@ -4,7 +4,10 @@ import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.common.app.BaseFragment;
+import com.example.factory.contract.BaseContract;
+import com.example.factory.contract.account.LoginContract;
+import com.example.factory.presenter.account.LoginPresenter;
+import com.example.factory.view.BasePresenterFragment;
 import com.example.netKit.piece.RspPiece;
 import com.example.netKit.piece.account.AccountPiece;
 import com.example.netKit.net.NetInterface;
@@ -20,7 +23,8 @@ import retrofit2.Response;
 /**
  * 进行登入事件的检验， 以及错误的显示
  */
-public class LoginFragment extends BaseFragment {
+public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter>
+        implements LoginContract.View {
 
     @BindView(R.id.et_phone)
     EditText etPhone;
@@ -29,9 +33,12 @@ public class LoginFragment extends BaseFragment {
     @BindView(R.id.tv_forget)
     TextView tvForget;
 
+
     @Override
     protected int getContentLayoutId() {
         return R.layout.fragment_login;
+
+//        presenter.login();
     }
 
 
@@ -57,6 +64,20 @@ public class LoginFragment extends BaseFragment {
             }
         });
     }
+
+
+    @Override
+    protected LoginContract.Presenter initPresent() {
+        return new LoginPresenter(this);
+    }
+
+    @Override
+    public void loginSuccess() {
+        // 登入成功，发生跳转
+    }
+
+    // 可以复写父类的方法实现对话框的消息展示，以及错误展示
+
 
 
 }

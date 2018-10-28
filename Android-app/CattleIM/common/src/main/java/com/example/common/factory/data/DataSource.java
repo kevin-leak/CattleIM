@@ -22,7 +22,7 @@ public interface DataSource  {
      * @param <T> 任意类型
      */
     interface SucceedCallback<T> {
-        // 数据加载成功, 网络请求成功
+        // 数据加载成功, 网络请求成功， 如果死操作UI记得在主线程运行，要不然报错
         void onDataLoaded(T t);
 
     }
@@ -31,14 +31,10 @@ public interface DataSource  {
      * 只关注失败的接口
      */
     interface FailedCallback {
-        // 数据加载失败, 网络请求失败
+        // 数据加载失败, 网络请求失败，如果死操作UI记得在主线程运行，要不然报错
         void onDataNotAvailable(@StringRes int strRes);
     }
 
 
-    /**
-     * 销毁操作
-     */
-    void dispose();
 
 }

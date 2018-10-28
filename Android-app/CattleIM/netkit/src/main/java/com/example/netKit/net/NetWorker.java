@@ -45,6 +45,13 @@ public class NetWorker {
 
     }
 
+
+
+    /**
+     * 建立网络连接的单例，提高性能
+     * 此处还需要对token值进行一个拦截，封装转发处理
+     * @return 返回一个单例对象
+     */
     public static Retrofit getRetrofit() {
 
         if (instance.retrofit != null) {

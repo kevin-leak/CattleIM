@@ -17,7 +17,7 @@ public class RspPiece<T> {
     private int status;
     private T result;
     private String message;
-    private final static int SUCCEED = 1;
+    public final static int SUCCEED = 1;
 
     public boolean success() {
         return status == SUCCEED;

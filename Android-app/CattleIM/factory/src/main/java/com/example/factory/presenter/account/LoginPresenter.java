@@ -4,26 +4,45 @@ import com.example.common.factory.data.DataSource;
 import com.example.factory.contract.account.LoginContract;
 import com.example.factory.presenter.BasePresenter;
 import com.example.netKit.db.User;
+import com.example.netKit.piece.account.LoginPiece;
 
+/**
+ * DataSource 实现了presenter 与 Helper之间的监听通信，
+ * Helper是实现数据本地化和数据网络请求的类， presenter是实现Helper与View时间的关系，
+ * Helper大大分担了presenter的逻辑
+ * BasePresenter 实现了所有的  presenter 的实例化，以及向view与presenter的传递
+ */
 public class LoginPresenter extends BasePresenter<LoginContract.View>
-        implements LoginContract.Presenter {
+        implements LoginContract.Presenter, DataSource.Callback<User> {
 
+
+    /**
+     * 必须实现父类的构造方法，presenter的实例化在具体的类中实现
+     * 只有构造出父类，才能构造出子类
+     */
     public LoginPresenter(LoginContract.View view) {
         super(view);
     }
 
-    @Override
-    public void start() {
-
-    }
-
-    @Override
-    public void destroy() {
-
-    }
 
     @Override
     public void login(String phone, String password) {
+
+        //TODO 处理数据的格式以及其他问题，防止出错
+        LoginPiece loginPiece = new LoginPiece(phone, password);
+        AccountHelper.login(loginPiece, this);
+    }
+
+
+    // 接下来的方法处理，helper处完数据的回调
+
+    @Override
+    public void onDataLoaded(User user) {
+
+    }
+
+    @Override
+    public void onDataNotAvailable(int strRes) {
 
     }
 }
