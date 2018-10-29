@@ -39,10 +39,13 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
     @Override
     public void onDataLoaded(User user) {
 
+//        网路请求成功
+        getView().loginSuccess();
     }
 
     @Override
     public void onDataNotAvailable(int strRes) {
-
+        getView().showError(strRes);
     }
 }
+

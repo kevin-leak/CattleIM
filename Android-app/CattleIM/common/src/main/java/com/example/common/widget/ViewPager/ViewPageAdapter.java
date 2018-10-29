@@ -1,13 +1,14 @@
 package com.example.common.widget.ViewPager;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.widget.Button;
 
-import com.example.common.app.BaseFragment;
-
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 /**
@@ -16,19 +17,29 @@ import java.util.List;
  * 处理fragment的缓冲问题，实现滑动和点击的切换
  * */
 
-public class BaseFragmentPageAdapter extends FragmentPagerAdapter {
+public class ViewPageAdapter<F extends Fragment> extends FragmentPagerAdapter {
 
-    private final List<BaseFragment> fragmentList;
+    private List<F> fragmentList = new ArrayList<>();
 
     /**
      * @param fm ragmentManager
      * @param fragmentList 要滑动的fragment
      */
-    public BaseFragmentPageAdapter(FragmentManager fm, List<BaseFragment> fragmentList) {
+    public ViewPageAdapter(FragmentManager fm, List<F> fragmentList) {
         super(fm);
         this.fragmentList = fragmentList;
     }
 
+    public ViewPageAdapter(FragmentManager fm) {
+        super(fm);
+    }
+
+
+
+    public void addFragment(F fragment){
+        fragmentList.add(fragment);
+        notifyDataSetChanged();
+    }
 
     @Override
     public Fragment getItem(int i) {
@@ -37,8 +48,12 @@ public class BaseFragmentPageAdapter extends FragmentPagerAdapter {
 
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public int getCount() {
+        if (Objects.isNull(fragmentList)){
+            return 0;
+        }
         return fragmentList.size();
     }
 

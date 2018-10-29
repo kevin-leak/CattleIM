@@ -17,8 +17,4 @@ public class BaseDbStore<Data extends BaseDdModel<Data>> implements DbDataSource
 
     }
 
-    @Override
-    public void dispose() {
-
-    }
 }

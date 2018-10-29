@@ -1,5 +1,7 @@
 package com.example.thinkpad.cattleim.frags.account;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -14,6 +16,9 @@ import com.example.netKit.net.NetInterface;
 import com.example.netKit.net.NetWorker;
 import com.example.netKit.piece.account.LoginPiece;
 import com.example.thinkpad.cattleim.R;
+import com.example.thinkpad.cattleim.activities.AccountActivity;
+
+import java.util.Objects;
 
 import butterknife.BindView;
 import retrofit2.Call;
@@ -26,6 +31,7 @@ import retrofit2.Response;
 public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter>
         implements LoginContract.View {
 
+    private static final String TAG = "LoginFragment";
     @BindView(R.id.et_phone)
     EditText etPhone;
     @BindView(R.id.et_password)
@@ -37,32 +43,14 @@ public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter
     @Override
     protected int getContentLayoutId() {
         return R.layout.fragment_login;
-
-//        presenter.login();
     }
 
 
     public void login(){
-        NetInterface connect = NetWorker.getConnect();
-        Call<RspPiece<AccountPiece>> login = connect.login(new LoginPiece(etPhone.getText().toString(), etPassword.getText().toString()));
-        login.enqueue(new Callback<RspPiece<AccountPiece>>() {
-            @Override
-            public void onResponse(Call<RspPiece<AccountPiece>> call, Response<RspPiece<AccountPiece>> response) {
-                assert response.body() != null;
-                if (response.body().success()){
-                    Log.e("----->",  response.body().getResult().getAvatar());
-                    Log.e("----->",  response.body().getResult().getAvatar());
-                    Log.e("----->",  response.body().getStatus() + " ");
-                }else {
-                    Log.e("----->",  response.body().getStatus() + "");
-                }
-            }
+        Log.e(TAG, "login: get it");
 
-            @Override
-            public void onFailure(Call<RspPiece<AccountPiece>> call, Throwable t) {
 
-            }
-        });
+        presenter.login(etPhone.getText().toString(), etPassword.getText().toString());
     }
 
 
@@ -71,9 +59,11 @@ public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter
         return new LoginPresenter(this);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void loginSuccess() {
         // 登入成功，发生跳转
+        ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
     }
 
     // 可以复写父类的方法实现对话框的消息展示，以及错误展示
