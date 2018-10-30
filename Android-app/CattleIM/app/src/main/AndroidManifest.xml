@@ -57,6 +57,12 @@
             android:theme="@style/AppTheme.AccountActivity">
         </activity>
 
+        <!--声明图片剪切的activity-->
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
         <activity android:name=".activities.MainActivity"
             android:theme="@style/AppTheme.MainActivity">
 

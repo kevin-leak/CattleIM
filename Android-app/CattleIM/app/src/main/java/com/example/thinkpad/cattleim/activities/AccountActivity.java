@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.common.app.Application;
 import com.example.common.app.BaseActivity;
 import com.example.common.app.BaseFragment;
@@ -59,6 +61,8 @@ public class AccountActivity extends BaseActivity
     EditText etUserName;
 
     private ViewPageHelper<TextView, BaseFragment> helper;
+    private String mAvatarPath;
+    private BaseFragment currentFragment;
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -73,30 +77,15 @@ public class AccountActivity extends BaseActivity
     /**
      * 设置头像选择器
      */
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @OnClick(R.id.profile_avatar)
     void onAvatarView() {
-        Log.e(TAG, "onAvatarView: ---------" );
-//        new GalleryFragment()
-//                .setListener(new GalleryFragment.OnSelectedListener() {
-//                    @Override
-//                    public void onSelectedImage(String path) {
-//                        UCrop.Options options = new UCrop.Options();
-//                        // 设置图片处理的格式JPEG
-//                        options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
-//                        // 设置压缩后的图片精度
-//                        options.setCompressionQuality(96);
-//
-//                        // 得到头像的缓存地址
-//                        File dPath = Application.getAvatarTmpFile();
-//
-//                        // 发起剪切
-//                        UCrop.of(Uri.fromFile(new File(path)), Uri.fromFile(dPath))
-//                                .withAspectRatio(1, 1) // 1比1比例
-//                                .withMaxResultSize(520, 520) // 返回最大的尺寸
-//                                .withOptions(options) // 相关参数
-//                                .start(AccountActivity.this);
-//                    }
-//                });
+        currentFragment = helper.getCurrent();
+        Log.e(TAG, "onAvatarView: sdafg" );
+        if (Objects.nonNull(currentFragment)){
+            ((RegisterFragment) currentFragment).getAvatar();
+        }
+
     }
 
     /**
@@ -106,7 +95,7 @@ public class AccountActivity extends BaseActivity
     @OnClick(R.id.fab_go)
     void onFloatingAction() {
 
-        BaseFragment currentFragment = helper.getCurrent();
+        currentFragment = helper.getCurrent();
         if (Objects.isNull(currentFragment)) {
         } else if (currentFragment instanceof LoginFragment) {
             ((LoginFragment) currentFragment).login();
@@ -167,16 +156,32 @@ public class AccountActivity extends BaseActivity
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-//        // 收到从Activity传递过来的回调，然后取出其中的值进行图片加载
-//        // 如果是我能够处理的类型
-//        if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
-//            // 通过UCrop得到对应的Uri
-//            final Uri resultUri = UCrop.getOutput(data);
-//            if (resultUri != null) {
-//                profileAvatar.setImageURI(resultUri);
-//            }
-//        } else if (resultCode == UCrop.RESULT_ERROR) {
-//            //TODO 处理错误弹框
-//        }
+        // 收到从Activity传递过来的回调，然后取出其中的值进行图片加载
+        // 如果是我能够处理的类型
+        if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
+            // 通过UCrop得到对应的Uri
+            final Uri resultUri = UCrop.getOutput(data);
+            if (resultUri != null) {
+                loadPortrait(resultUri);
+            }
+        } else if (resultCode == UCrop.RESULT_ERROR) {
+            //TODO 处理错误弹框
+        }
+    }
+
+    /**
+     * 加载Uri到当前的头像中
+     *
+     * @param uri Uri
+     */
+    private void loadPortrait(Uri uri) {
+        // 得到头像地址
+        mAvatarPath = uri.getPath();
+
+        Glide.with(this)
+                .load(uri)
+                .asBitmap()
+                .centerCrop()
+                .into(profileAvatar);
     }
 }

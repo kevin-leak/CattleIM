@@ -20,4 +20,5 @@
     <string name="business">商场</string>
     <string name="data_network_error">网络错误！</string>
     <string name="FORM_TYPE_ERROR_HONE">电话号码格式错误</string>
+    <string name="title_select_gallery">选择照片</string>
 </resources>

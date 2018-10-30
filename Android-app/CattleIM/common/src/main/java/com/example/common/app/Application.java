@@ -22,7 +22,7 @@ public class Application extends android.app.Application {
     public static File getAvatarTmpFile() {
 
         // 得到头像目录的缓存地址
-        File dir = new File(getCacheDirFile(), "portrait");
+        File dir = new File(getCacheDirFile(), "avatar");
         // 创建所有的对应的文件夹
         //noinspection ResultOfMethodCallIgnored
         dir.mkdirs();

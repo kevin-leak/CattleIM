@@ -21,7 +21,7 @@ import butterknife.Unbinder;
 /**
  * @author keivn
  * 1.继承RecyclerView.Adapter 实现基础的方法
- * 2. 实现由使用recycleView的类来实现绑定数据
+ * 2. 实现由使用adapter 数据分发到每一个holder里面
  * 3. 实现数据的更新
  * 4. 实现item的删除，点击事件，增加
  *
@@ -29,6 +29,7 @@ import butterknife.Unbinder;
 public abstract class RecyclerAdapter<Data>
         extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder<Data>>
         implements View.OnClickListener, View.OnLongClickListener, AdapterCallback<Data> {
+
     private final List<Data> mDataList;
     private AdapterListener<Data> mListener;
 
@@ -87,7 +88,7 @@ public abstract class RecyclerAdapter<Data>
 
 
         // 设置View的Tag为ViewHolder，进行双向绑定
-//        root.setTag(R.id.tag_recycler_holder, holder);
+        root.setTag(R.id.tag_recycler_holder, holder);
         // 设置事件点击
         root.setOnClickListener(this);
         root.setOnLongClickListener(this);
@@ -201,6 +202,9 @@ public abstract class RecyclerAdapter<Data>
         }
     }
 
+    /**
+     * 设置根布局的点击事件
+     */
     @Override
     public void onClick(View v) {
         ViewHolder viewHolder = (ViewHolder) v.getTag(R.id.tag_recycler_holder);
@@ -213,6 +217,9 @@ public abstract class RecyclerAdapter<Data>
 
     }
 
+    /**
+     * 设置holder的长按时间
+     */
     @Override
     public boolean onLongClick(View v) {
         ViewHolder viewHolder = (ViewHolder) v.getTag(R.id.tag_recycler_holder);

@@ -26,6 +26,7 @@
     <dimen name="len_12">12dp</dimen>
     <dimen name="len_150">150dp</dimen>
     <dimen name="len_180">180dp</dimen>
+    <dimen name="len_92">82dp</dimen>
 
 
 </resources>
