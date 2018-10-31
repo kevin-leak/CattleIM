@@ -1,6 +1,6 @@
 package com.example.factory.middleware.user;
 
-import com.example.factory.model.UserModel;
+import com.example.netKit.model.UserModel;
 
 /**
  * 推送的用户信息管理器

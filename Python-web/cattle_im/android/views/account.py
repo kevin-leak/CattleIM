@@ -1,3 +1,4 @@
+import base64
 import json
 
 from django.contrib import auth
@@ -69,8 +70,9 @@ def register(request):
     }
     """
     info = eval(request.body)
+    print(json.dumps(info))
     ret_info = common
-    print(info)
+    # print('from', info)
 
     same_phone = User.objects.filter(phone=info['phone']).first()
     same_username = User.objects.filter(username=info['username']).first()
@@ -101,9 +103,15 @@ def register(request):
     else:
         # todo 解密
         info['password'] = make_password(info['password'].strip())
-        User.objects.create(**info)
+        print(info)
+        # User.objects.create(**info)
         # User.objects.get(phone='18870742138')
         info.pop('password')
         ret_info['result'] = info
-    print(json.dumps(ret_info))
+
+    # file_str = open('2.jpg', 'wb')
+    msg = 'pp'
+    # file_str.write(base64.b64decode(info['avatar']))
+    # file_str.close()
+    print('to', json.dumps(ret_info))
     return HttpResponse(json.dumps(ret_info))

@@ -1,6 +1,18 @@
 [TOC]
 
 ----
+
+
+### 公共访问接口
+```json
+
+{
+ "status": 0,
+  "result": [],
+  "message": ""
+}
+```
+
 #### login 登入接口约定
 >登入的信息：
 ```json
@@ -26,16 +38,6 @@
 ```
 
 
-### 公共访问接口
-```json
-
-{
- "status": 0,
-  "result": [],
-  "message": ""
-}
-```
-
 ### 反馈用户信息接口
 ````json
 
@@ -46,22 +48,21 @@
 
 }
 ````
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+### 存储文件接口
+
+from
+```json
+{
+  "name": "ksadjk",
+  "content": "asdfjkal"
+}
+```
+
+to
+```json
+{
+  "code": 800,
+  "path": "aksdmjalskjl;k"
+}
+```

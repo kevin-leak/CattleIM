@@ -1,5 +1,7 @@
 package com.example.netKit.net;
 
+import com.example.netKit.model.FileModel;
+import com.example.netKit.piece.FilePiece;
 import com.example.netKit.piece.RspPiece;
 import com.example.netKit.piece.account.AccountPiece;
 import com.example.netKit.piece.account.LoginPiece;
@@ -24,6 +26,9 @@ public interface NetInterface {
 
     @POST("login/")
     Call<RspPiece<AccountPiece>> login(@Body LoginPiece piece);
+
+    @POST("save_file/")
+    Call<RspPiece<FileModel>> saveFile(@Body FilePiece piece);
 
 
 

@@ -63,7 +63,7 @@ public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter
     @Override
     public void loginSuccess() {
         // 登入成功，发生跳转
-        ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
+//        ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
     }
 
     // 可以复写父类的方法实现对话框的消息展示，以及错误展示

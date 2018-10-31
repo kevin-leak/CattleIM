@@ -1,10 +1,13 @@
 package com.example.factory.presenter.account;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+
 import com.example.common.factory.data.DataSource;
-import com.example.factory.R;
 import com.example.factory.contract.account.RegisterContract;
 import com.example.factory.presenter.BasePresenter;
-import com.example.factory.view.BasePresenterFragment;
+import com.example.factory.presenter.FileHelper;
+import com.example.netKit.db.IMFile;
 import com.example.netKit.db.User;
 import com.example.netKit.piece.account.RegisterPiece;
 
@@ -16,11 +19,19 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
         super(view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
-    public void register(String phone, String name, String password, String avatar) {
+    public void register(final String phone, final String name, final String password, final String avatarPath) {
 //        TODO 做数据检验并且回送消息到UI
-        RegisterPiece registerPiece = new RegisterPiece(phone, name, password, avatar);
-        AccountHelper.register(registerPiece,this);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String avatarUrl = FileHelper.fetchBackgroundFile(avatarPath);
+                RegisterPiece registerPiece = new RegisterPiece(phone, name, password, avatarUrl);
+                AccountHelper.register(registerPiece, RegisterPresenter.this);
+            }
+        }).start();
     }
 
     @Override

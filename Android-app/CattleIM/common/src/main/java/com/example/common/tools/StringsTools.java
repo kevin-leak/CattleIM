@@ -2,6 +2,7 @@ package com.example.common.tools;
 
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.util.Base64;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -21,7 +22,8 @@ public class StringsTools {
                 byte[] data = new byte[inputStream.available()];
                 inputStream.read(data);
                 inputStream.close();
-                return new String(data).trim();
+                // 对字节数组Base64编码
+                return Base64.encodeToString(data, Base64.DEFAULT);
             } catch (IOException e) {
                 e.printStackTrace();
             }

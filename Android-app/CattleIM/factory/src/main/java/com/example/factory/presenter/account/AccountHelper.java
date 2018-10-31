@@ -1,5 +1,9 @@
 package com.example.factory.presenter.account;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.util.Log;
+
 import com.example.common.factory.data.DataSource;
 import com.example.factory.R;
 import com.example.netKit.db.User;
@@ -9,6 +13,8 @@ import com.example.netKit.piece.RspPiece;
 import com.example.netKit.piece.account.AccountPiece;
 import com.example.netKit.piece.account.LoginPiece;
 import com.example.netKit.piece.account.RegisterPiece;
+
+import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -21,6 +27,7 @@ import retrofit2.Response;
  * @author KevinLeak
  */
 public class AccountHelper {
+    private static String   TAG = "AccountHelper";
     //TODO 后期加入对储存的优化，进行对本地数据的缓存
 
     /**
@@ -56,6 +63,7 @@ public class AccountHelper {
             this.callback = callback;
         }
 
+        @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
         public void onResponse(Call<RspPiece<AccountPiece>> call, Response<RspPiece<AccountPiece>> response) {
             /*todo, 注意哟啊区分登入与注册
@@ -71,6 +79,10 @@ public class AccountHelper {
 //                user.get
 //
 //                }
+
+            if (Objects.nonNull(response.body())) {
+                Log.e(TAG, "onResponse: " + response.body().success());
+            }
 
             // 通知全局的数据中心
             callback.onDataLoaded(new User());

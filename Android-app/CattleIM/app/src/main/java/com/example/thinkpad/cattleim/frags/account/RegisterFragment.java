@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.example.common.app.Application;
 import com.example.common.app.BaseFragment;
+import com.example.common.tools.HashTools;
 import com.example.common.tools.StringsTools;
 import com.example.factory.contract.account.RegisterContract;
 import com.example.factory.presenter.account.RegisterPresenter;
@@ -31,6 +32,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.support.constraint.Constraints.TAG;
+import static com.example.netKit.db.User_Table.avatar;
+
 public class RegisterFragment extends BasePresenterFragment<RegisterContract.Presenter>
         implements RegisterContract.View{
 
@@ -52,8 +56,13 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
         String phone = etPhone.getText().toString();
         String rePsd = etRePsd.getText().toString();
         String password = etPassword.getText().toString();
-        String avatar = StringsTools.ImageToStrings(path);
-        presenter.register(phone, username, rePsd, avatar);
+//        String avatar = StringsTools.ImageToStrings(path);
+//        Log.e(TAG, "register: " + new File(path).getName() );
+
+//        String avatar = HashTools.getMD5String(new File(path));
+
+
+        presenter.register(phone, username, rePsd, path);
     }
 
     @Override
@@ -64,7 +73,7 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void registerSuccess() {
-         ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
+//         ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
     }
 
     /**
