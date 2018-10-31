@@ -101,7 +101,7 @@ public class AccountActivity extends BaseActivity
             ((LoginFragment) currentFragment).login();
         } else if (helper.getCurrent() instanceof RegisterFragment) {
             String username = etUserName.getText().toString();
-            ((RegisterFragment) currentFragment).register("avatar", username);
+            ((RegisterFragment) currentFragment).register(mAvatarPath, username);
         }
     }
 

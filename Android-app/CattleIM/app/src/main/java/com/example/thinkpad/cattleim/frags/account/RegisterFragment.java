@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import com.example.common.app.Application;
 import com.example.common.app.BaseFragment;
+import com.example.common.tools.StringsTools;
 import com.example.factory.contract.account.RegisterContract;
 import com.example.factory.presenter.account.RegisterPresenter;
 import com.example.factory.view.BasePresenterFragment;
@@ -46,10 +47,12 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
         return R.layout.fragment_register;
     }
 
-    public void register(String avatar, String username) {
-        String password = etPassword.getText().toString();
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public void register(String path, String username) {
         String phone = etPhone.getText().toString();
         String rePsd = etRePsd.getText().toString();
+        String password = etPassword.getText().toString();
+        String avatar = StringsTools.ImageToStrings(path);
         presenter.register(phone, username, rePsd, avatar);
     }
 
