@@ -86,6 +86,7 @@ public class AccountHelper {
 
             // 通知全局的数据中心
             callback.onDataLoaded(new User());
+
         }
 
         @Override

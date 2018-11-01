@@ -1,6 +1,8 @@
 package com.example.factory.presenter.account;
 
 import com.example.common.factory.data.DataSource;
+import com.example.common.tools.ValidateTools;
+import com.example.factory.R;
 import com.example.factory.contract.account.LoginContract;
 import com.example.factory.presenter.BasePresenter;
 import com.example.netKit.db.User;
@@ -31,6 +33,15 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
         //TODO 处理数据的格式以及其他问题，防止出错
         LoginPiece loginPiece = new LoginPiece(phone, password);
         AccountHelper.login(loginPiece, this);
+    }
+
+    @Override
+    public boolean checkMobile(String phone) {
+        if (ValidateTools.isMobile(phone)){
+            return true;
+        }
+        getView().showError(R.string.form_phone_error);
+        return false;
     }
 
 

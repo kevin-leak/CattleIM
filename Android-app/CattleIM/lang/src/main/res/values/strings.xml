@@ -1,5 +1,4 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" tools:ignore="DuplicateDefinition">lang</string>
     <string name="login">登入</string>
     <string name="register">注册</string>
     <string name="keep_sign_in">Keep Sign in</string>
@@ -21,4 +20,29 @@
     <string name="data_network_error">网络错误！</string>
     <string name="FORM_TYPE_ERROR_HONE">电话号码格式错误</string>
     <string name="title_select_gallery">选择照片</string>
+    <string name="re_password">rePassword</string>
+    <string name="action_todo">todo</string>
+    <string name="action_schedule">schedule</string>
+    <string name="action_contact">contact</string>
+    <string name="action_circle">business</string>
+    <string name="action_settings">me</string>
+    <string name="today">Today</string>
+    <string name="settings">Settings</string>
+    <string name="account">Account</string>
+    <string name="theme">Theme</string>
+    <string name="notification">Notification</string>
+    <string name="about">About</string>
+    <string name="payment">payment</string>
+    <string name="language">language</string>
+    <string name="wristband">Wristband</string>
+    <string name="timeline">timeline</string>
+    <string name="linkTasks">link tasks</string>
+    <string name="eventMessage">event message</string>
+    <string name="add">添加</string>
+    <string name="group">group</string>
+    <string name="tag">tag</string>
+    <string name="database">database</string>
+    <string name="editName">name</string>
+    <string name="data_rsp_error_unknown">未知错误， 重新选择！！</string>
+    <string name="data_psd_not_same">两个密码不一致</string>
 </resources>

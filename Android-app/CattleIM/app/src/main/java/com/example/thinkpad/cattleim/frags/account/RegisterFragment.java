@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.EditText;
 
@@ -56,13 +57,17 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
         String phone = etPhone.getText().toString();
         String rePsd = etRePsd.getText().toString();
         String password = etPassword.getText().toString();
-//        String avatar = StringsTools.ImageToStrings(path);
-//        Log.e(TAG, "register: " + new File(path).getName() );
 
-//        String avatar = HashTools.getMD5String(new File(path));
+        if (TextUtils.isEmpty(path)){
+            showError(R.string.null_avatar);
+        }
 
+        if (presenter.checkUserName(username) &&
+                presenter.checkMobile(phone) &&
+                presenter.checkPsd(password, rePsd)){
+            presenter.register(phone, username, rePsd, path);
+        }
 
-        presenter.register(phone, username, rePsd, path);
     }
 
     @Override
@@ -73,7 +78,7 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void registerSuccess() {
-//         ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
+         ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
     }
 
     /**
@@ -105,5 +110,10 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
                 })// show 的时候建议使用getChildFragmentManager，
                 // tag GalleryFragment class 名
                 .show(getChildFragmentManager(), GalleryFragment.class.getName());
+    }
+
+    @Override
+    public void showError(int error) {
+        super.showError(error);
     }
 }

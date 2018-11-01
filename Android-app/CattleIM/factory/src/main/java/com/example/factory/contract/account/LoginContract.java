@@ -9,5 +9,14 @@ public interface LoginContract {
 
     interface Presenter extends BaseContract.Presenter {
         void login(String phone, String password);
+
+
+        /**
+         * @param phone
+         * @return
+         */
+        // 检查手机号是否正确, 实现给presenter用
+        boolean checkMobile(String phone);
+
     }
 }

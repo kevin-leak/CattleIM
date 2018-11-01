@@ -19,6 +19,7 @@ import java.util.Objects;
 
 public class ViewPageAdapter<F extends Fragment> extends FragmentPagerAdapter {
 
+    public FragmentManager manager;
     private List<F> fragmentList = new ArrayList<>();
 
     /**
@@ -27,6 +28,7 @@ public class ViewPageAdapter<F extends Fragment> extends FragmentPagerAdapter {
      */
     public ViewPageAdapter(FragmentManager fm, List<F> fragmentList) {
         super(fm);
+        manager = fm;
         this.fragmentList = fragmentList;
     }
 

@@ -2,6 +2,7 @@ package com.example.factory.view;
 
 import android.content.Context;
 
+import com.example.common.app.Application;
 import com.example.common.app.BaseFragment;
 import com.example.factory.contract.BaseContract;
 import com.example.factory.presenter.BasePresenter;
@@ -40,6 +41,7 @@ public abstract class BasePresenterFragment<Presenter extends BaseContract.Prese
     @Override
     public void showError(int error) {
         // TODO 可以在此处写一个统一的放回错误到界面的逻辑
+        Application.showToast(getActivity(), error);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.example.thinkpad.cattleim.activities;
 
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
@@ -12,6 +13,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -134,10 +137,12 @@ public class AccountActivity extends BaseActivity
 
         if (currentFragment instanceof RegisterFragment) {
             profileAvatar.setVisibility(View.VISIBLE);
+            setAvatarAnimator();
             etUserName.setVisibility(View.VISIBLE);
             ivBackground.setImageResource(R.mipmap.register_background);
         } else {
             profileAvatar.setVisibility(View.GONE);
+            profileAvatar.clearAnimation();
             etUserName.setVisibility(View.GONE);
             ivBackground.setImageResource(R.mipmap.login_background);
         }
@@ -184,4 +189,22 @@ public class AccountActivity extends BaseActivity
                 .centerCrop()
                 .into(profileAvatar);
     }
+
+    /**
+     * 图片循环的动画
+     */
+    private void setAvatarAnimator() {
+        TranslateAnimation animator =new TranslateAnimation(4,4,-4,4);
+        //设置持续时间
+        animator.setDuration(300);
+        //设置重复次数
+        animator.setRepeatCount(ValueAnimator.INFINITE);
+        //设置方向直行
+        animator.setRepeatMode(Animation.REVERSE);
+
+        profileAvatar.startAnimation(animator);
+    }
+
+
+
 }
