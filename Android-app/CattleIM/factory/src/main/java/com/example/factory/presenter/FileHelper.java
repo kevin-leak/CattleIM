@@ -64,10 +64,7 @@ public class FileHelper {
         Call<RspPiece<FileModel>> task = connect.saveFile(new FilePiece(name, imageString));
         try {
             Response<RspPiece<FileModel>> execute = task.execute();
-            Log.e("fileHelp", execute.body().getResult().getPath() + "");
             if (execute.body().success()){
-                // todo 后期对于code=判断
-                Log.e("fileHelp", execute.body().getResult().getPath() + "");
                 return execute.body().getResult().getPath();
             }
         } catch (IOException e) {
