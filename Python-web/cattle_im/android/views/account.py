@@ -103,15 +103,9 @@ def register(request):
     else:
         # todo 解密
         info['password'] = make_password(info['password'].strip())
-        print(info)
-        # User.objects.create(**info)
-        # User.objects.get(phone='18870742138')
+        User.objects.create(**info)
+        User.objects.get(phone='18870742138')
         info.pop('password')
         ret_info['result'] = info
 
-    # file_str = open('2.jpg', 'wb')
-    msg = 'pp'
-    # file_str.write(base64.b64decode(info['avatar']))
-    # file_str.close()
-    print('to', json.dumps(ret_info))
     return HttpResponse(json.dumps(ret_info))

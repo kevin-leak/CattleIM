@@ -2,19 +2,24 @@ import base64
 import json
 
 from django.http import HttpResponse
+from django.views.decorators.http import require_POST
 
 from android.contract.request_interface import common
 
 
+@require_POST
 def save(request):
-    print(request.POST)
+    global file_str
     info = eval(request.body)
-    print(json.dumps(info))
     ret_info = common
-    file_str = open('media/avatars/android/' + info['name'], 'wb')
-    file_str.write(base64.b64decode(info['content']))
-    file_str.close()
-    info = {"code": 800, "path": 'media/avatars/android/' + info['name']}
-    ret_info['result'] = info
-    ret_info['status'] = 1
-    return HttpResponse(json.dumps(ret_info))
+    try:
+        file_str = open('media/avatars/android/' + info['name'], 'wb')
+        file_str.write(base64.b64decode(info['content']))
+        info = {"path": 'media/avatars/android/' + info['name']}
+    except Exception:
+        info = {"path": ''}
+        ret_info['status'] = 0
+    finally:
+        file_str.close()
+        ret_info['result'] = info
+        return HttpResponse(json.dumps(ret_info))
