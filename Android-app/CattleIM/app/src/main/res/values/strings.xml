@@ -3,5 +3,6 @@
     <string name="app_name">CattleIM</string>
     <string name="cattle_chat">Cattle Chat</string>
     <string name="null_avatar">头像为空</string>
+    <string name="reLoad">重新加载</string>
 
 </resources>

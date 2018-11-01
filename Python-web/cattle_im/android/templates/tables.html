@@ -4,16 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <title>tables</title>
-    <link rel="stylesheet" type="text/css" href="{% static '/lib/bootstrap/css/bootstrap.min.css' %}">
     <style>
         body{
             padding: 0;
             margin: 0;
         }
         input {
-            height: 20px;
-            line-height: 20px;
-            width: 80px;
+            height: 15px;
+            line-height: 15px;
+            width: 70px;
             padding: 5px;
             border: none;
             margin: 0;
@@ -25,20 +24,21 @@
             margin: 0;
         }
 
+        td{
+            height: 18px;
+            line-height: 18px;
+            width: 70px;
+            border: none;
+            margin: 0;
+            text-align: center;
+        }
+
         table {
-            min-height: 25px;
-            line-height: 25px;
             text-align: center;
             border-collapse: collapse;
             padding: 0;
             margin: 10px;
         }
-
-        .shadow {
-            box-shadow: 0 0 5px 1px #aaa;
-            border: 1px solid #eeeeee;
-        }
-
 
     </style>
 </head>
@@ -54,18 +54,17 @@
     </table>
 </div>
 </body>
-<script src="{% static '/lib/jquery/jquery-2.1.4.min.js' %}"></script>
-<script src="{% static 'lib/bootstrap/js/bootstrap.min.js' %}"></script>
 
 <script>
-    var trCount = window.screen.availHeight/20;
-    var tdCount = window.screen.availWidth/80;
+    var trCount = window.screen.availHeight/10;
+    var tdCount = window.screen.availWidth/40;
     var elementById = document.getElementById('initBody');
     for (var i =0; i < trCount; ++i){
         var trElem = document.createElement("tr");
         for (var j =0; j < tdCount; j++){
             var tdElem = document.createElement("td");
             var inputElem = document.createElement("input");
+            inputElem.value = j * i;
             tdElem.appendChild(inputElem);
             trElem.appendChild(tdElem);
         }

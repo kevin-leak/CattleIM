@@ -29,8 +29,6 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
 
     @Override
     public void login(String phone, String password) {
-
-        //TODO 处理数据的格式以及其他问题，防止出错
         LoginPiece loginPiece = new LoginPiece(phone, password);
         AccountHelper.login(loginPiece, this);
     }

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -38,7 +39,19 @@
 
     </android.support.design.widget.AppBarLayout>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_40"
+        android:id="@+id/re_load"
+        android:text="@string/reLoad"
+        android:textColor="@color/colorWhite"/>
+
+    <WebView
+        android:id="@+id/wv_business"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </WebView>
 
 
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

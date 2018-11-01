@@ -25,6 +25,10 @@ public class User extends BaseDdModel<User> implements Profile {
     private String name;
     @Column
     private String avatar;
+//    @Column
+//    private String phone;
+//    @Column
+//    private String pushId;
 
 
     public String getId() {

@@ -12,4 +12,5 @@ urlpatterns = [
     path('out/', test.out),
     path('save_file/', im_file.save),
     path('xlrd/', excel_tools.parse_excel),
+    path('web_view/', include("android.web_view_urls"))
 ]

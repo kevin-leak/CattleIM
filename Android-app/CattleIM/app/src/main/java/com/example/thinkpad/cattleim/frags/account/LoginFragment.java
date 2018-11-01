@@ -46,10 +46,11 @@ public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void login(){
         String phone = etPhone.getText().toString();
         String psd = etPassword.getText().toString();
-        presenter.login(phone, psd);
+        ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
         if (presenter.checkMobile(phone)){
             presenter.login(phone, psd);
         }
