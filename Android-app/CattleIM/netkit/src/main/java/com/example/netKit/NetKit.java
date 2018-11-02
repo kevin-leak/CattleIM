@@ -1,27 +1,37 @@
 package com.example.netKit;
 
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.annotation.StringRes;
+
 import com.example.common.app.Application;
+import com.example.common.factory.data.DataSource;
 import com.example.netKit.db.DbTest;
+import com.example.netKit.db.User;
+import com.example.netKit.persistence.Account;
+import com.example.netKit.piece.RspPiece;
 import com.raizlabs.android.dbflow.config.FlowConfig;
 import com.raizlabs.android.dbflow.config.FlowManager;
 
+import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
 
 /*
-* fixme
-* 1. 处理网络本地化数据， 处理将数据转化为bean
-* 2. 处理数据持久化，处理数据的缓存
-* 3. 处理各种消息的接收，处理网络报活机制 ,处理消息的接收的服务
-* 处理网络，以及性能优化问题
-* */
+ * fixme
+ * 1. 处理网络本地化数据， 处理将数据转化为bean
+ * 2. 处理数据持久化，处理数据的缓存
+ * 3. 处理各种消息的接收，处理网络报活机制 ,处理消息的接收的服务
+ * 处理网络，以及性能优化问题
+ * */
 
 
 /**
- * 处理多线程网络请求问题
- *
+ * 1. 处理多线程网络请求问题
+ * 2. 处理db初始化
+ * 3. 处理状态码解码，已经回调
  * */
 public class NetKit {
 
@@ -60,6 +70,43 @@ public class NetKit {
         DbTest.getInfo(new DbTest().user);
 
         // 持久化的数据进行初始化
+        Account.init(NetKit.app());
+    }
+
+
+    public static void decodeRep(RspPiece piece, DataSource.Callback<User> callback){
+        switch (piece.getStatus()){
+            case RspPiece.SUCCEED:
+                return;
+            case RspPiece.ERROR_NET:
+                decodeRep(R.string.data_network_error, callback);
+                break;
+            case RspPiece.ERROR_PASSWORD:
+                decodeRep(R.string.error_password, callback);
+                break;
+            case RspPiece.ERROR_REPEAT_LOGIN:
+                decodeRep(R.string.error_repeat_login, callback);
+                break;
+            case RspPiece.FORMAT_ERROR_AVATAR:
+                decodeRep(R.string.form_avatar_error, callback);
+                break;
+            case RspPiece.FORMAT_ERROR_FILE:
+                decodeRep(R.string.FORMAT_ERROR_FILE, callback);
+                break;
+            case RspPiece.SAME_PHONE:
+                decodeRep(R.string.SAME_PHONE, callback);
+                break;
+            case RspPiece.SAME_USERNAME:
+                decodeRep(R.string.same_username, callback);
+                break;
+        }
+    }
+
+    public static void  decodeRep(@StringRes final int resId,
+                                  final DataSource.FailedCallback callback){
+        if (callback != null){
+            callback.onDataNotAvailable(resId);
+        }
     }
 
 }

@@ -66,11 +66,14 @@ public class FileHelper {
             Response<RspPiece<FileModel>> execute = task.execute();
             if (execute.body().success()){
                 return execute.body().getResult().getPath();
+            }else {
+                return null;
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }finally {
+            return null;
         }
-        return null;
     }
 
 

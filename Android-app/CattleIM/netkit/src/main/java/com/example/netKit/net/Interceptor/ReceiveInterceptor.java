@@ -21,27 +21,7 @@ public class ReceiveInterceptor implements Interceptor {
     public Response intercept(Interceptor.Chain chain) throws IOException {
         Response originalResponse = chain.proceed(chain.request());
 
-        List<String> headers = originalResponse.headers("Set-Cookie");
-
-        if (!headers.isEmpty()) {
-            String cookies;
-
-            // 调试发现 heads就是一个字符串
-            if (headers.size() == 1) {
-                String[] split = headers.get(0).split(";");
-                cookies = split[0].split("=")[1];
-            } else {
-                cookies = headers.get(0).split("=")[1];
-            }
-
-            //保存文件名字为"config",保存形式为Context.MODE_PRIVATE即该数据只能被本应用读取
-            // todo 持久化到model里面
-            SharedPreferences.Editor config = Application.getInstance()
-                    .getSharedPreferences("config", Context.MODE_PRIVATE)
-                    .edit();
-            config.putString("cookies", cookies);
-            config.apply();
-        }
+        InterceptorTools.saveCookies(originalResponse);
 
         return originalResponse;
     }

@@ -1,42 +1,50 @@
 package com.example.netKit.piece.account;
 
 
+import com.example.netKit.db.User;
+
 /**
  * 1.集合所有用户的信息
  */
 public class AccountPiece {
 
-    /**
-     * name : username
-     * phone : 188707421
-     * avatar : 999asfdasdfsafdsadsafdasfasklnasklxm aksdkljaskldjfklsa
-     */
+    // 用户基本信息
+    private User user;
+    // 当前登录的账号
+    private String account;
+    // 标示是否已经绑定到了设备PushId
+    private boolean isBind;
 
-    private String username;
-    private String phone;
-    private String avatar;
-
-    public String getUsername() {
-        return username;
+    public User getUser() {
+        return user;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getAccount() {
+        return account;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setAccount(String account) {
+        this.account = account;
     }
 
-    public String getAvatar() {
-        return avatar;
+    public boolean isBind() {
+        return isBind;
     }
 
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
+    public void setBind(boolean bind) {
+        isBind = bind;
+    }
+
+    @Override
+    public String toString() {
+        return "AccountRspModel{" +
+                "user=" + user +
+                ", account='" + account + '\'' +
+                ", isBind=" + isBind +
+                '}';
     }
 }

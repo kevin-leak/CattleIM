@@ -60,7 +60,7 @@ ERROR_NET = 11001								# 网络错误
   "phone":"18870742138",
   "username": "kevin",
   "password": "199shadjfk",
-  "avatar": "sdajfklajflksdaj;"
+  "avatar": "media/avatars/android/xx.jpg"
 }
 ```
 
@@ -71,7 +71,7 @@ ERROR_NET = 11001								# 网络错误
 {
   "username": "name",
   "phone": "188707421",
-  "avatar": "9999999ikjlk aksdmkljfckasjmfklmasklmfksalmjfkasjfkljaslkdfjklsajfkljaskldjfklsa"
+  "avatar": "media/avatars/android/xx.jpg"
 
 }
 ````
@@ -81,15 +81,14 @@ ERROR_NET = 11001								# 网络错误
 from
 ```json
 {
-  "name": "ksadjk",
-  "content": "asdfjkal"
+  "name": "当前文件的名字",
+  "content": "经过md5的加密"
 }
 ```
 
 to
 ```json
 {
-  "code": 800,
-  "path": "aksdmjalskjl;k"
+  "path": "media/avatars/android/xx.jpg"
 }
 ```

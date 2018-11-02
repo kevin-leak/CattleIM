@@ -19,6 +19,7 @@ import okhttp3.Response;
 public class SendInterceptor implements Interceptor {
 
 
+
     @Override
     public Response intercept(Chain chain) throws IOException {
 
@@ -27,10 +28,8 @@ public class SendInterceptor implements Interceptor {
         //直接操作request发现并没有add 方法， 查看request发现他的构造方法是由一个build处理的
         Request.Builder builder = oldReq.newBuilder();
 
-        //TODO 后期对其进行封装到Account 类中进行统一的管理
-        SharedPreferences config = Application.getInstance().getSharedPreferences("config",
-                Context.MODE_PRIVATE);
-        String cookies = config.getString("cookies", null);
+        String cookies = InterceptorTools.getCookies();
+
         if (!TextUtils.isEmpty(cookies) && cookies != null) {
             builder.addHeader("cookie", "csrftoken=" + cookies);
             builder.addHeader("X-CSRFtoken", cookies);
@@ -39,4 +38,6 @@ public class SendInterceptor implements Interceptor {
 
         return chain.proceed(builder.build());
     }
+
+
 }

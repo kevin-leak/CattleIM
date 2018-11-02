@@ -6,9 +6,12 @@ import android.util.Log;
 
 import com.example.common.factory.data.DataSource;
 import com.example.factory.R;
+import com.example.factory.middleware.DbHelper;
+import com.example.netKit.NetKit;
 import com.example.netKit.db.User;
 import com.example.netKit.net.NetInterface;
 import com.example.netKit.net.NetWorker;
+import com.example.netKit.persistence.Account;
 import com.example.netKit.piece.RspPiece;
 import com.example.netKit.piece.account.AccountPiece;
 import com.example.netKit.piece.account.LoginPiece;
@@ -22,7 +25,7 @@ import retrofit2.Response;
 
 /**
  * 为了简化present里面的操作，将netkit里面的数据抽象出来给present调用，同时我们需要个db来对数据进行操作
- * 主要第对网络断传过来的信息进行分析，将其打包成present能够操作的信息
+ * 主要第对网络断传过来的信息进行分析，将结果反=反馈给present能够操作的信息
  * 主要是将连接netkit的时候简化封装，使得操作解耦，跟便捷
  * @author KevinLeak
  */
@@ -66,27 +69,27 @@ public class AccountHelper {
         @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
         public void onResponse(Call<RspPiece<AccountPiece>> call, Response<RspPiece<AccountPiece>> response) {
-            /*todo, 注意哟啊区分登入与注册
+            /*
              * 1. 进行数据的本地化处理
              * 2. 进行一个全局的通知回调
              * 3. 可将后端返回的数据与本地数据库的数据相同
              * */
 
-//            if (response.body() != null && response.body().success()){
-//                RspPiece<AccountPiece> repPiece = response.body();
-//                AccountPiece accountPiece = repPiece.getResult();
-//                User user = new User();
-//                user.get
-//
-//                }
+            RspPiece<AccountPiece> rspPiece = response.body();
+            if (rspPiece.success()){
+                AccountPiece accountPiece = rspPiece.getResult();
+                User user = accountPiece.getUser();
+                DbHelper.save(User.class, user);
+                // 对数据进行本地化处理
+                callback.onDataLoaded(user);
 
-            if (Objects.nonNull(response.body())) {
-                Log.e(TAG, "onResponse: " + response.body().success());
+                Account.login(accountPiece);
+
+                // todo c这里需要对推送的id 进行一个绑定
+
+            }else {
+                NetKit.decodeRep(rspPiece, callback);
             }
-
-            // 通知全局的数据中心
-            callback.onDataLoaded(new User());
-
         }
 
         @Override

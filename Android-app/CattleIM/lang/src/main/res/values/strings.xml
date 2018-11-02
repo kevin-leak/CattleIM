@@ -45,4 +45,10 @@
     <string name="editName">name</string>
     <string name="data_rsp_error_unknown">未知错误， 重新选择！！</string>
     <string name="data_psd_not_same">两个密码不一致</string>
+    <string name="form_avatar_error">头像数据破损</string>
+    <string name="error_password">密码错误</string>
+    <string name="error_repeat_login">重复登入</string>
+    <string name="FORMAT_ERROR_FILE">文件破损</string>
+    <string name="SAME_PHONE">电话号码已经存在</string>
+    <string name="same_username">用户名已经存在！</string>
 </resources>

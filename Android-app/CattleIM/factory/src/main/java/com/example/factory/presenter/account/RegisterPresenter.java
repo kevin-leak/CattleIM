@@ -32,7 +32,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
             public void run() {
                 String avatarUrl = FileHelper.fetchBackgroundFile(avatarPath);
                 if (TextUtils.isEmpty(avatarUrl)){
-                    getView().showError(R.string.data_network_error);
+                    getView().showError(R.string.form_avatar_error);
                 }else {
                     RegisterPiece registerPiece = new RegisterPiece(phone, name, password, avatarUrl);
                     AccountHelper.register(registerPiece, RegisterPresenter.this);
