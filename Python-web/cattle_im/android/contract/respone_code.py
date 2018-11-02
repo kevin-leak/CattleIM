@@ -13,6 +13,7 @@ FORMAT_ERROR_PASSWORD = 8002					# 用户密码错误
 FORMAT_ERROR_PASSWORD_LENGTH = 8003				# 用户的密码长度不符合要求
 FORMAT_ERROR_USER_LENGTH = 8004					# 用户的名字长度不符合要去
 FORMAT_ERROR_FILE = 8005						# 传入的file文件有问题
+FORMAT_ERROR_AVATAR = 8006						# 头像数据破损
 ILLEGAL_USERNAME = 9000							# 不合法的用户名
 ERROR_PASSWORD = 10000							# 密码错误
 ERROR_REPEAT_LOGIN = 11000						# 重复登入
