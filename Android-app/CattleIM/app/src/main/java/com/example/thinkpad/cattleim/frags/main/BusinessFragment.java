@@ -85,7 +85,7 @@ public class BusinessFragment extends BaseFragment {
                 return true;
             }
         });
-        wvBusiness.loadUrl(Common.Constance.WEB_VIEW_URL + "index.html");
+//        wvBusiness.loadUrl(Common.Constance.WEB_VIEW_URL + "index.html");
 
     }
 
