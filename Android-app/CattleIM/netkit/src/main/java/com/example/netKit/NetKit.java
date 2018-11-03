@@ -1,19 +1,15 @@
 package com.example.netKit;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.annotation.StringRes;
 
 import com.example.common.app.Application;
 import com.example.common.factory.data.DataSource;
-import com.example.netKit.db.DbTest;
 import com.example.netKit.db.User;
 import com.example.netKit.persistence.Account;
 import com.example.netKit.piece.RspPiece;
 import com.raizlabs.android.dbflow.config.FlowConfig;
 import com.raizlabs.android.dbflow.config.FlowManager;
 
-import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -67,10 +63,10 @@ public class NetKit {
         FlowManager.init(new FlowConfig.Builder(app())
                 .openDatabasesOnInit(true) // 数据库初始化的时候就开始打开
                 .build());
-        DbTest.getInfo(new DbTest().user);
 
         // 持久化的数据进行初始化
         Account.init(NetKit.app());
+
     }
 
 

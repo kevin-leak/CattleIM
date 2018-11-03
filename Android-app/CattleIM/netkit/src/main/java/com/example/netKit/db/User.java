@@ -76,12 +76,12 @@ public class User extends BaseDdModel<User> implements Profile {
         this.phone = phone;
     }
 
-    public String getPortrait() {
+    public String getAvatar() {
         return avatar;
     }
 
-    public void setPortrait(String portrait) {
-        this.avatar = portrait;
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 
     public String getDesc() {
@@ -112,17 +112,17 @@ public class User extends BaseDdModel<User> implements Profile {
         return friends;
     }
 
-    public void setFriends(int follows) {
-        this.friends = follows;
+    public void setFriends(int friend) {
+        this.friends = friend;
     }
 
 
-    public boolean isFollow() {
+    public boolean isFriend() {
         return isFriend;
     }
 
-    public void setFollow(boolean follow) {
-        isFriend = follow;
+    public void setFriend(boolean friend) {
+        isFriend = friend;
     }
 
     public Date getModifyAt() {
