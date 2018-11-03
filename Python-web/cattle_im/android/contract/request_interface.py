@@ -22,5 +22,5 @@ account = {
         "modifyAt": "2018/12/15"
     },
     "account": "",
-    "isBind": True
+    "isBind": False
 }

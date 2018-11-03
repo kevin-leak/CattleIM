@@ -2,6 +2,7 @@ package com.example.factory.presenter.account;
 
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -31,9 +32,10 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
         new Thread(new Runnable() {
             @Override
             public void run() {
+                getView().showDialog();
                 String avatarUrl = FileHelper.fetchBackgroundFile(avatarPath);
                 if (TextUtils.isEmpty(avatarUrl)){
-                    getView().showError(R.string.form_avatar_error);
+                    getView().showError(R.string.data_network_error);
                 }else {
                     RegisterPiece registerPiece = new RegisterPiece(phone, name, password, avatarUrl);
                     AccountHelper.register(registerPiece, RegisterPresenter.this);
@@ -83,7 +85,15 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
             return;
 
         // 此时是从网络回送回来的，并不保证处于主现场状态
-        // fixme 强制执行在主线程中
+        // 强制执行在主线程中, 因为传送文件是在子线程执行的
+
+        view.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                view.registerSuccess();
+            }
+        });
+
     }
 
     @Override

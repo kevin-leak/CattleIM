@@ -14,7 +14,7 @@ class Profile(models.Model):
     push_id = models.CharField( max_length=255, null=True, blank=True, unique=True)
     choice = ((0, '男'), (1, '女'))
     sex = models.IntegerField(choices=choice, null=True, blank=True)
-    des = models.TextField(max_length=100, null=True, blank=True)
+    desc = models.TextField(max_length=100, null=True, blank=True)
 
 
 #  电话号码，头像， userName

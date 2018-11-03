@@ -25,8 +25,8 @@ def login(request):
     }
     """
     info = eval(request.body)
-    print(info)
     ret_info = common
+    result = account
 
     if info['password'].strip() == '':
         ret_info['status'] = respone_code.NULL_PASSWORD
@@ -41,22 +41,36 @@ def login(request):
     else:
         user = User.objects.filter(phone=info['phone']).first()
         if user:
-            user = authenticate(username=user.username, password='lkkzbl123888')
+            user = authenticate(usernam=user.username, password=info['password'])
+            if user:
+                print(user.username)
+                info.pop('password')
+                result_user = result.get('user')
+                result_user['id'] = str(user.uid)
+                result_user['username'] = user.username
+                result_user['phone'] = user.phone
+                result_user['avatar'] = user.avatar  # todo 处理解码问题
+                result_user['desc'] = user.profile.desc
+                result_user['sex'] = user.profile.sex
+                result_user['alias'] = user.username
+                result_user['friends'] = Friends.objects.filter(origin_id=user).count()
+                result_user['isFriend'] = True
+                result_user['modifyAt'] = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time()))
+                result.update(result_user)
+                result['account'] = user.phone
+                result['isBind'] = True
+                ret_info['result'] = result
+                ret_info['status'] = respone_code.SUCCESS_STATUS
+                if user.is_active:
+                    ret_info['status'] = respone_code.ERROR_REPEAT_LOGIN
+                    return HttpResponse(json.dumps(ret_info))
+                auth.login(request, user)
+            else:
+                ret_info['status'] = respone_code.ERROR_PASSWORD
+
         else:
             ret_info['status'] = respone_code.NULL_USER
             return HttpResponse(json.dumps(ret_info))
-        if user:
-            print(user.username)
-            info.pop('password')
-            info['avatar'] = "user.avatar"  # todo 处理解码问题
-            info['username'] = user.username
-            ret_info['result'] = info
-            if user.is_active:
-                ret_info['status'] = respone_code.ERROR_REPEAT_LOGIN
-                return HttpResponse(json.dumps(ret_info))
-            auth.login(request, user)
-        else:
-            ret_info['status'] = respone_code.ERROR_PASSWORD
 
     return HttpResponse(json.dumps(ret_info))
 
@@ -104,30 +118,33 @@ def register(request):
         ret_info['status'] = respone_code.SAME_USERNAME
     else:
 
-        # todo 解密
         # 进行一个Django自带的一个加密功能
         info['password'] = make_password(info['password'].strip())
         user = User.objects.create(**info)
-        user.profile_id = Profile.objects.create(sex='1').id
+        #  todo 后期进行一个修改,在更新个人信息处
+        user.profile_id = Profile.objects.create().id
         # 进行了修改需要提交，不然后面创建friend关系没有用
         user.save()
 
         # 将密码弹出
         info.pop('password')
         # 拼接数据
-        user_collect = result.get('user')
-        user_collect.update(info)
-        user_collect['id'] = str(user.uid)
-        user_collect['sex'] = user.profile.sex
-        user_collect['alias'] = user.username
-        user_collect['modifyAt'] = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time()))
+        result_user = result.get('user')
+        result_user.update(info)
+        result_user['id'] = str(user.uid)
+        result_user['sex'] = user.profile.sex
+        result_user['desc'] = user.profile.desc
+        result_user['alias'] = user.username
+        result_user['modifyAt'] = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time()))
         Friends.objects.create(origin_id=user, target_id=user, alias=user.username)
 
         result['account'] = user.phone
-        result.get('user').update(user_collect)
+        result.get('user').update(result_user)
         ret_info['result'] = result
 
-        ret_info['status'] = 1
+        ret_info['status'] = respone_code.SUCCESS_STATUS
+
+        auth.login(request, user)
     return HttpResponse(json.dumps(ret_info))
 
 

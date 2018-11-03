@@ -1,5 +1,6 @@
 package com.example.thinkpad.cattleim.frags.account;
 
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
@@ -37,7 +38,7 @@ import static android.support.constraint.Constraints.TAG;
 import static com.example.netKit.db.User_Table.avatar;
 
 public class RegisterFragment extends BasePresenterFragment<RegisterContract.Presenter>
-        implements RegisterContract.View{
+        implements RegisterContract.View {
 
     @BindView(R.id.et_phone)
     EditText etPhone;
@@ -45,6 +46,7 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
     EditText etPassword;
     @BindView(R.id.et_re_psd)
     EditText etRePsd;
+    private ProgressDialog dialog;
 
 
     @Override
@@ -58,13 +60,13 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
         String rePsd = etRePsd.getText().toString();
         String password = etPassword.getText().toString();
 
-        if (TextUtils.isEmpty(path)){
+        if (TextUtils.isEmpty(path)) {
             showError(R.string.null_avatar);
         }
 
         if (presenter.checkUserName(username) &&
                 presenter.checkMobile(phone) &&
-                presenter.checkPsd(password, rePsd)){
+                presenter.checkPsd(password, rePsd)) {
             presenter.register(phone, username, rePsd, path);
         }
 
@@ -78,7 +80,8 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void registerSuccess() {
-         ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
+
+        ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
     }
 
     /**
@@ -112,8 +115,18 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
                 .show(getChildFragmentManager(), GalleryFragment.class.getName());
     }
 
+
+    @Override
+    public void showDialog() {
+        super.showDialog();
+
+        dialog = ProgressDialog.show(this.getActivity(), "加载中", "");
+    }
+
     @Override
     public void showError(int error) {
         super.showError(error);
+        dialog.cancel();
     }
+
 }

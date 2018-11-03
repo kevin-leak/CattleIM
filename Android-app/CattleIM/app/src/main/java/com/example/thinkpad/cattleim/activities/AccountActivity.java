@@ -206,5 +206,4 @@ public class AccountActivity extends BaseActivity
     }
 
 
-
 }

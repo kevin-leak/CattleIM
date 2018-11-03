@@ -1,5 +1,6 @@
 package com.example.thinkpad.cattleim.frags.account;
 
+import android.app.ProgressDialog;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
@@ -38,6 +39,7 @@ public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter
     EditText etPassword;
     @BindView(R.id.tv_forget)
     TextView tvForget;
+    private ProgressDialog dialog;
 
 
     @Override
@@ -67,8 +69,20 @@ public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter
     public void loginSuccess() {
         // 登入成功，发生跳转
         ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
+        dialog.cancel();
     }
 
 
+    @Override
+    public void showDialog() {
+        super.showDialog();
 
+        dialog = ProgressDialog.show(this.getActivity(), "加载中", "");
+    }
+
+    @Override
+    public void showError(int error) {
+        super.showError(error);
+        dialog.cancel();
+    }
 }

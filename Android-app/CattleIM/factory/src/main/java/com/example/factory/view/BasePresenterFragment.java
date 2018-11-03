@@ -1,6 +1,8 @@
 package com.example.factory.view;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.widget.ProgressBar;
 
 import com.example.common.app.Application;
 import com.example.common.app.BaseFragment;
@@ -52,6 +54,10 @@ public abstract class BasePresenterFragment<Presenter extends BaseContract.Prese
 
     @Override
     public void showDialog() {
+
+//        ProgressDialog dialog = new ProgressDialog(this.getActivity());
+
+//        dialog.show();
 
     }
 

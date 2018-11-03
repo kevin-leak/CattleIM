@@ -4,6 +4,7 @@ import com.example.common.factory.data.DataSource;
 import com.example.common.tools.ValidateTools;
 import com.example.factory.R;
 import com.example.factory.contract.account.LoginContract;
+import com.example.factory.contract.account.RegisterContract;
 import com.example.factory.presenter.BasePresenter;
 import com.example.netKit.db.User;
 import com.example.netKit.piece.account.LoginPiece;
@@ -29,6 +30,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
 
     @Override
     public void login(String phone, String password) {
+        getView().showDialog();
         LoginPiece loginPiece = new LoginPiece(phone, password);
         AccountHelper.login(loginPiece, this);
     }
@@ -47,9 +49,19 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
 
     @Override
     public void onDataLoaded(User user) {
+        final LoginContract.View view = getView();
+        if (view == null)
+            return;
 
-//        网路请求成功
-        getView().loginSuccess();
+        // 此时是从网络回送回来的，并不保证处于主现场状态
+        // 强制执行在主线程中, 因为传送文件是在子线程执行的
+
+        view.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                view.loginSuccess();
+            }
+        });
     }
 
     @Override

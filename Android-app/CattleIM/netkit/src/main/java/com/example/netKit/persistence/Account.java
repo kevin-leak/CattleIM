@@ -50,6 +50,7 @@ public class Account {
 
     public static void init(Context context) {
         SharedPreferences sp = context.getSharedPreferences(Account.class.getName(), Context.MODE_PRIVATE);
+        Account.userId = sp.getString(USER_ID, "");
         Account.account = sp.getString(ACCOUNT_KEY, "");
         Account.pushId = sp.getString(PUSH_ID, "");
         Account.isBind = sp.getBoolean(IS_BIND, false);

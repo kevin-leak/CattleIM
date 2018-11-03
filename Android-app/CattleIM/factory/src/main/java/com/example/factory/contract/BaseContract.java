@@ -1,5 +1,6 @@
 package com.example.factory.contract;
 
+import android.app.Activity;
 import android.support.annotation.StringRes;
 
 /**
@@ -26,6 +27,13 @@ public interface BaseContract {
          * 展示进度栏
          */
         void showDialog();
+
+        /**
+         * 由于子类在都是fragment的情况下这个会被自动的复写
+         * 我们不需要管她，在这里我们只是先声明一下我们子类具有这个方法
+         * 方便我们在主线程和子线程之间的切换
+         */
+        Activity getActivity();
     }
 
     /**
