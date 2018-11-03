@@ -12,7 +12,8 @@ import java.util.Date;
 import java.util.Objects;
 
 /**
- * 建立用户表
+ * 建立用户表,
+ * 先定义了很多字段
  */
 
 @Table(database = AppDatabase.class)
@@ -25,11 +26,13 @@ public class User extends BaseDdModel<User> implements Profile {
     @PrimaryKey
     private String id;
     @Column
-    private String name;
+    private String username;
     @Column
     private String phone;
     @Column
     private String avatar;
+
+    // 个人的描述简介
     @Column
     private String desc;
     @Column
@@ -60,12 +63,12 @@ public class User extends BaseDdModel<User> implements Profile {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPhone() {
@@ -143,7 +146,7 @@ public class User extends BaseDdModel<User> implements Profile {
                 && friends == user.friends
                 && isFriend == user.isFriend
                 && Objects.equals(id, user.id)
-                && Objects.equals(name, user.name)
+                && Objects.equals(username, user.username)
                 && Objects.equals(phone, user.phone)
                 && Objects.equals(avatar, user.avatar)
                 && Objects.equals(desc, user.desc)
@@ -168,7 +171,7 @@ public class User extends BaseDdModel<User> implements Profile {
     public boolean isUiContentSame(User old) {
         // 显示的内容是否一样，主要判断 名字，头像，性别，是否已经关注
         return this == old || (
-                Objects.equals(name, old.name)
+                Objects.equals(username, old.username)
                         && Objects.equals(avatar, old.avatar)
                         && Objects.equals(sex, old.sex)
                         && Objects.equals(isFriend, old.isFriend)

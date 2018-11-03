@@ -7,6 +7,9 @@ import com.example.common.factory.data.DataSource;
 import com.example.netKit.db.User;
 import com.example.netKit.persistence.Account;
 import com.example.netKit.piece.RspPiece;
+import com.example.netKit.utils.DBFlowExclusionStrategy;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.raizlabs.android.dbflow.config.FlowConfig;
 import com.raizlabs.android.dbflow.config.FlowManager;
 
@@ -32,12 +35,19 @@ import java.util.concurrent.Executors;
 public class NetKit {
 
 
+    private static Gson gson;
     private final ExecutorService executor;
     private static NetKit netKit;
 
     //    建立单例模式
     private NetKit() {
         executor = Executors.newFixedThreadPool(4);
+        gson = new GsonBuilder()
+                // 设置时间格式
+                .setDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+                // 设置一个过滤器，数据库级别的Model不进行Json转换
+                .setExclusionStrategies(new DBFlowExclusionStrategy())
+                .create();
     }
 
     static {
@@ -105,4 +115,10 @@ public class NetKit {
         }
     }
 
+    /**
+     * @return 返回一个个全局的gson 字段，用来处理piece里面想Date的字段，进行一个formate
+     */
+    public static Gson getGson() {
+        return gson;
+    }
 }

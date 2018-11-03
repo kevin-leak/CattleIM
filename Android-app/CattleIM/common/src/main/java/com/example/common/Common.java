@@ -15,7 +15,7 @@ import retrofit2.http.Url;
 public class Common {
 
     public interface Constance{
-        String BASE_URL = "http://192.168.t:8000/android/";
+        String BASE_URL = "http://192.168.136.102:8000/android/";
         String WEB_VIEW_URL = BASE_URL + "web_view/";
     }
 }

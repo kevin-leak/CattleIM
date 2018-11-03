@@ -114,7 +114,7 @@ public class BusinessFragment extends BaseFragment {
         //开启服务
         getActivity().bindService(intent, conn, Context.BIND_AUTO_CREATE);
 
-        backHome();
+//        backHome();
     }
 
     /**

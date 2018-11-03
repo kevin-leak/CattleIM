@@ -11,7 +11,9 @@ import android.widget.Toast;
 
 import com.example.common.app.BaseActivity;
 import com.example.netKit.net.NetWorker;
+import com.example.netKit.persistence.Account;
 import com.example.thinkpad.cattleim.activities.AccountActivity;
+import com.example.thinkpad.cattleim.activities.MainActivity;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -20,10 +22,17 @@ import retrofit2.Response;
 
 public class LaunchActivity extends BaseActivity {
 
+    private Class<?> intentClass;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        intentClass = AccountActivity.class;
+
+        if (Account.isLogin()){
+            intentClass = MainActivity.class;
+        }
 
         if (Build.VERSION.SDK_INT >= 23) {
             if (!Settings.canDrawOverlays(LaunchActivity.this)) {
@@ -36,7 +45,7 @@ public class LaunchActivity extends BaseActivity {
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 getToken();
-                Intent intent = new Intent(LaunchActivity.this, AccountActivity.class);
+                Intent intent = new Intent(LaunchActivity.this, intentClass);
                 startActivity(intent);
                 finish();
             }
@@ -82,7 +91,7 @@ public class LaunchActivity extends BaseActivity {
         }
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                Intent intent = new Intent(LaunchActivity.this, AccountActivity.class);
+                Intent intent = new Intent(LaunchActivity.this, intentClass);
                 startActivity(intent);
                 finish();
             }

@@ -2,6 +2,7 @@ package com.example.netKit.net;
 
 
 import com.example.common.Common;
+import com.example.netKit.NetKit;
 import com.example.netKit.net.Interceptor.ReceiveInterceptor;
 import com.example.netKit.net.Interceptor.SendInterceptor;
 
@@ -37,7 +38,8 @@ public class NetWorker {
             return instance.client;
         }
 
-        instance.client = new OkHttpClient.Builder()
+        instance.client = new OkHttpClient
+                .Builder()
                 .addInterceptor(new SendInterceptor()) //这部分
                 .addInterceptor(new ReceiveInterceptor()) //这部分
                 .build();
@@ -59,7 +61,7 @@ public class NetWorker {
         }
         instance.retrofit = new Retrofit.Builder()
                 //设置数据解析器
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(NetKit.getGson()))
                 //设置网络请求的Url地址
                 .baseUrl(Common.Constance.BASE_URL)
                 .client(NetWorker.getClient())

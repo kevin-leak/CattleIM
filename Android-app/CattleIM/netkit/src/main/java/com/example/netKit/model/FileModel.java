@@ -2,8 +2,9 @@ package com.example.netKit.model;
 
 public class FileModel {
 
+
     /**
-     * path : aksdmjalskjl;k
+     * path : media/avatars/android/1926552.jpg
      */
 
     private String path;

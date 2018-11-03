@@ -11,7 +11,10 @@ from django.utils import timezone
 
 
 class Profile(models.Model):
-    push_id = models.CharField(unique=True, max_length=255)
+    push_id = models.CharField( max_length=255, null=True, blank=True, unique=True)
+    choice = ((0, '男'), (1, '女'))
+    sex = models.IntegerField(choices=choice, null=True, blank=True)
+    des = models.TextField(max_length=100, null=True, blank=True)
 
 
 #  电话号码，头像， userName
@@ -19,6 +22,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     uid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     phone = models.CharField(max_length=11, null=False, unique=True, db_index=True)
     avatar = models.FileField(upload_to="avatars/", default="avatars/default.jpg", verbose_name="头像", blank=True)
+    profile = models.OneToOneField(to="Profile", null=True, blank=False, on_delete=models.SET_NULL)
     create_time = models.DateTimeField(auto_now=True)
 
     username_validator = UnicodeUsernameValidator()

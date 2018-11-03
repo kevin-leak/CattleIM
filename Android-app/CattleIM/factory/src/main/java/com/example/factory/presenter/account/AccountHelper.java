@@ -38,6 +38,7 @@ public class AccountHelper {
      * @param callback  数据返回
      */
     public static void register(RegisterPiece piece, DataSource.Callback<User> callback){
+        Log.e(TAG, "register: sadkfjlksaj");
         NetInterface connect = NetWorker.getConnect();
         Call<RspPiece<AccountPiece>> task = connect.register(piece);
         task.enqueue(new AccountCallback(callback));
@@ -76,10 +77,15 @@ public class AccountHelper {
              * */
 
             RspPiece<AccountPiece> rspPiece = response.body();
+            Log.e(TAG, "onResponse: " + rspPiece.getStatus());
             if (rspPiece.success()){
                 AccountPiece accountPiece = rspPiece.getResult();
                 User user = accountPiece.getUser();
-                DbHelper.save(User.class, user);
+//                DbHelper.save(User.class, user);
+
+
+                user.save();
+
                 // 对数据进行本地化处理
                 callback.onDataLoaded(user);
 

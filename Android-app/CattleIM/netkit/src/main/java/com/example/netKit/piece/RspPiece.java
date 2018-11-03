@@ -12,6 +12,7 @@ public class RspPiece<T> {
      * status : 1
      * message :
      * data :
+     *
      */
 
 
@@ -19,7 +20,7 @@ public class RspPiece<T> {
     public final static int SUCCEED = 1;
     private int status;
     private String message;
-    private Date data;
+    private Date date;
 
 
     /**
@@ -59,10 +60,10 @@ public class RspPiece<T> {
     }
 
     public Date getData() {
-        return data;
+        return date;
     }
 
     public void setData(Date data) {
-        this.data = data;
+        this.date = data;
     }
 }

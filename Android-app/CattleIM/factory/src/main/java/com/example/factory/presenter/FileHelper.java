@@ -27,7 +27,7 @@ import retrofit2.Response;
 public class FileHelper {
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public static void saveBackgoundFile(String path,  DataSource.Callback<IMFile> callback){
+    public static void saveBackgoundFile(String path, DataSource.Callback<IMFile> callback) {
 
         String name = new File(path).getName();
         String imageString = StringsTools.ImageToStrings(path);
@@ -56,24 +56,24 @@ public class FileHelper {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public static String fetchBackgroundFile(String path){
+    public static String fetchBackgroundFile(String path) {
 
         String name = new File(path).getName();
         String imageString = StringsTools.ImageToStrings(path);
         NetInterface connect = NetWorker.getConnect();
         Call<RspPiece<FileModel>> task = connect.saveFile(new FilePiece(name, imageString));
+        String urlString = null;
         try {
             Response<RspPiece<FileModel>> execute = task.execute();
-            if (execute.body().success()){
-                return execute.body().getResult().getPath();
-            }else {
+            if (execute.body() == null){
                 return null;
             }
+            urlString = execute.body().getResult().getPath();
         } catch (IOException e) {
             e.printStackTrace();
-        }finally {
-            return null;
         }
+
+        return urlString;
     }
 
 

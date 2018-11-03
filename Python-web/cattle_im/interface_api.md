@@ -9,7 +9,8 @@
 {
  "status": 0,
   "result": [],
-  "message": ""
+  "message": "",
+  "Date": "2018/3/6"
 }
 ```
 
@@ -67,13 +68,23 @@ ERROR_NET = 11001								# 网络错误
 
 ### 反馈用户信息接口
 ````json
-
 {
-  "username": "name",
-  "phone": "188707421",
-  "avatar": "media/avatars/android/xx.jpg"
-
+  "user":{
+      "id": "",
+      "username": "name",
+      "phone": "188707421",
+      "avatar": "media/avatars/android/xx.jpg",
+      "desc": "",
+      "sex": 0,
+      "alias": "备注",
+      "friends": 0,
+      "isFriend": false,
+      "modifyAt": "2018/12/15"
+  },
+  "account": "",
+  "isBind": true
 }
+
 ````
 
 ### 存储文件接口
