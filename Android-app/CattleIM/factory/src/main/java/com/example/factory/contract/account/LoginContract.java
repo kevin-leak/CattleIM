@@ -17,5 +17,6 @@ public interface LoginContract {
         // 检查手机号是否正确, 实现给presenter用
         boolean checkMobile(String phone);
 
+        boolean checkPsd(String psd);
     }
 }

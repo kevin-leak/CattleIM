@@ -11,6 +11,8 @@ from django.views.decorators.http import require_POST, require_GET
 from pyDes import des
 from requests import auth
 
+from db.models import User
+
 
 @require_POST
 def post_test(request):
@@ -30,4 +32,9 @@ def get_test(request):
 
 def out(request):
     logout(request)
+    return HttpResponse("ok")
+
+def test(request):
+    user = User.objects.filter(phone='18870742138').first()
+    print(str(user.avatar))
     return HttpResponse("ok")

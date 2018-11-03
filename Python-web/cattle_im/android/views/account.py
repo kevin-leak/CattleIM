@@ -40,16 +40,16 @@ def login(request):
         ret_info['status'] = respone_code.FORMAT_ERROR_PHONE
     else:
         user = User.objects.filter(phone=info['phone']).first()
+        print(user.username, info['password'])
         if user:
-            user = authenticate(usernam=user.username, password=info['password'])
+            user = authenticate(username=user.username, password=info['password'])
             if user:
                 print(user.username)
-                info.pop('password')
                 result_user = result.get('user')
                 result_user['id'] = str(user.uid)
                 result_user['username'] = user.username
                 result_user['phone'] = user.phone
-                result_user['avatar'] = user.avatar  # todo 处理解码问题
+                result_user['avatar'] = 'media/' + str(user.avatar)
                 result_user['desc'] = user.profile.desc
                 result_user['sex'] = user.profile.sex
                 result_user['alias'] = user.username
@@ -61,17 +61,12 @@ def login(request):
                 result['isBind'] = True
                 ret_info['result'] = result
                 ret_info['status'] = respone_code.SUCCESS_STATUS
-                if user.is_active:
-                    ret_info['status'] = respone_code.ERROR_REPEAT_LOGIN
-                    return HttpResponse(json.dumps(ret_info))
                 auth.login(request, user)
             else:
                 ret_info['status'] = respone_code.ERROR_PASSWORD
-
         else:
             ret_info['status'] = respone_code.NULL_USER
             return HttpResponse(json.dumps(ret_info))
-
     return HttpResponse(json.dumps(ret_info))
 
 
@@ -90,7 +85,7 @@ def register(request):
     ret_info = common
     # 获取注册时产生的结果
     result = account
-
+    print(info)
     same_phone = User.objects.filter(phone=info['phone']).first()
     same_username = User.objects.filter(username=info['username']).first()
 
@@ -120,6 +115,7 @@ def register(request):
 
         # 进行一个Django自带的一个加密功能
         info['password'] = make_password(info['password'].strip())
+        info['avatar'] = info['avatar'].strip('media/')[1]
         user = User.objects.create(**info)
         #  todo 后期进行一个修改,在更新个人信息处
         user.profile_id = Profile.objects.create().id

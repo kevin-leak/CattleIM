@@ -29,10 +29,10 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
     public void register(final String phone, final String name, final String password, final String avatarPath) {
 //        TODO 做数据检验并且回送消息到UI
 
+        getView().showDialog();
         new Thread(new Runnable() {
             @Override
             public void run() {
-                getView().showDialog();
                 String avatarUrl = FileHelper.fetchBackgroundFile(avatarPath);
                 if (TextUtils.isEmpty(avatarUrl)){
                     getView().showError(R.string.data_network_error);
@@ -87,12 +87,14 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
         // 此时是从网络回送回来的，并不保证处于主现场状态
         // 强制执行在主线程中, 因为传送文件是在子线程执行的
 
-        view.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                view.registerSuccess();
-            }
-        });
+        if (user != null){
+            view.getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    view.registerSuccess();
+                }
+            });
+        }
 
     }
 

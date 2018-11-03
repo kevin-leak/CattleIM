@@ -6,18 +6,15 @@ import android.util.Log;
 
 import com.example.common.factory.data.DataSource;
 import com.example.factory.R;
-import com.example.factory.middleware.DbHelper;
 import com.example.netKit.NetKit;
 import com.example.netKit.db.User;
 import com.example.netKit.net.NetInterface;
-import com.example.netKit.net.NetWorker;
+import com.example.netKit.net.CattleNetWorker;
 import com.example.netKit.persistence.Account;
 import com.example.netKit.piece.RspPiece;
 import com.example.netKit.piece.account.AccountPiece;
 import com.example.netKit.piece.account.LoginPiece;
 import com.example.netKit.piece.account.RegisterPiece;
-
-import java.util.Objects;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,7 +36,7 @@ public class AccountHelper {
      * @param callback 数据返回
      */
     public static void register(RegisterPiece piece, DataSource.Callback<User> callback) {
-        NetInterface connect = NetWorker.getConnect();
+        NetInterface connect = CattleNetWorker.getConnect();
         Call<RspPiece<AccountPiece>> task = connect.register(piece);
         task.enqueue(new AccountCallback(callback));
     }
@@ -49,7 +46,7 @@ public class AccountHelper {
      * @param callback 数据返回
      */
     public static void login(LoginPiece piece, DataSource.Callback<User> callback) {
-        NetInterface connect = NetWorker.getConnect();
+        NetInterface connect = CattleNetWorker.getConnect();
         Call<RspPiece<AccountPiece>> task = connect.login(piece);
         task.enqueue(new AccountCallback(callback));
     }
@@ -77,6 +74,7 @@ public class AccountHelper {
              * */
 
             RspPiece<AccountPiece> rspPiece = response.body();
+            Log.e(TAG, "onResponse" );
             if (rspPiece == null) {
                 callback.onDataNotAvailable(R.string.data_network_error);
             }else if (rspPiece.success()) {
@@ -95,6 +93,7 @@ public class AccountHelper {
 
         @Override
         public void onFailure(Call<RspPiece<AccountPiece>> call, Throwable t) {
+            Log.e(TAG, "onFailure: kkkk");
             // 网络请求失败
             if (callback != null)
                 callback.onDataNotAvailable(R.string.data_network_error);

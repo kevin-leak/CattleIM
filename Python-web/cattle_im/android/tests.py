@@ -47,8 +47,8 @@ from bs4 import BeautifulSoup
 # account.get('user').update(info)
 # print(account)
 
-
-kk = time.strftime("%Y-%m-%dT%H:%M:%S", time.localtime())
-print(kk)
-
-print(datetime.datetime.now().microsecond)
+#
+# kk = time.strftime("%Y-%m-%dT%H:%M:%S", time.localtime())
+# print(kk)
+#
+# print(datetime.datetime.now().microsecond)

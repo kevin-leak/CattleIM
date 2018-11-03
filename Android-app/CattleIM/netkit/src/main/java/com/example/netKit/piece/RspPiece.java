@@ -18,7 +18,7 @@ public class RspPiece<T> {
 
     private T result;
     public final static int SUCCEED = 1;
-    private int status;
+    private int status = 0;
     private String message;
     private Date date;
 

@@ -16,17 +16,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
  *
  * @author KevinLeak
  */
-public class NetWorker {
+public class CattleNetWorker {
 
-    private static NetWorker instance;
+    private static CattleNetWorker instance;
     private Retrofit retrofit;
     private OkHttpClient client;
 
     static {
-        instance = new NetWorker();
+        instance = new CattleNetWorker();
     }
 
-    private NetWorker() {
+    private CattleNetWorker() {
     }
 
     /**
@@ -64,7 +64,7 @@ public class NetWorker {
                 .addConverterFactory(GsonConverterFactory.create(NetKit.getGson()))
                 //设置网络请求的Url地址
                 .baseUrl(Common.Constance.BASE_URL)
-                .client(NetWorker.getClient())
+                .client(CattleNetWorker.getClient())
                 .build();
 
         return instance.retrofit;
@@ -77,7 +77,7 @@ public class NetWorker {
      */
     public static NetInterface getConnect() {
 
-        return NetWorker.getRetrofit().create(NetInterface.class);
+        return CattleNetWorker.getRetrofit().create(NetInterface.class);
     }
 
 }

@@ -1,19 +1,14 @@
 package com.example.factory.presenter;
 
-import android.annotation.SuppressLint;
-import android.net.Network;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.annotation.StringRes;
-import android.util.Log;
 
 import com.example.common.factory.data.DataSource;
 import com.example.common.tools.StringsTools;
 import com.example.netKit.db.IMFile;
-import com.example.netKit.db.User;
 import com.example.netKit.model.FileModel;
 import com.example.netKit.net.NetInterface;
-import com.example.netKit.net.NetWorker;
+import com.example.netKit.net.CattleNetWorker;
 import com.example.netKit.piece.FilePiece;
 import com.example.netKit.piece.RspPiece;
 
@@ -31,7 +26,7 @@ public class FileHelper {
 
         String name = new File(path).getName();
         String imageString = StringsTools.ImageToStrings(path);
-        NetInterface connect = NetWorker.getConnect();
+        NetInterface connect = CattleNetWorker.getConnect();
         Call<RspPiece<FileModel>> task = connect.saveFile(new FilePiece(name, imageString));
         task.enqueue(new FileCallBack(callback));
     }
@@ -60,7 +55,7 @@ public class FileHelper {
 
         String name = new File(path).getName();
         String imageString = StringsTools.ImageToStrings(path);
-        NetInterface connect = NetWorker.getConnect();
+        NetInterface connect = CattleNetWorker.getConnect();
         Call<RspPiece<FileModel>> task = connect.saveFile(new FilePiece(name, imageString));
         String urlString = null;
         try {

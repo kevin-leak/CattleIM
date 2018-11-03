@@ -6,21 +6,12 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
-import android.util.Log;
 import android.widget.EditText;
 
 import com.example.common.app.Application;
-import com.example.common.app.BaseFragment;
-import com.example.common.tools.HashTools;
-import com.example.common.tools.StringsTools;
 import com.example.factory.contract.account.RegisterContract;
 import com.example.factory.presenter.account.RegisterPresenter;
 import com.example.factory.view.BasePresenterFragment;
-import com.example.netKit.piece.RspPiece;
-import com.example.netKit.piece.account.AccountPiece;
-import com.example.netKit.piece.account.RegisterPiece;
-import com.example.netKit.net.NetInterface;
-import com.example.netKit.net.NetWorker;
 import com.example.thinkpad.cattleim.R;
 import com.example.thinkpad.cattleim.activities.AccountActivity;
 import com.example.thinkpad.cattleim.frags.media.GalleryFragment;
@@ -30,12 +21,9 @@ import java.io.File;
 import java.util.Objects;
 
 import butterknife.BindView;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-import static android.support.constraint.Constraints.TAG;
 import static com.example.netKit.db.User_Table.avatar;
+import static com.example.netKit.db.User_Table.id;
 
 public class RegisterFragment extends BasePresenterFragment<RegisterContract.Presenter>
         implements RegisterContract.View {
@@ -81,6 +69,9 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
     @Override
     public void registerSuccess() {
 
+        if (dialog != null){
+            dialog.cancel();
+        }
         ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
     }
 
@@ -126,7 +117,10 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
     @Override
     public void showError(int error) {
         super.showError(error);
-        dialog.cancel();
+        if (dialog != null){
+            dialog.cancel();
+        }
+
     }
 
 }

@@ -10,7 +10,7 @@ import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import com.example.common.app.BaseActivity;
-import com.example.netKit.net.NetWorker;
+import com.example.netKit.net.CattleNetWorker;
 import com.example.netKit.persistence.Account;
 import com.example.thinkpad.cattleim.activities.AccountActivity;
 import com.example.thinkpad.cattleim.activities.MainActivity;
@@ -58,7 +58,7 @@ public class LaunchActivity extends BaseActivity {
      * 第一次访问获取token值
      */
     private void getToken() {
-        NetWorker.getConnect().getCall().enqueue(new Callback<ResponseBody>() {
+        CattleNetWorker.getConnect().getCall().enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
             }

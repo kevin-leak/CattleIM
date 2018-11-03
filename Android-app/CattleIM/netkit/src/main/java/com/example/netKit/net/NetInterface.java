@@ -35,4 +35,6 @@ public interface NetInterface {
     @POST("register/")
     Call<RspPiece<AccountPiece>> register(@Body RegisterPiece piece); // 此处，后端需要request里面的body接受数据
 
+    @GET("out/")
+    Call<ResponseBody> logout(); // 此处，后端需要request里面的body接受数据
 }

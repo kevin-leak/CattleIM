@@ -1,5 +1,7 @@
 package com.example.factory.presenter.account;
 
+import android.text.TextUtils;
+
 import com.example.common.factory.data.DataSource;
 import com.example.common.tools.ValidateTools;
 import com.example.factory.R;
@@ -44,6 +46,13 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
         return false;
     }
 
+    @Override
+    public boolean checkPsd(String psd) {
+        if (TextUtils.isEmpty(psd)){
+            getView().showError(R.string.NULL_PASSWORD);
+        }
+        return true;
+    }
 
     // 接下来的方法处理，helper处完数据的回调
 
@@ -56,12 +65,14 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
         // 此时是从网络回送回来的，并不保证处于主现场状态
         // 强制执行在主线程中, 因为传送文件是在子线程执行的
 
-        view.getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                view.loginSuccess();
-            }
-        });
+        if (user != null){
+            view.getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    view.loginSuccess();
+                }
+            });
+        }
     }
 
     @Override
