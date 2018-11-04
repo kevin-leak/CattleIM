@@ -4,5 +4,9 @@
     <string name="cattle_chat">Cattle Chat</string>
     <string name="null_avatar">头像为空</string>
     <string name="reLoad">重新加载</string>
+    <string name="fb_notice">通知</string>
+    <string name="fb_topic">话题</string>
+    <string name="fb_task">任务</string>
+    <string name="fb_time">日程</string>
 
 </resources>

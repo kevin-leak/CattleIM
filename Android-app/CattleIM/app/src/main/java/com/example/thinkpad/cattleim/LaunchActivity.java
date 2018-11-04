@@ -44,7 +44,7 @@ public class LaunchActivity extends BaseActivity {
         }
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                getToken();
+                updateCattle();
                 Intent intent = new Intent(LaunchActivity.this, intentClass);
                 startActivity(intent);
                 finish();
@@ -55,9 +55,9 @@ public class LaunchActivity extends BaseActivity {
     }
 
     /**
-     * 第一次访问获取token值
+     * 获取当前版本信息，与后端进行一个比对，进行版本更新，获取token值
      */
-    private void getToken() {
+    private void updateCattle() {
         CattleNetWorker.getConnect().getCall().enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -69,8 +69,6 @@ public class LaunchActivity extends BaseActivity {
             }
         });
     }
-
-
 
 
     @Override
@@ -91,6 +89,7 @@ public class LaunchActivity extends BaseActivity {
         }
         new Handler().postDelayed(new Runnable() {
             public void run() {
+                updateCattle();
                 Intent intent = new Intent(LaunchActivity.this, intentClass);
                 startActivity(intent);
                 finish();

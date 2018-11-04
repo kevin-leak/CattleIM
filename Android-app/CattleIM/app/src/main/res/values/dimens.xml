@@ -27,6 +27,15 @@
     <dimen name="len_150">150dp</dimen>
     <dimen name="len_180">180dp</dimen>
     <dimen name="len_92">82dp</dimen>
+    <dimen name="len_120">120dp</dimen>
+    <dimen name="len_140">140dp</dimen>
+    <dimen name="len_130">130dp</dimen>
+    <dimen name="len_143">143dp</dimen>
+    <dimen name="len_153">153dp</dimen>
+    <dimen name="len_163">163dp</dimen>
+    <dimen name="len_183">183dp</dimen>
+    <dimen name="len_85">85dp</dimen>
+    <dimen name="len_224">224dp</dimen>
 
 
 </resources>

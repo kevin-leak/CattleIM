@@ -20,10 +20,10 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toolbar;
+import android.widget.Toast;
 
 import com.example.common.app.BaseActivity;
 import com.example.thinkpad.cattleim.R;
@@ -38,6 +38,7 @@ import com.example.thinkpad.cattleim.helper.NavHelper;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 
 /**
@@ -55,6 +56,18 @@ public class MainActivity extends BaseActivity implements
     FrameLayout layContainer;
     @BindView(R.id.fa_add)
     FloatingActionButton faAdd;
+    @BindView(R.id.curtain)
+    View curtain;
+    @BindView(R.id.fb_notice)
+    FloatingActionButton fbNotice;
+    @BindView(R.id.fb_topic)
+    FloatingActionButton fbTopic;
+    @BindView(R.id.fb_task)
+    FloatingActionButton fbTask;
+    @BindView(R.id.fa_time)
+    FloatingActionButton faTime;
+    @BindView(R.id.rl_menu)
+    RelativeLayout rlMenu;
 
     private NavHelper mHelper;
 
@@ -85,6 +98,18 @@ public class MainActivity extends BaseActivity implements
 
 
         bindFragment();
+
+
+        initAdd();
+    }
+
+    private void initAdd() {
+        fbNotice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "kkk", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -98,6 +123,7 @@ public class MainActivity extends BaseActivity implements
         // 触发首次选中Home
         menu.performIdentifierAction(R.id.action_todo, 0);
     }
+
 
     /**
      * fragment 与tab相互绑定
@@ -117,6 +143,9 @@ public class MainActivity extends BaseActivity implements
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        if (curtain.getVisibility() == View.VISIBLE){
+            return false;
+        }
         return mHelper.performClickMenu(menuItem.getItemId());
     }
 
@@ -127,11 +156,8 @@ public class MainActivity extends BaseActivity implements
     @Override
     public void OnNavChanged(NavHelper.Tab newTab, NavHelper.Tab oldTab) {
         //此处表现为已经进行fragment的切换处理
-
-
         faAdd.setVisibility(View.GONE);
-
-        if (newTab.clx == TodoFragment.class || newTab.clx == ScheduleFragment.class){
+        if (newTab.clx == TodoFragment.class || newTab.clx == ScheduleFragment.class) {
             faAdd.setVisibility(View.VISIBLE);
         }
 
@@ -139,13 +165,45 @@ public class MainActivity extends BaseActivity implements
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void setStatusTextColor(NavHelper.Tab newTab) {
-
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-        if (newTab.clx == TodoFragment.class || newTab.clx == BusinessFragment.class){
+        if (newTab.clx == TodoFragment.class || newTab.clx == BusinessFragment.class) {
             //字体设置为亮色
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_VISIBLE);
         }
+    }
+
+    @SuppressLint("RestrictedApi")
+    @OnClick(R.id.fa_add)
+    void onclick(View view) {
+
+        startAddMenu();
+
+        curtain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeAddMenu();
+            }
+        });
+    }
+
+    @SuppressLint("RestrictedApi")
+    private void closeAddMenu() {
+        faAdd.setVisibility(View.VISIBLE);
+        rlMenu.setVisibility(View.GONE);
+        curtain.setVisibility(View.GONE);
+    }
+
+    /**
+     * 开启menu
+     */
+    @SuppressLint("RestrictedApi")
+    private void startAddMenu() {
+        faAdd.setVisibility(View.GONE);
+        rlMenu.setVisibility(View.VISIBLE);
+        curtain.setVisibility(View.VISIBLE);
+        curtain.setClickable(true);
     }
 
 

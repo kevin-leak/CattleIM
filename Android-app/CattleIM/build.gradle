@@ -53,4 +53,10 @@ ext{
     airpanelVersion = "1.1.0"
     lameVersion = "1.0.0"
     websocket = "1.3.7"
+
+    calendarview = "3.4.7"
+
+    mikhaellopez = "1.3.2"
+
+    sparkbutton = "1.0.6"
 }

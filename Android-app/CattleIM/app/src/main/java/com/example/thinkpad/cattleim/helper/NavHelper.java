@@ -90,7 +90,12 @@ public class NavHelper<T> {
         doTabChanged(currentTab, oldTab);
     }
 
+    /**
+     * 执行切换
+     * 同时我们设置拦截
+     */
     private void doTabChanged(Tab<T> newTab, Tab<T> oldTab) {
+
         FragmentTransaction ft = mFragmentManager.beginTransaction();
 
         if (oldTab != null) {
@@ -149,6 +154,7 @@ public class NavHelper<T> {
         // Package权限，外部无法使用
         Fragment fragment;
     }
+
 
 
 

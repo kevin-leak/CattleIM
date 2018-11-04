@@ -6,4 +6,5 @@
     <color name="colorWhiteDark">#F6F6F6</color>
     <color name="stepDialogBack">#90010c13</color>
     <color name="searchBack">#edf1f1f1</color>
+    <color name="add_curtain">#d2ffffff</color>
 </resources>

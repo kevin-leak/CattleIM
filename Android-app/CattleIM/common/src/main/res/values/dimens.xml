@@ -38,5 +38,6 @@
     <dimen name="fontNameSize">15sp</dimen>
     <dimen name="portraitSize">@dimen/len_40</dimen>
     <dimen name="len_1">1dp</dimen>
+    <dimen name="len_220">220dp</dimen>
 
 </resources>
