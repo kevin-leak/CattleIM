@@ -27,6 +27,8 @@ import android.widget.Toast;
 
 import com.example.common.app.BaseActivity;
 import com.example.thinkpad.cattleim.R;
+import com.example.thinkpad.cattleim.activities.creators.TaskCreatorActivity;
+import com.example.thinkpad.cattleim.activities.creators.TimeCreatorActivity;
 import com.example.thinkpad.cattleim.frags.assist.NotificationsUtils;
 import com.example.thinkpad.cattleim.frags.main.BusinessFragment;
 import com.example.thinkpad.cattleim.frags.main.ContactFragment;
@@ -64,8 +66,8 @@ public class MainActivity extends BaseActivity implements
     FloatingActionButton fbTopic;
     @BindView(R.id.fb_task)
     FloatingActionButton fbTask;
-    @BindView(R.id.fa_time)
-    FloatingActionButton faTime;
+    @BindView(R.id.fb_time)
+    FloatingActionButton fbTime;
     @BindView(R.id.rl_menu)
     RelativeLayout rlMenu;
 
@@ -107,9 +109,40 @@ public class MainActivity extends BaseActivity implements
         fbNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "kkk", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this, TaskCreatorActivity.class);
+                startActivity(intent);
+                closeAddMenu();
             }
         });
+
+        fbTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeAddMenu();
+                Intent intent = new Intent(MainActivity.this, TaskCreatorActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        fbTopic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeAddMenu();
+                Intent intent = new Intent(MainActivity.this, TaskCreatorActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        fbTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                closeAddMenu();
+                Intent intent = new Intent(MainActivity.this, TimeCreatorActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -219,6 +252,7 @@ public class MainActivity extends BaseActivity implements
                 Manifest.permission.ACCESS_WIFI_STATE,
                 Manifest.permission.WAKE_LOCK,
                 Manifest.permission.CAMERA,
+                Manifest.permission.RECEIVE_BOOT_COMPLETED,
                 Manifest.permission.SYSTEM_ALERT_WINDOW,
                 Manifest.permission.RECEIVE_BOOT_COMPLETED
         };

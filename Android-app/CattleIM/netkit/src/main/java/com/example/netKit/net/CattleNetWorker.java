@@ -6,6 +6,8 @@ import com.example.netKit.NetKit;
 import com.example.netKit.net.Interceptor.ReceiveInterceptor;
 import com.example.netKit.net.Interceptor.SendInterceptor;
 
+import java.util.concurrent.TimeUnit;
+
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -40,6 +42,8 @@ public class CattleNetWorker {
 
         instance.client = new OkHttpClient
                 .Builder()
+                .readTimeout(3, TimeUnit.SECONDS)   // 断网重连
+                .retryOnConnectionFailure(true) //http数据log，日志中打印出HTTP请求&响应数据
                 .addInterceptor(new SendInterceptor()) //这部分
                 .addInterceptor(new ReceiveInterceptor()) //这部分
                 .build();

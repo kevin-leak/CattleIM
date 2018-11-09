@@ -29,4 +29,5 @@
     <style name="AppTheme.Base" parent="Theme.private" />
 
 
+    <color name="hint">#eeeeee</color>
 </resources>

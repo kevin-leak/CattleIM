@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -50,7 +51,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-from django.middleware.csrf import CsrfViewMiddleware
 
 ROOT_URLCONF = 'cattle_im.urls'
 
@@ -134,3 +134,8 @@ MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 AUTH_USER_MODEL = 'db.User'
+
+import dwebsocket
+MIDDLEWARE_CLASSES=dwebsocket.middleware.WebSocketMiddleware
+WEBSOCKET_ACCEPT_ALL=True
+

@@ -1,10 +1,12 @@
 package com.example.netKit;
 
+import android.content.Intent;
 import android.support.annotation.StringRes;
 
 import com.example.common.app.Application;
 import com.example.common.factory.data.DataSource;
 import com.example.netKit.db.User;
+import com.example.netKit.net.push.PushService;
 import com.example.netKit.persistence.Account;
 import com.example.netKit.piece.RspPiece;
 import com.example.netKit.utils.DBFlowExclusionStrategy;
@@ -120,5 +122,13 @@ public class NetKit {
      */
     public static Gson getGson() {
         return gson;
+    }
+
+    /**
+     * 初始化推送的服务
+     */
+    public static void initPush() {
+        Intent intent = new Intent(app(), PushService.class);
+        app().startService(intent);
     }
 }

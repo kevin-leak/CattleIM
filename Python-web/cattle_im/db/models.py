@@ -11,7 +11,9 @@ from django.utils import timezone
 
 
 class Profile(models.Model):
-    push_id = models.CharField( max_length=255, null=True, blank=True, unique=True)
+    push_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    app_id = models.CharField(max_length=255, null=True, blank=True, unique=True)
+    is_bind = models.BooleanField(default=False)
     choice = ((0, '男'), (1, '女'))
     sex = models.IntegerField(choices=choice, null=True, blank=True)
     desc = models.TextField(max_length=100, null=True, blank=True)

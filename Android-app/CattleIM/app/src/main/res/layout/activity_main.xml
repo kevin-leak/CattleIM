@@ -120,7 +120,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fabCustomSize="46dp"
-            android:layout_above="@id/fa_time"
+            android:layout_above="@id/fb_time"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_margin="@dimen/len_5"
@@ -139,13 +139,13 @@
             android:layout_marginTop="@dimen/len_183"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="14dp"
-            android:layout_toStartOf="@+id/fa_time"
-            android:layout_toLeftOf="@+id/fa_time"
+            android:layout_toStartOf="@+id/fb_time"
+            android:layout_toLeftOf="@+id/fb_time"
             android:text="@string/fb_time"
             android:textColor="@color/black_alpha_112" />
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fa_time"
+            android:id="@+id/fb_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fabCustomSize="46dp"

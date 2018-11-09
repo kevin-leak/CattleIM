@@ -1,11 +1,10 @@
 [TOC]
 
-----
-
+------
 
 ### 公共访问接口
-```json
 
+```json
 {
  "status": 0,
   "result": [],
@@ -15,9 +14,10 @@
 ```
 
 #### login 登入接口约定
->登入的信息：
-```json
 
+> 登入的信息：
+
+```json
 {
     "phone": 18870742138,
     "password": "lkkzbl"
@@ -65,9 +65,9 @@ ERROR_NET = 11001								# 网络错误
 }
 ```
 
-
 ### 反馈用户信息接口
-````json
+
+```json
 {
   "user":{
       "id": "",
@@ -85,11 +85,12 @@ ERROR_NET = 11001								# 网络错误
   "isBind": true
 }
 
-````
+```
 
 ### 存储文件接口
 
 from
+
 ```json
 {
   "name": "当前文件的名字",
@@ -98,8 +99,99 @@ from
 ```
 
 to
+
 ```json
 {
   "path": "media/avatars/android/xx.jpg"
 }
 ```
+
+
+
+### 推送
+
+------
+
+#### message
+
+可以为空(心跳包)，也可以是一个字符串(反馈),  正式通信如下：
+
+```
+{
+	"chatId": "",
+	"fromId": "",
+	"toId": "",
+	"type": "",
+	"info": [{
+			"category": "",
+			"content": ""
+		},
+		{}
+	],
+	"createTime": ""
+}
+```
+
+type
+
+```json
+{ 
+	"0":"系统消息",
+	"1":"普通消息",
+	"2":"请求消息",
+	"3":"主题消息",
+	"4":"公告消息",
+	"5":"任务消息",
+	"6":"关联消息"
+}
+```
+
+category
+
+```json
+{
+	"0":"文本",
+	"1":"图片",
+	"2":"语音",
+	"3":"文件"
+}
+```
+
+
+
+#### 心跳包/回送包
+
+```json
+{
+    "status": 1,
+    "pushId": "",
+    "message": ""
+}
+```
+
+
+
+#### message_queue(消息队列)
+
+```json
+{
+	"pushId": [{
+			"chatId": "",
+			"fromId": "",
+			"toId": "",
+			"type": "",
+			"info": [{
+					"category": "",
+					"content": ""
+				},
+				{}
+			],
+			"createTime": ""
+		},
+		{},
+		{}
+	],
+	"second": []
+}
+```
+

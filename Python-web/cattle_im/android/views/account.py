@@ -3,7 +3,7 @@ import json
 import time
 
 from django.contrib import auth
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate, logout
 from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
@@ -40,7 +40,6 @@ def login(request):
         ret_info['status'] = respone_code.FORMAT_ERROR_PHONE
     else:
         user = User.objects.filter(phone=info['phone']).first()
-        print(user.username, info['password'])
         if user:
             user = authenticate(username=user.username, password=info['password'])
             if user:
@@ -73,12 +72,6 @@ def login(request):
 @require_POST
 def register(request):
     """
-    {
-      "phone":"18870742138",
-      "username": "kevin",
-      "password": "199shadjfk",
-      "avatar": "sdajfklajflksdaj;"
-    }
     """
     info = eval(request.body)
     # 获取公共的返回模块
@@ -142,5 +135,10 @@ def register(request):
 
         auth.login(request, user)
     return HttpResponse(json.dumps(ret_info))
+
+
+def out(request):
+    logout(request)
+    return HttpResponse("ok")
 
 

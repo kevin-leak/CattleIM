@@ -1,4 +1,5 @@
 import datetime
+import json
 import time
 
 from django.test import TestCase
@@ -52,3 +53,14 @@ from bs4 import BeautifulSoup
 # print(kk)
 #
 # print(datetime.datetime.now().microsecond)
+from dwebsocket import websocket
+
+hh = {
+    "status": 1,
+    "pushId": "uuid",
+    "message": ""
+}
+
+print(type(json.dumps(hh)))
+#
+websocket.WebSocket.is_close()

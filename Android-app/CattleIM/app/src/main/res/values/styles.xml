@@ -64,4 +64,14 @@
 
 
 
+    <style name="AppTheme.AddCreator" parent="AppTheme.TransStatusBar">
+        <item name="android:windowBackground">@color/colorWhiteDark</item>
+        <item name="android:textSize">@dimen/font_18</item>
+        <item name="android:textColorPrimary">@color/stepDialogBack</item>
+        <item name="android:editTextColor">@color/stepDialogBack</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+    </style>
+
+
+
 </resources>

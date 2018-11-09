@@ -1,4 +1,8 @@
+import json
+import random
 import sys
+import uuid
+from time import sleep
 
 from bs4 import BeautifulSoup
 from cryptography.hazmat.primitives.ciphers.algorithms import AES
@@ -7,7 +11,10 @@ from django.contrib.auth import logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.template import RequestContext
+from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST, require_GET
+from dwebsocket import require_websocket, accept_websocket
+from dwebsocket.websocket import WebSocket
 from pyDes import des
 from requests import auth
 
@@ -30,11 +37,5 @@ def get_test(request):
     return HttpResponse("ok")
 
 
-def out(request):
-    logout(request)
-    return HttpResponse("ok")
 
-def test(request):
-    user = User.objects.filter(phone='18870742138').first()
-    print(str(user.avatar))
-    return HttpResponse("ok")
+

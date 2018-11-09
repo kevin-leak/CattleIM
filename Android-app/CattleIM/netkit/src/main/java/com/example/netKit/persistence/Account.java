@@ -3,6 +3,7 @@ package com.example.netKit.persistence;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 
 import com.example.common.app.Application;
 import com.example.netKit.NetKit;
@@ -38,7 +39,7 @@ public class Account {
     /**
      * 持久化处理
      */
-    private static void save(Context context) {
+    public static void save(Context context) {
         SharedPreferences sp = context.getSharedPreferences(Account.class.getName(), Context.MODE_PRIVATE);
         sp.edit()
                 .putString(ACCOUNT_KEY, account)
@@ -81,5 +82,7 @@ public class Account {
 
     public static void setPushId(String pushId) {
         Account.pushId = pushId;
+//        进行一个持久化
+        Account.save(NetKit.app());
     }
 }

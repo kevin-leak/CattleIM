@@ -10,7 +10,9 @@ import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import com.example.common.app.BaseActivity;
+import com.example.netKit.NetKit;
 import com.example.netKit.net.CattleNetWorker;
+import com.example.netKit.net.push.PushService;
 import com.example.netKit.persistence.Account;
 import com.example.thinkpad.cattleim.activities.AccountActivity;
 import com.example.thinkpad.cattleim.activities.MainActivity;
@@ -27,6 +29,10 @@ public class LaunchActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // 初始化push的服务
+        NetKit.initPush();
+
 
         intentClass = AccountActivity.class;
 

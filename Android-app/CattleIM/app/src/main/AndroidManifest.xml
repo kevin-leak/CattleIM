@@ -5,12 +5,12 @@
 
     <!-- 基础模块（必须加入以下声明）START -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -30,8 +30,10 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <!--开机自启-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name=".App"
@@ -41,9 +43,10 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        tools:replace="android:roundIcon"
-        tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LaunchActivity"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:roundIcon">
+        <activity
+            android:name=".LaunchActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -52,10 +55,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.AccountActivity"
+        <activity
+            android:name=".activities.AccountActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.AccountActivity">
-        </activity>
+            android:theme="@style/AppTheme.AccountActivity"/>
 
         <!--声明图片剪切的activity-->
         <activity
@@ -63,13 +66,32 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
-        <activity android:name=".activities.MainActivity"
+        <activity
+            android:name=".activities.MainActivity"
             android:theme="@style/AppTheme.MainActivity">
 
         </activity>
 
-        <service android:name=".services.StepService"/>
+        <!--建立步骤的服务-->
+        <service android:name=".services.StepService" />
+        <!--建议一个广播接收者-->
+        <receiver
+            android:name=".EventReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="1000">
+            <intent-filter>
+                <action android:name="com.example.netKit.net.push.PushService"/>
+            </intent-filter>
+        </receiver>
 
+
+        <activity
+            android:name=".activities.creators.TaskCreatorActivity"
+            android:theme="@style/AppTheme.AddCreator" />
+        <activity
+            android:name=".activities.creators.TimeCreatorActivity"
+            android:theme="@style/AppTheme.AddCreator" />
 
     </application>
 
