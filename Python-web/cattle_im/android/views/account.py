@@ -6,6 +6,7 @@ from django.contrib import auth
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.views.decorators.http import require_POST
 from pymysql import Date
 
@@ -60,6 +61,7 @@ def login(request):
                 result['isBind'] = True
                 ret_info['result'] = result
                 ret_info['status'] = respone_code.SUCCESS_STATUS
+                request.session["userId"] = str(user.uid)
                 auth.login(request, user)
             else:
                 ret_info['status'] = respone_code.ERROR_PASSWORD
@@ -111,7 +113,8 @@ def register(request):
         info['avatar'] = info['avatar'].strip('media/')[1]
         user = User.objects.create(**info)
         #  todo 后期进行一个修改,在更新个人信息处
-        user.profile_id = Profile.objects.create().id
+        user.profile_id = Profile.objects.create().push_id
+        print(user.profile.push_id)
         # 进行了修改需要提交，不然后面创建friend关系没有用
         user.save()
 
@@ -132,12 +135,14 @@ def register(request):
         ret_info['result'] = result
 
         ret_info['status'] = respone_code.SUCCESS_STATUS
-
+        request.session["userId"] = str(user.uid)
+        auth.authenticate(request, username=user.username, password=user.username)
         auth.login(request, user)
     return HttpResponse(json.dumps(ret_info))
 
 
 def out(request):
+    print(request.session["userId"])
     logout(request)
     return HttpResponse("ok")
 

@@ -29,7 +29,7 @@ public class PushClient implements PushContract {
     private PushListener push;
     private WebSocket webSocket;
     private MessageListener listener;
-    private boolean cancel;
+    private boolean cancel = false;
 
     private PushClient() {
         initWebSocketClient();
@@ -106,7 +106,8 @@ public class PushClient implements PushContract {
             @Override
             public void sendSuccess(String text) {
                 push.messageArrival(text);
-                Account.setPushId(NetKit.getGson().toJson(text, PushPieces.class));
+                Log.e(TAG, "sendSuccess: " + text);
+                Account.setPushId(NetKit.getGson().fromJson(text, PushPieces.class).getPushId());
             }
 
             @Override
@@ -141,6 +142,7 @@ public class PushClient implements PushContract {
     @Override
     public void reConnect() {
         if (cancel){
+            Log.e(TAG, "reConnect: " + "sladjklakj" );
             return;
         }
         // 只要断了， 就必须重新建立， 不能复用之前websocket对象
@@ -178,8 +180,9 @@ public class PushClient implements PushContract {
     public void disConnect() {
         if (webSocket != null) {
             webSocket.cancel();
-            cancel = true;
         }
+        cancel = true;
+        Log.e(TAG, "disConnect: " + "skdj;lak");
     }
 
 

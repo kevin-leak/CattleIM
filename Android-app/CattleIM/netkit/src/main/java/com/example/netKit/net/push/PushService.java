@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.util.Log;
 
+import com.example.netKit.NetKit;
+import com.example.netKit.persistence.Account;
+
 import static android.support.constraint.Constraints.TAG;
 
 public class PushService extends Service implements PushClient.PushListener {
@@ -20,7 +23,9 @@ public class PushService extends Service implements PushClient.PushListener {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         // todo 获取intent的值，进行一个判断是否，应该开启，或者说是否应该断开
-
+        if (Account.isLogin()){
+            PushClient.getInstance().start(this);
+        }
         return super.onStartCommand(intent, flags, startId);
 
     }
@@ -30,14 +35,11 @@ public class PushService extends Service implements PushClient.PushListener {
         super.onCreate();
 
         initBroadcastIntent();
-
-        PushClient.getInstance().start(this);
     }
 
 
-
     private void initBroadcastIntent() {
-        if (intent == null){
+        if (intent == null) {
             intent = new Intent();
             intent.setAction("com.example.netKit.net.push.PushService");
         }
@@ -56,5 +58,9 @@ public class PushService extends Service implements PushClient.PushListener {
         intent.putExtra(PushContract.MSG, message);
         //发送广播
         sendBroadcast(intent);
+    }
+
+    public static void startPush() {
+        NetKit.app().startService(new Intent(NetKit.app(), PushService.class));
     }
 }

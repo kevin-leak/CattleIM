@@ -24,7 +24,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     uid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     phone = models.CharField(max_length=11, null=False, unique=True, db_index=True)
     avatar = models.FileField(upload_to="avatars/", default="avatars/default.jpg", verbose_name="头像", blank=True)
-    profile = models.OneToOneField(to="Profile", null=True, blank=False, on_delete=models.SET_NULL)
+    profile = models.OneToOneField(to="Profile", to_field="push_id", null=True, blank=False, on_delete=models.SET_NULL)
     create_time = models.DateTimeField(auto_now=True)
 
     username_validator = UnicodeUsernameValidator()

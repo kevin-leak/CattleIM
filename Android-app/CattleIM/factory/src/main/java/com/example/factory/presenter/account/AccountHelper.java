@@ -10,6 +10,7 @@ import com.example.netKit.NetKit;
 import com.example.netKit.db.User;
 import com.example.netKit.net.NetInterface;
 import com.example.netKit.net.CattleNetWorker;
+import com.example.netKit.net.push.PushService;
 import com.example.netKit.persistence.Account;
 import com.example.netKit.piece.RspPiece;
 import com.example.netKit.piece.account.AccountPiece;
@@ -71,7 +72,10 @@ public class AccountHelper {
              * 1. 进行数据的本地化处理
              * 2. 进行一个全局的通知回调
              * 3. 可将后端返回的数据与本地数据库的数据相同
+             * 4. 开启推送功能
              * */
+
+
 
             RspPiece<AccountPiece> rspPiece = response.body();
             Log.e(TAG, "onResponse" );
@@ -85,10 +89,14 @@ public class AccountHelper {
                 // 对数据进行本地化处理
                 callback.onDataLoaded(user);
                 Account.login(accountPiece);
+
                 // todo c这里需要对推送的id 进行一个绑定
+
+                PushService.startPush();
             } else {
                 NetKit.decodeRep(rspPiece, callback);
             }
+
         }
 
         @Override

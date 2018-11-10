@@ -2,58 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58bc5b7c-d96f-43e0-96e8-2ecdae3f6be4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/activities/creators/TaskCreatorActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/activities/creators/TimeCreatorActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/drawable/ic_back.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/layout/activity_creator_task.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/layout/activity_creator_time.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/BootPushReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/PushClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/PushContract.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/PushPieces.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/PushService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/views/push/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/android/views/push/wskt_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/LaunchActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/LaunchActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/MessageReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/EventReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/java/com/example/thinkpad/cattleim/activities/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/layout/activity_creator_task.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/app/src/main/res/layout/activity_creator_task.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/Common.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/Common.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/app/BaseActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/app/BaseActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/NetKit.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/NetKit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/CattleNetWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/CattleNetWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/NetPushClient.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/NetPushService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/tools/StringsTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/common/src/main/java/com/example/common/tools/StringsTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/java/com/example/factory/presenter/account/AccountHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/factory/src/main/java/com/example/factory/presenter/account/AccountHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/Interceptor/InterceptorTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/Interceptor/InterceptorTools.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/Interceptor/SendInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/Interceptor/SendInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/BootPushReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/BootPushReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/PushClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/PushClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/PushPieces.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/PushPieces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/PushService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/net/push/PushService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/persistence/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/persistence/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/piece/account/LoginPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Android-app/CattleIM/netkit/src/main/java/com/example/netKit/piece/account/LoginPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../IM软件资料/架构分析/app框架.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../IM软件资料/架构分析/app框架.xmind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../IM软件资料/架构分析/主界面需要完成的功能.xmind" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../IM软件资料/架构分析/基于IM的管理Android.xmind" beforeDir="false" afterPath="$PROJECT_DIR$/../../IM软件资料/架构分析/基于IM的管理Android.xmind" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../IM软件资料/架构分析/需要进行抽象封装的业务逻辑.xmind" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../IM软件资料/知识点记录.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../IM软件资料/知识点记录.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/f347e6f2-dc62-4b3f-9294-293a98c3c320.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/f347e6f2-dc62-4b3f-9294-293a98c3c320.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/android/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/android/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/views/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/android/views/account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/views/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/android/views/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/views/push/wskt_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/android/views/push/wskt_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cattle_im/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cattle_im/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/0002_auto_20181103_1520.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/0003_auto_20181103_1522.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/0004_auto_20181103_1958.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface_api.md" beforeDir="false" afterPath="$PROJECT_DIR$/interface_api.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,6 +49,17 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="Django default" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Django default" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="cattle_im: schema" type="c314c289:MysqlImplModel$Schema" />
       </path>
     </expand>
     <select />
@@ -125,7 +102,7 @@
     <session id="1266313493">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="47" />
+          <entry key="project.closed" value="49" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.10" value="4" />
@@ -133,7 +110,7 @@
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.13" value="2" />
           <entry key="project.open.time.14" value="3" />
-          <entry key="project.open.time.15" value="4" />
+          <entry key="project.open.time.15" value="5" />
           <entry key="project.open.time.16" value="5" />
           <entry key="project.open.time.18" value="3" />
           <entry key="project.open.time.20" value="1" />
@@ -141,12 +118,12 @@
           <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.32" value="1" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="4" />
           <entry key="project.open.time.6" value="10" />
           <entry key="project.open.time.7" value="4" />
           <entry key="project.open.time.8" value="5" />
-          <entry key="project.opened" value="59" />
+          <entry key="project.opened" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -155,46 +132,47 @@
           <entry key="dummy" value="44" />
           <entry key="html" value="1228" />
           <entry key="json" value="4" />
-          <entry key="md" value="1325" />
-          <entry key="py" value="11803" />
+          <entry key="md" value="1340" />
+          <entry key="py" value="12566" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="1228" />
-          <entry key="JSON" value="31" />
-          <entry key="Markdown" value="1298" />
+          <entry key="JSON" value="34" />
+          <entry key="Markdown" value="1310" />
           <entry key="PLAIN_TEXT" value="44" />
-          <entry key="Python" value="11803" />
+          <entry key="Python" value="12566" />
           <entry key="Scratch" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="db_friends" value="5" />
-          <entry key="db_profile" value="6" />
-          <entry key="db_user" value="23" />
+          <entry key="db_profile" value="7" />
+          <entry key="db_user" value="24" />
           <entry key="db_user_groups" value="1" />
+          <entry key="django_session" value="1" />
           <entry key="html" value="10" />
           <entry key="interface_api" value="1" />
           <entry key="jpg" value="11" />
           <entry key="js" value="2" />
           <entry key="json" value="2" />
-          <entry key="md" value="11" />
-          <entry key="py" value="246" />
+          <entry key="md" value="12" />
+          <entry key="py" value="257" />
           <entry key="pyi" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Database Element" value="35" />
+          <entry key="Database Element" value="38" />
           <entry key="HTML" value="10" />
           <entry key="Image" value="11" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="2" />
-          <entry key="Markdown" value="11" />
+          <entry key="Markdown" value="12" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="246" />
+          <entry key="Python" value="257" />
           <entry key="PythonStub" value="2" />
         </counts>
       </usages-collector>
@@ -205,8 +183,83 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/android/views/account.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-597">
-              <caret line="82" column="72" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="72" />
+            <state relative-caret-position="525">
+              <caret line="144" selection-start-line="144" selection-end-line="144" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/interface_api.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="303">
+                <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://f347e6f2-dc62-4b3f-9294-293a98c3c320/schema/cattle_im/table/django_session">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/shortcuts.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1719">
+              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/http/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/views/push/wskt_server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1541843633542" expanded="true" signature="2083:2087" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://f347e6f2-dc62-4b3f-9294-293a98c3c320/schema/cattle_im/table/db_user">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -215,74 +268,7 @@
         <entry file="file://$PROJECT_DIR$/cattle_im/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
-              <caret line="138" column="34" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/android/views/push/wskt_server.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <marker date="1541773132383" expanded="true" signature="1745:1749" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/interface_api.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="405">
-                <caret line="194" column="1" lean-forward="true" selection-start-line="194" selection-start-column="1" selection-end-line="194" selection-end-column="1" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/tests.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/templates/tables.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/utils/excel_tools.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/android/utils/phone_tools.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+              <caret line="151" selection-start-line="151" selection-end-line="151" />
             </state>
           </provider>
         </entry>
@@ -346,15 +332,15 @@
         <option value="$PROJECT_DIR$/android/views/im_file.py" />
         <option value="$PROJECT_DIR$/db/tests.py" />
         <option value="$PROJECT_DIR$/android/views/push_servers.py" />
-        <option value="$PROJECT_DIR$/cattle_im/settings.py" />
-        <option value="$PROJECT_DIR$/db/models.py" />
         <option value="$PROJECT_DIR$/android/tests.py" />
         <option value="$PROJECT_DIR$/android/views/test.py" />
-        <option value="$PROJECT_DIR$/android/views/account.py" />
         <option value="$PROJECT_DIR$/android/urls.py" />
         <option value="$PROJECT_DIR$/android/views/wskt_server.py" />
-        <option value="$PROJECT_DIR$/interface_api.md" />
+        <option value="$PROJECT_DIR$/db/models.py" />
+        <option value="$PROJECT_DIR$/cattle_im/settings.py" />
+        <option value="$PROJECT_DIR$/android/views/account.py" />
         <option value="$PROJECT_DIR$/android/views/push/wskt_server.py" />
+        <option value="$PROJECT_DIR$/interface_api.md" />
       </list>
     </option>
   </component>
@@ -365,10 +351,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="845" />
-    <option name="y" value="35" />
-    <option name="width" value="980" />
-    <option name="height" value="1040" />
+    <option name="x" value="10" />
+    <option name="y" value="20" />
+    <option name="width" value="1346" />
+    <option name="height" value="688" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -376,7 +362,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -415,12 +400,18 @@
             </path>
             <path>
               <item name="cattle_im" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cattle_im" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cattle_im" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -463,7 +454,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.tests">
+  <component name="RunManager" selected="Django server.cattle_im">
     <configuration name="Test: android.views" type="DjangoTestsConfigurationType" factoryName="Django tests" temporary="true">
       <module name="cattle_im" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -667,7 +658,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20877458" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21482602" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" weight="0.18683812" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -684,7 +675,7 @@
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.32840723" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.32840723" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32840723" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.32840723" />
+      <window_info anchor="bottom" id="Terminal" order="14" weight="0.36288998" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -723,48 +714,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/android/views/im_file.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/dwebsocket/backends/uwsgi/factory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/handlers/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="135" selection-start-line="135" selection-end-line="135" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/wsgi.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/core/handlers/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/conf/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/utils/autoreload.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -839,13 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/dwebsocket/backends/default/websocket.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="89" selection-start-line="89" selection-end-line="89" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/dwebsocket/middleware.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
@@ -858,30 +800,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/dwebsocket/backends/default/factory.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="das://f347e6f2-dc62-4b3f-9294-293a98c3c320/schema/cattle_im/table/db_profile">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/contrib/auth/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="20" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/tests.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -911,16 +829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/android/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/contract/request_interface.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -931,6 +839,14 @@
     <entry file="file://$PROJECT_DIR$/android/contract/respone_code.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/android/views/push_servers.py" />
+    <entry file="file://$PROJECT_DIR$/android/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/android/templates/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -938,11 +854,53 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/android/utils/excel_tools.py">
-      <provider selected="true" editor-type-id="text-editor">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://f347e6f2-dc62-4b3f-9294-293a98c3c320/schema/cattle_im/table/db_profile">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/dwebsocket/backends/default/websocket.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/ProgramData/Anaconda3/pkgs/jupyter_client-5.2.3-py37_0/Lib/site-packages/jupyter_client/connect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5559">
+          <caret line="350" column="4" selection-start-line="350" selection-start-column="4" selection-end-line="350" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/ProgramData/Anaconda3/pkgs/sqlalchemy-1.2.11-py37hfa6e2cd_0/Lib/site-packages/sqlalchemy/orm/dynamic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3927">
+          <caret line="237" column="4" selection-start-line="237" selection-start-column="4" selection-end-line="237" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/contrib/auth/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7055">
+          <caret line="425" column="8" selection-start-line="425" selection-start-column="8" selection-end-line="425" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -956,26 +914,67 @@
     <entry file="file://$PROJECT_DIR$/android/utils/pthoto_tools.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/http/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/shortcuts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1719">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f347e6f2-dc62-4b3f-9294-293a98c3c320/schema/cattle_im/table/django_session">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cattle_im/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
-          <caret line="138" column="34" selection-start-line="138" selection-start-column="34" selection-end-line="138" selection-end-column="34" />
+          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://f347e6f2-dc62-4b3f-9294-293a98c3c320/schema/cattle_im/table/db_user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/android/views/push/wskt_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="67" column="22" lean-forward="true" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1541843633542" expanded="true" signature="2083:2087" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/views/account.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-597">
-          <caret line="82" column="72" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/views/push_servers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="525">
+          <caret line="144" selection-start-line="144" selection-end-line="144" selection-end-column="36" />
           <folding>
-            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -983,31 +982,10 @@
     <entry file="file://$PROJECT_DIR$/interface_api.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="405">
-            <caret line="194" column="1" lean-forward="true" selection-start-line="194" selection-start-column="1" selection-end-line="194" selection-end-column="1" />
+          <first_editor relative-caret-position="303">
+            <caret line="164" column="1" selection-start-line="164" selection-start-column="1" selection-end-line="164" selection-end-column="1" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="65" column="26" selection-start-line="65" selection-start-column="26" selection-end-line="65" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/views/push/wskt_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="72" column="8" selection-start-line="72" selection-start-column="8" selection-end-line="72" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1541773132383" expanded="true" signature="1745:1749" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>

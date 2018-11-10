@@ -2,50 +2,78 @@ package com.example.netKit.net.Interceptor;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import com.example.common.app.Application;
+import com.example.common.tools.StringsTools;
+import com.example.netKit.persistence.Account;
 
 import java.util.List;
 
 import okhttp3.Response;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * 持久化token
  */
 public class InterceptorTools {
 
-    private static final String SET_COOKIE = "Set-Cookie";
+    /**
+     * 获取服务端原始的cookies
+     */
+    public static final String SET_COOKIE = "Set-Cookie";
+    public static String cookies; // 加工过的cookies
 
-    private static final String COOKIES_KEY = "cookies";
+    // 用来持久化和拼接cookies的  键
+    public static final String X_CSRFTOKEN = "X-CSRFtoken";
+    public static final String content_type = "Content-Type";
+    public static final String COOKIES_KEY = "cookie";
+    public static final String CSRFTOKEN = "csrftoken";
+
+    // 用来持久化和拼接cookies的  值
+    public static String csrftoken;
+    public static String session;
+
 
 
     public static void saveCookies(Response originalResponse) {
         List<String> headers = originalResponse.headers(SET_COOKIE);
 
         if (!headers.isEmpty()) {
-            String cookies;
 
-            // 调试发现 heads就是一个字符串
+            // 由于不同的浏览器返回的可能是list，或者就一条字符串，这里统一转化为字符串再处理
             if (headers.size() == 1) {
                 String[] split = headers.get(0).split(";");
-                cookies = split[0].split("=")[1];
+                for (int i = 0; i < split.length; i ++){
+                    Log.e(TAG, "saveCookies: " + split[i] );
+                }
+                csrftoken = split[0].split("=")[1];
+                cookies = headers.get(0);
             } else {
-                cookies = headers.get(0).split("=")[1];
+                csrftoken = headers.get(0).split("=")[1];
+                cookies = StringsTools.ListToString(headers);
+            }
+
+            //获取session
+            if (cookies.contains("sessionid=")){
+                session = cookies.split("sessionid=")[1].split(";")[0];
+                Account.setSession_id(session);
             }
 
             //保存文件名字为"config",保存形式为Context.MODE_PRIVATE即该数据只能被本应用读取
             SharedPreferences.Editor config = Application.getInstance()
                     .getSharedPreferences("config", Context.MODE_PRIVATE)
                     .edit();
-            config.putString(COOKIES_KEY, cookies);
+            config.putString(CSRFTOKEN, csrftoken);
             config.apply();
         }
     }
 
 
-    public static String getCookies() {
+    public static String getToken() {
         SharedPreferences config = Application.getInstance().getSharedPreferences("config",
                 Context.MODE_PRIVATE);
-        return config.getString(COOKIES_KEY, null);
+        return config.getString(CSRFTOKEN, "");
     }
 }
