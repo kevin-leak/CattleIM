@@ -31,18 +31,24 @@
                 android:drawableLeft="@drawable/ic_back"
                 android:scaleType="centerCrop"
                 android:text="type"
-                android:textColor="@color/black_alpha_228"
+                android:textStyle="bold"
+                android:textColor="@color/black_alpha_195"
                 android:textSize="@dimen/font_18" />
 
         </FrameLayout>
 
     </android.support.design.widget.AppBarLayout>
 
-    <AutoCompleteTextView
+    <android.support.design.widget.TextInputEditText
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="73dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_edit_text"
+        android:textAlignment="textStart"
+        android:gravity="start"
+        android:minHeight="@dimen/len_100"
+        android:hint="@string/send_info"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appbar"/>
+        app:layout_constraintTop_toBottomOf="@+id/appbar"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

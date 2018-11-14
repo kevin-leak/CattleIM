@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 
 import com.example.common.app.BaseFragment;
 import com.example.thinkpad.cattleim.R;
+import com.example.thinkpad.cattleim.activities.SearchActivity;
 import com.example.thinkpad.cattleim.frags.main.todo.EventFragment;
 import com.example.thinkpad.cattleim.frags.main.todo.LinkTaskFragment;
 import com.example.thinkpad.cattleim.frags.main.todo.TimeLineFragment;
@@ -21,6 +22,7 @@ import com.example.thinkpad.cattleim.helper.NavHelper;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class TodoFragment extends BaseFragment implements
@@ -66,6 +68,13 @@ public class TodoFragment extends BaseFragment implements
 
         bindFragment();
     }
+
+
+    @OnClick(R.id.im_search)
+    void onClickSearch() {
+        SearchActivity.show(getActivity(), SearchActivity.SCHEDULE_TYPE);
+    }
+
 
     /**
      * fragment 与tab相互绑定

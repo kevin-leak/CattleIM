@@ -30,7 +30,6 @@ public class SendInterceptor implements Interceptor {
         Request.Builder builder = oldReq.newBuilder();
         String token = InterceptorTools.getToken();
         if (!TextUtils.isEmpty(token)) {
-            Log.e(TAG, "intercept:" + Account.getSession_id());
             builder.addHeader(
                     InterceptorTools.COOKIES_KEY,  InterceptorTools.CSRFTOKEN +  "=" + token
                             + "; sessionid=" + Account.getSession_id());

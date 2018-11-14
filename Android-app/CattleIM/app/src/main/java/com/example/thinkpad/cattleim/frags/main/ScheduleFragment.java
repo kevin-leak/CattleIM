@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.common.app.BaseFragment;
 import com.example.thinkpad.cattleim.R;
+import com.example.thinkpad.cattleim.activities.SearchActivity;
 import com.haibin.calendarview.Calendar;
 import com.haibin.calendarview.CalendarLayout;
 import com.haibin.calendarview.CalendarView;
@@ -23,6 +24,7 @@ import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 public class ScheduleFragment extends BaseFragment
@@ -88,6 +90,10 @@ public class ScheduleFragment extends BaseFragment
         mTextLunar.setText("今日");
     }
 
+    @OnClick(R.id.im_search)
+    void onClickSearch() {
+        SearchActivity.show(getActivity(), SearchActivity.SCHEDULE_TYPE);
+    }
 
     @Override
     protected void initData() {

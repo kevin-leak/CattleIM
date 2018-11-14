@@ -21,9 +21,7 @@ public class BootPushReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (Account.isLogin()){
-            Log.e(TAG, "onReceive: " + "llllllllllllll");
-            PushService.startPush();
-        }
+//        todo  监控网络变化来使得控制 service的工作
+        PushService.startPush();
     }
 }

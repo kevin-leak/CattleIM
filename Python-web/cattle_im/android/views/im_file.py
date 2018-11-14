@@ -22,4 +22,5 @@ def save(request):
     finally:
         file_str.close()
         ret_info['result'] = info
-        return HttpResponse(json.dumps(ret_info))
+        print(json.dumps(ret_info, ensure_ascii=False))
+        return HttpResponse(json.dumps(ret_info, ensure_ascii=False))

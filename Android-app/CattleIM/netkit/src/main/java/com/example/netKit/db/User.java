@@ -177,4 +177,20 @@ public class User extends BaseDdModel<User> implements Profile {
                         && Objects.equals(isFriend, old.isFriend)
         );
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", username='" + username + '\'' +
+                ", phone='" + phone + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", desc='" + desc + '\'' +
+                ", sex=" + sex +
+                ", alias='" + alias + '\'' +
+                ", friends=" + friends +
+                ", isFriend=" + isFriend +
+                ", modifyAt=" + modifyAt +
+                '}';
+    }
 }

@@ -110,6 +110,7 @@
         android:src="@drawable/ic_go"
         app:borderWidth="0dp"
         app:elevation="8dp"
+        app:backgroundTint="@color/colorEggBlue"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintLeft_toLeftOf="parent"

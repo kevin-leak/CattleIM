@@ -32,7 +32,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
 
     @Override
     public void login(String phone, String password) {
-        getView().showDialog();
+        start();
         LoginPiece loginPiece = new LoginPiece(phone, password);
         AccountHelper.login(loginPiece, this);
     }

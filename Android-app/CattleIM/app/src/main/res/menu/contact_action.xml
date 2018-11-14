@@ -1,0 +1,30 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+
+    <item
+        android:icon="@drawable/add_info"
+        android:id="@+id/find_some"
+        android:title="@string/find_some"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+
+    <item android:id="@+id/add_group"
+        android:title="@string/create_group"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/add_tag"
+        android:title="@string/add_tag"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/add_info"
+        android:title="@string/add_info"
+        android:orderInCategory="100"
+        app:showAsAction="never"/>
+
+</menu>

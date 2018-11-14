@@ -1,11 +1,11 @@
 package com.example.common.widget.recycler;
 
 import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 
 import com.example.common.R;
 
@@ -17,19 +17,14 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-
 /**
- * @author keivn
- * 1.继承RecyclerView.Adapter 实现基础的方法
- * 2. 实现由使用adapter 数据分发到每一个holder里面
- * 3. 实现数据的更新
- * 4. 实现item的删除，点击事件，增加
- *
+ * @author qiujuer Email:qiujuer@live.cn
+ * @version 1.0.0
  */
+@SuppressWarnings({"unchecked", "unused"})
 public abstract class RecyclerAdapter<Data>
         extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder<Data>>
         implements View.OnClickListener, View.OnLongClickListener, AdapterCallback<Data> {
-
     private final List<Data> mDataList;
     private AdapterListener<Data> mListener;
 
@@ -133,6 +128,15 @@ public abstract class RecyclerAdapter<Data>
     }
 
     /**
+     * 返回整个集合
+     *
+     * @return List<Data>
+     */
+    public List<Data> getItems() {
+        return mDataList;
+    }
+
+    /**
      * 插入一条数据并通知插入
      *
      * @param data Data
@@ -202,9 +206,6 @@ public abstract class RecyclerAdapter<Data>
         }
     }
 
-    /**
-     * 设置根布局的点击事件
-     */
     @Override
     public void onClick(View v) {
         ViewHolder viewHolder = (ViewHolder) v.getTag(R.id.tag_recycler_holder);
@@ -217,9 +218,6 @@ public abstract class RecyclerAdapter<Data>
 
     }
 
-    /**
-     * 设置holder的长按时间
-     */
     @Override
     public boolean onLongClick(View v) {
         ViewHolder viewHolder = (ViewHolder) v.getTag(R.id.tag_recycler_holder);
@@ -271,6 +269,7 @@ public abstract class RecyclerAdapter<Data>
 
         /**
          * 用于绑定数据的触发
+         *
          * @param data 绑定的数据
          */
         void bind(Data data) {

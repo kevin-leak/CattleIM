@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="contract_add">
+        <item>添加好友</item>
+        <item>添加群</item>
+        <item>添加标签</item>
+        <item>添加本地数据</item>
+    </string-array>
+
+
+</resources>

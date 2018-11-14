@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import com.example.netKit.NetKit;
-import com.example.netKit.piece.account.AccountPiece;
+import com.example.netKit.model.UserModel;
 
 /**
  * 设置一个用户的账号管理类
@@ -38,7 +38,7 @@ public class Account {
      * @param accountPiece 服务器返回的piece
      * 用处理登入账户的状态的持久化处理
      */
-    public static void login(AccountPiece accountPiece) {
+    public static void login(UserModel accountPiece) {
         Account.account = accountPiece.getAccount();
         Account.userId = accountPiece.getUser().getId();
 

@@ -23,6 +23,7 @@
         app:rippleColor="#33728dff"
         app:elevation="8dp"
         app:pressedTranslationZ="16dp"
+        app:backgroundTint="@color/colorEggBlue"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="@dimen/len_85"
         android:layout_marginRight="@dimen/len_15"
@@ -156,6 +157,7 @@
             app:borderWidth="0dp"
             app:elevation="8dp"
             app:pressedTranslationZ="16dp"
+            app:backgroundTint="@color/colorEggBlue"
             app:rippleColor="#33728dff"
             app:srcCompat="@drawable/fb_time"
             tools:ignore="MissingConstraints" />

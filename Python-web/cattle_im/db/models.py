@@ -85,16 +85,16 @@ class User(AbstractBaseUser, PermissionsMixin):
 # message friend
 class Friends(models.Model):
     fid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    origin_id = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE,
+    origin = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE,
                                   related_name='origin_user_id')
-    target_id = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE,
+    target = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE,
                                   related_name="target_user_id")
     alias = models.CharField(max_length=20)
 
 
 class Group(models.Model):
     gid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    owner_id = models.ForeignKey(to="User", to_field='uid', null=False, on_delete=models.CASCADE)
+    owner = models.ForeignKey(to="User", to_field='uid', null=False, on_delete=models.CASCADE)
     name = models.CharField(max_length=20, null=False)
     picture = models.FileField(upload_to='groupPicture/', null=False)
     description = models.CharField(max_length=100, blank=True)
@@ -102,10 +102,10 @@ class Group(models.Model):
 
 
 class GroupMember(models.Model):
-    mId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    mid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     alias = models.CharField(max_length=20)
-    group_id = models.ForeignKey(to="Group", to_field="gid", null=False, on_delete=models.CASCADE)
-    user_id = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE)
+    group = models.ForeignKey(to="Group", to_field="gid", null=False, on_delete=models.CASCADE)
+    user = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE)
     # 管理权限
     permission_type = models.IntegerField(default=0)
     # 通知权限
@@ -117,21 +117,21 @@ class GroupMember(models.Model):
 # tag的所属可能是个人，也可能是一个群， group可以没有
 class Tag(models.Model):
     tid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    create_id = models.ForeignKey(to=User, on_delete=models.CASCADE)
-    group_id = models.ForeignKey(to=Group, null=True, on_delete=models.CASCADE)
+    create = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    group = models.ForeignKey(to=Group, null=True, on_delete=models.CASCADE)
     tag_name = models.CharField(max_length=20, null=False)
     description = models.CharField(max_length=100, blank=True)
     update_at = models.DateTimeField(auto_now_add=True)
 
 
 class TagMember(models.Model):
-    tag_id = models.ForeignKey(to="Tag", to_field="tid", null=False, on_delete=models.CASCADE)
+    tag = models.ForeignKey(to="Tag", to_field="tid", null=False, on_delete=models.CASCADE)
     tmId = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user_id = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE)
+    user = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE)
 
 
 class TimeLine(models.Model):
-    user_id = models.ForeignKey(to="User", to_field='uid', null=False, on_delete=models.CASCADE)
+    user = models.ForeignKey(to="User", to_field='uid', null=False, on_delete=models.CASCADE)
     content = models.TextField(null=False)
     create_time = models.DateTimeField(auto_now_add=True)
     start_time = models.DateTimeField(auto_now_add=True)
@@ -143,9 +143,9 @@ class TimeLine(models.Model):
 
 class LinkTask(models.Model):
     lid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    create_id = models.ForeignKey(to="User", to_field="uid", on_delete=models.CASCADE)
-    group_id = models.ForeignKey(to=Group, null=True, on_delete=models.CASCADE)
-    tag_id = models.ForeignKey(to=Tag, null=True, on_delete=models.CASCADE)
+    create = models.ForeignKey(to="User", to_field="uid", on_delete=models.CASCADE)
+    group = models.ForeignKey(to=Group, null=True, on_delete=models.CASCADE)
+    tag = models.ForeignKey(to=Tag, null=True, on_delete=models.CASCADE)
     type = models.IntegerField()
     content = models.TextField(null=False)
     attach = models.CharField(max_length=255)
@@ -157,17 +157,17 @@ class LinkTask(models.Model):
 
 class LinkMember(models.Model):
     mid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    link_id = models.ForeignKey(to="LinkTask", to_field="lid", null=False, on_delete=models.CASCADE)
-    user_id = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE)
+    link = models.ForeignKey(to="LinkTask", to_field="lid", null=False, on_delete=models.CASCADE)
+    user = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE)
     is_up = models.BooleanField(default=False)
     is_remind = models.BooleanField(default=True)
 
 
 class LinkComment(models.Model):
     link_id = models.ForeignKey(to="LinkTask", to_field="lid", null=False, on_delete=models.CASCADE)
-    comment_id = models.ForeignKey(to="self", related_name='lower_comment', blank=True, on_delete=models.CASCADE)
-    from_id = models.ForeignKey(to="LinkMember", null=False, on_delete=models.CharField, related_name="from_member_id")
-    to_id = models.ForeignKey(to="LinkMember", null=False, on_delete=models.CharField, related_name="to_member_id")
+    comment = models.ForeignKey(to="self", related_name='lower_comment', blank=True, on_delete=models.CASCADE)
+    link_from = models.ForeignKey(to="LinkMember", null=False, on_delete=models.CharField, related_name="from_member_id")
+    link_to = models.ForeignKey(to="LinkMember", null=False, on_delete=models.CharField, related_name="to_member_id")
     create_time = models.DateTimeField(auto_now_add=True)
 
 
@@ -184,11 +184,11 @@ class Event(models.Model):
     eid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
     attach = models.CharField(max_length=255)
     content = models.TextField()
-    group_id = models.ForeignKey(to=Group, null=True, on_delete=models.CASCADE)
-    tag_id = models.ForeignKey(to="Tag", to_field="tid", null=True, on_delete=models.CASCADE)
-    link_id = models.ForeignKey(to="LinkTask", to_field="lid", null=True, on_delete=models.CASCADE)
-    send_id = models.ForeignKey(to=User, null=False, on_delete=models.CASCADE, related_name="send_event_id")
-    receive_id = models.ForeignKey(to=User, null=True, on_delete=models.CASCADE, related_name="receive_event_id")
+    group = models.ForeignKey(to=Group, null=True, on_delete=models.CASCADE)
+    tag = models.ForeignKey(to="Tag", to_field="tid", null=True, on_delete=models.CASCADE)
+    link = models.ForeignKey(to="LinkTask", to_field="lid", null=True, on_delete=models.CASCADE)
+    send = models.ForeignKey(to=User, null=False, on_delete=models.CASCADE, related_name="send_event_id")
+    receive = models.ForeignKey(to=User, null=True, on_delete=models.CASCADE, related_name="receive_event_id")
     type = models.IntegerField()
     update_time = models.DateTimeField(auto_now=True)
 
@@ -196,7 +196,7 @@ class Event(models.Model):
 # targetId 不进行强关联， description描述：我想添加你为好友
 class Apply(models.Model):
     aid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    application_id = models.ForeignKey(to='User', null=True, on_delete=models.CASCADE)
+    application = models.ForeignKey(to='User', null=True, on_delete=models.CASCADE)
     targetId = models.CharField(max_length=255)
     attach = models.TextField()
     description = models.CharField(max_length=255)
@@ -213,9 +213,9 @@ class PushHistory(models.Model):
     pid = models.UUIDField(default=uuid.uuid4, editable=False)
     entity = models.BigAutoField(primary_key=True)
     entity_type = models.IntegerField()
-    send_id = models.ForeignKey(to=User, null=False, on_delete=models.CASCADE, related_name="send_push_id")
-    receive_id = models.ForeignKey(to=User, null=True, on_delete=models.CASCADE, related_name="receive_push_id")
-    receive_push_id = models.CharField(max_length=255)
+    send = models.ForeignKey(to=User, null=False, on_delete=models.CASCADE, related_name="send_push_id")
+    receive = models.ForeignKey(to=User, null=True, on_delete=models.CASCADE, related_name="receive_push_id")
+    receive_push = models.CharField(max_length=255)
     arrival_time_plan = models.DateTimeField()
     arrival_time = models.DateTimeField()
     create_time = models.DateTimeField(auto_now_add=True)

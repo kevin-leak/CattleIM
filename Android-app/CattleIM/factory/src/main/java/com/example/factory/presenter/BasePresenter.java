@@ -32,7 +32,10 @@ public class BasePresenter<T extends BaseContract.View> implements BaseContract.
 
     @Override
     public void start() {
-
+        T view = mView;
+        if (view != null) {
+            view.showDialog();
+        }
     }
 
     @Override

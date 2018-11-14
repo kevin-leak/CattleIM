@@ -29,10 +29,11 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
     public void register(final String phone, final String name, final String password, final String avatarPath) {
 //        TODO 做数据检验并且回送消息到UI
 
-        getView().showDialog();
+        start();
         new Thread(new Runnable() {
             @Override
             public void run() {
+                // todo 后期进行分离，注册的逻辑太多了，而且如果没有登入不允许上传文件
                 String avatarUrl = FileHelper.fetchBackgroundFile(avatarPath);
                 if (TextUtils.isEmpty(avatarUrl)){
                     getView().showError(R.string.data_network_error);
@@ -99,7 +100,14 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
     }
 
     @Override
-    public void onDataNotAvailable(int strRes) {
+    public void onDataNotAvailable(final int strRes) {
+        final RegisterContract.View view = getView();
 
+        view.getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                view.showError(strRes);
+            }
+        });
     }
 }

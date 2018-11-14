@@ -4,4 +4,5 @@
     <string name="form_username_error">请输入5-20位除下划线名字</string>
     <string name="form_psd_error">密码要求为6到20位之间</string>
     <string name="NULL_PASSWORD">密码不能为空！</string>
+    <string name="data_null">没有数据</string>
 </resources>

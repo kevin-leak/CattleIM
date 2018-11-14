@@ -82,7 +82,7 @@ public class NetKit {
     }
 
 
-    public static void decodeRep(RspPiece piece, DataSource.Callback<User> callback){
+    public static void decodeRep(RspPiece piece, DataSource.FailedCallback callback){
         switch (piece.getStatus()){
             case RspPiece.SUCCEED:
                 return;
@@ -106,6 +106,12 @@ public class NetKit {
                 break;
             case RspPiece.SAME_USERNAME:
                 decodeRep(R.string.same_username, callback);
+                break;
+            case RspPiece.NULL_DATA:
+                decodeRep(R.string.NULL_DATA, callback);
+                break;
+            case RspPiece.EXIST_FRIENDS:
+                decodeRep(R.string.friend_relation_exit, callback);
                 break;
         }
     }

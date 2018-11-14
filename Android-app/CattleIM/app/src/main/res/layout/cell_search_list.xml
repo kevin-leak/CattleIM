@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/len_2"
+    android:background="@color/colorWhite"
+    android:foreground="@drawable/ic_touch_fg"
+    android:orientation="horizontal"
+    android:paddingBottom="@dimen/len_12"
+    android:paddingEnd="@dimen/len_16"
+    android:paddingStart="@dimen/len_16"
+    android:divider="@drawable/search_divider"
+    android:paddingTop="@dimen/len_12">
+
+    <com.example.common.widget.AvatarView
+        android:id="@+id/civ_avatar"
+        android:layout_width="@dimen/portraitSize"
+        android:layout_height="@dimen/portraitSize"
+        android:layout_gravity="start|center_vertical"
+        android:src="@mipmap/default_avatar" />
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/len_24"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="@dimen/len_12"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/textAccent"
+        android:textSize="@dimen/fontNameSize"
+        tools:text="@string/app_name"
+        android:layout_marginLeft="@dimen/len_12" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="@dimen/len_60"
+        android:layout_height="@dimen/len_30"
+        android:text="@string/add_friend_now"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/shape_add"/>
+
+
+
+</LinearLayout>

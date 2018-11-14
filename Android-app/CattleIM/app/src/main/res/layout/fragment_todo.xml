@@ -57,7 +57,8 @@
                     android:padding="@dimen/len_10"
                     android:scaleType="centerInside"
                     android:src="@drawable/ic_search"
-                    android:tint="?attr/toolbarMenuIconColor" />
+                    android:tint="?attr/toolbarMenuIconColor"
+                    tools:ignore="VectorDrawableCompat" />
 
             </FrameLayout>
 

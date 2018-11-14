@@ -143,6 +143,7 @@ public class MainActivity extends BaseActivity implements
             }
         });
 
+
     }
 
     @Override
@@ -308,7 +309,7 @@ public class MainActivity extends BaseActivity implements
                 }
             });
 
-            TextView cancel = (TextView) view.findViewById(R.id.btn_off);
+            TextView cancel =  view.findViewById(R.id.btn_off);
             cancel.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     dialog.cancel();

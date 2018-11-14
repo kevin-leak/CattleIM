@@ -153,6 +153,8 @@ public class PushClient implements PushContract {
             @Override
             public void sendSuccess(String text) {
                 push.reStart();
+                Log.e(TAG, "sendSuccess: " + NetKit.getGson().fromJson(text, PushPieces.class).getPushId() );
+                Account.setPushId(NetKit.getGson().fromJson(text, PushPieces.class).getPushId());
             }
 
             @Override

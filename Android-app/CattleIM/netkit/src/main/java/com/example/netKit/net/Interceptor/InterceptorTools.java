@@ -45,9 +45,6 @@ public class InterceptorTools {
             // 由于不同的浏览器返回的可能是list，或者就一条字符串，这里统一转化为字符串再处理
             if (headers.size() == 1) {
                 String[] split = headers.get(0).split(";");
-                for (int i = 0; i < split.length; i ++){
-                    Log.e(TAG, "saveCookies: " + split[i] );
-                }
                 csrftoken = split[0].split("=")[1];
                 cookies = headers.get(0);
             } else {

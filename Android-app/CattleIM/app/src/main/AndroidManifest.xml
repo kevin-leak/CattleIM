@@ -92,6 +92,19 @@
         <activity
             android:name=".activities.creators.TimeCreatorActivity"
             android:theme="@style/AppTheme.AddCreator" />
+        <activity android:name=".activities.SearchActivity"
+            android:theme="@style/AppTheme.SearchCreator"/>
+
+
+        <!--contact 创建的页面-->
+        <activity android:name=".activities.contact.CreateTagActivity" />
+        <activity android:name=".activities.contact.CreateGroupActivity"/>
+        <activity android:name=".activities.contact.CreateInfoActivity"/>
+
+
+        <!--好友的个人页面展示-->
+
+        <activity android:name=".activities.PersonActivity"/>
 
     </application>
 

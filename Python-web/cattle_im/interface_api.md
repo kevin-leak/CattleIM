@@ -24,6 +24,16 @@
 }
 ```
 
+### session设定
+
+```
+request.session["userId"] = str(user.uid)
+# 获取
+if request.session.get("userId", "") == "":
+   return error_response.session_error()
+holder_id = request.session["userId"]
+```
+
 
 
 #### 公共的状态码
@@ -65,7 +75,7 @@ ERROR_NET = 11001								# 网络错误
 }
 ```
 
-### 反馈用户信息接口
+### 用户信息接口
 
 ```json
 {
@@ -86,6 +96,8 @@ ERROR_NET = 11001								# 网络错误
 }
 
 ```
+
+
 
 ### 存储文件接口
 
@@ -193,5 +205,38 @@ category
 	],
 	"second": []
 }
+```
+
+
+
+### search搜索
+
+user的搜索
+
+```python 
+# 使用get请求，传入username 或则 phone
+```
+
+返回接口为空的情况
+
+```json
+{"status": 0, "result": [], "message": "ok", "date": "2018-11-14T21:40:56"}
+```
+
+
+
+#### friends
+
+```
+# 好友关系建立用get，请求,传入用户的id，将好友账户信息反馈
+/(?P<field>\w+)/(?P<page>\d+)/
+```
+
+
+
+### Group
+
+```python
+# get方式传入name
 ```
 

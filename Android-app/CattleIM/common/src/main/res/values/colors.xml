@@ -2,11 +2,11 @@
 <resources>
     <color name="colorPrimary">#0099A7</color>
     <color name="colorPrimaryDark">#008C99</color>
-    <color name="colorAccent">#1AD1CC</color>
+    <color name="colorAccent">#e0383838</color>
 
     <color name="colorEggBlue">#1AD1CC</color>
 
-    <color name="windowsBackground">#f6f6f6</color>
+    <color name="windowsBackground">#eaeaea</color>
     <color name="colorWhite">#FFFFFF</color>
 
     <!--字体颜色-->
@@ -27,5 +27,6 @@
     <color name="black_alpha_112">#70000000</color>
     <color name="white_alpha_192">#c0ffffff</color>
     <color name="grey_200">#eeeeee</color>
-    <color name="black_alpha_228" >#90010c13</color>
+    <color name="black_alpha_228" >#e4010c13</color>
+    <color name="black_alpha_195">#c3010c13</color>
 </resources>

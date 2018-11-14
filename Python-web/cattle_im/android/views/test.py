@@ -18,6 +18,7 @@ from dwebsocket.websocket import WebSocket
 from pyDes import des
 from requests import auth
 
+from android.api.factory.user_card import account_creator
 from db.models import User
 
 
@@ -36,6 +37,13 @@ def get_test(request):
     # render(request, 'index.html')
     return HttpResponse("ok")
 
+#
+# {
+#     "holder_id": "094e8f05637f4312890b60b27b2c47a3",
+#     "current_id": "68f1316aa8674a63ba515a3d282af5a5"
+# }
 
 
-
+def test_account(request):
+    info = eval(request.body)
+    return account_creator(info["holder_id"])

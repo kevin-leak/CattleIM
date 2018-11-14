@@ -10,7 +10,7 @@
     <schema id="2" parent="1" name="cattle_im">
       <Current>1</Current>
       <Visible>1</Visible>
-      <Collation>utf8mb4_0900_ai_ci</Collation>
+      <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="db_i_t_push_test">
       <Collation>utf8mb4_0900_ai_ci</Collation>
@@ -1304,13 +1304,13 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="333" parent="283" name="application_id_id">
+    <column id="333" parent="283" name="application_id">
       <Position>8</Position>
       <DataType>char(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="334" parent="283" name="db_apply_application_id_id_e9ce5718_fk_db_user_uid">
-      <ColNames>application_id_id</ColNames>
+    <index id="334" parent="283" name="db_apply_application_id_412dd2c9_fk_db_user_uid">
+      <ColNames>application_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="335" parent="283" name="PRIMARY">
@@ -1318,8 +1318,8 @@ codename</ColNames>
       <ColNames>aid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="336" parent="283" name="db_apply_application_id_id_e9ce5718_fk_db_user_uid">
-      <ColNames>application_id_id</ColNames>
+    <foreign-key id="336" parent="283" name="db_apply_application_id_412dd2c9_fk_db_user_uid">
+      <ColNames>application_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
@@ -1354,50 +1354,50 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="342" parent="284" name="group_id_id">
+    <column id="342" parent="284" name="group_id">
       <Position>6</Position>
       <DataType>char(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="343" parent="284" name="link_id_id">
+    <column id="343" parent="284" name="link_id">
       <Position>7</Position>
       <DataType>char(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="344" parent="284" name="receive_id_id">
+    <column id="344" parent="284" name="receive_id">
       <Position>8</Position>
       <DataType>char(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="345" parent="284" name="send_id_id">
+    <column id="345" parent="284" name="send_id">
       <Position>9</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="346" parent="284" name="tag_id_id">
+    <column id="346" parent="284" name="tag_id">
       <Position>10</Position>
       <DataType>char(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="347" parent="284" name="db_event_group_id_id_7a8a4d59_fk_db_group_gid">
-      <ColNames>group_id_id</ColNames>
+    <index id="347" parent="284" name="db_event_group_id_e4ae43e3_fk_db_group_gid">
+      <ColNames>group_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="348" parent="284" name="db_event_link_id_id_7475aeeb_fk_db_linktask_lid">
-      <ColNames>link_id_id</ColNames>
+    <index id="348" parent="284" name="db_event_link_id_c5bec343_fk_db_linktask_lid">
+      <ColNames>link_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="349" parent="284" name="db_event_receive_id_id_78670c8f_fk_db_user_uid">
-      <ColNames>receive_id_id</ColNames>
+    <index id="349" parent="284" name="db_event_receive_id_ab81525b_fk_db_user_uid">
+      <ColNames>receive_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="350" parent="284" name="db_event_send_id_id_0d46bc5c_fk_db_user_uid">
-      <ColNames>send_id_id</ColNames>
+    <index id="350" parent="284" name="db_event_send_id_cdfb44ac_fk_db_user_uid">
+      <ColNames>send_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="351" parent="284" name="db_event_tag_id_id_04ce9325_fk_db_tag_tid">
-      <ColNames>tag_id_id</ColNames>
+    <index id="351" parent="284" name="db_event_tag_id_cc004c84_fk_db_tag_tid">
+      <ColNames>tag_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="352" parent="284" name="PRIMARY">
@@ -1405,32 +1405,32 @@ codename</ColNames>
       <ColNames>eid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="353" parent="284" name="db_event_group_id_id_7a8a4d59_fk_db_group_gid">
-      <ColNames>group_id_id</ColNames>
+    <foreign-key id="353" parent="284" name="db_event_group_id_e4ae43e3_fk_db_group_gid">
+      <ColNames>group_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_group</RefTableName>
       <RefColNames>gid</RefColNames>
     </foreign-key>
-    <foreign-key id="354" parent="284" name="db_event_link_id_id_7475aeeb_fk_db_linktask_lid">
-      <ColNames>link_id_id</ColNames>
+    <foreign-key id="354" parent="284" name="db_event_link_id_c5bec343_fk_db_linktask_lid">
+      <ColNames>link_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_linktask</RefTableName>
       <RefColNames>lid</RefColNames>
     </foreign-key>
-    <foreign-key id="355" parent="284" name="db_event_receive_id_id_78670c8f_fk_db_user_uid">
-      <ColNames>receive_id_id</ColNames>
+    <foreign-key id="355" parent="284" name="db_event_receive_id_ab81525b_fk_db_user_uid">
+      <ColNames>receive_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <foreign-key id="356" parent="284" name="db_event_send_id_id_0d46bc5c_fk_db_user_uid">
-      <ColNames>send_id_id</ColNames>
+    <foreign-key id="356" parent="284" name="db_event_send_id_cdfb44ac_fk_db_user_uid">
+      <ColNames>send_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <foreign-key id="357" parent="284" name="db_event_tag_id_id_04ce9325_fk_db_tag_tid">
-      <ColNames>tag_id_id</ColNames>
+    <foreign-key id="357" parent="284" name="db_event_tag_id_cc004c84_fk_db_tag_tid">
+      <ColNames>tag_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_tag</RefTableName>
       <RefColNames>tid</RefColNames>
@@ -1447,24 +1447,24 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="360" parent="285" name="origin_id_id">
+    <column id="360" parent="285" name="origin_id">
       <Position>3</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="361" parent="285" name="target_id_id">
+    <column id="361" parent="285" name="target_id">
       <Position>4</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="362" parent="285" name="db_friends_origin_id_id_fef26ebe_fk_db_user_uid">
-      <ColNames>origin_id_id</ColNames>
+    <index id="362" parent="285" name="db_friends_origin_id_02f9196c_fk_db_user_uid">
+      <ColNames>origin_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="363" parent="285" name="db_friends_target_id_id_8c495796_fk_db_user_uid">
-      <ColNames>target_id_id</ColNames>
+    <index id="363" parent="285" name="db_friends_target_id_f15f7d14_fk_db_user_uid">
+      <ColNames>target_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="364" parent="285" name="PRIMARY">
@@ -1472,14 +1472,14 @@ codename</ColNames>
       <ColNames>fid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="365" parent="285" name="db_friends_origin_id_id_fef26ebe_fk_db_user_uid">
-      <ColNames>origin_id_id</ColNames>
+    <foreign-key id="365" parent="285" name="db_friends_origin_id_02f9196c_fk_db_user_uid">
+      <ColNames>origin_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <foreign-key id="366" parent="285" name="db_friends_target_id_id_8c495796_fk_db_user_uid">
-      <ColNames>target_id_id</ColNames>
+    <foreign-key id="366" parent="285" name="db_friends_target_id_f15f7d14_fk_db_user_uid">
+      <ColNames>target_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
@@ -1514,14 +1514,14 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="372" parent="286" name="owner_id_id">
+    <column id="372" parent="286" name="owner_id">
       <Position>6</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="373" parent="286" name="db_group_owner_id_id_d4fedf88_fk_db_user_uid">
-      <ColNames>owner_id_id</ColNames>
+    <index id="373" parent="286" name="db_group_owner_id_7d7cf589_fk_db_user_uid">
+      <ColNames>owner_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="374" parent="286" name="PRIMARY">
@@ -1529,13 +1529,13 @@ codename</ColNames>
       <ColNames>gid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="375" parent="286" name="db_group_owner_id_id_d4fedf88_fk_db_user_uid">
-      <ColNames>owner_id_id</ColNames>
+    <foreign-key id="375" parent="286" name="db_group_owner_id_7d7cf589_fk_db_user_uid">
+      <ColNames>owner_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <column id="376" parent="287" name="mId">
+    <column id="376" parent="287" name="mid">
       <Position>1</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1571,39 +1571,39 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="382" parent="287" name="group_id_id">
+    <column id="382" parent="287" name="group_id">
       <Position>7</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="383" parent="287" name="user_id_id">
+    <column id="383" parent="287" name="user_id">
       <Position>8</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="384" parent="287" name="db_groupmember_group_id_id_8641026a_fk_db_group_gid">
-      <ColNames>group_id_id</ColNames>
+    <index id="384" parent="287" name="db_groupmember_group_id_5af73f65_fk_db_group_gid">
+      <ColNames>group_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="385" parent="287" name="db_groupmember_user_id_id_7310c0b9_fk_db_user_uid">
-      <ColNames>user_id_id</ColNames>
+    <index id="385" parent="287" name="db_groupmember_user_id_77583520_fk_db_user_uid">
+      <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="386" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>mId</ColNames>
+      <ColNames>mid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="387" parent="287" name="db_groupmember_group_id_id_8641026a_fk_db_group_gid">
-      <ColNames>group_id_id</ColNames>
+    <foreign-key id="387" parent="287" name="db_groupmember_group_id_5af73f65_fk_db_group_gid">
+      <ColNames>group_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_group</RefTableName>
       <RefColNames>gid</RefColNames>
     </foreign-key>
-    <foreign-key id="388" parent="287" name="db_groupmember_user_id_id_7310c0b9_fk_db_user_uid">
-      <ColNames>user_id_id</ColNames>
+    <foreign-key id="388" parent="287" name="db_groupmember_user_id_77583520_fk_db_user_uid">
+      <ColNames>user_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
@@ -1621,13 +1621,13 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="391" parent="288" name="comment_id_id">
+    <column id="391" parent="288" name="comment_id">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="392" parent="288" name="from_id_id">
+    <column id="392" parent="288" name="link_from_id">
       <Position>4</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1639,26 +1639,26 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="394" parent="288" name="to_id_id">
+    <column id="394" parent="288" name="link_to_id">
       <Position>6</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="395" parent="288" name="db_linkcomment_comment_id_id_fd697c48_fk_db_linkcomment_id">
-      <ColNames>comment_id_id</ColNames>
+    <index id="395" parent="288" name="db_linkcomment_comment_id_7589c4ef_fk_db_linkcomment_id">
+      <ColNames>comment_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="396" parent="288" name="db_linkcomment_from_id_id_c0970309_fk_db_linkmember_mid">
-      <ColNames>from_id_id</ColNames>
+    <index id="396" parent="288" name="db_linkcomment_link_from_id_1b58957a_fk_db_linkmember_mid">
+      <ColNames>link_from_id</ColNames>
       <Type>btree</Type>
     </index>
     <index id="397" parent="288" name="db_linkcomment_link_id_id_c225e2e1_fk_db_linktask_lid">
       <ColNames>link_id_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="398" parent="288" name="db_linkcomment_to_id_id_5d817e43_fk_db_linkmember_mid">
-      <ColNames>to_id_id</ColNames>
+    <index id="398" parent="288" name="db_linkcomment_link_to_id_6d84f383_fk_db_linkmember_mid">
+      <ColNames>link_to_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="399" parent="288" name="PRIMARY">
@@ -1666,14 +1666,14 @@ codename</ColNames>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="400" parent="288" name="db_linkcomment_comment_id_id_fd697c48_fk_db_linkcomment_id">
-      <ColNames>comment_id_id</ColNames>
+    <foreign-key id="400" parent="288" name="db_linkcomment_comment_id_7589c4ef_fk_db_linkcomment_id">
+      <ColNames>comment_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_linkcomment</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="401" parent="288" name="db_linkcomment_from_id_id_c0970309_fk_db_linkmember_mid">
-      <ColNames>from_id_id</ColNames>
+    <foreign-key id="401" parent="288" name="db_linkcomment_link_from_id_1b58957a_fk_db_linkmember_mid">
+      <ColNames>link_from_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_linkmember</RefTableName>
       <RefColNames>mid</RefColNames>
@@ -1684,8 +1684,8 @@ codename</ColNames>
       <RefTableName>db_linktask</RefTableName>
       <RefColNames>lid</RefColNames>
     </foreign-key>
-    <foreign-key id="403" parent="288" name="db_linkcomment_to_id_id_5d817e43_fk_db_linkmember_mid">
-      <ColNames>to_id_id</ColNames>
+    <foreign-key id="403" parent="288" name="db_linkcomment_link_to_id_6d84f383_fk_db_linkmember_mid">
+      <ColNames>link_to_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_linkmember</RefTableName>
       <RefColNames>mid</RefColNames>
@@ -1760,24 +1760,24 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="416" parent="290" name="link_id_id">
+    <column id="416" parent="290" name="link_id">
       <Position>4</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="417" parent="290" name="user_id_id">
+    <column id="417" parent="290" name="user_id">
       <Position>5</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="418" parent="290" name="db_linkmember_link_id_id_9372c8ca_fk_db_linktask_lid">
-      <ColNames>link_id_id</ColNames>
+    <index id="418" parent="290" name="db_linkmember_link_id_76bda7a3_fk_db_linktask_lid">
+      <ColNames>link_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="419" parent="290" name="db_linkmember_user_id_id_79d76dfb_fk_db_user_uid">
-      <ColNames>user_id_id</ColNames>
+    <index id="419" parent="290" name="db_linkmember_user_id_e468f371_fk_db_user_uid">
+      <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="420" parent="290" name="PRIMARY">
@@ -1785,14 +1785,14 @@ codename</ColNames>
       <ColNames>mid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="421" parent="290" name="db_linkmember_link_id_id_9372c8ca_fk_db_linktask_lid">
-      <ColNames>link_id_id</ColNames>
+    <foreign-key id="421" parent="290" name="db_linkmember_link_id_76bda7a3_fk_db_linktask_lid">
+      <ColNames>link_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_linktask</RefTableName>
       <RefColNames>lid</RefColNames>
     </foreign-key>
-    <foreign-key id="422" parent="290" name="db_linkmember_user_id_id_79d76dfb_fk_db_user_uid">
-      <ColNames>user_id_id</ColNames>
+    <foreign-key id="422" parent="290" name="db_linkmember_user_id_e468f371_fk_db_user_uid">
+      <ColNames>user_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
@@ -1845,32 +1845,32 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="431" parent="291" name="create_id_id">
+    <column id="431" parent="291" name="create_id">
       <Position>9</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="432" parent="291" name="group_id_id">
+    <column id="432" parent="291" name="group_id">
       <Position>10</Position>
       <DataType>char(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="433" parent="291" name="tag_id_id">
+    <column id="433" parent="291" name="tag_id">
       <Position>11</Position>
       <DataType>char(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="434" parent="291" name="db_linktask_create_id_id_869e6400_fk_db_user_uid">
-      <ColNames>create_id_id</ColNames>
+    <index id="434" parent="291" name="db_linktask_create_id_dd5b6f96_fk_db_user_uid">
+      <ColNames>create_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="435" parent="291" name="db_linktask_group_id_id_9da05bd1_fk_db_group_gid">
-      <ColNames>group_id_id</ColNames>
+    <index id="435" parent="291" name="db_linktask_group_id_110e9a93_fk_db_group_gid">
+      <ColNames>group_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="436" parent="291" name="db_linktask_tag_id_id_be21cb48_fk_db_tag_tid">
-      <ColNames>tag_id_id</ColNames>
+    <index id="436" parent="291" name="db_linktask_tag_id_be9fbaa5_fk_db_tag_tid">
+      <ColNames>tag_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="437" parent="291" name="PRIMARY">
@@ -1878,20 +1878,20 @@ codename</ColNames>
       <ColNames>lid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="438" parent="291" name="db_linktask_create_id_id_869e6400_fk_db_user_uid">
-      <ColNames>create_id_id</ColNames>
+    <foreign-key id="438" parent="291" name="db_linktask_create_id_dd5b6f96_fk_db_user_uid">
+      <ColNames>create_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <foreign-key id="439" parent="291" name="db_linktask_group_id_id_9da05bd1_fk_db_group_gid">
-      <ColNames>group_id_id</ColNames>
+    <foreign-key id="439" parent="291" name="db_linktask_group_id_110e9a93_fk_db_group_gid">
+      <ColNames>group_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_group</RefTableName>
       <RefColNames>gid</RefColNames>
     </foreign-key>
-    <foreign-key id="440" parent="291" name="db_linktask_tag_id_id_be21cb48_fk_db_tag_tid">
-      <ColNames>tag_id_id</ColNames>
+    <foreign-key id="440" parent="291" name="db_linktask_tag_id_be9fbaa5_fk_db_tag_tid">
+      <ColNames>tag_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_tag</RefTableName>
       <RefColNames>tid</RefColNames>
@@ -1956,7 +1956,7 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="452" parent="293" name="receive_push_id">
+    <column id="452" parent="293" name="receive_push">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1986,23 +1986,23 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="457" parent="293" name="receive_id_id">
+    <column id="457" parent="293" name="receive_id">
       <Position>9</Position>
       <DataType>char(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="458" parent="293" name="send_id_id">
+    <column id="458" parent="293" name="send_id">
       <Position>10</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="459" parent="293" name="db_pushhistory_receive_id_id_326efeea_fk_db_user_uid">
-      <ColNames>receive_id_id</ColNames>
+    <index id="459" parent="293" name="db_pushhistory_receive_id_67490e04_fk_db_user_uid">
+      <ColNames>receive_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="460" parent="293" name="db_pushhistory_send_id_id_a79899d8_fk_db_user_uid">
-      <ColNames>send_id_id</ColNames>
+    <index id="460" parent="293" name="db_pushhistory_send_id_c0ef7b57_fk_db_user_uid">
+      <ColNames>send_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="461" parent="293" name="PRIMARY">
@@ -2010,14 +2010,14 @@ codename</ColNames>
       <ColNames>entity</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="462" parent="293" name="db_pushhistory_receive_id_id_326efeea_fk_db_user_uid">
-      <ColNames>receive_id_id</ColNames>
+    <foreign-key id="462" parent="293" name="db_pushhistory_receive_id_67490e04_fk_db_user_uid">
+      <ColNames>receive_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <foreign-key id="463" parent="293" name="db_pushhistory_send_id_id_a79899d8_fk_db_user_uid">
-      <ColNames>send_id_id</ColNames>
+    <foreign-key id="463" parent="293" name="db_pushhistory_send_id_c0ef7b57_fk_db_user_uid">
+      <ColNames>send_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
@@ -2046,23 +2046,23 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="468" parent="294" name="create_id_id">
+    <column id="468" parent="294" name="create_id">
       <Position>5</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="469" parent="294" name="group_id_id">
+    <column id="469" parent="294" name="group_id">
       <Position>6</Position>
       <DataType>char(32)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="470" parent="294" name="db_tag_create_id_id_ac41f27b_fk_db_user_uid">
-      <ColNames>create_id_id</ColNames>
+    <index id="470" parent="294" name="db_tag_create_id_968a573b_fk_db_user_uid">
+      <ColNames>create_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="471" parent="294" name="db_tag_group_id_id_b203e8f4_fk_db_group_gid">
-      <ColNames>group_id_id</ColNames>
+    <index id="471" parent="294" name="db_tag_group_id_84ba7873_fk_db_group_gid">
+      <ColNames>group_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="472" parent="294" name="PRIMARY">
@@ -2070,14 +2070,14 @@ codename</ColNames>
       <ColNames>tid</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="473" parent="294" name="db_tag_create_id_id_ac41f27b_fk_db_user_uid">
-      <ColNames>create_id_id</ColNames>
+    <foreign-key id="473" parent="294" name="db_tag_create_id_968a573b_fk_db_user_uid">
+      <ColNames>create_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
     </foreign-key>
-    <foreign-key id="474" parent="294" name="db_tag_group_id_id_b203e8f4_fk_db_group_gid">
-      <ColNames>group_id_id</ColNames>
+    <foreign-key id="474" parent="294" name="db_tag_group_id_84ba7873_fk_db_group_gid">
+      <ColNames>group_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_group</RefTableName>
       <RefColNames>gid</RefColNames>
@@ -2088,24 +2088,24 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="476" parent="295" name="tag_id_id">
+    <column id="476" parent="295" name="tag_id">
       <Position>2</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="477" parent="295" name="user_id_id">
+    <column id="477" parent="295" name="user_id">
       <Position>3</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="478" parent="295" name="db_tagmember_tag_id_id_63f9a0c4_fk_db_tag_tid">
-      <ColNames>tag_id_id</ColNames>
+    <index id="478" parent="295" name="db_tagmember_tag_id_1fa627a1_fk_db_tag_tid">
+      <ColNames>tag_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="479" parent="295" name="db_tagmember_user_id_id_e8c09c43_fk_db_user_uid">
-      <ColNames>user_id_id</ColNames>
+    <index id="479" parent="295" name="db_tagmember_user_id_9fdb47ae_fk_db_user_uid">
+      <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="480" parent="295" name="PRIMARY">
@@ -2113,14 +2113,14 @@ codename</ColNames>
       <ColNames>tmId</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="481" parent="295" name="db_tagmember_tag_id_id_63f9a0c4_fk_db_tag_tid">
-      <ColNames>tag_id_id</ColNames>
+    <foreign-key id="481" parent="295" name="db_tagmember_tag_id_1fa627a1_fk_db_tag_tid">
+      <ColNames>tag_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_tag</RefTableName>
       <RefColNames>tid</RefColNames>
     </foreign-key>
-    <foreign-key id="482" parent="295" name="db_tagmember_user_id_id_e8c09c43_fk_db_user_uid">
-      <ColNames>user_id_id</ColNames>
+    <foreign-key id="482" parent="295" name="db_tagmember_user_id_9fdb47ae_fk_db_user_uid">
+      <ColNames>user_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>
@@ -2156,7 +2156,7 @@ codename</ColNames>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="488" parent="296" name="user_id_id">
+    <column id="488" parent="296" name="user_id">
       <Position>6</Position>
       <DataType>char(32)|0s</DataType>
       <NotNull>1</NotNull>
@@ -2168,8 +2168,8 @@ end_time</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="490" parent="296" name="db_timeline_user_id_id_0dc8a004_fk_db_user_uid">
-      <ColNames>user_id_id</ColNames>
+    <index id="490" parent="296" name="db_timeline_user_id_d062f217_fk_db_user_uid">
+      <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
     <key id="491" parent="296" name="PRIMARY">
@@ -2182,8 +2182,8 @@ end_time</ColNames>
 end_time</ColNames>
       <UnderlyingIndexName>db_timeline_start_time_end_time_26bfca36_uniq</UnderlyingIndexName>
     </key>
-    <foreign-key id="493" parent="296" name="db_timeline_user_id_id_0dc8a004_fk_db_user_uid">
-      <ColNames>user_id_id</ColNames>
+    <foreign-key id="493" parent="296" name="db_timeline_user_id_d062f217_fk_db_user_uid">
+      <ColNames>user_id</ColNames>
       <RefSchemaName>cattle_im</RefSchemaName>
       <RefTableName>db_user</RefTableName>
       <RefColNames>uid</RefColNames>

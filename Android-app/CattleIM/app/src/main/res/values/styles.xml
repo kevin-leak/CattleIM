@@ -72,6 +72,28 @@
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
     </style>
 
+    <style name="popup_tool" parent="@style/ThemeOverlay.AppCompat.Light">
+        <!--设置不覆盖锚点-->
+        <item name="overlapAnchor">false</item>
+        <item name="android:popupBackground">#e2ffffff</item>
+    </style>
+
+
+    <style name="toolbar_theme" parent="@style/ThemeOverlay.AppCompat.Light">
+        <!--设置toolbar menu icon的颜色-->
+        <item name="colorControlNormal">@color/colorPrimaryDark</item>
+
+    </style>
+
+    <style name="AppTheme.SearchCreator" parent="AppTheme.TransStatusBar">
+        <item name="android:textColorPrimary">@color/textPrimary</item>
+        <item name="android:textColorSecondary">@color/textSecond</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">false</item>
+        <item name="colorPrimaryDark">#000000</item>
+        <item name="isLightTheme">false</item>
+    </style>
+
+
 
 
 </resources>

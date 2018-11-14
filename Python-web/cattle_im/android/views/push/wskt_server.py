@@ -30,7 +30,7 @@ def push_to_all(request):
     ret_ok['message'] = 'ok'
     print(queue)
     for q in queue.values():
-        q.send(json.dumps(ret_ok))
+        q.send(json.dumps(ret_ok, ensure_ascii=False))
     return HttpResponse("ok")
 
 
@@ -49,11 +49,11 @@ def pack_ret(wb_id, message, status=1):
     return pack
 
 
-
 @csrf_exempt
 @accept_websocket
 def wbskt(request):
     if request.session.get("userId", "") == "":
+        print("----->")
         return
     while True:
         if not hasattr(request, 'websocket'):
@@ -61,7 +61,11 @@ def wbskt(request):
         # 处理没有登入的情况
         # if not hasattr(request, "user"):
         #     request.websocket.send(pack_ret())
-        message = request.websocket.wait()
+        try:
+            message = request.websocket.wait()
+        except Exception:
+            return
+
         message_set = eval(message)
         print(message_set)
         user = User.objects.get(uid=request.session["userId"])
@@ -94,7 +98,7 @@ def add_pusher(message, websocket, user):
         print(str(user.profile.push_id))
         queue[message['pushId']] = websocket
         user.profile.is_bind = True
-        print(json.dumps(pack_ret(wb_id=message['pushId'], message='连接成功')))
+        print(json.dumps(pack_ret(wb_id=message['pushId'], message='连接成功'), ensure_ascii=False))
         websocket.send(json.dumps(pack_ret(wb_id=message['pushId'], message='连接成功')))
         # 拉取消息，后期处理redis, 以及mysql，
         if not message_queue.get(message['pushId']):

@@ -9,43 +9,28 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/actionBarWithStatusBarSize"
         android:background="@color/colorWhite"
+        android:layout_height="@dimen/actionBarWithStatusBarSize"
         android:elevation="@dimen/len_2"
         android:outlineProvider="bounds"
         tools:targetApi="lollipop">
 
 
-        <FrameLayout
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb_contact"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/statusBarSize"
-            android:orientation="vertical"
-            android:paddingLeft="@dimen/len_4"
-            android:paddingRight="@dimen/len_4">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="@dimen/len_15"
+            android:minHeight="@dimen/actionBarWithStatusBarSize"
+            android:gravity="center_vertical"
+            app:theme="@style/toolbar_theme"
+            app:popupTheme="@style/popup_tool"
+            app:titleTextColor="@color/colorPrimaryDark"
+            app:title="@string/contact">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="@dimen/len_10"
-                android:scaleType="centerCrop"
-                android:text="@string/contact"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/font_18" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/len_10"
-                android:layout_gravity="right|center_vertical"
-                android:text="@string/add"
-                tools:ignore="RtlHardcoded"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="@dimen/font_16"/>
-
-        </FrameLayout>
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -66,14 +51,22 @@
             android:background="@color/colorWhite"
             android:paddingLeft="@dimen/len_10"
             android:paddingBottom="@dimen/len_10">
-            <android.support.v7.widget.SearchView
-                android:id="@+id/sv_contact"
+            <ImageView
+                android:id="@+id/im_search"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/len_40"
+                android:layout_margin="@dimen/len_4"
+                android:contentDescription="@string/app_name"
+                android:foreground="@drawable/ic_touch_menu"
+                android:padding="@dimen/len_10"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_search"
+                android:tint="?attr/toolbarMenuIconColor"
+                tools:ignore="VectorDrawableCompat"
                 android:paddingRight="@dimen/len_10"
                 android:paddingLeft="@dimen/len_10"
                 android:gravity="center"
-                android:background="@drawable/search"/>
+                android:background="@drawable/shape_search"/>
         </RelativeLayout>
 
 

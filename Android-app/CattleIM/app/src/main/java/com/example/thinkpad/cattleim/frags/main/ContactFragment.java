@@ -1,31 +1,32 @@
 package com.example.thinkpad.cattleim.frags.main;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.SearchView;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 
 import com.example.common.app.BaseFragment;
 import com.example.thinkpad.cattleim.R;
+import com.example.thinkpad.cattleim.activities.SearchActivity;
+import com.example.thinkpad.cattleim.activities.contact.CreateGroupActivity;
+import com.example.thinkpad.cattleim.activities.contact.CreateInfoActivity;
+import com.example.thinkpad.cattleim.activities.contact.CreateTagActivity;
 import com.example.thinkpad.cattleim.frags.main.contact.DataBaseFragment;
 import com.example.thinkpad.cattleim.frags.main.contact.GroupFragment;
 import com.example.thinkpad.cattleim.frags.main.contact.TagFragment;
 import com.example.thinkpad.cattleim.helper.NavHelper;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
+import butterknife.OnClick;
 
 public class ContactFragment extends BaseFragment implements
         BottomNavigationView.OnNavigationItemSelectedListener,
@@ -36,11 +37,10 @@ public class ContactFragment extends BaseFragment implements
     AppBarLayout appbar;
     @BindView(R.id.bnv_contactNav)
     BottomNavigationView bnvContactNav;
-    @BindView(R.id.sv_contact)
-    SearchView svContact;
     @BindView(R.id.contact_container)
     FrameLayout contactContainer;
-    Unbinder unbinder;
+    @BindView(R.id.tb_contact)
+    Toolbar tbContact;
     private FragmentActivity mActivity;
     private NavHelper mHelper;
 
@@ -69,20 +69,22 @@ public class ContactFragment extends BaseFragment implements
     protected void initWidgets(View root) {
         super.initWidgets(root);
 
-
-        changeSearchTextColor();
+        setHasOptionsMenu(true);
+        ((AppCompatActivity) getActivity()).setSupportActionBar(tbContact);
 
         // 设置底边ico显示自己的颜色
         bnvContactNav.setItemIconTintList(null);
         bindFragment();
+
+
     }
 
-    /**
-     * 修改输入框的文字颜色     */
-    private void changeSearchTextColor() {
-        SearchView.SearchAutoComplete textView = svContact.findViewById(R.id.search_src_text);
-        textView.setTextColor(Color.parseColor("#000000"));
+    @OnClick(R.id.im_search)
+    void onClickSearch() {
+        SearchActivity.show(getActivity(), SearchActivity.CONTACT_TYPE);
     }
+
+
 
     /**
      * fragment 与tab相互绑定
@@ -108,4 +110,32 @@ public class ContactFragment extends BaseFragment implements
 
     }
 
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.contact_action, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.find_some:
+                SearchActivity.show(getActivity(), SearchActivity.CONTACT_TYPE);
+                break;
+            case R.id.add_group:
+                // todo
+                CreateGroupActivity.show(getActivity());
+                break;
+            case R.id.add_tag:
+                // todo 后期修改
+                CreateTagActivity.show(getActivity());
+                break;
+            case R.id.add_info:
+                // todo 后期修改
+                CreateInfoActivity.show(getActivity());
+                break;
+        }
+
+        return true;
+    }
 }

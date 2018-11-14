@@ -1,10 +1,11 @@
 package com.example.netKit.net.push;
 
 import com.example.netKit.NetKit;
+import com.example.netKit.persistence.Account;
 
 public interface PushContract {
 
-    PushPieces<String> connectPieces = new PushPieces<String>(1, "", "");
+    PushPieces<String> connectPieces = new PushPieces<String>(1, Account.getPushId(), "");
 
     String connectMessage = NetKit.getGson().toJson(connectPieces);
 

@@ -1,26 +1,31 @@
+import json
 import time
 from datetime import date
+from functools import wraps
 
 common = {
     "status": 0,
     "result": [],
-    "message": "",
+    "message": "ok",
     "date": time.strftime("%Y-%m-%dT%H:%M:%S", time.localtime())
 }
 
 account = {
     "user": {
         "id": "",
-        "username": "name",
-        "phone": "188707421",
-        "avatar": "media/avatars/android/xx.jpg",
+        "username": "",
+        "phone": "",
+        "avatar": "",
         "desc": "",
         "sex": 0,
-        "alias": "备注",
+        "alias": "",
         "friends": 0,
         "isFriend": True,
-        "modifyAt": "2018/12/15"
+        "modifyAt": ""
     },
     "account": "",
     "isBind": False
 }
+
+
+

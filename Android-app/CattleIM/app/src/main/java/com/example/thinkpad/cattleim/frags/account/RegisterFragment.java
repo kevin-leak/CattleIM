@@ -120,7 +120,6 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
         if (dialog != null){
             dialog.cancel();
         }
-
     }
 
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +22,7 @@ import butterknife.Unbinder;
  * 处理一个root复用问题
  * 处理fragment返回问题
  */
-public abstract class BaseFragment extends android.support.v4.app.Fragment {
+public abstract class BaseFragment extends Fragment {
 
     private View mRoot;
     private Unbinder unbinder;
@@ -81,6 +82,7 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment {
      * 返回False代表我没有处理逻辑，Activity自己走自己的逻辑
      */
     public boolean onBackPressed() {
+
         return false;
     }
 

@@ -5,8 +5,9 @@
     <color name="black_edit">#302E2A</color>
     <color name="colorWhiteDark">#F6F6F6</color>
     <color name="stepDialogBack">#90010c13</color>
-    <color name="searchBack">#edf1f1f1</color>
+    <color name="searchBack">#edf5f5f5</color>
     <color name="add_curtain">#d2ffffff</color>
     <color name="black">#000000</color>
     <color name="title_bar" >#e4000000</color>
+    <color name="color_search_icon">#c4000000</color>
 </resources>

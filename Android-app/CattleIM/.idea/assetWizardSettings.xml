@@ -28,8 +28,9 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_back" />
-                            <entry key="sourceFile" value="D:\google_downlaod\水滴.svg" />
+                            <entry key="assetSourceType" value="FILE" />
+                            <entry key="outputName" value="ic_cancel_input" />
+                            <entry key="sourceFile" value="D:\google_downlaod\ic_cancel_input.svg" />
                           </map>
                         </option>
                       </PersistentState>

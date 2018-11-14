@@ -6,6 +6,7 @@ import android.support.annotation.RequiresApi;
 import android.view.View;
 
 import com.example.common.app.BaseActivity;
+import com.example.common.widget.ToolbarActivity;
 import com.example.thinkpad.cattleim.R;
 
 import butterknife.OnClick;

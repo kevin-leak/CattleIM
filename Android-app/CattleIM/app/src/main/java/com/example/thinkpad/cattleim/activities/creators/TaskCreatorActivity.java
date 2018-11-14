@@ -6,6 +6,7 @@ import android.support.annotation.RequiresApi;
 import android.view.View;
 
 import com.example.common.app.BaseActivity;
+import com.example.common.widget.ToolbarActivity;
 import com.example.thinkpad.cattleim.R;
 import com.example.thinkpad.cattleim.frags.main.BusinessFragment;
 import com.example.thinkpad.cattleim.frags.main.TodoFragment;
@@ -14,7 +15,7 @@ import com.example.thinkpad.cattleim.helper.NavHelper;
 import butterknife.OnClick;
 
 @SuppressLint("Registered")
-public class TaskCreatorActivity extends BaseActivity {
+public class TaskCreatorActivity extends BaseActivity{
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)

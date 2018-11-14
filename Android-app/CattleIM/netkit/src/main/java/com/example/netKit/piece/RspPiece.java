@@ -35,8 +35,10 @@ public class RspPiece<T> {
     public static final int ERROR_REPEAT_LOGIN = 11000;					    // # 重复登入
     public static final int ERROR_NET = 11001;								// # 网络错误
     public static final int FORMAT_ERROR_AVATAR = 8006;						// # 头像数据破损
+    public static final int NULL_DATA = 6005;
+    public static final int EXIST_FRIENDS = 12000;                          // 好友关系已经存在
 
-    public boolean success() {
+    public boolean isSuccess() {
         return status == SUCCEED;
     }
     public T getResult() {
