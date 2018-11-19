@@ -29,8 +29,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_cancel_input" />
-                            <entry key="sourceFile" value="D:\google_downlaod\ic_cancel_input.svg" />
+                            <entry key="outputName" value="ic_send_message" />
+                            <entry key="sourceFile" value="D:\google_downlaod\send-message-1.svg" />
                           </map>
                         </option>
                       </PersistentState>

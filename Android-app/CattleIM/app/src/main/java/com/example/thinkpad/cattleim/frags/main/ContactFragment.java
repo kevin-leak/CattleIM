@@ -7,11 +7,14 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.example.common.app.BaseFragment;
@@ -26,7 +29,9 @@ import com.example.thinkpad.cattleim.frags.main.contact.TagFragment;
 import com.example.thinkpad.cattleim.helper.NavHelper;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 public class ContactFragment extends BaseFragment implements
         BottomNavigationView.OnNavigationItemSelectedListener,
@@ -41,6 +46,7 @@ public class ContactFragment extends BaseFragment implements
     FrameLayout contactContainer;
     @BindView(R.id.tb_contact)
     Toolbar tbContact;
+    Unbinder unbinder;
     private FragmentActivity mActivity;
     private NavHelper mHelper;
 
@@ -62,7 +68,6 @@ public class ContactFragment extends BaseFragment implements
         Menu menu = bnvContactNav.getMenu();
         // 触发首次选中Home
         menu.performIdentifierAction(R.id.group, 0);
-
     }
 
     @Override
@@ -76,14 +81,12 @@ public class ContactFragment extends BaseFragment implements
         bnvContactNav.setItemIconTintList(null);
         bindFragment();
 
-
     }
 
     @OnClick(R.id.im_search)
     void onClickSearch() {
         SearchActivity.show(getActivity(), SearchActivity.CONTACT_TYPE);
     }
-
 
 
     /**
@@ -137,5 +140,19 @@ public class ContactFragment extends BaseFragment implements
         }
 
         return true;
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder = ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 }

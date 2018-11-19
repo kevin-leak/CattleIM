@@ -15,7 +15,7 @@ import com.example.netKit.piece.account.LoginPiece;
  * DataSource 实现了presenter 与 Helper之间的监听通信，
  * Helper是实现数据本地化和数据网络请求的类， presenter是实现Helper与View时间的关系，
  * Helper大大分担了presenter的逻辑
- * BasePresenter 实现了所有的  presenter 的实例化，以及向view与presenter的传递
+ * BasePresenterFragment 实现了所有的  presenter 的实例化，以及向view与presenter的传递
  */
 public class LoginPresenter extends BasePresenter<LoginContract.View>
         implements LoginContract.Presenter, DataSource.Callback<User> {

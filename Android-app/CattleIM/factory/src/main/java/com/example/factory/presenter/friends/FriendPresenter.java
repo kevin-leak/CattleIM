@@ -1,11 +1,10 @@
 package com.example.factory.presenter.friends;
 
-import android.support.annotation.Nullable;
-
+import com.example.common.app.Application;
 import com.example.common.factory.data.DataSource;
-import com.example.factory.R;
 import com.example.factory.presenter.BasePresenter;
 import com.example.factory.presenter.user.UserHelper;
+import com.example.netKit.model.AccountModel;
 import com.example.netKit.model.UserModel;
 
 public class FriendPresenter extends BasePresenter<FriendContract.View>
@@ -15,16 +14,16 @@ public class FriendPresenter extends BasePresenter<FriendContract.View>
     public FriendPresenter(FriendContract.View viewHolder) {
         super(viewHolder);
 
-
     }
 
     @Override
-    public void onDataLoaded(UserModel userModel) {
+    public void onDataLoaded(UserModel accountModel) {
 
     }
 
     @Override
     public void onDataNotAvailable(int strRes) {
+        Application.showToast(getView().getActivity(), strRes);
         getView().showError(strRes);
     }
 

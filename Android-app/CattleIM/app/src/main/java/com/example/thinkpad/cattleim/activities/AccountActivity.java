@@ -2,11 +2,9 @@ package com.example.thinkpad.cattleim.activities;
 
 import android.animation.ValueAnimator;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
@@ -20,18 +18,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.common.app.Application;
 import com.example.common.app.BaseActivity;
 import com.example.common.app.BaseFragment;
 import com.example.common.tools.UITools;
 import com.example.thinkpad.cattleim.R;
-import com.example.thinkpad.cattleim.frags.account.LoginFragment;
-import com.example.thinkpad.cattleim.frags.account.RegisterFragment;
-import com.example.thinkpad.cattleim.frags.media.GalleryFragment;
+import com.example.thinkpad.cattleim.frags.account.Login;
+import com.example.thinkpad.cattleim.frags.account.Register;
 import com.example.thinkpad.cattleim.helper.ViewPageHelper;
 import com.yalantis.ucrop.UCrop;
 
-import java.io.File;
 import java.util.List;
 import java.util.Objects;
 
@@ -86,7 +81,7 @@ public class AccountActivity extends BaseActivity
         currentFragment = helper.getCurrent();
         Log.e(TAG, "onAvatarView: sdafg" );
         if (Objects.nonNull(currentFragment)){
-            ((RegisterFragment) currentFragment).getAvatar();
+            ((Register) currentFragment).getAvatar();
         }
 
     }
@@ -100,11 +95,11 @@ public class AccountActivity extends BaseActivity
 
         currentFragment = helper.getCurrent();
         if (Objects.isNull(currentFragment)) {
-        } else if (currentFragment instanceof LoginFragment) {
-            ((LoginFragment) currentFragment).login();
-        } else if (helper.getCurrent() instanceof RegisterFragment) {
+        } else if (currentFragment instanceof Login) {
+            ((Login) currentFragment).login();
+        } else if (helper.getCurrent() instanceof Register) {
             String username = etUserName.getText().toString();
-            ((RegisterFragment) currentFragment).register(mAvatarPath, username);
+            ((Register) currentFragment).register(mAvatarPath, username);
         }
     }
 
@@ -114,8 +109,8 @@ public class AccountActivity extends BaseActivity
     @RequiresApi(api = Build.VERSION_CODES.N)
     private void startPager() {
         helper = new ViewPageHelper<>(pagerContainer, this, this);
-        helper.addItem(navigationList.get(0), new LoginFragment())
-                .addItem(navigationList.get(1), new RegisterFragment());
+        helper.addItem(navigationList.get(0), new Login())
+                .addItem(navigationList.get(1), new Register());
     }
 
     @Override
@@ -135,7 +130,7 @@ public class AccountActivity extends BaseActivity
     @Override
     public void onChangedFragment(Object currentFragment) {
 
-        if (currentFragment instanceof RegisterFragment) {
+        if (currentFragment instanceof Register) {
             profileAvatar.setVisibility(View.VISIBLE);
             setAvatarAnimator();
             etUserName.setVisibility(View.VISIBLE);

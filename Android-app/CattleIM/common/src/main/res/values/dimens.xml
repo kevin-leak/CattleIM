@@ -39,5 +39,6 @@
     <dimen name="portraitSize">@dimen/len_40</dimen>
     <dimen name="len_1">1dp</dimen>
     <dimen name="len_220">220dp</dimen>
+    <dimen name="len_48">48dp</dimen>
 
 </resources>

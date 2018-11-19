@@ -6,11 +6,13 @@ import android.util.Log;
 import com.example.common.factory.data.DataSource;
 import com.example.factory.R;
 import com.example.netKit.NetKit;
+import com.example.netKit.db.User;
 import com.example.netKit.model.UserModel;
 import com.example.netKit.net.CattleNetWorker;
 import com.example.netKit.net.NetInterface;
 import com.example.netKit.piece.RspPiece;
 
+import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
@@ -23,6 +25,7 @@ import static android.content.ContentValues.TAG;
  * 用来处理用户的信息的更新
  */
 public class UserHelper {
+
 
 
     /**
@@ -72,16 +75,13 @@ public class UserHelper {
         NetInterface connect = CattleNetWorker.getConnect();
 
         Call<RspPiece<UserModel>> relation = connect.createRelation(id);
+
         relation.enqueue(new Callback<RspPiece<UserModel>>() {
             @Override
             public void onResponse(Call<RspPiece<UserModel>> call, Response<RspPiece<UserModel>> response) {
                 // todo 调用本地数据库进行储存，同时通知联系人页面，进行页面的更新
                 // 暂时先不处理
                 RspPiece<UserModel> rspPiece = response.body();
-                if (rspPiece == null){
-                    callback.onDataNotAvailable(R.string.data_network_error);
-                    return;
-                }
 
                 if (rspPiece.isSuccess())
                     callback.onDataLoaded(rspPiece.getResult());
@@ -92,8 +92,37 @@ public class UserHelper {
 
             @Override
             public void onFailure(Call<RspPiece<UserModel>> call, Throwable t) {
+                Log.e("createRelation", "onFailure: " + "sadfkjasl;k" );
                 callback.onDataNotAvailable(R.string.data_network_error);
             }
         });
+    }
+
+
+    public static User getInfo(String userId) {
+        User user = getFromNet(userId);
+        if (user == null){
+            // 从数据库中取出
+        }
+        return user;
+    }
+
+    private static User getFromNet(final String userId) {
+
+        User user = null;
+
+        try {
+            Call<RspPiece<UserModel>> userInfo = CattleNetWorker.getConnect().getUserInfo(userId);
+            Response<RspPiece<UserModel>> execute = userInfo.execute();
+            RspPiece<UserModel> body = execute.body();
+            if (body != null){
+                UserModel userModel = body.getResult();
+                user = userModel.Build();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return user;
     }
 }

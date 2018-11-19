@@ -4,20 +4,17 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.graphics.Color;
 import android.os.Build;
-import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.common.app.Application;
 import com.example.common.widget.AvatarView;
 import com.example.common.widget.recycler.Decoration;
 import com.example.common.widget.recycler.RecyclerAdapter;
@@ -34,10 +31,7 @@ import com.example.thinkpad.cattleim.activities.SearchActivity;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 public class SearchUserFragment extends BasePresenterFragment<SearchContract.Presenter>
         implements SearchActivity.SearchFragment, SearchContract.UserView {
@@ -99,12 +93,12 @@ public class SearchUserFragment extends BasePresenterFragment<SearchContract.Pre
     }
 
     @Override
-    public void onSearchDone(List<UserModel> userCards) {
+    public void onSearchDone(List<UserModel> userModel) {
         dialog.cancel();
         Log.e(TAG, "onSearchDone: " + "====>>>");
 
         // 数据成功的情况下返回数据
-        mAdapter.replace(userCards);
+        mAdapter.replace(userModel);
     }
 
     @Override
@@ -153,16 +147,8 @@ public class SearchUserFragment extends BasePresenterFragment<SearchContract.Pre
         @Override
         protected void onBind(UserModel userModel) {
             this.userModel = userModel;
-            mName.setText(userModel.getUser().getUsername());
-            civAvatar.setup(Glide.with(SearchUserFragment.this), userModel.getUser());
-            if (!userModel.getUser().isFriend()){
-                //todo 服务器必须筛选，当前用户已经通过了对方验证的用户
-                btnAdd.setBackgroundColor(Color.TRANSPARENT);
-                btnAdd.setTextColor(Color.GRAY);
-                btnAdd.setText("等待验证");
-                btnAdd.setClickable(false);
-            }
-            Log.e(TAG, "onBind: " + userModel.getUser().getUsername() );
+            mName.setText(userModel.getUsername());
+            civAvatar.setup(Glide.with(SearchUserFragment.this), userModel);
         }
 
         /**
@@ -177,6 +163,7 @@ public class SearchUserFragment extends BasePresenterFragment<SearchContract.Pre
             btnAdd.setTextColor(Color.WHITE);
             btnAdd.setText("添加");
             btnAdd.setClickable(true);
+
         }
 
         @OnClick(R.id.btn_add)
@@ -185,12 +172,12 @@ public class SearchUserFragment extends BasePresenterFragment<SearchContract.Pre
             btnAdd.setTextColor(Color.GRAY);
             btnAdd.setText("等待验证");
             btnAdd.setClickable(false);
-            present.addFriend(userModel.getUser().getId());
+            present.addFriend(userModel.getId());
         }
 
         @OnClick(R.id.civ_avatar)
         void showDetails(){
-            PersonActivity.show(getActivity(), userModel.getUser().getId());
+            PersonActivity.show(getActivity(), userModel.getId());
         }
 
 
@@ -225,5 +212,6 @@ public class SearchUserFragment extends BasePresenterFragment<SearchContract.Pre
             btnAdd.setText("通过验证");
             btnAdd.setClickable(false);
         }
+
     }
 }

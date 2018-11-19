@@ -10,4 +10,5 @@
     <color name="black">#000000</color>
     <color name="title_bar" >#e4000000</color>
     <color name="color_search_icon">#c4000000</color>
+    <color name="grey_300">#eeeeee</color>
 </resources>

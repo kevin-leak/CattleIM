@@ -19,17 +19,17 @@ def create(request, uid):
     :param uid: 好友的id
     :return:
     """
-
     if request.session.get("userId", "") == "":
         return error_response.session_error()
     holder_id = request.session["userId"]
+    print(holder_id)
     is_exists = Friends.objects.filter(origin_id=holder_id, target_id=uid).exists()
     if is_exists:
         ret = error_response.base_error(response_code.EXIST_FRIENDS)
     else:
         ret = friends_creator.relation(holder_id, uid)
-    print(ret)
-    return HttpResponse(json.dumps(ret, ensure_ascii=False))
+    print(json.dumps(ret))
+    return HttpResponse(json.dumps(ret))
 
 
 @login_required

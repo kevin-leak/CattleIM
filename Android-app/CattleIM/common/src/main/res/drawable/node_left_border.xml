@@ -7,7 +7,7 @@
 
     <item android:right="@dimen/len_2" android:gravity="center_horizontal">
         <shape >
-            <solid android:color="@color/windowsBackground" />
+            <solid android:color="#FAFAFA" />
         </shape>
     </item>
 

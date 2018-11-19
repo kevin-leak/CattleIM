@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/len_40"
+        android:layout_marginTop="@dimen/statusBarSize"
+        android:background="@null"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/im_header" />
+
+    <ImageView
+        android:id="@+id/im_header"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/len_23"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/person_bg"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="@dimen/font_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/im_portrait" />
+
+    <com.example.common.widget.AvatarView
+        android:id="@+id/im_portrait"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="@dimen/len_20"
+        android:src="@mipmap/default_avatar"
+        app:civ_border_color="@color/colorWhite"
+        app:civ_border_width="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:ignore="MissingConstraints" />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_follow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        app:fabCustomSize="46dp"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_follow"
+        app:backgroundTint="@color/colorEggBlue"
+        app:borderWidth="0dp"
+        app:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="#33728dff"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/txt_desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/len_16"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/textPrimary"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline1"
+        android:text="Hugh Michael Jackman is an Australian actor, singer and producer. Jackman has won international recognition for his roles in variety of film genres."
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_send_message"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/len_28"
+        android:layout_marginBottom="@dimen/len_16"
+        android:background="@drawable/sel_btn_bg_accent_44"
+        android:gravity="center"
+        android:minWidth="@dimen/len_156"
+        android:text="@string/btn_send_start"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:visibility="visible" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="265dp"/>
+
+</android.support.constraint.ConstraintLayout>

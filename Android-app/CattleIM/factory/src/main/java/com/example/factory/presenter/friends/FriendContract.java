@@ -6,6 +6,7 @@ public interface FriendContract {
 
     interface View extends BaseContract.View<Present> {
 
+        // 发送提添加好友的成功
         void sendSuccess();
 
     }
@@ -14,5 +15,6 @@ public interface FriendContract {
     interface Present extends BaseContract.Presenter {
 
         void addFriend(String id);
+
     }
 }

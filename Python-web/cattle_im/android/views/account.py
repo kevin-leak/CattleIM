@@ -10,7 +10,7 @@ from django.shortcuts import render
 from django.views.decorators.http import require_POST
 from pymysql import Date
 
-from android.api.factory.user_card import account_creator
+from android.api.factory.user_card import account
 from android.contract import response_code
 from android.contract.request_interface import common, account
 
@@ -30,6 +30,7 @@ def login(request):
     ret_info = common
     result = account
 
+    print(info)
     if info['password'].strip() == '':
         ret_info['status'] = response_code.NULL_PASSWORD
     elif len(info['password']) < 6 or len(info['password']) > 16:
@@ -69,6 +70,7 @@ def login(request):
                 ret_info['status'] = response_code.ERROR_PASSWORD
         else:
             ret_info['status'] = response_code.NULL_USER
+            print(ret_info)
             return HttpResponse(json.dumps(ret_info))
     return HttpResponse(json.dumps(ret_info, ensure_ascii=False))
 
@@ -140,6 +142,7 @@ def register(request):
         request.session["userId"] = str(user.uid)
         auth.authenticate(request, username=user.username, password=user.username)
         auth.login(request, user)
+    print(ret_info)
     return HttpResponse(json.dumps(ret_info, ensure_ascii=False))
 
 

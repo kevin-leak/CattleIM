@@ -13,7 +13,7 @@ import com.example.netKit.net.CattleNetWorker;
 import com.example.netKit.net.push.PushService;
 import com.example.netKit.persistence.Account;
 import com.example.netKit.piece.RspPiece;
-import com.example.netKit.model.UserModel;
+import com.example.netKit.model.AccountModel;
 import com.example.netKit.piece.account.LoginPiece;
 import com.example.netKit.piece.account.RegisterPiece;
 
@@ -38,7 +38,7 @@ public class AccountHelper {
      */
     public static void register(RegisterPiece piece, DataSource.Callback<User> callback) {
         NetInterface connect = CattleNetWorker.getConnect();
-        Call<RspPiece<UserModel>> task = connect.register(piece);
+        Call<RspPiece<AccountModel>> task = connect.register(piece);
         task.enqueue(new AccountCallback(callback));
     }
 
@@ -48,7 +48,7 @@ public class AccountHelper {
      */
     public static void login(LoginPiece piece, DataSource.Callback<User> callback) {
         NetInterface connect = CattleNetWorker.getConnect();
-        Call<RspPiece<UserModel>> task = connect.login(piece);
+        Call<RspPiece<AccountModel>> task = connect.login(piece);
         task.enqueue(new AccountCallback(callback));
     }
 
@@ -56,7 +56,7 @@ public class AccountHelper {
     /**
      * 继承retrofit类的回调接口，统一实现对登入注册的处理并将信息通过全局的DataSource进行一个监听回调
      */
-    private static class AccountCallback implements Callback<RspPiece<UserModel>> {
+    private static class AccountCallback implements Callback<RspPiece<AccountModel>> {
 
         private DataSource.Callback<User> callback;
 
@@ -67,7 +67,7 @@ public class AccountHelper {
 
         @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
-        public void onResponse(Call<RspPiece<UserModel>> call, Response<RspPiece<UserModel>> response) {
+        public void onResponse(Call<RspPiece<AccountModel>> call, Response<RspPiece<AccountModel>> response) {
             /*
              * 1. 进行数据的本地化处理
              * 2. 进行一个全局的通知回调
@@ -77,12 +77,10 @@ public class AccountHelper {
 
 
 
-            RspPiece<UserModel> rspPiece = response.body();
+            RspPiece<AccountModel> rspPiece = response.body();
             Log.e(TAG, "onResponse" );
-            if (rspPiece == null) {
-                callback.onDataNotAvailable(R.string.data_network_error);
-            }else if (rspPiece.isSuccess()) {
-                UserModel accountPiece = rspPiece.getResult();
+            if (rspPiece.isSuccess()) {
+                AccountModel accountPiece = rspPiece.getResult();
                 User user = accountPiece.getUser();
 //                DbHelper.save(User.class, user);
                 user.save();
@@ -100,8 +98,8 @@ public class AccountHelper {
         }
 
         @Override
-        public void onFailure(Call<RspPiece<UserModel>> call, Throwable t) {
-            Log.e(TAG, "onFailure: kkkk");
+        public void onFailure(Call<RspPiece<AccountModel>> call, Throwable t) {
+            Log.e(TAG, "onFailure: kkkk" );
             // 网络请求失败
             if (callback != null)
                 callback.onDataNotAvailable(R.string.data_network_error);

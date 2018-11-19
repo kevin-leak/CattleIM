@@ -104,7 +104,13 @@
 
         <!--好友的个人页面展示-->
 
-        <activity android:name=".activities.PersonActivity"/>
+        <activity android:name=".activities.PersonActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransStatusBar" />
+
+        <activity android:name=".activities.MessageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransStatusBar"/>
 
     </application>
 

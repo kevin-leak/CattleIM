@@ -27,5 +27,15 @@ account = {
     "isBind": False
 }
 
-
-
+user = {
+    "id": "",
+    "username": "",
+    "phone": "",
+    "avatar": "",
+    "desc": "",
+    "sex": 0,
+    "alias": "",
+    "friends": 0,
+    "isFriend": True,
+    "modifyAt": ""
+}

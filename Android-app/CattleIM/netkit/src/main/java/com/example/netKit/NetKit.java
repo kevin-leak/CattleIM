@@ -106,6 +106,8 @@ public class NetKit {
                 break;
             case RspPiece.SAME_USERNAME:
                 decodeRep(R.string.same_username, callback);
+            case RspPiece.NULL_USER:
+                decodeRep(R.string.null_user, callback);
                 break;
             case RspPiece.NULL_DATA:
                 decodeRep(R.string.NULL_DATA, callback);

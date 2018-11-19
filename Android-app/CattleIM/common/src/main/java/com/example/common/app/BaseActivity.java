@@ -39,11 +39,21 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (initArgs(getIntent().getExtras())) {
             int contentLayoutId = getContentLayoutId();
             setContentView(contentLayoutId);
+            initBefore();
             initWidget();
             initData();
         } else {
             finish();
         }
+
+    }
+
+
+    /**
+     *在初始化控件之前的操作
+     */
+    protected void initBefore() {
+
 
     }
 

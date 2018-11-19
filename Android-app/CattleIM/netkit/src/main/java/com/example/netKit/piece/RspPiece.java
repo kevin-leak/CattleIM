@@ -11,10 +11,9 @@ public class RspPiece<T> {
     /**
      * status : 1
      * message :
-     * data :
+     * date :
      *
      */
-
 
     private T result;
     public final static int SUCCEED = 1;
@@ -36,6 +35,7 @@ public class RspPiece<T> {
     public static final int ERROR_NET = 11001;								// # 网络错误
     public static final int FORMAT_ERROR_AVATAR = 8006;						// # 头像数据破损
     public static final int NULL_DATA = 6005;
+    public static final int NULL_USER = 6004;                               // 用户不存在
     public static final int EXIST_FRIENDS = 12000;                          // 好友关系已经存在
 
     public boolean isSuccess() {
@@ -67,5 +67,15 @@ public class RspPiece<T> {
 
     public void setData(Date data) {
         this.date = data;
+    }
+
+    @Override
+    public String toString() {
+        return "RspPiece{" +
+                "result=" + result.toString() +
+                ", status=" + status +
+                ", message='" + message + '\'' +
+                ", date=" + date +
+                '}';
     }
 }

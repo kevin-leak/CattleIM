@@ -9,10 +9,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.example.common.app.BaseActivity;
 import com.example.common.widget.ViewPager.ViewPageAdapter;
 import com.example.thinkpad.cattleim.R;
-import com.example.thinkpad.cattleim.frags.account.RegisterFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;

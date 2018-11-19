@@ -6,6 +6,7 @@ import com.example.common.factory.data.DataSource;
 import com.example.factory.contract.search.SearchContract;
 import com.example.factory.presenter.BasePresenter;
 import com.example.factory.presenter.user.UserHelper;
+import com.example.netKit.model.AccountModel;
 import com.example.netKit.model.UserModel;
 
 import java.util.List;
@@ -40,12 +41,10 @@ public class SearchUserPresenter extends BasePresenter<SearchContract.UserView>
     public void onDataLoaded(final List<UserModel> userModels) {
         final SearchContract.UserView view = getView();
 
-
         if (view != null){
             view.getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Log.e(TAG, "onDataLoaded: " + "--------------");
                     view.onSearchDone(userModels);
                 }
             });

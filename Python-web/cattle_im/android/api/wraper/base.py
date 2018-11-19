@@ -4,8 +4,7 @@ import time
 from android.api.factory import user_card
 from datetime import date
 
-from android.contract import response_code
-from android.contract.request_interface import common, account
+from android.contract import response_code, request_interface
 from functools import wraps
 import json
 
@@ -45,7 +44,7 @@ def base_contract(contract=None):
     :return: 返回加工过的数据
     """
     if contract is None:
-        contract = common
+        contract = request_interface.common
 
     def outer(func):
         @wraps(func)
@@ -62,7 +61,7 @@ def base_contract(contract=None):
     return outer
 
 
-def user_creator(holder_id, current_id):
+def account_creator(holder_id, current_id):
     """
     则获取 current_id ，自身的信息，以及与holder_id的关系
 
@@ -72,7 +71,7 @@ def user_creator(holder_id, current_id):
     :return: 返回一个规定的接口集合类型
     """
 
-    ret = copy.deepcopy(account)
+    ret = copy.deepcopy(request_interface.account)
 
     user = User.objects.get(uid=current_id)
     if user:
@@ -92,6 +91,37 @@ def user_creator(holder_id, current_id):
         ret["isBind"] = user.profile.is_bind
 
     if holder_id == current_id:
+        ret["user"]['isFriend'] = True
+    else:
+        target = User.objects.get(uid=holder_id)
+        if target:
+            friends = Friends.objects.filter(origin=user, target=target).first()
+            if friends:
+                ret["user"]["isFriend"] = True
+                ret["user"]["alias"] = friends.alias
+    return ret
+
+
+def user_creator(holder_id, current_id):
+
+    ret = copy.deepcopy(request_interface.user)
+
+    user = User.objects.get(uid=current_id)
+    if user:
+        ret["id"] = str(user.uid)
+        ret["username"] = user.username
+        ret["phone"] = user.phone
+        ret["avatar"] = str(user.avatar)
+        ret['modifyAt'] = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time()))
+        # 当前用户自己的好友， 别人添加的，不一定是自己的好友，可能是单向的
+        ret['friends'] = Friends.objects.filter(origin=user).count()
+
+    if user.profile is not None:
+        if user.profile.desc:
+            ret["desc"] = user.profile.desc
+        ret["sex"] = user.profile.sex
+
+    if holder_id == current_id:
         ret['isFriend'] = True
     else:
         target = User.objects.get(uid=holder_id)
@@ -99,7 +129,12 @@ def user_creator(holder_id, current_id):
             friends = Friends.objects.filter(origin=user, target=target).first()
             if friends:
                 ret["isFriend"] = True
-                ret["user"]["alias"] = friends.alias
+                ret["alias"] = friends.alias
+            else:
+                ret["isFriend"] = False
+                ret["alias"] = ""
+        else:
+            ret["isFriend"] = False
+            ret["alias"] = ""
+
     return ret
-
-

@@ -1,6 +1,7 @@
 package com.example.factory.contract.search;
 
 import com.example.factory.contract.BaseContract;
+import com.example.netKit.model.AccountModel;
 import com.example.netKit.model.UserModel;
 
 import java.util.List;

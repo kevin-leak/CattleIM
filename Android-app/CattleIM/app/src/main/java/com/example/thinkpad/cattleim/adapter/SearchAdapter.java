@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.common.app.BaseActivity;
 import com.example.common.tools.DrawChangeColor;
 import com.example.thinkpad.cattleim.R;
 import com.example.thinkpad.cattleim.activities.SearchActivity;
