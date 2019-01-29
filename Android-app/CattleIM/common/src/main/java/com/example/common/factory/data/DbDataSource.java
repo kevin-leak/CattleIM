@@ -16,3 +16,4 @@ public interface DbDataSource<Data> extends DataSource {
     void load(SucceedCallback<List<Data>> callback);
 
 }
+

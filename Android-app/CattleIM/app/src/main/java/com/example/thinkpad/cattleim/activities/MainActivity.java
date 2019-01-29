@@ -90,8 +90,6 @@ public class MainActivity extends BaseActivity implements
     @Override
     protected void initWindows() {
         super.initWindows();
-
-        initPermission();
     }
 
     @Override
@@ -241,82 +239,4 @@ public class MainActivity extends BaseActivity implements
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    private void initPermission() {
-        String permissions[] = {
-                Manifest.permission.RECORD_AUDIO,
-                Manifest.permission.READ_PHONE_STATE,
-                Manifest.permission.ACCESS_NETWORK_STATE,
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.MODIFY_AUDIO_SETTINGS,
-                Manifest.permission.ACCESS_WIFI_STATE,
-                Manifest.permission.WAKE_LOCK,
-                Manifest.permission.CAMERA,
-                Manifest.permission.RECEIVE_BOOT_COMPLETED,
-                Manifest.permission.SYSTEM_ALERT_WINDOW,
-                Manifest.permission.RECEIVE_BOOT_COMPLETED
-        };
-
-        ArrayList<String> toApplyList = new ArrayList<String>();
-
-        for (String perm : permissions) {
-            if (PackageManager.PERMISSION_GRANTED != ContextCompat.checkSelfPermission(this, perm)) {
-                toApplyList.add(perm);
-                //进入到这里代表没有权限.
-                Log.e("--------->", "没有权限");
-            } else {
-
-                Log.e("--------->", "已经被授权");
-            }
-        }
-        String tmpList[] = new String[toApplyList.size()];
-        if (!toApplyList.isEmpty()) {
-            ActivityCompat.requestPermissions(this, toApplyList.toArray(tmpList), 123);
-        }
-
-
-        if (!NotificationsUtils.isNotificationEnabled(this)) {
-            final AlertDialog dialog = new AlertDialog.Builder(this).create();
-            dialog.show();
-
-            View view = View.inflate(this, R.layout.dialog, null);
-            dialog.setContentView(view);
-
-            TextView context = (TextView) view.findViewById(R.id.tv_dialog_context);
-            context.setText("检测到您没有打开通知权限，是否去打开");
-
-            TextView confirm = (TextView) view.findViewById(R.id.btn_confirm);
-            confirm.setText("确定");
-            confirm.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    dialog.cancel();
-                    Intent localIntent = new Intent();
-                    localIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    if (Build.VERSION.SDK_INT >= 9) {
-                        localIntent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
-                        localIntent.setData(Uri.fromParts("package", MainActivity.this.getPackageName(), null));
-                    } else if (Build.VERSION.SDK_INT <= 8) {
-                        localIntent.setAction(Intent.ACTION_VIEW);
-
-                        localIntent.setClassName("com.android.settings",
-                                "com.android.settings.InstalledAppDetails");
-
-                        localIntent.putExtra("com.android.settings.ApplicationPkgName",
-                                MainActivity.this.getPackageName());
-                    }
-                    startActivity(localIntent);
-                }
-            });
-
-            TextView cancel =  view.findViewById(R.id.btn_off);
-            cancel.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    dialog.cancel();
-                }
-            });
-        }
-
-
-    }
 }

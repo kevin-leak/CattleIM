@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.SearchView;
@@ -75,6 +76,11 @@ public class SearchActivity extends BaseActivity {
 
     @OnClick(R.id.btn_back)
     void onBack() {
+        if (currentFragment != null){
+            fragmentTransaction.detach((BaseFragment) currentFragment);
+            currentFragment = null;
+            lastFragment = null;
+        }
         onBackPressed();
     }
 
@@ -202,6 +208,9 @@ public class SearchActivity extends BaseActivity {
 
     }
 
+    /**
+     * @param s 传入查询的字符串
+     */
     private void query(String s) {
         if (lvSelect.getVisibility() == View.GONE && currentFragment != null){
             Log.e(TAG, "query: " + "ppp" );

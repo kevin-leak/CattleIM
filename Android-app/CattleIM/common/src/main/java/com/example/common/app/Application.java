@@ -52,6 +52,7 @@ public class Application extends android.app.Application {
     public static File getCacheDirFile() {
         return instance.getCacheDir();
     }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -86,6 +87,9 @@ public class Application extends android.app.Application {
         showToast(activity, instance.getString(msgId));
     }
 
+    /**
+     * @return 获取到修饰过的app的单例对象
+     */
     public static Application getInstance() {
         return instance;
     }
