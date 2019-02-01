@@ -152,7 +152,7 @@ public class SearchUserFragment extends BasePresenterFragment<SearchContract.Pre
         }
 
         /**
-         * view 必须具有展示错误信息的能力
+         * View 必须具有展示错误信息的能力
          *
          * @param error 传入错误信息
          */

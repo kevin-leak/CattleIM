@@ -45,6 +45,7 @@
                 android:textSize="@dimen/font_35" />
 
             <LinearLayout
+                android:id="@+id/ll_account"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/len_60"
                 android:layout_marginTop="@dimen/len_60"
@@ -67,7 +68,8 @@
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/font_20" />
 
-                <de.hdodenhof.circleimageview.CircleImageView
+                <com.example.common.widget.AvatarView
+                    android:id="@+id/civ_avatar"
                     android:layout_width="@dimen/len_50"
                     android:layout_height="@dimen/len_50"
                     android:layout_gravity="center_vertical"
@@ -130,7 +132,8 @@
                         android:layout_height="@dimen/len_50"
                         android:layout_gravity="center_vertical"
                         android:paddingRight="@dimen/len_10"
-                        android:src="@drawable/ic_day" />
+                        android:src="@drawable/ic_day"
+                        tools:ignore="VectorDrawableCompat" />
                 </LinearLayout>
 
             </LinearLayout>

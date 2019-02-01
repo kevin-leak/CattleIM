@@ -24,6 +24,7 @@
 
     <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base"/>
 
+
     <style name="AppTheme.MainActivity" parent="AppTheme.TransStatusBar">
         <item name="toolbarTitleColor">@color/colorWhite</item>
         <item name="toolbarMenuIconColor">@color/colorWhite</item>
@@ -85,12 +86,26 @@
 
     </style>
 
+    <style name="profile_toolbar_theme" parent="@style/ThemeOverlay.AppCompat.Light">
+        <!--设置toolbar menu icon的颜色-->
+        <item name="colorControlNormal">@color/colorWhite</item>
+
+    </style>
+
     <style name="AppTheme.SearchCreator" parent="AppTheme.TransStatusBar">
         <item name="android:textColorPrimary">@color/textPrimary</item>
         <item name="android:textColorSecondary">@color/textSecond</item>
         <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">false</item>
         <item name="colorPrimaryDark">#000000</item>
         <item name="isLightTheme">false</item>
+    </style>
+
+    <style name="AppTheme.AccountInfoActivity" parent="AppTheme">
+        <item name="editTextColor">@color/textSecond</item>
+        <item name="actionMenuTextColor">@color/textSecond</item>
+        <item name="android:color">@color/textSecond</item>
+        <item name="android:colorForeground">@color/textSecond</item>
+
     </style>
 
 

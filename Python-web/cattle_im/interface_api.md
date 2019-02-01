@@ -1,4 +1,10 @@
+# 接口协议
+
 [TOC]
+
+
+
+
 
 ------
 
@@ -69,13 +75,11 @@ ERROR_NET = 11001								# 网络错误
 ```json
 {
   "phone":"18870742138",
-  "username": "kevin",
   "password": "199shadjfk",
-  "avatar": "media/avatars/android/xx.jpg"
 }
 ```
 
-### 用户信息接口
+### 账户信息
 
 ```json
 {
@@ -95,6 +99,28 @@ ERROR_NET = 11001								# 网络错误
   "isBind": true
 }
 
+```
+
+
+
+## 账户信息完善接口定义
+
+### android
+
+```json
+{
+    "userId":"",
+    "avatar":"media/avatars/android/xx.jpg",
+    "username":"",
+    "desc":"",
+    "sex": 0
+}
+```
+
+### web
+
+```
+账户信息
 ```
 
 

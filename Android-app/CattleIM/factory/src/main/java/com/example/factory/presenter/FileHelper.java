@@ -21,8 +21,7 @@ import retrofit2.Response;
 
 public class FileHelper {
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public static void saveBackgoundFile(String path, DataSource.Callback<IMFile> callback) {
+    public static void saveBackgroundFile(String path, DataSource.Callback<IMFile> callback) {
 
         String name = new File(path).getName();
         String imageString = StringsTools.ImageToStrings(path);
@@ -50,7 +49,6 @@ public class FileHelper {
         }
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     public static String fetchBackgroundFile(String path) {
 
         String name = new File(path).getName();

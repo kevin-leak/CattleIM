@@ -21,7 +21,7 @@ account = {
         "alias": "",
         "friends": 0,
         "isFriend": True,
-        "modifyAt": ""
+        "modifyAt": time.strftime("%Y-%m-%dT%H:%M:%S", time.localtime())
     },
     "account": "",
     "isBind": False

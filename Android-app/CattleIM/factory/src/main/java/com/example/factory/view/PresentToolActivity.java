@@ -13,8 +13,8 @@ public abstract class PresentToolActivity<Presenter extends BaseContract.Present
         extends ToolbarActivity implements BaseContract.View<Presenter> {
 
 
-    private Presenter mPresenter;
-    private ProgressDialog mLoadingDialog;
+    protected Presenter mPresenter;
+    protected ProgressDialog mLoadingDialog;
 
     @Override
     protected void initBefore() {

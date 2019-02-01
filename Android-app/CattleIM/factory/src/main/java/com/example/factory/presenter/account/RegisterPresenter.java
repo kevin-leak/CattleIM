@@ -24,24 +24,18 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
         super(view);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    @Override
-    public void register(final String phone, final String name, final String password, final String avatarPath) {
-//        TODO 做数据检验并且回送消息到UI
 
+    @Override
+    public void register(final String phone,final String password) {
+//        TODO 做数据检验并且回送消息到UI
         start();
         new Thread(new Runnable() {
             @Override
             public void run() {
-                // todo 后期进行分离，注册的逻辑太多了，而且如果没有登入不允许上传文件
-                String avatarUrl = FileHelper.fetchBackgroundFile(avatarPath);
-                if (TextUtils.isEmpty(avatarUrl)){
-                    getView().showError(R.string.data_network_error);
-                }else {
-                    RegisterPiece registerPiece = new RegisterPiece(phone, name, password, avatarUrl);
+                    RegisterPiece registerPiece = new RegisterPiece(phone,  password);
                     AccountHelper.register(registerPiece, RegisterPresenter.this);
                 }
-            }
+//            }
         }).start();
     }
 

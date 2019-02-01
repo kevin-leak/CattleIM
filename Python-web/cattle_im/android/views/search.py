@@ -24,7 +24,9 @@ def friends(request, field, page):
     # todo 服务器必须筛选，当前用户已经通过了对方验证的用户
     page = int(page)
     print(field, page)
+    print(request.session.get("userId", ""))
     if request.session.get("userId", "") == "":
+        print("----")
         return error_response.session_error()
     holder_id = request.session["userId"]
     if phone_tools.check_phone(field):
@@ -36,6 +38,7 @@ def friends(request, field, page):
         friends_ret = friends_creator.info(all_user, holder_id)
     if not friends_ret['result']:
         friends_ret['status'] = response_code.NULL_DATA
+    print('===========')
     print(json.dumps(friends_ret, ensure_ascii=False))
     return HttpResponse(json.dumps(friends_ret, ensure_ascii=False))
 

@@ -61,6 +61,6 @@ public class PushService extends Service implements PushClient.PushListener {
     }
 
     public static void startPush() {
-        NetKit.app().startService(new Intent(NetKit.app(), PushService.class));
+//        NetKit.app().startService(new Intent(NetKit.app(), PushService.class));
     }
 }

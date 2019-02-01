@@ -68,21 +68,21 @@ public class PushClient implements PushContract {
         @Override
         public void onMessage(WebSocket webSocket, String text) {
             // 如果当前是重启对象，则走重启对象的方法, 否则走成功信息发送的方法
-            listener.sendSuccess(text);
+//            listener.sendSuccess(text);
         }
 
         @RequiresApi(api = Build.VERSION_CODES.KITKAT)
         @Override
         public void onFailure(WebSocket webSocket, Throwable t, Response response) {
-            if (listener != null) {
-                if (response != null && response.body() != null) {
-                    listener.sendFailure("");
-                } else {
-                    listener.sendFailure("");
-                }
-            } else {
-                reConnect();
-            }
+//            if (listener != null) {
+//                if (response != null && response.body() != null) {
+//                    listener.sendFailure("");
+//                } else {
+//                    listener.sendFailure("");
+//                }
+//            } else {
+//                reConnect();
+//            }
         }
 
         @Override
@@ -127,11 +127,11 @@ public class PushClient implements PushContract {
         // 这里只处理wesocket 为空的情况，关于websocket的其他错误需要为外部进行拦截
         // 对于数据的错误我们在MessageListener 里面统一反馈
 
-        if (webSocket != null) {
-            webSocket.send(message);
-        } else {
-            this.listener.sendFailure("未知错误");
-        }
+//        if (webSocket != null) {
+//            webSocket.send(message);
+//        } else {
+//            this.listener.sendFailure("未知错误");
+//        }
     }
 
 
@@ -141,41 +141,41 @@ public class PushClient implements PushContract {
      */
     @Override
     public void reConnect() {
-        if (cancel){
-            Log.e(TAG, "reConnect: " + "sladjklakj" );
-            return;
-        }
-        // 只要断了， 就必须重新建立， 不能复用之前websocket对象
-        initWebSocketClient();
-        // 给后端发送一个重连的包，更新以前断掉的连接
-        sendMessage(PushContract.connectMessage, new MessageListener() {
-
-            @Override
-            public void sendSuccess(String text) {
-                push.reStart();
-                Log.e(TAG, "sendSuccess: " + NetKit.getGson().fromJson(text, PushPieces.class).getPushId() );
-                Account.setPushId(NetKit.getGson().fromJson(text, PushPieces.class).getPushId());
-            }
-
-            @Override
-            public void sendFailure(String body) {
-                new Thread() {
-                    @Override
-                    public void run() {
-                        super.run();
-                        try {
-                            Thread.sleep(3000);//休眠1秒
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-
-                        // TODO 进行一个当前网络的一个判断来决定是否要进行重新连接还是通知用户开启网络
-                        reConnect();
-                    }
-                }.start();
-
-            }
-        });
+//        if (cancel){
+//            Log.e(TAG, "reConnect: " + "sladjklakj" );
+//            return;
+//        }
+//        // 只要断了， 就必须重新建立， 不能复用之前websocket对象
+//        initWebSocketClient();
+//        // 给后端发送一个重连的包，更新以前断掉的连接
+//        sendMessage(PushContract.connectMessage, new MessageListener() {
+//
+//            @Override
+//            public void sendSuccess(String text) {
+//                push.reStart();
+//                Log.e(TAG, "sendSuccess: " + NetKit.getGson().fromJson(text, PushPieces.class).getPushId() );
+//                Account.setPushId(NetKit.getGson().fromJson(text, PushPieces.class).getPushId());
+//            }
+//
+//            @Override
+//            public void sendFailure(String body) {
+//                new Thread() {
+//                    @Override
+//                    public void run() {
+//                        super.run();
+//                        try {
+//                            Thread.sleep(3000);//休眠1秒
+//                        } catch (InterruptedException e) {
+//                            e.printStackTrace();
+//                        }
+//
+//                        // TODO 进行一个当前网络的一个判断来决定是否要进行重新连接还是通知用户开启网络
+//                        reConnect();
+//                    }
+//                }.start();
+//
+//            }
+//        });
     }
 
     @Override

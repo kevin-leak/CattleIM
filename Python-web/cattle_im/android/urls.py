@@ -8,6 +8,7 @@ from android.views.push import wskt_server
 urlpatterns = [
     path('login/', account.login),
     path('register/', account.register),
+    path('complete_account/', account.complete_account),
     path('out/', account.out),
 
     path('save_file/', im_file.save),

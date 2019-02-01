@@ -53,7 +53,7 @@ public class ViewPageAdapter<F extends Fragment> extends FragmentPagerAdapter {
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public int getCount() {
-        if (Objects.isNull(fragmentList)){
+        if (fragmentList == null){
             return 0;
         }
         return fragmentList.size();

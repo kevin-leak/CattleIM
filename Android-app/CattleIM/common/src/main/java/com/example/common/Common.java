@@ -14,7 +14,7 @@ public class Common {
     public interface Constance{
         String HTTP_HEAD = "http://";
         String WEB_SOCKET_HEAD = "ws://";
-        String BASE_IP_PORT = "192.168.136.101:8000/";
+        String BASE_IP_PORT = "120.79.255.228:8000/";
         String BASE_PHONE_UTL = HTTP_HEAD + BASE_IP_PORT + "media/";
         String BASE_URL = HTTP_HEAD + BASE_IP_PORT + "android/";
         String WEB_VIEW_URL = BASE_URL + "web_view/";

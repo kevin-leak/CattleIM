@@ -81,8 +81,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'cattle_im',
         'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'lkk!zbl!123!',
+        'HOST': '120.79.255.228',
         'PORT': '3306',
     }
 }

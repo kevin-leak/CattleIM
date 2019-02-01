@@ -2,6 +2,7 @@ package com.example.common.app;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,6 +30,8 @@ import butterknife.ButterKnife;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
+
+    public static final String EXIST = "exit";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -122,5 +125,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onBackPressed();
         finish();
     }
+
 
 }

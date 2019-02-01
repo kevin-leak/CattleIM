@@ -112,6 +112,18 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.TransStatusBar"/>
 
+        <activity android:name=".activities.AccountInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.AccountInfoActivity"/>
+
+        <activity android:name=".activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransStatusBar" />
+
+
     </application>
+
+
+
 
 </manifest>

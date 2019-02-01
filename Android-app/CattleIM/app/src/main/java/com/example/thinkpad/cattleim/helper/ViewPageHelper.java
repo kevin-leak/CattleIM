@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.common.widget.ViewPager.ViewPageAdapter;
+import com.example.factory.view.BasePresenterFragment;
 import com.example.thinkpad.cattleim.R;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class ViewPageHelper<V extends View, F extends Fragment> {
 
     private ViewPageAdapter pageAdapter;
     private ViewPager viewPager;
-    private ViewPagerCallback callback;
+    private ViewPagerCallback<F> callback;
     private AppCompatActivity context;
     private List<V> navList = new ArrayList<>();
     private List<F> fragments = new ArrayList<>();
@@ -69,7 +70,7 @@ public class ViewPageHelper<V extends View, F extends Fragment> {
      */
     @RequiresApi(api = Build.VERSION_CODES.N)
     public  ViewPageHelper<V, F> addItem(V v, F f){
-        if (Objects.nonNull(v) || Objects.nonNull(f)){
+        if (v != null || f != null){
             navList.add(v);
             fragments.add(f);
             pageAdapter.addFragment(f);

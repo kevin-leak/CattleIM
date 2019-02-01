@@ -28,16 +28,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     create_time = models.DateTimeField(auto_now=True)
 
     username_validator = UnicodeUsernameValidator()
-
+    USERNAME_FIELD = 'phone'
     username = models.CharField(
         "username",
         max_length=20,
         help_text="Required. 10 characters or fewer. Letters, digits and @/./+/-/_ only.",
-        unique=True,
         validators=[username_validator],
-        error_messages={
-            'unique': "A user with that username already exists.",
-        },
     )
     email = models.EmailField("email address", blank=True)
     is_staff = models.BooleanField(
@@ -58,7 +54,6 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     EMAIL_FIELD = 'email'
-    USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email']
 
     class Meta:

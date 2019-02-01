@@ -42,20 +42,15 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
         return R.layout.fragment_register;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public void register(String path, String username) {
+    public void register() {
         String phone = etPhone.getText().toString();
         String rePsd = etRePsd.getText().toString();
         String password = etPassword.getText().toString();
 
-        if (TextUtils.isEmpty(path)) {
-            showError(R.string.null_avatar);
-        }
 
-        if (presenter.checkUserName(username) &&
-                presenter.checkMobile(phone) &&
+        if (presenter.checkMobile(phone) &&
                 presenter.checkPsd(password, rePsd)) {
-            presenter.register(phone, username, rePsd, path);
+            presenter.register(phone, rePsd);
         }
 
     }
@@ -65,46 +60,17 @@ public class RegisterFragment extends BasePresenterFragment<RegisterContract.Pre
         return new RegisterPresenter(this);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void registerSuccess() {
 
         if (dialog != null){
             dialog.cancel();
         }
-        ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
+
+        if (getActivity() != null)
+            ((AccountActivity) getActivity()).trigger();
     }
 
-    /**
-     * 获取图片信息
-     * todo 设置拍照获取
-     */
-    public void getAvatar() {
-        new GalleryFragment()
-                .setListener(new GalleryFragment.OnSelectedListener() {
-                    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-                    @Override
-                    public void onSelectedImage(String path) {
-                        UCrop.Options options = new UCrop.Options();
-                        // 设置图片处理的格式JPEG
-                        options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
-                        // 设置压缩后的图片精度
-                        options.setCompressionQuality(96);
-
-                        // 得到头像的缓存地址
-                        File dPath = Application.getAvatarTmpFile();
-
-                        // 发起剪切
-                        UCrop.of(Uri.fromFile(new File(path)), Uri.fromFile(dPath))
-                                .withAspectRatio(1, 1) // 1比1比例
-                                .withMaxResultSize(520, 520) // 返回最大的尺寸
-                                .withOptions(options) // 相关参数
-                                .start(Objects.requireNonNull(getActivity()));
-                    }
-                })// show 的时候建议使用getChildFragmentManager，
-                // tag GalleryFragment class 名
-                .show(getChildFragmentManager(), GalleryFragment.class.getName());
-    }
 
 
     @Override

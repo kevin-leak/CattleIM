@@ -5,6 +5,7 @@ import com.example.netKit.model.UserModel;
 import com.example.netKit.piece.FilePiece;
 import com.example.netKit.piece.RspPiece;
 import com.example.netKit.model.AccountModel;
+import com.example.netKit.piece.account.AccountInfoPiece;
 import com.example.netKit.piece.account.LoginPiece;
 import com.example.netKit.piece.account.RegisterPiece;
 
@@ -36,12 +37,15 @@ public interface NetInterface {
     @POST("save_file/")
     Call<RspPiece<FileModel>> saveFile(@Body FilePiece piece);
 
+    @POST("complete_account/")
+    Call<RspPiece<AccountModel>> completeAccount(@Body AccountInfoPiece piece);
+
 
     @POST("register/")
     Call<RspPiece<AccountModel>> register(@Body RegisterPiece piece); // 此处，后端需要request里面的body接受数据
 
     @GET("out/")
-    Call<ResponseBody> logout(); // 此处，后端需要request里面的body接受数据
+    Call<RspPiece<String>> logout(); // 此处，后端需要request里面的body接受数据
 
     // 用户搜索的接口
     @GET("user_search/{name}/{page}")

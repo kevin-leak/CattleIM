@@ -13,9 +13,8 @@ import java.util.Objects;
 
 public class StringsTools {
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     public static String ImageToStrings(String path) {
-        if (Objects.isNull(path)) {
+        if (path == null) {
             return "";
         } else {
             try {

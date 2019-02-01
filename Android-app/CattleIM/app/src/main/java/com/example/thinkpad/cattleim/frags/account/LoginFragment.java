@@ -38,7 +38,6 @@ public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public void login(){
         String phone = etPhone.getText().toString();
         String psd = etPassword.getText().toString();
@@ -53,14 +52,14 @@ public class LoginFragment extends BasePresenterFragment<LoginContract.Presenter
         return new LoginPresenter(this);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void loginSuccess() {
+        // 登入成功，发生跳转
+        if (getActivity() != null)
+            ((AccountActivity) getActivity()).trigger();
         if (dialog != null){
             dialog.cancel();
         }
-        // 登入成功，发生跳转
-        ((AccountActivity) Objects.requireNonNull(getActivity())).trigger();
     }
 
 

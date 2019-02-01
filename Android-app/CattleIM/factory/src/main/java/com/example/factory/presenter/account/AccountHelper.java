@@ -1,7 +1,6 @@
 package com.example.factory.presenter.account;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.example.common.factory.data.DataSource;
@@ -14,9 +13,11 @@ import com.example.netKit.net.push.PushService;
 import com.example.netKit.persistence.Account;
 import com.example.netKit.piece.RspPiece;
 import com.example.netKit.model.AccountModel;
+import com.example.netKit.piece.account.AccountInfoPiece;
 import com.example.netKit.piece.account.LoginPiece;
 import com.example.netKit.piece.account.RegisterPiece;
 
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -52,6 +53,39 @@ public class AccountHelper {
         task.enqueue(new AccountCallback(callback));
     }
 
+    public static void completeInfo(AccountInfoPiece infoPiece, DataSource.Callback<User> callback) {
+        NetInterface connect = CattleNetWorker.getConnect();
+        Call<RspPiece<AccountModel>> task = connect.completeAccount(infoPiece);
+        task.enqueue(new AccountCallback(callback));
+    }
+
+    public static void loginOut(final DataSource.Callback<String> callback) {
+
+        NetInterface connect = CattleNetWorker.getConnect();
+        final Call<RspPiece<String>> logout = connect.logout();
+        logout.enqueue(new Callback<RspPiece<String>>() {
+            @Override
+            public void onResponse(Call<RspPiece<String>> call, Response<RspPiece<String>> response) {
+                RspPiece<String> body = response.body();
+
+                if (body != null && body.isSuccess()){
+                    Log.e(TAG, "onResponse: " + body.getResult());
+                    callback.onDataLoaded(body.getResult());
+                } else {
+                    if (body != null) {
+                        NetKit.decodeRep(body, callback);
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<RspPiece<String>> call, Throwable t) {
+                Log.e(TAG, "onFailure: " + "out----------" );
+            }
+        });
+
+    }
+
 
     /**
      * 继承retrofit类的回调接口，统一实现对登入注册的处理并将信息通过全局的DataSource进行一个监听回调
@@ -65,9 +99,9 @@ public class AccountHelper {
             this.callback = callback;
         }
 
-        @RequiresApi(api = Build.VERSION_CODES.N)
         @Override
-        public void onResponse(Call<RspPiece<AccountModel>> call, Response<RspPiece<AccountModel>> response) {
+        public void onResponse(@NonNull Call<RspPiece<AccountModel>> call,
+                               @NonNull Response<RspPiece<AccountModel>> response) {
             /*
              * 1. 进行数据的本地化处理
              * 2. 进行一个全局的通知回调
@@ -75,31 +109,32 @@ public class AccountHelper {
              * 4. 开启推送功能
              * */
 
-
-
             RspPiece<AccountModel> rspPiece = response.body();
-            Log.e(TAG, "onResponse" );
-            if (rspPiece.isSuccess()) {
+            if (rspPiece != null && rspPiece.isSuccess()) {
                 AccountModel accountPiece = rspPiece.getResult();
                 User user = accountPiece.getUser();
 //                DbHelper.save(User.class, user);
                 user.save();
                 // 对数据进行本地化处理
-                callback.onDataLoaded(user);
                 Account.login(accountPiece);
 
                 // todo c这里需要对推送的id 进行一个绑定
 
-                PushService.startPush();
+//                PushService.startPush();
+
+
+                callback.onDataLoaded(user);
             } else {
-                NetKit.decodeRep(rspPiece, callback);
+                if (rspPiece != null) {
+                    NetKit.decodeRep(rspPiece, callback);
+                }
             }
 
         }
 
         @Override
-        public void onFailure(Call<RspPiece<AccountModel>> call, Throwable t) {
-            Log.e(TAG, "onFailure: kkkk" );
+        public void onFailure(@NonNull Call<RspPiece<AccountModel>> call, @NonNull Throwable t) {
+            Log.e(TAG, "onFailure: " + "login----------" );
             // 网络请求失败
             if (callback != null)
                 callback.onDataNotAvailable(R.string.data_network_error);

@@ -6,149 +6,151 @@ from django.contrib import auth
 from django.contrib.auth import authenticate, logout
 from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse
-from django.shortcuts import render
 from django.views.decorators.http import require_POST
-from pymysql import Date
 
-from android.api.factory.user_card import account
 from android.contract import response_code
-from android.contract.request_interface import common, account
-
-from android.utils.phone_tools import check_phone
-from db.models import User, Friends, Profile
 
 
 @require_POST
 def login(request):
-    """
-    {
-    "phone": 18870742138,
-    "password": "lkkzbl"
-    }
-    """
-    info = eval(request.body)
-    ret_info = common
-    result = account
-
-    print(info)
-    if info['password'].strip() == '':
-        ret_info['status'] = response_code.NULL_PASSWORD
-    elif len(info['password']) < 6 or len(info['password']) > 16:
-        ret_info['status'] = response_code.FORMAT_ERROR_PASSWORD_LENGTH
-    elif info['phone'].strip() == '':
-        ret_info['status'] = response_code.NULL_PHONE
-    elif len(info['phone']) < 6 or len(info['phone']) > 16:
-        ret_info['status'] = response_code.FORMAT_ERROR_PHONE_LENGTH
-    elif check_phone(info['phone']) is None:
-        ret_info['status'] = response_code.FORMAT_ERROR_PHONE
-    else:
-        user = User.objects.filter(phone=info['phone']).first()
-        if user:
-            user = authenticate(username=user.username, password=info['password'])
-            if user:
-                print(user.username)
-                result_user = result.get('user')
-                result_user['id'] = str(user.uid)
-                result_user['username'] = user.username
-                result_user['phone'] = user.phone
-                result_user['avatar'] = 'media/' + str(user.avatar)
-                print(result_user['avatar'])
-                result_user['desc'] = user.profile.desc
-                result_user['sex'] = user.profile.sex
-                result_user['alias'] = user.username
-                result_user['friends'] = Friends.objects.filter(origin=user).count()
-                result_user['isFriend'] = True
-                result_user['modifyAt'] = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time()))
-                result.update(result_user)
-                result['account'] = user.phone
-                result['isBind'] = True
-                ret_info['result'] = result
-                ret_info['status'] = response_code.SUCCESS_STATUS
-                request.session["userId"] = str(user.uid)
-                auth.login(request, user)
-            else:
-                ret_info['status'] = response_code.ERROR_PASSWORD
-        else:
-            ret_info['status'] = response_code.NULL_USER
-            print(ret_info)
-            return HttpResponse(json.dumps(ret_info))
-    return HttpResponse(json.dumps(ret_info, ensure_ascii=False))
+    act = Account(request)
+    ret = json.dumps(act.to_login(), ensure_ascii=False)
+    print(ret)
+    return HttpResponse(ret)
 
 
 @require_POST
 def register(request):
-    """
-    """
-    info = eval(request.body)
-    # 获取公共的返回模块
-    ret_info = common
-    # 获取注册时产生的结果
-    result = account
-    print(info)
-    same_phone = User.objects.filter(phone=info['phone']).first()
-    same_username = User.objects.filter(username=info['username']).first()
+    act = Account(request)
+    return HttpResponse(json.dumps(act.to_register(), ensure_ascii=False))
 
-    # 处理password， name, password, 为空的情况
-    # 处理字段相同问题
-    if info['password'].strip() == '':
-        ret_info['status'] = response_code.NULL_PASSWORD
-    elif len(info['password']) < 6 or len(info['password']) > 16:
-        ret_info['status'] = response_code.FORMAT_ERROR_PASSWORD_LENGTH
-    elif info['avatar'].strip() == '':
-        ret_info['status'] = response_code.NULL_AVATAR
-    elif info['phone'].strip() == '':
-        ret_info['status'] = response_code.NULL_PHONE
-    elif len(info['phone']) < 6 or len(info['phone']) > 16:
-        ret_info['status'] = response_code.FORMAT_ERROR_PHONE_LENGTH
-    elif check_phone(info['phone']) is None:
-        ret_info['status'] = response_code.FORMAT_ERROR_PHONE
-    elif len(info['username']) > 15:
-        ret_info['status'] = response_code.FORMAT_ERROR_USER_LENGTH
-    elif info['username'].strip() == '':
-        ret_info['status'] = response_code.NULL_USERNAME
-    elif same_phone is not None:
-        ret_info['status'] = response_code.SAME_PHONE
-    elif same_username is not None:
-        ret_info['status'] = response_code.SAME_USERNAME
-    else:
 
-        # 进行一个Django自带的一个加密功能
-        info['password'] = make_password(info['password'].strip())
-        info['avatar'] = str(info['avatar']).split('media/')[1]
-        print(info['avatar'])
-        user = User.objects.create(**info)
-        #  todo 后期进行一个修改,在更新个人信息处
-        user.profile_id = Profile.objects.create().push_id
-        # 进行了修改需要提交，不然后面创建friend关系没有用
-        user.save()
-
-        # 将密码弹出
-        info.pop('password')
-        # 拼接数据
-        result_user = result.get('user')
-        result_user.update(info)
-        result_user['id'] = str(user.uid)
-        result_user['sex'] = user.profile.sex
-        result_user['desc'] = user.profile.desc
-        result_user['alias'] = user.username
-        result_user['modifyAt'] = time.strftime('%Y-%m-%dT%H:%M:%S', time.localtime(time.time()))
-        Friends.objects.create(origin=user, target=user, alias=user.username)
-
-        result['account'] = user.phone
-        result.get('user').update(result_user)
-        ret_info['result'] = result
-
-        ret_info['status'] = response_code.SUCCESS_STATUS
-        request.session["userId"] = str(user.uid)
-        auth.authenticate(request, username=user.username, password=user.username)
-        auth.login(request, user)
-    print(ret_info)
-    return HttpResponse(json.dumps(ret_info, ensure_ascii=False))
+@require_POST
+def complete_account(request):
+    act = Account(request)
+    return HttpResponse(json.dumps(act.complete_account(), ensure_ascii=False))
 
 
 def out(request):
-    print(request.session["userId"])
     logout(request)
-    return HttpResponse("ok")
+    ret = copy.deepcopy(request_interface.common)
+    ret['result'] = "ok"
+    ret['status'] = 1
+    print(ret)
+    return HttpResponse(json.dumps(ret, ensure_ascii=False))
 
 
+from android.contract import request_interface
+import copy
+from android.api.factory import user_card
+from android.utils.phone_tools import check_phone
+from db.models import User, Profile
+
+
+class Account:
+
+    def __init__(self, req):
+        """
+        piece 获取从android获取的数据，并将其转化为字典
+        base_ret account 反馈的基础信息
+        :param req:
+        """
+        self.piece = eval(req.body)
+        self.req = req
+        self.base_ret = copy.deepcopy(request_interface.common)
+        self.base_ret['status'] = response_code.SUCCESS_STATUS
+
+    def password_filter(self):
+        if self.piece['password'].strip() == '':
+            self.base_ret['status'] = response_code.NULL_PASSWORD
+        elif len(self.piece['password']) < 6 or len(self.piece['password']) > 16:
+            self.base_ret['status'] = response_code.FORMAT_ERROR_PASSWORD_LENGTH
+        if self.base_ret['status'] != response_code.SUCCESS_STATUS:
+            return False
+
+    def phone_filter(self):
+        if self.piece['phone'].strip() == '':
+            self.base_ret['status'] = response_code.NULL_PHONE
+        elif len(self.piece['phone']) < 6 or len(self.piece['phone']) > 16:
+            self.base_ret['status'] = response_code.FORMAT_ERROR_PHONE_LENGTH
+        elif check_phone(self.piece['phone']) is None:
+            self.base_ret['status'] = response_code.FORMAT_ERROR_PHONE
+        same_phone = User.objects.filter(phone=self.piece['phone']).first()
+        if same_phone is not None:
+            self.base_ret['status'] = response_code.SAME_PHONE
+
+        if self.base_ret['status'] != response_code.SUCCESS_STATUS:
+            return False
+
+    def name_filter(self):
+        same_username = User.objects.filter(username=self.piece['username']).first()
+        if len(self.piece['username']) > 15:
+            self.base_ret['status'] = response_code.FORMAT_ERROR_USER_LENGTH
+        elif self.piece['username'].strip() == '':
+            self.base_ret['status'] = response_code.NULL_USERNAME
+        elif same_username is not None:
+            self.base_ret['status'] = response_code.SAME_USERNAME
+        if self.base_ret['status'] != response_code.SUCCESS_STATUS:
+            return False
+
+    def avatar_filter(self):
+        if self.piece['avatar'].strip() == '':
+            self.base_ret['status'] = response_code.NULL_AVATAR
+        if self.base_ret['status'] != response_code.SUCCESS_STATUS:
+            return False
+
+    def to_login(self):
+        user = User.objects.filter(phone=self.piece['phone']).first()
+        if user is not None:
+            user = authenticate(phone=user.phone, password=self.piece['password'])
+            if user is not None:
+                auth.login(self.req, user)
+                self.req.session['userId'] = str(user.uid)
+                return user_card.account(user.uid)
+            else:
+                self.base_ret['status'] = response_code.ERROR_PASSWORD
+                self.base_ret['result'] = copy.deepcopy(request_interface.account)
+                return self.base_ret
+        else:
+            self.base_ret['status'] = response_code.NULL_USER
+            self.base_ret['result'] = copy.deepcopy(request_interface.account)
+            return self.base_ret
+
+    def to_register(self):
+        if self.password_filter() is not False and self.phone_filter() is not False:
+            user = self.create_user()
+            if user is not None:
+                return self.to_login()
+            else:
+                raise Exception("Account.class：数据插入数据出异常")
+        else:
+            self.base_ret['result'] = copy.deepcopy(request_interface.account)
+            return self.base_ret
+
+    def create_user(self):
+        # 为了保持self.piece 里面的值不变，做一个替换
+        password = self.piece['password'].strip()
+        self.piece['password'] = make_password(self.piece['password'].strip())
+        user = User.objects.create(**self.piece)
+        user.save()
+        self.piece['password'] = password
+        return user
+
+    def complete_account(self):
+        if self.piece['userId'] != '':
+            user = User.objects.get(uid=self.piece['userId'])
+            if user is not None:
+                if user.profile_id is None:
+                    user.profile_id = Profile.objects.create(sex=self.piece['sex'], desc=self.piece['desc']).push_id
+                user.avatar = self.piece['avatar']
+                user.username = self.piece['username']
+                user.save()
+                return user_card.account(user.uid)
+            else:
+                self.base_ret['status'] = response_code.NULL_USER
+                self.base_ret['result'] = copy.deepcopy(request_interface.account)
+                return self.base_ret
+        else:
+            self.base_ret['status'] = response_code.NULL_USER
+            self.base_ret['result'] = copy.deepcopy(request_interface.account)
+            return self.base_ret

@@ -6,41 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".activities.AccountActivity">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_avatar"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:elevation="1dp"
-        android:src="@drawable/ic_add_avatar"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.76"
-        android:visibility="gone"
-        tools:targetApi="lollipop"
-        tools:ignore="VectorDrawableCompat" />
 
-    <EditText
-        android:id="@+id/et_user_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:elevation="1dp"
-        android:lines="1"
-        android:padding="@dimen/len_10"
-        android:singleLine="true"
-        android:text="@string/editName"
-        android:textColor="@color/colorWhite"
-        android:visibility="gone"
-        app:layout_constraintBottom_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.904"
-        tools:ignore="UnusedAttribute" />
 
 
     <android.support.v7.widget.LinearLayoutCompat
@@ -48,7 +14,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
 
         <ImageView
             android:id="@+id/iv_background"

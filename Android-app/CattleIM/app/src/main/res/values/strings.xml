@@ -1,6 +1,9 @@
 <resources>
 
     <string name="app_name">CattleIM</string>
+    <string name="spinner_prompt"> sex </string>
+    <string name="change_info">修改信息</string>
+    <string name="login_out">退出登入</string>
 
 
 </resources>

@@ -86,7 +86,6 @@ public class MainActivity extends BaseActivity implements
     }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void initWindows() {
         super.initWindows();

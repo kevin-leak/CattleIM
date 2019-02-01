@@ -1,11 +1,21 @@
 package com.example.netKit.persistence;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
+import android.os.Handler;
+import android.support.annotation.RequiresApi;
 import android.text.TextUtils;
+import android.util.Log;
 
+import com.example.common.app.Application;
 import com.example.netKit.NetKit;
+import com.example.netKit.db.User;
+import com.example.netKit.db.User_Table;
 import com.example.netKit.model.AccountModel;
+import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 /**
  * 设置一个用户的账号管理类
@@ -13,6 +23,8 @@ import com.example.netKit.model.AccountModel;
  * 2. 处理推送的ID绑定问题 todo 后期处理
  */
 public class Account {
+
+    public static String TAG = "Account";
 
     private static String account;
     private static String pushId;
@@ -62,6 +74,7 @@ public class Account {
     public static void init(Context context) {
         SharedPreferences sp = context.getSharedPreferences(Account.class.getName(), Context.MODE_PRIVATE);
         Account.userId = sp.getString(USER_ID, "");
+        Log.e(TAG, "init: " +  Account.userId);
         Account.account = sp.getString(ACCOUNT_KEY, "");
         Account.pushId = sp.getString(PUSH_ID, "");
         Account.isBind = sp.getBoolean(IS_BIND, false);
@@ -108,6 +121,7 @@ public class Account {
 
     }
 
+
     public static String getCookie() {
         return Cookie;
     }
@@ -122,5 +136,34 @@ public class Account {
 
     public static void setxCsrfToken(String xCsrfToken) {
         Account.xCsrfToken = xCsrfToken;
+    }
+
+
+
+    /**
+     * 获取当前登录的用户信息
+     *
+     * @return User
+     */
+    public static User getUser() {
+        // 如果为null返回一个new的User，其次从数据库查询
+        return TextUtils.isEmpty(userId) ? new User() : SQLite.select()
+                .from(User.class)
+                .where(User_Table.id.eq(userId))
+                .querySingle();
+    }
+
+    public static boolean isComplete(){
+        if (Account.getUser().getSex() == 0  &&
+                TextUtils.isEmpty(Account.getUser().getDesc())){
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean removeLogin(final Context context) {
+        SharedPreferences sp = context.getSharedPreferences(Account.class.getName(), Context.MODE_PRIVATE);
+        sp.edit().clear().commit();
+        return true;
     }
 }

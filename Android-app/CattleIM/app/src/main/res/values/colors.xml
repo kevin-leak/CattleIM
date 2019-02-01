@@ -11,4 +11,6 @@
     <color name="title_bar" >#e4000000</color>
     <color name="color_search_icon">#c4000000</color>
     <color name="grey_300">#eeeeee</color>
+    <color name="profile_item">#F4BA6F</color>
+    <color name="profile_underline">#E8E8E8</color>
 </resources>

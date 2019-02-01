@@ -11,7 +11,7 @@ import com.example.factory.presenter.BasePresenter;
 
 
 /**
- * 此类是为了建议统一的fragment view 中的一个标准，在其中可以通过他对想要继承的子类进行约束
+ * 此类是为了建议统一的fragment View 中的一个标准，在其中可以通过他对想要继承的子类进行约束
  * 如：protected abstract void initPresent();
  * 同时我们将此类设置为抽象类，这同时使得基础的 BaseFragment 的约束不会改变
  *

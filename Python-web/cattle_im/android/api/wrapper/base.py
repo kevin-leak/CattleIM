@@ -50,21 +50,22 @@ def base_contract(contract=None):
         @wraps(func)
         def inner(*args, **kwargs):
             ret = func(*args, **kwargs)
-
             if ret:
                 contract["status"] = response_code.SUCCESS_STATUS
             else:
                 contract["status"] = response_code.FAILURE_STATUS
             contract["result"] = ret
             return contract
+
         return inner
+
     return outer
 
 
 def account_creator(holder_id, current_id):
     """
     则获取 current_id ，自身的信息，以及与holder_id的关系
-
+    建立账户信息，与下面的user-creator 就是有无设备绑定的问题
     :param ret: 定义的用户接口类型， 不允许自定义
     :param holder_id: 当前用户登入的id
     :param current_id: 此时连接传递过来的id
@@ -72,7 +73,6 @@ def account_creator(holder_id, current_id):
     """
 
     ret = copy.deepcopy(request_interface.account)
-
     user = User.objects.get(uid=current_id)
     if user:
         ret["user"]["id"] = str(user.uid)
@@ -84,25 +84,31 @@ def account_creator(holder_id, current_id):
         ret["user"]['friends'] = Friends.objects.filter(origin=user).count()
         ret["account"] = user.phone
 
-    if user.profile is not None:
-        if user.profile.desc:
-            ret["user"]["desc"] = user.profile.desc
-        ret["user"]["sex"] = user.profile.sex
-        ret["isBind"] = user.profile.is_bind
+        if user.profile is not None:
+            if user.profile.desc:
+                ret["user"]["desc"] = user.profile.desc
+            ret["user"]["sex"] = user.profile.sex
+            ret["isBind"] = user.profile.is_bind
 
-    if holder_id == current_id:
-        ret["user"]['isFriend'] = True
-    else:
-        target = User.objects.get(uid=holder_id)
-        if target:
-            friends = Friends.objects.filter(origin=user, target=target).first()
-            if friends:
-                ret["user"]["isFriend"] = True
-                ret["user"]["alias"] = friends.alias
+        if holder_id == current_id:
+            ret["user"]['isFriend'] = True
+        else:
+            target = User.objects.get(uid=holder_id)
+            if target:
+                friends = Friends.objects.filter(origin=user, target=target).first()
+                if friends:
+                    ret["user"]["isFriend"] = True
+                    ret["user"]["alias"] = friends.alias
     return ret
 
 
 def user_creator(holder_id, current_id):
+    """
+    建立用户信息，用来处理查询好友的时候用的，和建立好友关系后生产好友信息。
+    :param holder_id: 当前用户的id
+    :param current_id: 指的是查询或者建立的id
+    :return:
+    """
 
     ret = copy.deepcopy(request_interface.user)
 
@@ -116,25 +122,25 @@ def user_creator(holder_id, current_id):
         # 当前用户自己的好友， 别人添加的，不一定是自己的好友，可能是单向的
         ret['friends'] = Friends.objects.filter(origin=user).count()
 
-    if user.profile is not None:
-        if user.profile.desc:
-            ret["desc"] = user.profile.desc
-        ret["sex"] = user.profile.sex
+        if user.profile is not None:
+            if user.profile.desc:
+                ret["desc"] = user.profile.desc
+            ret["sex"] = user.profile.sex
 
-    if holder_id == current_id:
-        ret['isFriend'] = True
-    else:
-        target = User.objects.get(uid=holder_id)
-        if target:
-            friends = Friends.objects.filter(origin=user, target=target).first()
-            if friends:
-                ret["isFriend"] = True
-                ret["alias"] = friends.alias
+        if holder_id == current_id:
+            ret['isFriend'] = True
+        else:
+            target = User.objects.get(uid=holder_id)
+            if target:
+                friends = Friends.objects.filter(origin=user, target=target).first()
+                if friends:
+                    ret["isFriend"] = True
+                    ret["alias"] = friends.alias
+                else:
+                    ret["isFriend"] = False
+                    ret["alias"] = ""
             else:
                 ret["isFriend"] = False
                 ret["alias"] = ""
-        else:
-            ret["isFriend"] = False
-            ret["alias"] = ""
 
     return ret

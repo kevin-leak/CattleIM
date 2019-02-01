@@ -16,7 +16,6 @@ public class RspPiece<T> {
      */
 
     private T result;
-    public final static int SUCCEED = 1;
     private int status = 0;
     private String message;
     private Date date;
@@ -25,6 +24,7 @@ public class RspPiece<T> {
     /**
      * 很多状态码表示的错误，在前端已经拦截
      * */
+    public final static int SUCCEED = 1;
     public static final int SUCCESS_STATUS = 1;								// # 操作正确
     public static final int FAILURE_STATUS = 0;								// # 操作失败
     public static final int SAME_USERNAME = 7000;							// # 用户名字已经存在
@@ -41,6 +41,8 @@ public class RspPiece<T> {
     public boolean isSuccess() {
         return status == SUCCEED;
     }
+
+
     public T getResult() {
         return result;
     }
@@ -77,5 +79,9 @@ public class RspPiece<T> {
                 ", message='" + message + '\'' +
                 ", date=" + date +
                 '}';
+    }
+
+    public void setResult(T result) {
+        this.result = result;
     }
 }

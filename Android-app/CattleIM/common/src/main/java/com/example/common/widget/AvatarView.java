@@ -35,6 +35,9 @@ public class AvatarView extends CircleImageView {
 
 
     public void setup(RequestManager manager, String url) {
+        if (url.contains("media")){
+            url = url.replace("media/", "");
+        }
         url = Common.Constance.BASE_PHONE_UTL + url;
         Log.e(TAG, "setup: " + url);
         setup(manager, R.mipmap.default_avatar, url);

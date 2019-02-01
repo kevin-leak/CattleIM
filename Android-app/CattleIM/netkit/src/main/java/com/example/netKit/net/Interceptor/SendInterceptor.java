@@ -35,6 +35,7 @@ public class SendInterceptor implements Interceptor {
                             + "; sessionid=" + Account.getSession_id());
             builder.addHeader(InterceptorTools.X_CSRFTOKEN, token);
         }
+        Log.e(TAG, "intercept: " + Account.getSession_id());
         builder.addHeader(InterceptorTools.content_type, "application/json");
 
         return chain.proceed(builder.build());

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/im_header"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@id/guideline1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
+        android:src="@color/colorPrimary" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_40"
+        android:layout_marginTop="28dp"
+        app:title="Profile"
+        app:titleTextColor="@color/colorWhite"
+        android:gravity="center_vertical"
+        app:theme="@style/profile_toolbar_theme"
+        app:popupTheme="@style/popup_tool"
+        android:background="@color/colorPrimary"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/im_header"
+        tools:ignore="UnknownIdInLayout,UnusedAttribute" />
+
+    <TextView
+        android:id="@+id/txt_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:text="@string/app_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textSize="@dimen/font_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/im_portrait" />
+
+    <com.example.common.widget.AvatarView
+        android:id="@+id/im_portrait"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@mipmap/default_avatar"
+        app:civ_border_color="@color/colorWhite"
+        app:civ_border_width="2dp"
+        tools:ignore="MissingConstraints,NotSibling"
+        android:layout_marginTop="@dimen/len_20"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/len_10"
+        android:layout_marginRight="@dimen/len_10"
+        android:layout_marginBottom="@dimen/len_20"
+        android:padding="@dimen/len_20"
+        android:background="@drawable/shape_info"
+        android:elevation="@dimen/len_5"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline2"
+        tools:ignore="UnusedAttribute">
+
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/met_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_floatingLabel="normal"
+            app:met_floatingLabelText="phone"
+            app:met_clearButton="false"
+            app:met_underlineColor="@color/profile_underline"
+            app:met_baseColor="@color/profile_item"
+            app:met_floatingLabelTextColor="@color/textPrimary"
+            app:met_textColor="@color/textDark"
+            app:met_iconLeft="@mipmap/phone"
+            android:editable="false"
+            android:focusable="false"
+            android:text="110"
+            tools:ignore="Deprecated" />
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/met_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="sex"
+            app:met_clearButton="false"
+            app:met_iconLeft="@mipmap/intersex"
+            android:editable="false"
+            android:focusable="false"
+            app:met_underlineColor="@color/profile_underline"
+            app:met_baseColor="@color/profile_item"
+            app:met_floatingLabelTextColor="@color/textPrimary"
+            app:met_textColor="@color/textDark"
+            android:text="男"
+            tools:ignore="Deprecated" />
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/len_5">
+
+            <ImageView
+                android:id="@+id/iv_id"
+                android:layout_width="@dimen/len_30"
+                android:layout_height="@dimen/len_30"
+                android:layout_marginTop="@dimen/len_20"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/signature"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/met_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/iv_id"
+                android:focusable="false"
+                android:layout_marginLeft="@dimen/len_20"
+                android:layout_marginRight="@dimen/len_10"
+                app:met_floatingLabel="highlight"
+                app:met_floatingLabelText="desc"
+                app:met_clearButton="false"
+                app:met_hideUnderline="true"
+                app:met_floatingLabelTextColor="@color/textPrimary"
+                app:met_textColor="@color/textDark"
+                android:layout_toEndOf="@+id/iv_id"
+                android:textColor="@color/textSecond"
+                android:text="sadfsafsadfsadfsadfssfdafadfafdfadsfadfsafsdfdsdfsfdsfsdfsdfdsfdsfasadfsfaadfsafds"
+                android:textAlignment="textStart"
+                android:gravity="start" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    <!---->
+
+</android.support.constraint.ConstraintLayout>

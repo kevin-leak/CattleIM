@@ -1,6 +1,7 @@
 package com.example.thinkpad.cattleim;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -25,6 +26,7 @@ import com.example.netKit.net.CattleNetWorker;
 import com.example.netKit.net.push.PushService;
 import com.example.netKit.persistence.Account;
 import com.example.thinkpad.cattleim.activities.AccountActivity;
+import com.example.thinkpad.cattleim.activities.AccountInfoActivity;
 import com.example.thinkpad.cattleim.activities.MainActivity;
 import com.example.thinkpad.cattleim.frags.assist.NotificationsUtils;
 import com.yanzhenjie.permission.AndPermission;
@@ -44,6 +46,7 @@ public class LaunchActivity extends BaseActivity {
 
     private Class<?> intentClass;
 
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,13 +54,17 @@ public class LaunchActivity extends BaseActivity {
         // 初始化push的服务
         NetKit.initPush();
 
-
         // 选择跳转
-        intentClass = AccountActivity.class;
-
-        if (Account.isLogin()) {
+        if (Account.isLogin() ) {
             intentClass = MainActivity.class;
+            if (!Account.isComplete()){
+                intentClass = AccountInfoActivity.class;
+            }
+        }else {
+            intentClass = AccountActivity.class;
         }
+
+
 
 //        if (Build.VERSION.SDK_INT >= 23) {
 //            if (!Settings.canDrawOverlays(LaunchActivity.this)) {
@@ -67,6 +74,8 @@ public class LaunchActivity extends BaseActivity {
 //            }
 //
 //        }
+
+
 
 
         getPermission(new PermissionListener() {
@@ -79,8 +88,9 @@ public class LaunchActivity extends BaseActivity {
                         updateCattle();
                         Intent intent = new Intent(LaunchActivity.this, intentClass);
                         startActivity(intent);
+                        finish();
                     }
-                }, 3000);
+                }, 1000);
             }
 
             @Override
@@ -92,11 +102,11 @@ public class LaunchActivity extends BaseActivity {
                         updateCattle();
                         Intent intent = new Intent(LaunchActivity.this, intentClass);
                         startActivity(intent);
+                        finish();
                     }
-                }, 3000);
+                }, 1000);
             }
         });
-
 
     }
 
@@ -106,11 +116,11 @@ public class LaunchActivity extends BaseActivity {
     private void updateCattle() {
         CattleNetWorker.getConnect().getCall().enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
 
             }
         });
@@ -144,7 +154,6 @@ public class LaunchActivity extends BaseActivity {
 //    }
 
 
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     private void initPermission() {
         String permissions[] = {
                 Manifest.permission.RECORD_AUDIO,
@@ -222,6 +231,7 @@ public class LaunchActivity extends BaseActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     void getPermission(PermissionListener permissionListener) {
         String permissions[] = {
                 Manifest.permission.RECORD_AUDIO,

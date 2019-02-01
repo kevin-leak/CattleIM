@@ -48,6 +48,7 @@ public class GalleryFragment extends BottomSheetDialogFragment
         view.post(new Runnable() {
             @Override
             public void run() {
+                assert view != null;
                 View parent = (View) view.getParent();
                 CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) (parent).getLayoutParams();
                 CoordinatorLayout.Behavior behavior = params.getBehavior();
