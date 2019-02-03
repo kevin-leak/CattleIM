@@ -1,4 +1,4 @@
-package com.example.factory.view;
+package com.example.factory.presenter;
 
 import android.app.Activity;
 

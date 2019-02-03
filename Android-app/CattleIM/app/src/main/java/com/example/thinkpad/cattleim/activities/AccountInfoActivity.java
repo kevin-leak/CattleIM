@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 import com.example.common.app.Application;
 import com.example.factory.contract.account.AccountInfoContract;
 import com.example.factory.presenter.account.AccountInfoPresenter;
-import com.example.factory.view.BaseActivityPresenter;
+import com.example.factory.presenter.BaseActivityPresenter;
 import com.example.thinkpad.cattleim.R;
 import com.example.thinkpad.cattleim.frags.media.GalleryFragment;
 import com.rengwuxian.materialedittext.MaterialEditText;

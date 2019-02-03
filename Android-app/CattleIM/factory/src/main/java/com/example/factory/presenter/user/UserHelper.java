@@ -4,13 +4,16 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.example.common.factory.data.DataSource;
+import com.example.factory.Factory;
 import com.example.factory.R;
 import com.example.netKit.NetKit;
 import com.example.netKit.db.User;
+import com.example.netKit.db.User_Table;
 import com.example.netKit.model.UserModel;
 import com.example.netKit.net.CattleNetWorker;
 import com.example.netKit.net.NetInterface;
 import com.example.netKit.piece.RspPiece;
+import com.raizlabs.android.dbflow.sql.language.SQLite;
 
 import java.io.IOException;
 import java.util.List;
@@ -99,15 +102,7 @@ public class UserHelper {
     }
 
 
-    public static User getInfo(String userId) {
-        User user = getFromNet(userId);
-        if (user == null){
-            // 从数据库中取出
-        }
-        return user;
-    }
-
-    private static User getFromNet(final String userId) {
+    public static User findFromNet(final String userId) {
 
         User user = null;
 
@@ -118,11 +113,28 @@ public class UserHelper {
             if (body != null){
                 UserModel userModel = body.getResult();
                 user = userModel.Build();
+                Factory.getInstance().dispatch(userModel);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
         return user;
+    }
+
+    public static User searchFirstFromNet(String userId) {
+        User user = findFromNet(userId);
+        if (user == null){
+            user = findFromLocal(userId);
+        }
+
+        return user;
+    }
+
+    public static User findFromLocal(String userId) {
+        return SQLite.select()
+                .from(User.class)
+                .where(User_Table.id.eq(userId))
+                .querySingle();
     }
 }

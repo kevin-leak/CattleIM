@@ -34,7 +34,7 @@ import json
 
 from django.http import HttpResponse
 
-from db.models import User, Friends
+from db.models import User, Friends, Profile
 
 
 def base_contract(contract=None):
@@ -84,11 +84,14 @@ def account_creator(holder_id, current_id):
         ret["user"]['friends'] = Friends.objects.filter(origin=user).count()
         ret["account"] = user.phone
 
-        if user.profile is not None:
-            if user.profile.desc:
-                ret["user"]["desc"] = user.profile.desc
-            ret["user"]["sex"] = user.profile.sex
-            ret["isBind"] = user.profile.is_bind
+        if user.profile_id is not None:
+            print(user.profile_id)
+            profile = Profile.objects.filter(push_id=user.profile_id).first()
+            print(profile.desc)
+            if profile.desc:
+                ret["user"]["desc"] = profile.desc
+            ret["user"]["sex"] = profile.sex
+            ret["isBind"] = profile.is_bind
 
         if holder_id == current_id:
             ret["user"]['isFriend'] = True

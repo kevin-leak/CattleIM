@@ -140,8 +140,7 @@ class Account:
         if self.piece['userId'] != '':
             user = User.objects.get(uid=self.piece['userId'])
             if user is not None:
-                if user.profile_id is None:
-                    user.profile_id = Profile.objects.create(sex=self.piece['sex'], desc=self.piece['desc']).push_id
+                user.profile_id = Profile.objects.create(sex=self.piece['sex'], desc=self.piece['desc']).push_id
                 user.avatar = self.piece['avatar']
                 user.username = self.piece['username']
                 user.save()

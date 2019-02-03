@@ -1,14 +1,9 @@
 package com.example.factory.presenter.account;
 
 
-import android.content.Intent;
-
-import com.example.common.app.BaseActivity;
 import com.example.common.factory.data.DataSource;
 import com.example.factory.contract.account.ProfileContract;
 import com.example.factory.presenter.BasePresenter;
-import com.example.factory.view.BaseActivityPresenter;
-import com.example.netKit.db.User;
 import com.example.netKit.persistence.Account;
 
 public class ProfilePresenter extends BasePresenter<ProfileContract.View>

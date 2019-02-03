@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.common.widget.AvatarView;
 import com.example.factory.presenter.user.PersonContract;
 import com.example.factory.presenter.user.PersonPresent;
+import com.example.factory.presenter.user.UserHelper;
 import com.example.factory.view.PresentToolActivity;
 import com.example.thinkpad.cattleim.R;
 
@@ -56,10 +57,14 @@ public class PersonActivity extends
     @Override
     protected boolean initArgs(Bundle bundle) {
         userId = bundle.getString(USER_ID);
-        if (!TextUtils.isEmpty(userId)) {
-
-        }
         return super.initArgs(bundle);
+    }
+
+    @Override
+    protected void initData() {
+        super.initData();
+
+        mPresenter.start();
     }
 
     @OnClick(R.id.btn_send_message)

@@ -20,7 +20,8 @@ public class PersonPresent extends BasePresenter<PersonContract.View>
                 PersonContract.View view = getView();
                 if (view != null){
                     final String userId = getView().getUserId();
-                    User info = UserHelper.getInfo(userId);
+                    // 考虑到用户信息可能已经更新
+                    User info = UserHelper.searchFirstFromNet(userId);
                     onLoad(info);
                 }
 

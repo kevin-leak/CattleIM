@@ -7,6 +7,9 @@ import com.example.factory.presenter.user.UserHelper;
 import com.example.netKit.model.AccountModel;
 import com.example.netKit.model.UserModel;
 
+/**
+ * 用于好友的添加
+ */
 public class FriendPresenter extends BasePresenter<FriendContract.View>
         implements FriendContract.Present, DataSource.Callback<UserModel> {
 

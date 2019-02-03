@@ -122,7 +122,8 @@ public class ProfileActivity extends PresentToolActivity<ProfileContract.Present
         super.finish();
 
         if (context != null && OUT_FLAG){
-            ((BaseActivity) context).finish();
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(0);
         }
     }
 }

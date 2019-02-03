@@ -62,6 +62,7 @@ public class Account {
      */
     public static void save(Context context) {
         SharedPreferences sp = context.getSharedPreferences(Account.class.getName(), Context.MODE_PRIVATE);
+        Log.e(TAG, "save: " + "[[[[[[[[[[[[[[[[[[" );
         sp.edit()
                 .putString(ACCOUNT_KEY, account)
                 .putString(PUSH_ID, pushId)
@@ -69,6 +70,7 @@ public class Account {
                 .putBoolean(IS_BIND, isBind)
                 .putString(SEESION_ID, sessionId)
                 .apply();
+        Log.e(TAG, "save: " + "[[[[[[[[[[[[[[[[[[" );
     }
 
     public static void init(Context context) {
