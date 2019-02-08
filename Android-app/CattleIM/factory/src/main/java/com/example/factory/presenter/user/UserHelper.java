@@ -4,8 +4,10 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.example.common.factory.data.DataSource;
+import com.example.common.tools.CollectionUtil;
 import com.example.factory.Factory;
 import com.example.factory.R;
+import com.example.factory.middleware.user.UserDispatch;
 import com.example.netKit.NetKit;
 import com.example.netKit.db.User;
 import com.example.netKit.db.User_Table;
@@ -28,6 +30,9 @@ import static android.content.ContentValues.TAG;
  * 用来处理用户的信息的更新
  */
 public class UserHelper {
+
+
+    private static String TAG = "UserHelper";
 
 
 
@@ -86,9 +91,10 @@ public class UserHelper {
                 // 暂时先不处理
                 RspPiece<UserModel> rspPiece = response.body();
 
-                if (rspPiece.isSuccess())
+                if (rspPiece.isSuccess()) {
+                    Factory.getUserCenter().dispatch(rspPiece.getResult());
                     callback.onDataLoaded(rspPiece.getResult());
-                else {
+                }else {
                     NetKit.decodeRep(rspPiece, callback);
                 }
             }
@@ -102,6 +108,12 @@ public class UserHelper {
     }
 
 
+    /**
+     * @param userId  用户id
+     * @return 返回用户信息
+     *
+     * 对数据进行分发，用来处理
+     */
     public static User findFromNet(final String userId) {
 
         User user = null;
@@ -112,8 +124,8 @@ public class UserHelper {
             RspPiece<UserModel> body = execute.body();
             if (body != null){
                 UserModel userModel = body.getResult();
-                user = userModel.Build();
-                Factory.getInstance().dispatch(userModel);
+                user = userModel.build();
+                Factory.getUserCenter().dispatch(userModel);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -122,6 +134,10 @@ public class UserHelper {
         return user;
     }
 
+    /**
+     * @param userId  用户的id
+     * @return 查找用户信息，且优先网络查询，这是为了防止本地数据谷网络数据不一致，被修改
+     */
     public static User searchFirstFromNet(String userId) {
         User user = findFromNet(userId);
         if (user == null){
@@ -131,10 +147,60 @@ public class UserHelper {
         return user;
     }
 
+    /**
+     * @param userId  用户的id
+     * @return 返回用户的信息
+     *
+     * 用于本地对单个用户信息的查询
+     */
     public static User findFromLocal(String userId) {
         return SQLite.select()
                 .from(User.class)
                 .where(User_Table.id.eq(userId))
                 .querySingle();
+    }
+
+    /**
+     * 进行用户信息的刷新
+     */
+    public static void refreshContacts() {
+
+        // 获取远程连接
+        NetInterface connect = CattleNetWorker.getConnect();
+
+        // 选择拉去联系人的信息链接
+        connect.userContacts().enqueue(new Callback<RspPiece<List<UserModel>>>() {
+            @Override
+            public void onResponse(Call<RspPiece<List<UserModel>>> call, Response<RspPiece<List<UserModel>>> response) {
+
+                // 获取集合信息
+
+                RspPiece<List<UserModel>> body = response.body();
+                if (body.isSuccess()){
+
+                    List<UserModel> result = body.getResult();
+                    if (result == null || result.size() == 0)
+                        return;
+
+                    UserModel[] userModels = CollectionUtil.toArray(result, UserModel.class);
+
+                    Log.e(TAG, "onResponse: " + userModels.toString() );
+                    // 将集合进行分发
+                    Factory.getUserCenter().dispatch(userModels);
+
+                }else {
+                    NetKit.decodeRep(body.getStatus(), null);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<RspPiece<List<UserModel>>> call, Throwable t) {
+
+            }
+        });
+
+
+
     }
 }

@@ -2,6 +2,7 @@ package com.example.common.widget.recycler;
 
 import android.support.annotation.LayoutRes;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,9 @@ import butterknife.Unbinder;
 public abstract class RecyclerAdapter<Data>
         extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder<Data>>
         implements View.OnClickListener, View.OnLongClickListener, AdapterCallback<Data> {
+
+    final static String TAG = "RecyclerAdapter";
+
     private final List<Data> mDataList;
     private AdapterListener<Data> mListener;
 

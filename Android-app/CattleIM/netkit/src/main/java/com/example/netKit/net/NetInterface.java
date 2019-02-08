@@ -58,4 +58,7 @@ public interface NetInterface {
     // 添加好友接口
     @GET("search/{uid}/")
     Call<RspPiece<UserModel>> getUserInfo(@Path("uid") String uid);
+
+    @GET("user_contacts/")
+    Call<RspPiece<List<UserModel>>> userContacts();
 }

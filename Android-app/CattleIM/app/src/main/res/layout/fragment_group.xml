@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="hello group"
-        android:textColor="#000000"
-        tools:layout_editor_absoluteX="137dp"
-        tools:layout_editor_absoluteY="250dp"
-        tools:ignore="MissingConstraints" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_friends"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="@dimen/len_10"
+        />
 
 </android.support.constraint.ConstraintLayout>

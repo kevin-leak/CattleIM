@@ -36,7 +36,7 @@
         tools:ignore="HardcodedText,RtlCompat"/>
 
     <TextView
-        android:id="@+id/txt_content"
+        android:id="@+id/txt_desc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"

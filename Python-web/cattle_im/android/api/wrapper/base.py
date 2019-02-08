@@ -135,7 +135,7 @@ def user_creator(holder_id, current_id):
         else:
             target = User.objects.get(uid=holder_id)
             if target:
-                friends = Friends.objects.filter(origin=user, target=target).first()
+                friends = Friends.objects.filter(origin=target, target=user).first()
                 if friends:
                     ret["isFriend"] = True
                     ret["alias"] = friends.alias

@@ -6,7 +6,7 @@ import com.example.factory.contract.BaseContract;
  * @author KevinLeak
  * 抽象实现present共同具有的功能
  * 1. 抽象出present而的构造方法，要求同时设置view，当所有的子类继承他时候，必须实现它
- * 2.
+ * 2. 规划一个开始，和一个摧毁
  */
 public class BasePresenter<T extends BaseContract.View> implements BaseContract.Presenter {
 

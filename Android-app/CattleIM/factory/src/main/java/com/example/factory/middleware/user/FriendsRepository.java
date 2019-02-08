@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 数据的仓库
  */
-public class ContactRepository extends BaseDbRepository<User> implements ContactDataSource{
+public class FriendsRepository extends BaseDbRepository<User> implements ContactDataSource{
 
 
     @Override

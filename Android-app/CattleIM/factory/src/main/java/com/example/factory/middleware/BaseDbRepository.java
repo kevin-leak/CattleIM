@@ -1,6 +1,7 @@
 package com.example.factory.middleware;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.example.common.factory.data.DataSource;
 import com.example.common.factory.data.DbDataSource;
@@ -21,6 +22,8 @@ import java.util.List;
  */
 public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implements DbDataSource<Data>,
         DbHelper.DataChangeListener<Data> , QueryTransaction.QueryResultListCallback<Data>{
+
+    final static String TAG = "BaseDbRepository";
 
     /**
      * 被扫描出的数据类型
@@ -58,6 +61,7 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
      * 提供注册监听器的方法，建立与数据存储的连接
      */
     private void registerDbChangeListener() {
+        Log.e(TAG, "registerDbChangeListener: "  );
         DbHelper.addChangeListener(tClass, this);
     }
 
@@ -94,6 +98,7 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
                 isChanged = true;
             }
         }
+        Log.e(TAG, "notifyDataChange: " );
         // 有数据变更，则进行界面刷新
         if (isChanged)
             notifyDataChange();
@@ -101,6 +106,7 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
 
     // 通知界面刷新的方法
     private void notifyDataChange() {
+        Log.e(TAG, "notifyDataChange: true" );
         SucceedCallback<List<Data>> callback = this.callback;
         if (callback != null)
             callback.onDataLoaded(dataList);

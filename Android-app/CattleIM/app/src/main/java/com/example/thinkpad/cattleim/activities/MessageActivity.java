@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.example.common.widget.ToolbarActivity;
+import com.example.netKit.db.User;
 import com.example.thinkpad.cattleim.R;
 
 import butterknife.BindView;
@@ -29,6 +30,11 @@ public class MessageActivity extends ToolbarActivity {
     public static void show(Context context, String userId) {
 
         context.startActivity(new Intent(context, MessageActivity.class).putExtra(USER_ID, userId));
+    }
+
+    public static void show(Context context, User user) {
+
+        context.startActivity(new Intent(context, MessageActivity.class).putExtra(USER_ID, user.getId()));
     }
 
     @Override

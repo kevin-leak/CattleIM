@@ -1,9 +1,19 @@
 package com.example.factory.middleware;
 
-import com.example.common.factory.data.DataSource;
-import com.example.netKit.db.User;
-import com.raizlabs.android.dbflow.structure.BaseModel;
+import android.util.Log;
 
+import com.example.common.factory.data.DataSource;
+import com.example.netKit.db.AppDatabase;
+import com.example.netKit.db.User;
+import com.example.netKit.model.UserModel;
+import com.raizlabs.android.dbflow.config.DatabaseDefinition;
+import com.raizlabs.android.dbflow.config.FlowManager;
+import com.raizlabs.android.dbflow.structure.BaseModel;
+import com.raizlabs.android.dbflow.structure.ModelAdapter;
+import com.raizlabs.android.dbflow.structure.database.DatabaseWrapper;
+import com.raizlabs.android.dbflow.structure.database.transaction.ITransaction;
+
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -22,6 +32,8 @@ import java.util.Set;
  */
 public class DbHelper {
 
+    final static String TAG = "DbHelper";
+
 
     private static final DbHelper instance;
 
@@ -33,9 +45,33 @@ public class DbHelper {
     }
 
 
+    /**
+     * @param modelClass  指的model类型的class，也指信息表
+     * @param models 数据库表的集合
+     * @param <Model>
+     * 开启一个事务： 数据的实际存储，数据通知
+     *
+     */
+    public static <Model extends BaseModel> void save(final Class<Model> modelClass, final Model... models) {
 
+        if (models == null || models.length == 0)
+            return;
 
-    public static void save(Class<User> userClass, User user) {
+        Log.e(TAG, "save: " + models.toString() );
+        // 当前数据库的一个管理者
+        DatabaseDefinition definition = FlowManager.getDatabase(AppDatabase.class);
+        // 提交一个事物
+        definition.beginTransactionAsync(new ITransaction() {
+            @Override
+            public void execute(DatabaseWrapper databaseWrapper) {
+                // 执行
+                ModelAdapter<Model> adapter = FlowManager.getModelAdapter(modelClass);
+                // 保存
+                adapter.saveAll(Arrays.asList(models));
+                // 唤起通知
+                instance.notifySave(modelClass, models);
+            }
+        }).build().execute();
 
     }
 
@@ -65,8 +101,8 @@ public class DbHelper {
     /**
      * 规定我们的键必须BaseModel 类型的
      */
-    public static <model extends BaseModel>  void
-        addChangeListener(Class<model> cls, DataChangeListener<model> listener){
+    public static <model extends BaseModel>  void addChangeListener(Class<model> cls,
+                                                                    DataChangeListener<model> listener){
         Set<DataChangeListener> dataChangeListeners = instance.getChangedListeners(cls);
         if (dataChangeListeners == null){
             dataChangeListeners = new HashSet<>();
@@ -76,8 +112,8 @@ public class DbHelper {
     }
 
 
-    public static <model extends BaseModel>  void
-    removeChangeListener(Class<model> cls, DataChangeListener<model> listener){
+    public static <model extends BaseModel>  void removeChangeListener(Class<model> cls,
+                                                                       DataChangeListener<model> listener){
         Set<DataChangeListener> dataChangeListeners = instance.getChangedListeners(cls);
         if (dataChangeListeners != null){
             dataChangeListeners.remove(listener);
@@ -98,8 +134,11 @@ public class DbHelper {
     // 设置监听通知
     private <model extends BaseModel> void notifySave(Class<model> clsType, model... models){
         Set<DataChangeListener> dataChangeListeners = getChangedListeners(clsType);
+        Log.e(TAG, "notifySave: 1" + dataChangeListeners.size() );
         if (dataChangeListeners != null && dataChangeListeners.size() > 0){
+            Log.e(TAG, "notifySave: 2" + dataChangeListeners.size() );
             for (DataChangeListener<model> listener: dataChangeListeners){
+                Log.e(TAG, "notifySave: 3" + dataChangeListeners.size() );
                 listener.onDataSave(models);
             }
         }

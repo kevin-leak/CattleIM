@@ -7,14 +7,11 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.example.common.app.BaseFragment;
@@ -24,14 +21,12 @@ import com.example.thinkpad.cattleim.activities.contact.CreateGroupActivity;
 import com.example.thinkpad.cattleim.activities.contact.CreateInfoActivity;
 import com.example.thinkpad.cattleim.activities.contact.CreateTagActivity;
 import com.example.thinkpad.cattleim.frags.main.contact.DataBaseFragment;
-import com.example.thinkpad.cattleim.frags.main.contact.GroupFragment;
+import com.example.thinkpad.cattleim.frags.main.contact.FriendsFragment;
 import com.example.thinkpad.cattleim.frags.main.contact.TagFragment;
 import com.example.thinkpad.cattleim.helper.NavHelper;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
 public class ContactFragment extends BaseFragment implements
         BottomNavigationView.OnNavigationItemSelectedListener,
@@ -46,7 +41,6 @@ public class ContactFragment extends BaseFragment implements
     FrameLayout contactContainer;
     @BindView(R.id.tb_contact)
     Toolbar tbContact;
-    Unbinder unbinder;
     private FragmentActivity mActivity;
     private NavHelper mHelper;
 
@@ -95,7 +89,7 @@ public class ContactFragment extends BaseFragment implements
     private void bindFragment() {
 
         mHelper = new NavHelper(mActivity, R.id.contact_container, mActivity.getSupportFragmentManager(), this);
-        mHelper.add(R.id.group, new NavHelper.Tab(GroupFragment.class, R.string.group))
+        mHelper.add(R.id.group, new NavHelper.Tab(FriendsFragment.class, R.string.group))
                 .add(R.id.tag, new NavHelper.Tab(TagFragment.class, R.string.tag))
                 .add(R.id.database, new NavHelper.Tab(DataBaseFragment.class, R.string.database));
 

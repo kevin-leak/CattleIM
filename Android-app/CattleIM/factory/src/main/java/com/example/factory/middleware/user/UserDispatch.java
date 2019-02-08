@@ -2,10 +2,15 @@ package com.example.factory.middleware.user;
 
 
 import android.icu.lang.UCharacter;
+import android.text.TextUtils;
 
+import com.example.factory.middleware.DbHelper;
+import com.example.netKit.db.User;
 import com.example.netKit.model.AccountModel;
 import com.example.netKit.model.UserModel;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
@@ -34,11 +39,17 @@ public class UserDispatch implements UserCenter {
         if (model == null || model.length == 0)
             return;
 
-        // 丢到单线程池中
+        // 丢到单线程池中,进行异步存储
         executor.execute(new UserModelHandler(model));
     }
 
-    private class UserModelHandler implements Runnable {
+    /**
+     * 用来异步存储用户数据
+     * 1. 将数组转化为list
+     * 2. 进行小部分的过滤
+     * 3. 丢入Dbhlper  里面启用观察模式
+     */
+    class UserModelHandler implements Runnable {
 
 
         private UserModel[] models;
@@ -49,6 +60,19 @@ public class UserDispatch implements UserCenter {
 
         @Override
         public void run() {
+
+            // 单被线程调度的时候触发
+            List<User> users = new ArrayList<>();
+            for (UserModel user : models) {
+                // 进行过滤操作
+                if (user == null || TextUtils.isEmpty(user.getId()))
+                    continue;
+                // 添加操作
+                users.add(user.build());
+            }
+
+            // 进行数据库存储，并分发通知, 异步的操作
+            DbHelper.save(User.class, users.toArray(new User[0]));
 
         }
     }

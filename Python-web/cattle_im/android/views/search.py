@@ -9,7 +9,7 @@ from django.http import HttpResponse
 from android.api.factory import error_response, friends_creator, groups_creator
 from android.contract import response_code
 from android.utils import phone_tools
-from db.models import User, Group
+from db.models import User, Group, Friends
 
 
 @login_required
@@ -23,19 +23,16 @@ def friends(request, field, page):
 
     # todo 服务器必须筛选，当前用户已经通过了对方验证的用户
     page = int(page)
-    print(field, page)
-    print(request.session.get("userId", ""))
     if request.session.get("userId", "") == "":
-        print("----")
         return error_response.session_error()
     holder_id = request.session["userId"]
     if phone_tools.check_phone(field):
-        all_user = User.objects.filter(phone=field)[page*10:10*(page+1)]
-        friends_ret = friends_creator.info(all_user, holder_id)
+        all_user = User.objects.filter(phone=field)[page * 10:10 * (page + 1)]
+        friends_ret = friends_creator.find_new_info(all_user, holder_id)
     else:
         search = field
-        all_user = User.objects.filter(username__contains=search)[page*10:10*(page+1)]
-        friends_ret = friends_creator.info(all_user, holder_id)
+        all_user = User.objects.filter(username__contains=search)[page * 10:10 * (page + 1)]
+        friends_ret = friends_creator.find_new_info(all_user, holder_id)
     if not friends_ret['result']:
         friends_ret['status'] = response_code.NULL_DATA
     print('===========')
@@ -52,9 +49,20 @@ def group(request, field, page):
     if request.session.get("userId", "") == "":
         return error_response.session_error()
     holder_id = request.session["userId"]
-    all_gopup = Group.objects.filter(name__contains=field)[(page-1)*10:10*(page-1)+10]
+    all_gopup = Group.objects.filter(name__contains=field)[(page - 1) * 10:10 * (page - 1) + 10]
     goups_ret = groups_creator.info(all_gopup, holder_id)
     return HttpResponse(json.dumps(goups_ret, ensure_ascii=False))
+
+
+@login_required
+def user_contacts(request):
+    if request.session.get("userId", "") == "":
+        return error_response.session_error()
+    holder_id = request.session["userId"]
+    all_relation = Friends.objects.filter(origin=holder_id).all()
+    ret = friends_creator.get_friend_contact(all_relation, holder_id)
+    print(ret)
+    return HttpResponse(json.dumps(ret, ensure_ascii=False))
 
 
 @login_required

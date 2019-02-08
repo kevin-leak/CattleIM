@@ -18,7 +18,7 @@ import com.example.factory.middleware.user.UserDispatch;
 
 public class Factory{
 
-    public static UserCenter getInstance() {
+    public static UserCenter getUserCenter() {
         return UserDispatch.instance();
     }
 }

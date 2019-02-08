@@ -193,4 +193,5 @@ public class User extends BaseDdModel<User> implements Profile {
                 ", modifyAt=" + modifyAt +
                 '}';
     }
+
 }

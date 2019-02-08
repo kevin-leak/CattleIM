@@ -1,6 +1,8 @@
 package com.example.factory.presenter;
 
+import android.arch.lifecycle.ViewModel;
 import android.support.v7.util.DiffUtil;
+import android.util.Log;
 
 import com.example.common.app.Application;
 import com.example.common.widget.recycler.RecyclerAdapter;
@@ -8,8 +10,14 @@ import com.example.factory.contract.BaseContract;
 
 import java.util.List;
 
+/**
+ * 对具有recycleview的view 再一次封装，添加两个刷新数据的功能方法
+ */
 class BaseRecyclerPresenter<ViewMode, View extends BaseContract.RecyclerView>
         extends BasePresenter<View> {
+
+    final static String TAG = "BaseRecyclerPresenter";
+
     public BaseRecyclerPresenter(View view) {
         super(view);
     }
@@ -58,13 +66,24 @@ class BaseRecyclerPresenter<ViewMode, View extends BaseContract.RecyclerView>
             return;
         // 基本的更新数据并刷新界面
         RecyclerAdapter<ViewMode> adapter = view.getRecyclerAdapter();
+
+        for (ViewMode model: dataList){
+            Log.e(TAG, "refreshDataOnUiThread:" + model.toString() );
+        }
+
         // 改变数据集合并不通知界面刷新
         adapter.getItems().clear();
         adapter.getItems().addAll(dataList);
-        // 通知界面刷新占位布局
-        view.onAdapterDataChanged();
 
-        // 进行增量更新
+        Log.e(TAG, "refreshDataOnUiThread: " + dataList.size());
+        adapter.notifyDataSetChanged();
+        // 通知界面刷新占位布局
+//        view.onAdapterDataChanged();
+
+//         进行增量更新
         diffResult.dispatchUpdatesTo(adapter);
+
     }
+
+
 }

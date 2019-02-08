@@ -19,6 +19,8 @@ urlpatterns = [
 
     url(r'^user_search/(?P<field>\w+)/(?P<page>\d+)/$', search.friends),
     url(r'^group_search/(?P<field>\w+)/(?P<page>\d+)/$', search.group),
+    url(r'^user_contacts/$', search.user_contacts),
+
     path('time_search/', search.time),
     path('task_search/', search.task),
     path('topic_search/', search.topic),

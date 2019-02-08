@@ -125,7 +125,7 @@ public class UserModel implements Profile {
     /**
      * 建立user与数据库的联系，同时建立缓存机制
      */
-    public User Build() {
+    public User build() {
         if (user == null) {
             User user = new User();
             user.setId(id);
@@ -141,4 +141,5 @@ public class UserModel implements Profile {
         }
         return user;
     }
+
 }
