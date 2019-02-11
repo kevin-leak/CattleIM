@@ -1,25 +1,11 @@
-import json
-import random
-import sys
-import uuid
-from time import sleep
 
-from bs4 import BeautifulSoup
-from cryptography.hazmat.primitives.ciphers.algorithms import AES
 from django import template
 from django.contrib.auth import logout
 from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render
 from django.template import RequestContext
-from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST, require_GET
-from dwebsocket import require_websocket, accept_websocket
-from dwebsocket.websocket import WebSocket
-from pyDes import des
-from requests import auth
 
 from android.api.factory.user_card import account
-from db.models import User
 
 
 @require_POST

@@ -81,9 +81,9 @@ class User(AbstractBaseUser, PermissionsMixin):
 class Friends(models.Model):
     fid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     origin = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE,
-                                  related_name='origin_user_id')
+                               related_name='origin_user_id')
     target = models.ForeignKey(to="User", to_field="uid", null=False, on_delete=models.CASCADE,
-                                  related_name="target_user_id")
+                               related_name="target_user_id")
     alias = models.CharField(max_length=20)
 
 
@@ -161,7 +161,8 @@ class LinkMember(models.Model):
 class LinkComment(models.Model):
     link_id = models.ForeignKey(to="LinkTask", to_field="lid", null=False, on_delete=models.CASCADE)
     comment = models.ForeignKey(to="self", related_name='lower_comment', blank=True, on_delete=models.CASCADE)
-    link_from = models.ForeignKey(to="LinkMember", null=False, on_delete=models.CharField, related_name="from_member_id")
+    link_from = models.ForeignKey(to="LinkMember", null=False, on_delete=models.CharField,
+                                  related_name="from_member_id")
     link_to = models.ForeignKey(to="LinkMember", null=False, on_delete=models.CharField, related_name="to_member_id")
     create_time = models.DateTimeField(auto_now_add=True)
 
@@ -174,17 +175,37 @@ class LinkComplete(models.Model):
     create_time = models.DateTimeField(auto_now_add=True)
 
 
-# attach 附件
-class Event(models.Model):
-    eid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=True)
-    attach = models.CharField(max_length=255)
-    content = models.TextField()
-    group = models.ForeignKey(to=Group, null=True, on_delete=models.CASCADE)
-    tag = models.ForeignKey(to="Tag", to_field="tid", null=True, on_delete=models.CASCADE)
-    link = models.ForeignKey(to="LinkTask", to_field="lid", null=True, on_delete=models.CASCADE)
+class Conversation(models.Model):
+    cid = models.UUIDField(primary_key=True, default=uuid.uuid4, unique=True)
+    content = models.CharField(max_length=255, null=False, blank=True)
     send = models.ForeignKey(to=User, null=False, on_delete=models.CASCADE, related_name="send_event_id")
     receive = models.ForeignKey(to=User, null=True, on_delete=models.CASCADE, related_name="receive_event_id")
-    type = models.IntegerField()
+    category_list = (
+        (0, '文本'),
+        (1, '图片'),
+        (2, '语音'),
+        (3, '文件')
+    )
+    category = models.IntegerField(choices=category_list)
+    update_time = models.DateTimeField(auto_now=True)
+
+
+# 在消息接口中 chatId  指的是 group， tag， conversation， link, 根据type来填充
+class Event(models.Model):
+    eid = models.UUIDField(primary_key=True, default=uuid.uuid4, unique=True)
+    conversation = models.ForeignKey(to=Conversation, on_delete=models.CASCADE)
+    chatId = models.UUIDField(default=uuid.uuid4, null=True, blank=True, editable=True)
+    type_list = (
+        (0, '系统消息'),
+        (1, '普通消息'),
+        (2, '请求消息'),
+        (3, '主题消息'),
+        (4, '公告消息'),
+        (5, '任务消息'),
+        (6, '关联消息'),
+        (7, '群消息')
+    )
+    type = models.IntegerField(choices=type_list)
     update_time = models.DateTimeField(auto_now=True)
 
 
@@ -204,15 +225,18 @@ class Apply(models.Model):
 # receive_push_id 用来确定设备是哪个设备，手机还是网页端
 # arrival_time 回送，告诉后端已经收到消息
 # entity 是 comment 与 event 转化为Jason的文本
+# receive_push  是否接受到消息
+# arrival_time_plan 用来处理定时任务
 class PushHistory(models.Model):
-    pid = models.UUIDField(default=uuid.uuid4, editable=False)
-    entity = models.BigAutoField(primary_key=True)
-    entity_type = models.IntegerField()
-    send = models.ForeignKey(to=User, null=False, on_delete=models.CASCADE, related_name="send_push_id")
-    receive = models.ForeignKey(to=User, null=True, on_delete=models.CASCADE, related_name="receive_push_id")
-    receive_push = models.CharField(max_length=255)
-    arrival_time_plan = models.DateTimeField()
-    arrival_time = models.DateTimeField()
+    pid = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True)
+    entity = models.TextField()
+    send = models.ForeignKey(to=Profile, to_field="push_id", null=False, on_delete=models.CASCADE,
+                             related_name="send_push_id")
+    receive = models.ForeignKey(to=Profile, to_field="push_id", null=True, on_delete=models.CASCADE,
+                                related_name="receive_push_id")
+    receive_push = models.BooleanField(default=False)
+    arrival_time_plan = models.DateTimeField(null=True, blank=True)
+    arrival_time = models.DateTimeField(null=True, blank=True)
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
 

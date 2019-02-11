@@ -22,6 +22,7 @@ import com.bumptech.glide.Glide;
 import com.example.common.app.BaseActivity;
 import com.example.common.app.BaseFragment;
 import com.example.common.tools.UITools;
+import com.example.netKit.NetKit;
 import com.example.netKit.persistence.Account;
 import com.example.thinkpad.cattleim.R;
 import com.example.thinkpad.cattleim.frags.account.LoginFragment;
@@ -39,6 +40,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * 1. 实现UI切换
  * 2. 实现数据反馈以及切换时候的交互
+ *
  * @author KevinLeak
  */
 public class AccountActivity extends BaseActivity
@@ -117,21 +119,22 @@ public class AccountActivity extends BaseActivity
     /**
      * 登入或者注册成功跳转
      */
-    public void trigger(){
+    public void trigger() {
 
 //        if (Account.isLogin()){
-            Intent intent = new Intent();
-            if (!Account.isComplete()){
-                intent.setClass(AccountActivity.this, AccountInfoActivity.class);
-            }else {
-                intent.setClass(AccountActivity.this, MainActivity.class);
-            }
-            startActivity(intent);
-            finish();
+        Intent intent = new Intent();
+        if (!Account.isComplete()) {
+            intent.setClass(AccountActivity.this, AccountInfoActivity.class);
+        } else {
+            intent.setClass(AccountActivity.this, MainActivity.class);
+        }
+        // 初始化push的服务
+        NetKit.initPush();
+        startActivity(intent);
+        finish();
 //        }
 
     }
-
 
 
 }

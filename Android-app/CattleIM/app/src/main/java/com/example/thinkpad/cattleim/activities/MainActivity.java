@@ -26,6 +26,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.common.app.BaseActivity;
+import com.example.netKit.NetKit;
+import com.example.netKit.net.CattleNetWorker;
+import com.example.netKit.net.NetInterface;
 import com.example.thinkpad.cattleim.R;
 import com.example.thinkpad.cattleim.activities.creators.TaskCreatorActivity;
 import com.example.thinkpad.cattleim.activities.creators.TimeCreatorActivity;
@@ -41,6 +44,10 @@ import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 /**
@@ -238,4 +245,21 @@ public class MainActivity extends BaseActivity implements
     }
 
 
+    @Override
+    protected void onDestroy() {
+
+        NetInterface connect = CattleNetWorker.getConnect();
+        connect.getCall().enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+        super.onDestroy();
+    }
 }

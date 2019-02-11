@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.common.app.BaseActivity;
 import com.example.common.app.BaseFragment;
 import com.example.common.widget.AvatarView;
 import com.example.netKit.persistence.Account;
@@ -62,7 +63,7 @@ public class SettingsFragment extends BaseFragment {
 //            }
 //        });
 
-        ProfileActivity.show(SettingsFragment.this.getActivity());
+        ProfileActivity.show((BaseActivity) SettingsFragment.this.getActivity());
     }
 
 

@@ -62,7 +62,6 @@ public class Account {
      */
     public static void save(Context context) {
         SharedPreferences sp = context.getSharedPreferences(Account.class.getName(), Context.MODE_PRIVATE);
-        Log.e(TAG, "save: " + "[[[[[[[[[[[[[[[[[[" );
         sp.edit()
                 .putString(ACCOUNT_KEY, account)
                 .putString(PUSH_ID, pushId)
@@ -70,24 +69,23 @@ public class Account {
                 .putBoolean(IS_BIND, isBind)
                 .putString(SEESION_ID, sessionId)
                 .apply();
-        Log.e(TAG, "save: " + "[[[[[[[[[[[[[[[[[[" );
     }
 
     public static void init(Context context) {
         SharedPreferences sp = context.getSharedPreferences(Account.class.getName(), Context.MODE_PRIVATE);
-        Account.userId = sp.getString(USER_ID, "");
-        Log.e(TAG, "init: " +  Account.userId);
-        Account.account = sp.getString(ACCOUNT_KEY, "");
-        Account.pushId = sp.getString(PUSH_ID, "");
+        Account.userId = sp.getString(USER_ID, "").trim();
+        Account.account = sp.getString(ACCOUNT_KEY, "").trim();
+        Account.pushId = sp.getString(PUSH_ID, "").trim();
         Account.isBind = sp.getBoolean(IS_BIND, false);
-        Account.sessionId = sp.getString(SEESION_ID, "");
+        Account.sessionId = sp.getString(SEESION_ID, "").trim();
     }
 
     /**
      * 判断是否登入
      */
     public static boolean isLogin(){
-        return !TextUtils.isEmpty(Account.userId);
+
+        return !TextUtils.isEmpty(Account.userId) && !TextUtils.isEmpty(Account.sessionId);
     }
 
     public static String getAccount() {
@@ -168,4 +166,13 @@ public class Account {
         sp.edit().clear().commit();
         return true;
     }
+
+    /**
+     * 设置绑定状态
+     */
+    public static void setBind(boolean isBind) {
+        Account.isBind = isBind;
+        Account.save(NetKit.app());
+    }
+
 }

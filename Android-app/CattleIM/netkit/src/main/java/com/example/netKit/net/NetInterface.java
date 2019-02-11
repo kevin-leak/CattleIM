@@ -37,6 +37,7 @@ public interface NetInterface {
     @POST("save_file/")
     Call<RspPiece<FileModel>> saveFile(@Body FilePiece piece);
 
+    // 登入注册后，看用户信息是否完成，用于请求链接
     @POST("complete_account/")
     Call<RspPiece<AccountModel>> completeAccount(@Body AccountInfoPiece piece);
 
@@ -61,4 +62,8 @@ public interface NetInterface {
 
     @GET("user_contacts/")
     Call<RspPiece<List<UserModel>>> userContacts();
+
+    // 当客户端接收到pushid 的时候，我们回送一条消息，进行一个绑定
+    @GET("push_id/{pushId}/")
+    Call<RspPiece<AccountModel>> accountBind(@Path("pushId") String pushId);
 }

@@ -148,14 +148,36 @@ to
 
 ### 推送
 
-------
+----
+
+~~规定客户端，发送消息，每次只能发送一种会话的消息，消息可以联系发送~~
+
+~~而服务器回送消息，是可以由不同的会话~~
+
+
+
+#### 心跳包/回送包
+
+```python
+message_set = {
+    "status": 1,
+    "pushId": "",
+    "message": ""
+}
+```
+
+ message约定
+
+- 消息包：message=“ok", 
+- 启动包：message=“start”
+- 重启包：message=“restart”
 
 #### message
 
 可以为空(心跳包)，也可以是一个字符串(反馈),  正式通信如下：
 
-```
-{
+```python
+message_set['message'] = [{
 	"chatId": "",
 	"fromId": "",
 	"toId": "",
@@ -167,8 +189,12 @@ to
 		{}
 	],
 	"createTime": ""
-}
+}，{}]
 ```
+
+chatId：指的是普通对话， tag，group，link
+
+
 
 type
 
@@ -180,7 +206,8 @@ type
 	"3":"主题消息",
 	"4":"公告消息",
 	"5":"任务消息",
-	"6":"关联消息"
+	"6":"关联消息",
+    "7":"群消息",
 }
 ```
 
@@ -197,22 +224,23 @@ category
 
 
 
-#### 心跳包/回送包
+消息回送确认包
 
 ```json
-{
-    "status": 1,
-    "pushId": "",
-    "message": ""
+message_set['message'] = {
+	"fromId": "",
+	"toId": "",
+    "chatId":"",
+    "content": "ok",
 }
 ```
 
-
+回送包和消息包，分开来发
 
 #### message_queue(消息队列)
 
-```json
-{
+```python
+message_queue = {
 	"pushId": [{
 			"chatId": "",
 			"fromId": "",
@@ -221,7 +249,7 @@ category
 			"info": [{
 					"category": "",
 					"content": ""
-				},
+					},
 				{}
 			],
 			"createTime": ""

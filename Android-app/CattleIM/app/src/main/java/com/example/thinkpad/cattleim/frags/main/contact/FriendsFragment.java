@@ -50,7 +50,6 @@ public class FriendsFragment extends BasePresenterFragment<FriendsContract.Prese
     @Override
     protected void intiArgs(Bundle arguments) {
         super.intiArgs(arguments);
-        Log.e(TAG, "intiArgs: ");
     }
 
     /**
@@ -99,7 +98,6 @@ public class FriendsFragment extends BasePresenterFragment<FriendsContract.Prese
              */
             @Override
             protected ViewHolder<User> onCreateViewHolder(View root, int viewType) {
-                Log.e(TAG, "onCreateViewHolder: " + "onCreateViewHolder" );
                 return new FriendsFragment.ViewHolder(root);
             }
         });
@@ -158,7 +156,6 @@ public class FriendsFragment extends BasePresenterFragment<FriendsContract.Prese
         @Override
         protected void onBind(User user) {
             this.user = user;
-            Log.e(TAG, "onBind: " + "user" );
             civAvatar.setup(Glide.with(FriendsFragment.this), user);
             txtName.setText(user.getUsername());
             txtTime.setText(DateTimeUtil.getSampleDate(user.getModifyAt()));

@@ -98,7 +98,6 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
                 isChanged = true;
             }
         }
-        Log.e(TAG, "notifyDataChange: " );
         // 有数据变更，则进行界面刷新
         if (isChanged)
             notifyDataChange();
@@ -106,7 +105,6 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
 
     // 通知界面刷新的方法
     private void notifyDataChange() {
-        Log.e(TAG, "notifyDataChange: true" );
         SucceedCallback<List<Data>> callback = this.callback;
         if (callback != null)
             callback.onDataLoaded(dataList);

@@ -10,6 +10,7 @@ urlpatterns = [
     path('register/', account.register),
     path('complete_account/', account.complete_account),
     path('out/', account.out),
+    url(r'^push_id/(?P<pushId>[a-zA-Z0-9-]*)', account.bind_push_id),
 
     path('save_file/', im_file.save),
 

@@ -184,7 +184,6 @@ public class UserHelper {
 
                     UserModel[] userModels = CollectionUtil.toArray(result, UserModel.class);
 
-                    Log.e(TAG, "onResponse: " + userModels.toString() );
                     // 将集合进行分发
                     Factory.getUserCenter().dispatch(userModels);
 

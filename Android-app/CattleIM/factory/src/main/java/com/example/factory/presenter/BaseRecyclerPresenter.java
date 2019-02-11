@@ -67,15 +67,11 @@ class BaseRecyclerPresenter<ViewMode, View extends BaseContract.RecyclerView>
         // 基本的更新数据并刷新界面
         RecyclerAdapter<ViewMode> adapter = view.getRecyclerAdapter();
 
-        for (ViewMode model: dataList){
-            Log.e(TAG, "refreshDataOnUiThread:" + model.toString() );
-        }
 
         // 改变数据集合并不通知界面刷新
         adapter.getItems().clear();
         adapter.getItems().addAll(dataList);
 
-        Log.e(TAG, "refreshDataOnUiThread: " + dataList.size());
         adapter.notifyDataSetChanged();
         // 通知界面刷新占位布局
 //        view.onAdapterDataChanged();

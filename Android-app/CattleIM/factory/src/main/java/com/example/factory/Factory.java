@@ -1,9 +1,14 @@
 package com.example.factory;
 
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.example.factory.middleware.user.UserCenter;
 import com.example.factory.middleware.user.UserDispatch;
+import com.example.netKit.net.push.MessageFactory;
+import com.example.netKit.net.push.PushClient;
+import com.example.netKit.net.push.pieces.MessagePieces;
+import com.example.netKit.net.push.pieces.PushPieces;
 
 
 /** fixme
@@ -18,7 +23,22 @@ import com.example.factory.middleware.user.UserDispatch;
 
 public class Factory{
 
+    final static String TAG = Factory.class.getName();
+
+    private static String message;
+
     public static UserCenter getUserCenter() {
         return UserDispatch.instance();
+    }
+
+    /**
+     * @param message 信息
+     */
+    public static void dispatchPush(String message) {
+
+        Factory.message = message;
+        Log.e(TAG, "dispatchPush: 1 " + message );
+        // todo 对消息进行解码， 弄成一个model
+        PushClient.getInstance().sendMessage(new PushPieces<String>("ok"));
     }
 }

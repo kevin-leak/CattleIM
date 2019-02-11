@@ -74,7 +74,8 @@
 
         <!--建立步骤的服务-->
         <service android:name=".services.StepService" />
-        <!--建议一个广播接收者-->
+
+        <!--建了立一个广播接收者-->
         <receiver
             android:name=".EventReceiver"
             android:enabled="true"

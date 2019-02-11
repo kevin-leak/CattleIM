@@ -27,7 +27,7 @@ public class ProfileActivity extends PresentToolActivity<ProfileContract.Present
         implements ProfileContract.View {
 
     private static boolean OUT_FLAG = false;
-    private static Context context;
+    private static BaseActivity context;
     @BindView(R.id.im_header)
     ImageView imHeader;
     @BindView(R.id.txt_name)
@@ -42,7 +42,7 @@ public class ProfileActivity extends PresentToolActivity<ProfileContract.Present
     MaterialEditText metDesc;
     private String TAG = "ProfileActivity";
 
-    public static void show(Context context) {
+    public static void show(BaseActivity context) {
         ProfileActivity.context = context;
         context.startActivity(new Intent(context, ProfileActivity.class));
     }
@@ -108,7 +108,6 @@ public class ProfileActivity extends PresentToolActivity<ProfileContract.Present
 
     @Override
     public void loadInfo(User user) {
-        Log.e(TAG, "loadInfo: " + "load" );
         imPortrait.setup((Glide.with(ProfileActivity.this)), user);
         txtName.setText(user.getUsername());
         metPhone.setText(user.getPhone());
@@ -121,7 +120,7 @@ public class ProfileActivity extends PresentToolActivity<ProfileContract.Present
     public void finish() {
         super.finish();
 
-        if (context != null && OUT_FLAG){
+        if (ProfileActivity.context != null && OUT_FLAG){
             android.os.Process.killProcess(android.os.Process.myPid());
             System.exit(0);
         }

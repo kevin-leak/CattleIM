@@ -12,10 +12,13 @@ import android.widget.LinearLayout;
 
 import com.example.common.widget.ToolbarActivity;
 import com.example.netKit.db.User;
+import com.example.netKit.net.push.PushClient;
+import com.example.netKit.net.push.pieces.MessagePieces;
+import com.example.netKit.net.push.pieces.PushPieces;
 import com.example.thinkpad.cattleim.R;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MessageActivity extends ToolbarActivity {
 
@@ -69,6 +72,22 @@ public class MessageActivity extends ToolbarActivity {
     @Override
     protected int getContentLayoutId() {
         return R.layout.activity_message;
+    }
+
+    @OnClick(R.id.msg_send)
+    void sendMessage(){
+        PushClient.getInstance().sendMessage(new MessagePieces(userId, etMessage.getText().toString()),
+                new PushClient.MessageListener() {
+            @Override
+            public void onFailure() {
+
+            }
+
+            @Override
+            public void onSuccess() {
+
+            }
+        });
     }
 
 

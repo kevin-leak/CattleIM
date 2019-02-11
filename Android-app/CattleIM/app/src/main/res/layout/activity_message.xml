@@ -71,6 +71,7 @@
             android:layout_height="match_parent" />
 
         <ImageButton
+            android:id="@+id/msg_send"
             android:layout_width="@dimen/len_50"
             android:layout_height="match_parent"
             android:src="@drawable/ic_send_message"

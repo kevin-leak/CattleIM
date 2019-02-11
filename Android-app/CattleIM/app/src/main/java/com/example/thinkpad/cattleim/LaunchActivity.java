@@ -64,6 +64,10 @@ public class LaunchActivity extends BaseActivity {
             intentClass = AccountActivity.class;
         }
 
+        Intent intent = new Intent();
+        intent.setAction("com.example.netKit.net.push.PushService");
+        sendBroadcast(intent);
+
 
 
 //        if (Build.VERSION.SDK_INT >= 23) {

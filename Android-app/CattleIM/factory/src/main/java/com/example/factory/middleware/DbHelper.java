@@ -57,7 +57,6 @@ public class DbHelper {
         if (models == null || models.length == 0)
             return;
 
-        Log.e(TAG, "save: " + models.toString() );
         // 当前数据库的一个管理者
         DatabaseDefinition definition = FlowManager.getDatabase(AppDatabase.class);
         // 提交一个事物
@@ -134,11 +133,8 @@ public class DbHelper {
     // 设置监听通知
     private <model extends BaseModel> void notifySave(Class<model> clsType, model... models){
         Set<DataChangeListener> dataChangeListeners = getChangedListeners(clsType);
-        Log.e(TAG, "notifySave: 1" + dataChangeListeners.size() );
         if (dataChangeListeners != null && dataChangeListeners.size() > 0){
-            Log.e(TAG, "notifySave: 2" + dataChangeListeners.size() );
             for (DataChangeListener<model> listener: dataChangeListeners){
-                Log.e(TAG, "notifySave: 3" + dataChangeListeners.size() );
                 listener.onDataSave(models);
             }
         }

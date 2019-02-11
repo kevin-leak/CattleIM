@@ -39,3 +39,26 @@ user = {
     "isFriend": True,
     "modifyAt": ""
 }
+
+
+# web socket 发送的基本包
+wskt_base = {
+    "status": 1,
+    "pushId": "",
+    "message": []
+}
+
+# 消息的传送格式
+message = {
+    "chatId": "",
+    "fromId": "",
+    "toId": "",
+    "type": "",
+    "info": [],
+    "createTime": ""
+}
+
+message_info = {
+    "category": "",
+    "content": ""
+}

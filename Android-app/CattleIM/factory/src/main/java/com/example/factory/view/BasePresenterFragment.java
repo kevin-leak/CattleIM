@@ -56,7 +56,7 @@ public abstract class BasePresenterFragment<Presenter extends BaseContract.Prese
     public void showDialog() {
 
 //        ProgressDialog dialog = new ProgressDialog(this.getActivity());
-
+//
 //        dialog.show();
 
     }

@@ -1,0 +1,45 @@
+package com.example.netKit.net.push.contract;
+
+import com.example.netKit.NetKit;
+import com.example.netKit.net.push.PushClient;
+import com.example.netKit.net.push.pieces.MessagePieces;
+import com.example.netKit.persistence.Account;
+import com.example.netKit.net.push.pieces.PushPieces;
+
+public interface PushClientContract {
+
+
+
+
+    String CMD_ACTION = "CMD_ACTION";
+
+    int MSG = 0;
+
+    int PUSH_ID = 1;
+
+
+
+
+    /**
+     * websoket 发消息的时候的监听回调
+     */
+    interface MessageListener {
+
+        void sendSuccess(String text, int status);
+
+        void sendFailure(String text, int status);
+    }
+
+    interface BaseClient{
+        void start(PushClient.PushListener push);
+
+        void sendMessage(MessagePieces pieces, PushClient.MessageListener listener);
+
+        void sendMessage(PushPieces pushPieces);
+
+        void disConnect();
+
+        void reConnect();
+    }
+
+}

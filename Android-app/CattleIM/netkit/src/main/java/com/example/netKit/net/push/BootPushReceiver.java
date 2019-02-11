@@ -22,6 +22,7 @@ public class BootPushReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 //        todo  监控网络变化来使得控制 service的工作
-//        PushService.startPush();
+        Log.e(TAG, "onReceive: " + "开机 启动 后广播" );
+        PushService.startPush();
     }
 }

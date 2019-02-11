@@ -40,7 +40,6 @@ public class FriendsPresenter extends BaseSourcePresenter<User, User, ContactDat
 
         RecyclerAdapter<User> adapter = view.getRecyclerAdapter();
         List<User> old = adapter.getItems();
-        Log.e(TAG, "onDataLoaded:" + users.size() );
 
 
 

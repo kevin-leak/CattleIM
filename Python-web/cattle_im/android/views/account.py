@@ -4,6 +4,7 @@ import time
 
 from django.contrib import auth
 from django.contrib.auth import authenticate, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
 from django.http import HttpResponse
 from django.views.decorators.http import require_POST
@@ -40,6 +41,12 @@ def out(request):
     return HttpResponse(json.dumps(ret, ensure_ascii=False))
 
 
+@login_required
+def bind_push_id(request, pushId):
+    act = Account(request)
+    return HttpResponse(json.dumps(act.bind_push_id(pushId), ensure_ascii=False))
+
+
 from android.contract import request_interface
 import copy
 from android.api.factory import user_card
@@ -55,7 +62,11 @@ class Account:
         base_ret account 反馈的基础信息
         :param req:
         """
-        self.piece = eval(req.body)
+        try:
+            self.piece = eval(req.body)
+        except Exception:
+            self.piece = None
+
         self.req = req
         self.base_ret = copy.deepcopy(request_interface.common)
         self.base_ret['status'] = response_code.SUCCESS_STATUS
@@ -153,3 +164,11 @@ class Account:
             self.base_ret['status'] = response_code.NULL_USER
             self.base_ret['result'] = copy.deepcopy(request_interface.account)
             return self.base_ret
+
+    def bind_push_id(self, push_id):
+        profile = Profile.objects.get(push_id=push_id)
+        user_id = profile.user.uid
+        if profile.is_bind is False:
+            profile.is_bind = True
+            profile.save()
+        return user_card.account(user_id)
