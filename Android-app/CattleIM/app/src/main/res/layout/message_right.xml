@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout android:layout_width="match_parent"
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <com.example.common.widget.AvatarView
-        android:id="@+id/av_right_avatar"
+        android:id="@+id/av_avatar"
         android:layout_width="@dimen/len_40"
         android:layout_height="@dimen/len_40"
         android:layout_margin="@dimen/len_10"
@@ -13,19 +14,39 @@
         android:src="@mipmap/default_avatar"
         android:layout_alignParentRight="true" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/len_20"
-        android:layout_toStartOf="@+id/av_right_avatar"
-        android:layout_toLeftOf="@+id/av_right_avatar"
-        android:layout_marginLeft="@dimen/len_80"
-        android:layout_marginBottom="@dimen/len_5"
+        android:layout_toLeftOf="@+id/av_avatar"
         android:elevation="@dimen/len_4"
-        android:padding="@dimen/len_10"
-        android:background="@drawable/message_right_item"
-        android:text="sdafnlkjj;j;j;j;j;jj;jjjjsdfdsfsdfsafsadfsafasdfsadjjjjjjjjjjjjj"
-        android:textSize="@dimen/font_20"
-        tools:ignore="HardcodedText,RtlHardcoded,UnusedAttribute" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="@dimen/len_80"
+        tools:ignore="RtlHardcoded,UnusedAttribute">
+
+        <ImageView
+            android:id="@+id/iv_reload"
+            android:layout_width="@dimen/len_25"
+            android:layout_height="@dimen/len_25"
+            app:srcCompat="@drawable/ic_reload"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/len_10"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/tv_chat_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/len_20"
+            android:layout_marginBottom="@dimen/len_5"
+            android:padding="@dimen/len_10"
+            android:background="@drawable/message_right_item"
+            android:text="sdafnlkjj;j;j;j;j;jj;jjjjsdfdsfsdfsafsadfsafasdfsadjjjjjjjjjjjjj"
+            android:textSize="@dimen/font_20"
+            tools:ignore="HardcodedText,NotSibling,RtlHardcoded,UnusedAttribute" />
+
+
+    </LinearLayout>
+
+
 
 </RelativeLayout>

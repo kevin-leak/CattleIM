@@ -1,14 +1,22 @@
 package com.example.factory;
 
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.example.factory.middleware.user.UserCenter;
+import com.example.common.utils.CollectionUtil;
+import com.example.factory.contract.chat.ConversationCenter;
+import com.example.factory.contract.todo.EventCenter;
+import com.example.factory.middleware.chat.ConversationDispatch;
+import com.example.factory.contract.user.UserCenter;
+import com.example.factory.middleware.todo.EventDispatch;
 import com.example.factory.middleware.user.UserDispatch;
-import com.example.netKit.net.push.MessageFactory;
+import com.example.netKit.db.Conversation;
+import com.example.netKit.model.ConversationModel;
+import com.example.netKit.net.push.ConversationFactory;
 import com.example.netKit.net.push.PushClient;
-import com.example.netKit.net.push.pieces.MessagePieces;
+import com.example.netKit.net.push.pieces.ConversationAck;
 import com.example.netKit.net.push.pieces.PushPieces;
+
+import java.util.List;
 
 
 /** fixme
@@ -25,20 +33,44 @@ public class Factory{
 
     final static String TAG = Factory.class.getName();
 
-    private static String message;
 
     public static UserCenter getUserCenter() {
         return UserDispatch.instance();
     }
 
     /**
-     * @param message 信息
+     * @param conversation 信息
+     * @param isOpen
      */
-    public static void dispatchPush(String message) {
+    public static void dispatchPush(String conversation, boolean isOpen) {
+        Log.e(TAG, "dispatchPush: 1 " + conversation );
 
-        Factory.message = message;
-        Log.e(TAG, "dispatchPush: 1 " + message );
+        List<ConversationModel> conversationModels = ConversationFactory.decodeConText(conversation, isOpen);
+
+        ConversationModel[] models = CollectionUtil.toArray(conversationModels, ConversationModel.class);
+        Factory.getConversationCenter().dispatch(models);
+
         // todo 对消息进行解码， 弄成一个model
         PushClient.getInstance().sendMessage(new PushPieces<String>("ok"));
     }
+
+
+    /**
+     * 获取一个消息中心的实现类
+     *
+     * @return 消息中心的规范接口
+     */
+    public static ConversationCenter getConversationCenter() {
+        return ConversationDispatch.instance();
+    }
+
+
+    public static EventCenter getEventCenter() {
+        return EventDispatch.instance();
+    }
+
+
+
+
+
 }

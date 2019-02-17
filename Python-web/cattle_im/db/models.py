@@ -193,8 +193,10 @@ class Conversation(models.Model):
 # 在消息接口中 chatId  指的是 group， tag， conversation， link, 根据type来填充
 class Event(models.Model):
     eid = models.UUIDField(primary_key=True, default=uuid.uuid4, unique=True)
+
     conversation = models.ForeignKey(to=Conversation, on_delete=models.CASCADE)
     chatId = models.UUIDField(default=uuid.uuid4, null=True, blank=True, editable=True)
+
     type_list = (
         (0, '系统消息'),
         (1, '普通消息'),
@@ -205,6 +207,7 @@ class Event(models.Model):
         (6, '关联消息'),
         (7, '群消息')
     )
+
     type = models.IntegerField(choices=type_list)
     update_time = models.DateTimeField(auto_now=True)
 

@@ -66,9 +66,9 @@ def wbskt(request):
                 send_message("ok", websocket)
                 # fixme 先只处理单聊
                 dispatch(message_set, user)
-    else:
-        print("-----------绑定push id------")
-        add_pusher(request.websocket, user)
+        else:
+            print("-----------绑定push id------")
+            add_pusher(request.websocket, user)
 
 
 def dispatch(message_set, user):

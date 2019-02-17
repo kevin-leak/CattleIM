@@ -167,7 +167,8 @@ class Account:
 
     def bind_push_id(self, push_id):
         profile = Profile.objects.get(push_id=push_id)
-        user_id = profile.user.uid
+        if profile.user is not None:
+            user_id = profile.user.uid
         if profile.is_bind is False:
             profile.is_bind = True
             profile.save()

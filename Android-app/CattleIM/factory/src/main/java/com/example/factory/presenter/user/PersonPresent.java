@@ -1,5 +1,6 @@
 package com.example.factory.presenter.user;
 
+import com.example.factory.contract.user.PersonContract;
 import com.example.factory.presenter.BasePresenter;
 import com.example.netKit.NetKit;
 import com.example.netKit.db.User;

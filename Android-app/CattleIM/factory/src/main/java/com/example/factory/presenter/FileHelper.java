@@ -1,10 +1,7 @@
 package com.example.factory.presenter;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-
 import com.example.common.factory.data.DataSource;
-import com.example.common.tools.StringsTools;
+import com.example.common.utils.StringsUtils;
 import com.example.netKit.db.IMFile;
 import com.example.netKit.model.FileModel;
 import com.example.netKit.net.NetInterface;
@@ -24,7 +21,7 @@ public class FileHelper {
     public static void saveBackgroundFile(String path, DataSource.Callback<IMFile> callback) {
 
         String name = new File(path).getName();
-        String imageString = StringsTools.ImageToStrings(path);
+        String imageString = StringsUtils.ImageToStrings(path);
         NetInterface connect = CattleNetWorker.getConnect();
         Call<RspPiece<FileModel>> task = connect.saveFile(new FilePiece(name, imageString));
         task.enqueue(new FileCallBack(callback));
@@ -52,7 +49,7 @@ public class FileHelper {
     public static String fetchBackgroundFile(String path) {
 
         String name = new File(path).getName();
-        String imageString = StringsTools.ImageToStrings(path);
+        String imageString = StringsUtils.ImageToStrings(path);
         NetInterface connect = CattleNetWorker.getConnect();
         Call<RspPiece<FileModel>> task = connect.saveFile(new FilePiece(name, imageString));
         String urlString = null;

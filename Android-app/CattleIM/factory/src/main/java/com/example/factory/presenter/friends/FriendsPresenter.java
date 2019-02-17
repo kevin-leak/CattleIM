@@ -1,11 +1,11 @@
 package com.example.factory.presenter.friends;
 
 import android.support.v7.util.DiffUtil;
-import android.util.Log;
 
 import com.example.common.factory.data.DataSource;
 import com.example.common.widget.recycler.RecyclerAdapter;
-import com.example.factory.middleware.user.ContactDataSource;
+import com.example.factory.contract.friends.FriendsContract;
+import com.example.factory.contract.user.ContactDataSource;
 import com.example.factory.middleware.user.FriendsRepository;
 import com.example.factory.presenter.BaseSourcePresenter;
 import com.example.factory.presenter.user.UserHelper;

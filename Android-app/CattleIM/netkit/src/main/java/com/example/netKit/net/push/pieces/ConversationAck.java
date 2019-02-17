@@ -17,8 +17,28 @@ public class ConversationAck {
     private String chatId;
     private String info = "ok";
 
+    public ConversationAck(String fromId, String toId, String chatId) {
+        this.fromId = fromId;
+        this.toId = toId;
+        this.chatId = chatId;
+    }
+
+    public ConversationAck() {
+
+    }
+
     public String getFromId() {
         return fromId;
+    }
+
+    @Override
+    public String toString() {
+        return "ConversationAck{" +
+                "fromId='" + fromId + '\'' +
+                ", toId='" + toId + '\'' +
+                ", chatId='" + chatId + '\'' +
+                ", info='" + info + '\'' +
+                '}';
     }
 
     public void setFromId(String fromId) {

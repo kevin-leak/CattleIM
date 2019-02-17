@@ -1,19 +1,17 @@
 package com.example.factory.middleware.user;
 
 
-import android.icu.lang.UCharacter;
 import android.text.TextUtils;
 
+import com.example.factory.contract.user.UserCenter;
 import com.example.factory.middleware.DbHelper;
 import com.example.netKit.db.User;
-import com.example.netKit.model.AccountModel;
 import com.example.netKit.model.UserModel;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
 
 /**
  * 做一个model的分发，开启一个线程对其进行一个数据的额存储处理

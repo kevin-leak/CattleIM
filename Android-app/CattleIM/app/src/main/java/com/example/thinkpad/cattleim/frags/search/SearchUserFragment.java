@@ -14,12 +14,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.common.app.Application;
 import com.example.common.widget.AvatarView;
 import com.example.common.widget.recycler.Decoration;
 import com.example.common.widget.recycler.RecyclerAdapter;
 import com.example.factory.contract.search.SearchContract;
-import com.example.factory.presenter.friends.FriendContract;
+import com.example.factory.contract.friends.FriendContract;
 import com.example.factory.presenter.friends.FriendPresenter;
 import com.example.factory.presenter.search.SearchUserPresenter;
 import com.example.factory.view.BasePresenterFragment;

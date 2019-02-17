@@ -1,41 +1,29 @@
 package com.example.thinkpad.cattleim.activities;
 
-import android.animation.ValueAnimator;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.view.ViewPager;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.TranslateAnimation;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.example.common.app.BaseActivity;
 import com.example.common.app.BaseFragment;
-import com.example.common.tools.UITools;
+import com.example.common.utils.UIUtils;
 import com.example.netKit.NetKit;
 import com.example.netKit.persistence.Account;
 import com.example.thinkpad.cattleim.R;
 import com.example.thinkpad.cattleim.frags.account.LoginFragment;
 import com.example.thinkpad.cattleim.frags.account.RegisterFragment;
 import com.example.thinkpad.cattleim.helper.ViewPageHelper;
-import com.yalantis.ucrop.UCrop;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.BindViews;
 import butterknife.OnClick;
-import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * 1. 实现UI切换
@@ -100,7 +88,7 @@ public class AccountActivity extends BaseActivity
     protected void initWidget() {
         super.initWidget();
         // 为了适配不同的机型，我们动态的设置一下背景的高度
-        ivBackground.getLayoutParams().height = (int) (UITools.getScreenHeight(this) * 0.3);
+        ivBackground.getLayoutParams().height = (int) (UIUtils.getScreenHeight(this) * 0.3);
     }
 
 

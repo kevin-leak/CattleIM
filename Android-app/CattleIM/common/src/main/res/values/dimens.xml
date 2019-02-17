@@ -40,5 +40,6 @@
     <dimen name="len_1">1dp</dimen>
     <dimen name="len_220">220dp</dimen>
     <dimen name="len_48">48dp</dimen>
+    <dimen name="len_26">26dp</dimen>
 
 </resources>

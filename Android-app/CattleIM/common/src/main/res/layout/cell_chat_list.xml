@@ -68,4 +68,17 @@
         android:text="17-04-12"
         tools:text="17-04-12"
         tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/btn_chat_count"
+        android:layout_width="@dimen/len_18"
+        android:layout_height="@dimen/len_18"
+        android:background="@drawable/chat_count"
+        android:text="1"
+        android:layout_gravity="bottom|end"
+        android:ellipsize="end"
+        android:textColor="@color/colorWhite"
+        tools:ignore="HardcodedText" />
+
+
 </FrameLayout>

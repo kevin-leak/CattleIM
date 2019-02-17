@@ -109,9 +109,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.TransStatusBar" />
 
-        <activity android:name=".activities.MessageActivity"
+        <activity android:name=".activities.ConversationActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.TransStatusBar"/>
+            android:theme="@style/AppTheme.Conversation"
+            android:windowSoftInputMode="adjustResize"/>
 
         <activity android:name=".activities.AccountInfoActivity"
             android:screenOrientation="portrait"

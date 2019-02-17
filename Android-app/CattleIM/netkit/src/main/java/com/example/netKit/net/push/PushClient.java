@@ -6,7 +6,8 @@ import com.example.common.Common;
 import com.example.netKit.net.CattleNetWorker;
 import com.example.netKit.net.push.contract.PushClientContract;
 import com.example.netKit.net.push.helper.ClientHelper;
-import com.example.netKit.net.push.pieces.MessagePieces;
+import com.example.netKit.net.push.pieces.ConversationAck;
+import com.example.netKit.net.push.pieces.ConversationPieces;
 import com.example.netKit.net.push.pieces.PushPieces;
 import com.google.gson.reflect.TypeToken;
 
@@ -80,19 +81,36 @@ public class PushClient implements PushClientContract.BaseClient, PushClientCont
     }
 
     @Override
-    public void sendMessage(MessagePieces pieces, MessageListener listener) {
+    public void sendMessage(ConversationPieces pieces, MessageListener listener) {
 //        todo 是否做拦截，发多条,或者单条
-
-        ArrayList<MessagePieces> messagePieces = new ArrayList<>();
+        Log.e(TAG, "sendMessage: " + " 发送消息中----" );
+        ArrayList<ConversationPieces> messagePieces = new ArrayList<>();
         messagePieces.add(pieces);
-        String messageJson = MessageFactory.build(messagePieces);
-//        String messageJson = MessageFactory.build(pieces);
+        String messageJson = ConversationFactory.build(messagePieces);
+//        String messageJson = ConversationFactory.build(pieces);
 
         this.listener = listener;
         if (webSocket != null) {
             webSocket.send(messageJson);
         } else {
             reConnect();
+
+        }
+    }
+
+    @Override
+    public void sendMessage(ConversationAck pieces, MessageListener listener) {
+//        todo 是否做拦截，发多条,或者单条
+        Log.e(TAG, "sendMessage: " + " 发送消息中----" );
+        String messageJson = ConversationFactory.build(pieces);
+//        String messageJson = ConversationFactory.build(pieces);
+
+        this.listener = listener;
+        if (webSocket != null) {
+            webSocket.send(messageJson);
+        } else {
+            reConnect();
+
         }
     }
 
@@ -103,8 +121,11 @@ public class PushClient implements PushClientContract.BaseClient, PushClientCont
     public void sendMessage(PushPieces pushPieces) {
         if (webSocket != null) {
             webSocket.send(pushPieces.toJson());
-
         } else {
+            if (listener != null){
+                listener.onFailure(webSocket);
+                listener = null;
+            }
             reConnect();
         }
     }
@@ -141,7 +162,7 @@ public class PushClient implements PushClientContract.BaseClient, PushClientCont
                     }.getType());
         }catch (Exception ignored){
             pushPieces = ClientHelper
-                    .getGson().fromJson(text, new TypeToken<PushPieces<List<MessagePieces>>>() {
+                    .getGson().fromJson(text, new TypeToken<PushPieces<List<ConversationPieces>>>() {
                     }.getType());
         }
         //  如果message是ok证明是消息包
@@ -160,8 +181,10 @@ public class PushClient implements PushClientContract.BaseClient, PushClientCont
                     break;
                 case ClientHelper.StatusListener.MESSAGE:
                     Log.e(TAG, "sendSuccess: " + "MESSAGE" );
-                    if (listener != null)
-                    listener.onSuccess();
+                    if (listener != null){
+                        listener.onSuccess();
+                        listener = null;
+                    }
             }
 
         }
@@ -173,21 +196,33 @@ public class PushClient implements PushClientContract.BaseClient, PushClientCont
     public void sendFailure(String text, int status) {
 
         if (ClientHelper.StatusListener.RE_CONNECT == status) {
-            new Thread() {
-                @Override
-                public void run() {
-                    super.run();
-                    try {
-                        Thread.sleep(3000);//休眠1秒
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    // TODO 进行一个当前网络的一个判断来决定是否要进行重新连接还是通知用户开启网络
-                    reConnect();
-                }
-            }.start();
-
+            reConnect();
+        }else if (ClientHelper.StatusListener.MESSAGE == status){
+            reConnectWrapper();
+        }else if (ClientHelper.StatusListener.START == status){
+            reConnectWrapper();
         }
+
+        if (listener != null){
+            listener.onFailure(webSocket);
+            listener = null;
+        }
+    }
+
+    private void reConnectWrapper() {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                try {
+                    Thread.sleep(1000);//休眠1秒
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                // TODO 进行一个当前网络的一个判断来决定是否要进行重新连接还是通知用户开启网络
+                reConnect();
+            }
+        }.start();
     }
 
 
@@ -220,7 +255,7 @@ public class PushClient implements PushClientContract.BaseClient, PushClientCont
         /**
          * 消息发送成功的回调
          */
-        void onFailure();
+        void onFailure(WebSocket webSocket);
 
         /**
          * 消息发送失败的回调

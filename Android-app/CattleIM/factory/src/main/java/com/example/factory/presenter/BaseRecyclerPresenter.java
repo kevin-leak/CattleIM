@@ -37,8 +37,11 @@ class BaseRecyclerPresenter<ViewMode, View extends BaseContract.RecyclerView>
 
                 // 基本的更新数据并刷新界面
                 RecyclerAdapter<ViewMode> adapter = view.getRecyclerAdapter();
-                adapter.replace(dataList);
-                view.onAdapterDataChanged();
+                if (adapter != null){
+                    adapter.replace(dataList);
+                    view.onAdapterDataChanged();
+                }
+
             }
         });
     }
@@ -50,13 +53,14 @@ class BaseRecyclerPresenter<ViewMode, View extends BaseContract.RecyclerView>
      * @param dataList   具体的新数据
      */
     protected void refreshData(final DiffUtil.DiffResult diffResult, final List<ViewMode> dataList) {
-        getView().getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                // 这里是主线程运行时
-                refreshDataOnUiThread(diffResult, dataList);
-            }
-        });
+        if (getView().getActivity() != null)
+            getView().getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    // 这里是主线程运行时
+                    refreshDataOnUiThread(diffResult, dataList);
+                }
+            });
     }
 
 
@@ -73,8 +77,8 @@ class BaseRecyclerPresenter<ViewMode, View extends BaseContract.RecyclerView>
         adapter.getItems().addAll(dataList);
 
         adapter.notifyDataSetChanged();
-        // 通知界面刷新占位布局
-//        view.onAdapterDataChanged();
+//         通知界面刷新占位布局
+        view.onAdapterDataChanged();
 
 //         进行增量更新
         diffResult.dispatchUpdatesTo(adapter);

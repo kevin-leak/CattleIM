@@ -40,7 +40,9 @@ dependencies {
     implementation 'com.yanzhenjie:permission:1.1.0'
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
 
+
     //    spark按钮
     api project(path:':factory')
+
 
 }

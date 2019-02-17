@@ -61,12 +61,10 @@ class MessageFactory:
             "fromId": "",
             "toId": "",
             "type": "",
-            "info": [{
+            "info": {
                 "category": "",
                 "content": ""
             },
-                {}
-            ],
             "createTime": ""
         },
         {},]
@@ -78,27 +76,25 @@ class MessageFactory:
             print("-----push回送------")
             # 这里是push回送包
             return None, MessageFactory.PUSH_MSG
-        elif type(message).__name__ is 'list' and message.index(0)['info'] is 'ok':
+        elif type(message).__name__ != 'list':
             # （这里是一个会话发送一次回送包，表示客户端已经收到信息），做多个会话回送处理
             # 确认回送包
-            # [{
+            # {
             #     "fromId": "",
             #     "toId": "",
             #     "chatId": "",
             #     "info": "ok",
-            # },]
+            # }
             # 用来存储当前已经push成功的 id
             # 要求我们这里，回送消息一起发
             print("-------会话回送-------")
-            for msg in message:
-                cls.save_db(msg)
+            cls.save_db(message)
             return None, MessageFactory.CLEAR_MSG
         else:
             # 获取push id
             # message_queue = {"pushId": ...}
             print('------消息暂时存储-----')
             message_queue = {}
-            print(message)
             # 获取不同会话信息的信息
             for msg in message:
                 toId = msg["toId"]
@@ -119,6 +115,7 @@ class MessageFactory:
         :param msg: 指的是每个会话
         :return:
         """
+        print(msg)
         toId = msg["toId"]
         toPushId = User.objects.get(uid=toId).profile_id
         fromId = msg["fromId"]
@@ -127,9 +124,11 @@ class MessageFactory:
         # 获取消息队列, entity，指的是一个会话里面的内容
         entity = eval(pushHistory.entity)
         # 建立conversation
-        for info in entity['info']:
+        # entity 是一个list
+        for e in entity:
+            info = e['info']
             category = int(info['category'])
-            content = int(info['content'])
+            content = info['content']
             # "0": "文本",
             # "1": "图片",
             # "2": "语音",
@@ -138,7 +137,10 @@ class MessageFactory:
             con = Conversation.objects.create(category=category, send_id=fromId,
                                               receive_id=toId, content=content)
             # 建立event 对象
-            Event.objects.create(conversation=con, chatId=msg['chatId'], type=msg['type'])
+            Event.objects.create(conversation=con, chatId=msg['chatId'], type=e['type'])
+        # 清理 entity
+        pushHistory.entity = str(json.dumps([]))
+        pushHistory.save()
 
     @classmethod
     def save_push(cls, fromPushId, msg, toPushId):
@@ -155,13 +157,13 @@ class MessageFactory:
         if pushHistory:
             entity = pushHistory.entity
             entity = eval(entity)
-            # 对消息进行扩展
-            entity['info'].extend(msg['info'])
+            entity.append(msg)
             pushHistory.entity = str(json.dumps(entity))
             pushHistory.save()
         else:
+            entity = [msg]
             PushHistory.objects.create(send_id=fromPushId, receive_id=toPushId,
-                                       entity=str(json.dumps(msg)))
+                                       entity=str(json.dumps(entity)))
 
     @classmethod
     def create_beat_heart(cls, user):

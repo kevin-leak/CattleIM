@@ -154,7 +154,7 @@ public class Account {
     }
 
     public static boolean isComplete(){
-        if (Account.getUser().getSex() == 0  &&
+        if (Account.getUser()!= null && Account.getUser().getSex() == 0  &&
                 TextUtils.isEmpty(Account.getUser().getDesc())){
             return false;
         }

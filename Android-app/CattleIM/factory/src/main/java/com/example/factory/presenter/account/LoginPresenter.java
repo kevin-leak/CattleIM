@@ -3,10 +3,9 @@ package com.example.factory.presenter.account;
 import android.text.TextUtils;
 
 import com.example.common.factory.data.DataSource;
-import com.example.common.tools.ValidateTools;
+import com.example.common.utils.ValidateUtils;
 import com.example.factory.R;
 import com.example.factory.contract.account.LoginContract;
-import com.example.factory.contract.account.RegisterContract;
 import com.example.factory.presenter.BasePresenter;
 import com.example.netKit.db.User;
 import com.example.netKit.piece.account.LoginPiece;
@@ -39,7 +38,7 @@ public class LoginPresenter extends BasePresenter<LoginContract.View>
 
     @Override
     public boolean checkMobile(String phone) {
-        if (ValidateTools.isMobile(phone)){
+        if (ValidateUtils.isMobile(phone)){
             return true;
         }
         getView().showError(R.string.form_phone_error);

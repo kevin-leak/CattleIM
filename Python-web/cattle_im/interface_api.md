@@ -182,19 +182,17 @@ message_set['message'] = [{
 	"fromId": "",
 	"toId": "",
 	"type": "",
-	"info": [{
+	"info": {
 			"category": "",
 			"content": ""
 		},
-		{}
-	],
 	"createTime": ""
 }，{}]
 ```
 
 chatId：指的是普通对话， tag，group，link
 
-
+这里重新规定，info 不能为数组，每次发一条信息，我们都在message 里面增加一个 字典
 
 type
 
@@ -246,16 +244,13 @@ message_queue = {
 			"fromId": "",
 			"toId": "",
 			"type": "",
-			"info": [{
+			"info": {
 					"category": "",
 					"content": ""
 					},
-				{}
-			],
 			"createTime": ""
 		},
 		{},
-		{}
 	],
 	"second": []
 }

@@ -1,9 +1,8 @@
 package com.example.netKit.net.push.contract;
 
-import com.example.netKit.NetKit;
 import com.example.netKit.net.push.PushClient;
-import com.example.netKit.net.push.pieces.MessagePieces;
-import com.example.netKit.persistence.Account;
+import com.example.netKit.net.push.pieces.ConversationAck;
+import com.example.netKit.net.push.pieces.ConversationPieces;
 import com.example.netKit.net.push.pieces.PushPieces;
 
 public interface PushClientContract {
@@ -33,7 +32,10 @@ public interface PushClientContract {
     interface BaseClient{
         void start(PushClient.PushListener push);
 
-        void sendMessage(MessagePieces pieces, PushClient.MessageListener listener);
+        void sendMessage(ConversationPieces pieces, PushClient.MessageListener listener);
+
+        // 用来发送消息确定包
+        void sendMessage(ConversationAck pieces, PushClient.MessageListener listener);
 
         void sendMessage(PushPieces pushPieces);
 

@@ -1,84 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/actionBarWithStatusBarSize"
-        android:elevation="@dimen/len_2"
-        android:outlineProvider="bounds"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="lollipop">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/len_40"
-            android:layout_marginTop="28dp"
-            android:background="@color/colorPrimary"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/im_header"
-            tools:ignore="UnknownIdInLayout" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/actionBarWithStatusBarSize"
-        android:layout_marginBottom="@dimen/len_50"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <include layout="@layout/message_left"/>
-            <include layout="@layout/message_right"/>
-            <include layout="@layout/message_left"/>
-            <include layout="@layout/message_left"/>
-            <include layout="@layout/message_left"/>
-            <include layout="@layout/message_right"/>
-            <include layout="@layout/message_right"/>
-
-        </LinearLayout>
-    </ScrollView>
-
-    <LinearLayout
-        android:id="@+id/ll_message_sender"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/len_50"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:background="@color/colorWhite"
-        android:elevation="@dimen/len_4">
-
-        <EditText
-            android:id="@+id/et_message"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:singleLine="true"
-            android:text="asdflksajkjkl"
-            android:textColor="@color/textAccent"
-            android:paddingLeft="@dimen/len_10"
-            android:layout_height="match_parent" />
-
-        <ImageButton
-            android:id="@+id/msg_send"
-            android:layout_width="@dimen/len_50"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_send_message"
-            tools:ignore="VectorDrawableCompat"
-            android:background="@color/colorWhite"/>
-
-    </LinearLayout>
-
-
-</android.support.constraint.ConstraintLayout>
+</FrameLayout>

@@ -97,7 +97,12 @@ public class TodoFragment extends BaseFragment implements
 
     @Override
     public void OnNavChanged(NavHelper.Tab newTab, NavHelper.Tab oldTab) {
-
+        if (newTab.clx != EventFragment.class ) {
+            // 处理是否要进行消息通知
+            EventFragment.isOpen = false;
+        }else {
+            EventFragment.isOpen = true;
+        }
     }
 
 }

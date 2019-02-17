@@ -54,4 +54,5 @@ dependencies {
     api "com.mikhaellopez:circularfillableloaders:$rootProject.ext.mikhaellopez"
 //    spark按钮
     api "com.github.varunest:sparkbutton:$rootProject.ext.sparkbutton"
+    implementation 'org.jetbrains:annotations-java5:15.0'
 }

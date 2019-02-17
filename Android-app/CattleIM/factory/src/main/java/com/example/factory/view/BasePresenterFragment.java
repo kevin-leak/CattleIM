@@ -61,4 +61,5 @@ public abstract class BasePresenterFragment<Presenter extends BaseContract.Prese
 
     }
 
+
 }

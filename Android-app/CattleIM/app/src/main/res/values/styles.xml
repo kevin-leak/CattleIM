@@ -108,7 +108,13 @@
 
     </style>
 
+    <style name="AppTheme.Conversation" parent="AppTheme.TransStatusBar">
+    </style>
 
+    <style name="TextAppearance.Title" parent="@style/TextAppearance.AppCompat.Title">
+        <item name="android:textSize">?attr/toolbarTitleSize</item>
+        <item name="android:textColor">?attr/toolbarTitleColor</item>
+    </style>
 
 
 </resources>

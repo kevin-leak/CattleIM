@@ -3,13 +3,16 @@ package com.example.thinkpad.cattleim;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.common.utils.NotificationUtils;
 import com.example.factory.Factory;
 import com.example.factory.presenter.account.AccountHelper;
 import com.example.netKit.net.push.contract.PushClientContract;
 import com.example.netKit.persistence.Account;
+import com.example.thinkpad.cattleim.activities.ConversationActivity;
 import com.example.thinkpad.cattleim.activities.creators.TaskCreatorActivity;
 
 /**
@@ -68,7 +71,16 @@ public class EventReceiver extends BroadcastReceiver {
      * @param message 新消息
      */
     private void onMessageArrived(String message) {
+        Log.e(TAG, "onMessageArrived: " + message );
+
+        // todo  通知栏记得优化
+        Context applicationContext = App.getInstance().getApplicationContext();
+        NotificationUtils notificationUtils = new NotificationUtils(applicationContext,
+                R.mipmap.cattle, "消息", "有一条新的消息到了！！");
+        notificationUtils.getBuilder().setLargeIcon(BitmapFactory.decodeResource(applicationContext.getResources(), R.mipmap.chat_default));
+        notificationUtils.notifyed();
+
         // 交给Factory处理
-        Factory.dispatchPush(message);
+        Factory.dispatchPush(message, ConversationActivity.isOpen);
     }
 }

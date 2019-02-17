@@ -1,18 +1,10 @@
 package com.example.factory.presenter.account;
 
-import android.os.Build;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.Fragment;
-import android.text.TextUtils;
-import android.util.Log;
-
 import com.example.common.factory.data.DataSource;
-import com.example.common.tools.ValidateTools;
+import com.example.common.utils.ValidateUtils;
 import com.example.factory.R;
 import com.example.factory.contract.account.RegisterContract;
 import com.example.factory.presenter.BasePresenter;
-import com.example.factory.presenter.FileHelper;
-import com.example.netKit.db.IMFile;
 import com.example.netKit.db.User;
 import com.example.netKit.piece.account.RegisterPiece;
 
@@ -42,7 +34,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
     @Override
     public boolean checkMobile(String phone) {
 
-        if (ValidateTools.isMobile(phone)){
+        if (ValidateUtils.isMobile(phone)){
             return true;
         }
         getView().showError(R.string.form_phone_error);
@@ -55,7 +47,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
         if (!psd.equals(re_psd)){
             getView().showError(R.string.data_psd_not_same);
             return false;
-        }else if(! ValidateTools.isPassword(psd)){
+        }else if(! ValidateUtils.isPassword(psd)){
             getView().showError(R.string.form_psd_error);
             return false;
         }
@@ -65,7 +57,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View>
 
     @Override
     public boolean checkUserName(String username) {
-        if (ValidateTools.isUsername(username)){
+        if (ValidateUtils.isUsername(username)){
             return true;
         }
         getView().showError(R.string.form_username_error);

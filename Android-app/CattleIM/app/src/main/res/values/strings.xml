@@ -4,6 +4,8 @@
     <string name="spinner_prompt"> sex </string>
     <string name="change_info">修改信息</string>
     <string name="login_out">退出登入</string>
+    <string name="label_chat_edit_hint">输入文字</string>
+    <string name="net_unavailable">网络不可用！！</string>
 
 
 </resources>

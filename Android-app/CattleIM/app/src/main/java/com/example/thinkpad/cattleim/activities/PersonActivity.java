@@ -5,20 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.common.widget.AvatarView;
-import com.example.factory.presenter.user.PersonContract;
+import com.example.factory.contract.user.PersonContract;
 import com.example.factory.presenter.user.PersonPresent;
-import com.example.factory.presenter.user.UserHelper;
 import com.example.factory.view.PresentToolActivity;
 import com.example.thinkpad.cattleim.R;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 @SuppressLint("Registered")
@@ -69,7 +66,7 @@ public class PersonActivity extends
 
     @OnClick(R.id.btn_send_message)
     void sendMessage(){
-        MessageActivity.show(PersonActivity.this, getUserId());
+        ConversationActivity.show(PersonActivity.this, getUserId());
     }
 
     @OnClick(R.id.fab_follow)

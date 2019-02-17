@@ -1,5 +1,6 @@
 package com.example.factory.middleware.user;
 
+import com.example.factory.contract.user.ContactDataSource;
 import com.example.factory.middleware.BaseDbRepository;
 import com.example.netKit.db.User;
 import com.example.netKit.db.User_Table;
@@ -11,7 +12,7 @@ import java.util.List;
 /**
  * 数据的仓库
  */
-public class FriendsRepository extends BaseDbRepository<User> implements ContactDataSource{
+public class FriendsRepository extends BaseDbRepository<User> implements ContactDataSource {
 
 
     @Override

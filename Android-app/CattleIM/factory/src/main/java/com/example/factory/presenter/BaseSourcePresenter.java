@@ -9,10 +9,10 @@ import java.util.List;
 
 
 /**
- * @param <Data> 数据模型
- * @param <ViewModel>
- * @param <Source> 数据源，数据仓库
- * @param <View>
+ * @param <Data> 关注的数据，数据库中的
+ * @param <ViewModel> 页面展示要用的model， 数据库中经过处理的数据模型
+ * @param <Source> 数据来源
+ * @param <View> 我们需要控制的view
  */
 public abstract class BaseSourcePresenter<Data, ViewModel,
         Source extends DbDataSource<Data>,

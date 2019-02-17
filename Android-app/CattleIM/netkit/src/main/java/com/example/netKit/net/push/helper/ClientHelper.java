@@ -85,6 +85,8 @@ public class ClientHelper {
 
             this.listener = listener;
             this.mode = mode;
+
+            Log.e(TAG, "StatusListener: " + mode );
         }
 
         @Override
@@ -110,24 +112,16 @@ public class ClientHelper {
 
         @Override
         public void onFailure(WebSocket webSocket, Throwable t, Response response) {
-//            if (listener != null) {
-//                if (response != null && response.body() != null) {
-//                    listener.sendFailure("");
-//                } else {
-//                    listener.sendFailure("");
-//                }
-//            } else {
 
             // 分析发送失败的原因，不一定是连接问题
 
-            Log.e(TAG, "onFailure: " + t.getMessage() + " ==== ");
-            if ("Connection reset".equals(t.getMessage())) {
-                mode = RE_CONNECT;
-            }
             if (listener != null)
                 listener.sendFailure("", mode);
 
-
+            Log.e(TAG, "onFailure: " + t.getMessage() + " ==== mode " + mode);
+            if ("Connection reset".equals(t.getMessage())) {
+                mode = RE_CONNECT;
+            }
 //            }
         }
 
@@ -138,10 +132,10 @@ public class ClientHelper {
 
             // 发生关闭，那么我们需要怎么处理？
 
-            if (code == 1000)
-                mode = RE_CONNECT;
             if (listener != null)
                 listener.sendFailure("", mode);
+            if (code == 1000)
+                mode = RE_CONNECT;
         }
 
         @Override

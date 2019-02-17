@@ -55,7 +55,7 @@ public class StepService extends Service {
         intent.setAction("step");
 
         //初始化布局
-        showStepLayout();
+//        showStepLayout();
         super.onCreate();
     }
 

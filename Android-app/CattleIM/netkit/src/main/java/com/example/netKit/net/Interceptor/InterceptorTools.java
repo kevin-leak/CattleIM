@@ -2,17 +2,14 @@ package com.example.netKit.net.Interceptor;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 import com.example.common.app.Application;
-import com.example.common.tools.StringsTools;
+import com.example.common.utils.StringsUtils;
 import com.example.netKit.persistence.Account;
 
 import java.util.List;
 
 import okhttp3.Response;
-
-import static android.content.ContentValues.TAG;
 
 /**
  * 持久化token
@@ -49,7 +46,7 @@ public class InterceptorTools {
                 cookies = headers.get(0);
             } else {
                 csrftoken = headers.get(0).split("=")[1];
-                cookies = StringsTools.ListToString(headers);
+                cookies = StringsUtils.ListToString(headers);
             }
 
             //获取session

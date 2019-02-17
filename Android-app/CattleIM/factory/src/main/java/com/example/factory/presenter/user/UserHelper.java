@@ -4,10 +4,9 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.example.common.factory.data.DataSource;
-import com.example.common.tools.CollectionUtil;
+import com.example.common.utils.CollectionUtil;
 import com.example.factory.Factory;
 import com.example.factory.R;
-import com.example.factory.middleware.user.UserDispatch;
 import com.example.netKit.NetKit;
 import com.example.netKit.db.User;
 import com.example.netKit.db.User_Table;
@@ -23,8 +22,6 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
-import static android.content.ContentValues.TAG;
 
 /**
  * 用来处理用户的信息的更新

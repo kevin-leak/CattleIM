@@ -3,32 +3,24 @@ package com.example.thinkpad.cattleim.frags.main.contact;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.TextureView;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.common.tools.DateTimeUtil;
+import com.example.common.utils.DateTimeUtil;
 import com.example.common.widget.AvatarView;
 import com.example.common.widget.recycler.Decoration;
 import com.example.common.widget.recycler.RecyclerAdapter;
-import com.example.factory.presenter.friends.FriendsContract;
+import com.example.factory.contract.friends.FriendsContract;
 import com.example.factory.presenter.friends.FriendsPresenter;
 import com.example.factory.view.BasePresenterFragment;
 import com.example.netKit.db.User;
 import com.example.thinkpad.cattleim.R;
-import com.example.thinkpad.cattleim.activities.MessageActivity;
+import com.example.thinkpad.cattleim.activities.ConversationActivity;
 import com.example.thinkpad.cattleim.activities.PersonActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
-import butterknife.Unbinder;
-
-import static android.content.ContentValues.TAG;
 
 /**
  * 用于好友与团的查询
@@ -106,7 +98,7 @@ public class FriendsFragment extends BasePresenterFragment<FriendsContract.Prese
             @Override
             public void onItemClick(RecyclerAdapter.ViewHolder holder, User user) {
                 // 跳转到聊天界面
-                MessageActivity.show(FriendsFragment.this.getActivity(), user);
+                ConversationActivity.show(FriendsFragment.this.getActivity(), user);
             }
         });
 

@@ -45,5 +45,7 @@
     <dimen name="len_23">23dp</dimen>
     <dimen name="len_75">75dp</dimen>
     <dimen name="len_70">70dp</dimen>
+    <dimen name="len_44">44dp</dimen>
+    <dimen name="len_68">68dp</dimen>
 
 </resources>

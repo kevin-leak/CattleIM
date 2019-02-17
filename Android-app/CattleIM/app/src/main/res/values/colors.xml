@@ -13,4 +13,5 @@
     <color name="grey_300">#eeeeee</color>
     <color name="profile_item">#F4BA6F</color>
     <color name="profile_underline">#E8E8E8</color>
+    <color name="white_alpha_224">#f4ffffff</color>
 </resources>

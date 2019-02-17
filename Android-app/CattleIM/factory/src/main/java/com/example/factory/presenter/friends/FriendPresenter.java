@@ -2,9 +2,9 @@ package com.example.factory.presenter.friends;
 
 import com.example.common.app.Application;
 import com.example.common.factory.data.DataSource;
+import com.example.factory.contract.friends.FriendContract;
 import com.example.factory.presenter.BasePresenter;
 import com.example.factory.presenter.user.UserHelper;
-import com.example.netKit.model.AccountModel;
 import com.example.netKit.model.UserModel;
 
 /**

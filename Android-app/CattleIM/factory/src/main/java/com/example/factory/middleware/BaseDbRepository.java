@@ -3,11 +3,9 @@ package com.example.factory.middleware;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.example.common.factory.data.DataSource;
 import com.example.common.factory.data.DbDataSource;
-import com.example.common.tools.CollectionUtil;
+import com.example.common.utils.CollectionUtil;
 import com.example.netKit.db.BaseDdModel;
-import com.raizlabs.android.dbflow.structure.BaseModel;
 import com.raizlabs.android.dbflow.structure.database.transaction.QueryTransaction;
 
 import java.lang.reflect.ParameterizedType;
@@ -32,9 +30,9 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
 
     private SucceedCallback<List<Data>> callback;
     /**
-     * 用于缓存的数组， 链表操作
+     * 用于缓存的数组， 链表操作, 便于对数据的处理，可以在开头插入数据，在更新到ui
      */
-    private List<Data> dataList =  new LinkedList<>();
+    public LinkedList<Data> dataList =  new LinkedList<>();
 
     public BaseDbRepository() {
 
