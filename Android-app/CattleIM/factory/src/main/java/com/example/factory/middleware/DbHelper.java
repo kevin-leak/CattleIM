@@ -153,6 +153,7 @@ public class DbHelper {
         if (clsType.equals(Conversation.class)) {
             dealEvent(models);
         }
+
     }
 
     private <model extends BaseModel> void dealEvent(model[] models) {

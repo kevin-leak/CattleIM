@@ -173,6 +173,9 @@ public class UserHelper {
                 // 获取集合信息
 
                 RspPiece<List<UserModel>> body = response.body();
+                if (body == null){
+                    return;
+                }
                 if (body.isSuccess()){
 
                     List<UserModel> result = body.getResult();

@@ -71,6 +71,13 @@
         <item name="android:textColorPrimary">@color/stepDialogBack</item>
         <item name="android:editTextColor">@color/stepDialogBack</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
+        <item name="android:timePickerDialogTheme" tools:targetApi="lollipop">@style/MyDatePickerDialogTheme</item>
+    </style>
+
+    <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog" tools:targetApi="lollipop">
+        <item name="android:colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorPrimaryDark">@color/colorPrimary</item>
+        <item name="android:colorAccent">@color/colorPrimary</item>
     </style>
 
     <style name="popup_tool" parent="@style/ThemeOverlay.AppCompat.Light">
@@ -116,5 +123,14 @@
         <item name="android:textColor">?attr/toolbarTitleColor</item>
     </style>
 
+
+    <style name="Theme.TimePicker" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:editTextStyle">@style/Widget.AppCompat.EditText.Gray</item>
+    </style>
+
+    <style name="Widget.AppCompat.EditText.Gray">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">#b3b3b3</item>
+    </style>
 
 </resources>

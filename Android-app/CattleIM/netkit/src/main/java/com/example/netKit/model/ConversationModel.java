@@ -9,7 +9,7 @@ public class ConversationModel {
     private String content;
     private int categroy;
     private int type;
-    private String chatId;
+    private String chatId;  // 后端的消息，到来，一般情况下，本地是找不到的。
     private String fromId;
     private String toId;
 

@@ -93,6 +93,14 @@
         <activity
             android:name=".activities.creators.TimeCreatorActivity"
             android:theme="@style/AppTheme.AddCreator" />
+
+
+
+        <activity android:name=".activities.MemberSelectActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.TransStatusBar" />
+
+
         <activity android:name=".activities.SearchActivity"
             android:theme="@style/AppTheme.SearchCreator"/>
 

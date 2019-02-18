@@ -65,7 +65,9 @@ public abstract class BaseDbRepository<Data extends BaseDdModel<Data>> implement
 
 
     /**
-     * 邮递员 扫描物件后，对箱子进行了类型标识，把物品放入放入箱子，那一刻使用load
+     * 邮递员 扫描物件后，对箱子进行了类型标识，把物品放入放入箱子，那一刻使用注册监听
+     *
+     * 实现数据的回调
      */
     @Override
     public void load(SucceedCallback<List<Data>> callback) {

@@ -220,7 +220,9 @@ public abstract class ChatFragment<InitModel> extends BasePresenterFragment<Chat
     }
 
     public void read(String receiverID, Event event) {
-        presenter.sendReadEvent(new ConversationAck(receiverID, Account.getUserId(), event.getChatId()), event);
+        if (event != null){
+            presenter.sendReadEvent(new ConversationAck(receiverID, Account.getUserId(), event.getChatId()), event);
+        }
     }
 
 

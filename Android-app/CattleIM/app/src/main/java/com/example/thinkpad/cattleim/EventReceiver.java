@@ -73,12 +73,7 @@ public class EventReceiver extends BroadcastReceiver {
     private void onMessageArrived(String message) {
         Log.e(TAG, "onMessageArrived: " + message );
 
-        // todo  通知栏记得优化
-        Context applicationContext = App.getInstance().getApplicationContext();
-        NotificationUtils notificationUtils = new NotificationUtils(applicationContext,
-                R.mipmap.cattle, "消息", "有一条新的消息到了！！");
-        notificationUtils.getBuilder().setLargeIcon(BitmapFactory.decodeResource(applicationContext.getResources(), R.mipmap.chat_default));
-        notificationUtils.notifyed();
+
 
         // 交给Factory处理
         Factory.dispatchPush(message, ConversationActivity.isOpen);

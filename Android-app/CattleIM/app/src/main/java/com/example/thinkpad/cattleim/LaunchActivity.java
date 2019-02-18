@@ -69,7 +69,7 @@ public class LaunchActivity extends BaseActivity {
         sendBroadcast(intent);
 
 
-
+//      用来处理步骤的
 //        if (Build.VERSION.SDK_INT >= 23) {
 //            if (!Settings.canDrawOverlays(LaunchActivity.this)) {
 //                Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
