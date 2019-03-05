@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 import com.example.common.app.Application;
 import com.example.factory.contract.account.AccountInfoContract;
 import com.example.factory.presenter.account.AccountInfoPresenter;
-import com.example.factory.presenter.BaseActivityPresenter;
+import com.example.factory.presenter.BasePresenterActivity;
 import com.example.thinkpad.cattleim.R;
 import com.example.thinkpad.cattleim.frags.media.GalleryFragment;
 import com.rengwuxian.materialedittext.MaterialEditText;
@@ -37,7 +37,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
  * 2. 存储在本地数据库
  * 3. 处理后端信息储存
  */
-public class AccountInfoActivity extends BaseActivityPresenter<AccountInfoContract.Presenter>
+public class AccountInfoActivity extends BasePresenterActivity<AccountInfoContract.Presenter>
         implements AccountInfoContract.View {
     @BindView(R.id.profile_avatar)
     CircleImageView profileAvatar;

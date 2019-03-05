@@ -279,6 +279,7 @@ public class ConversationFactory {
         ConversationModel conversationModel = new ConversationModel();
 
         conversationModel.setFromId(conversation.getFromId());
+
         conversationModel.setChatId(conversation.getChatId());
 
         conversationModel.setToId(conversation.getToId());

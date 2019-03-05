@@ -40,4 +40,9 @@ public abstract class BaseSourcePresenter<Data, ViewModel,
         mSource.dispose();
         mSource = null;
     }
+
+    @Override
+    public void onDataLoaded(List<Data> data) {
+
+    }
 }

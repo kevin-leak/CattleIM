@@ -1,7 +1,5 @@
 package com.example.netKit.db;
 
-import android.support.annotation.NonNull;
-
 import com.raizlabs.android.dbflow.annotation.Column;
 import com.raizlabs.android.dbflow.annotation.ForeignKey;
 import com.raizlabs.android.dbflow.annotation.PrimaryKey;
@@ -37,6 +35,15 @@ public class TimeLine extends BaseDdModel<TimeLine> {
 
     @Column
     private Date endTime;
+
+
+    public static int TYPE_EVERY = 0;
+    public static int TYPE_EVERY_WEEK = 1;
+    public static int TYPE_EVERY_MOTH = 2;
+
+
+    @Column
+    private int repeatTime;
 
 
     public String getId() {
@@ -96,5 +103,13 @@ public class TimeLine extends BaseDdModel<TimeLine> {
     @Override
     public boolean isUiContentSame(TimeLine old) {
         return false;
+    }
+
+    public int getRepeatTime() {
+        return repeatTime;
+    }
+
+    public void setRepeatTime(int repeatTime) {
+        this.repeatTime = repeatTime;
     }
 }

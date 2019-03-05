@@ -10,6 +10,14 @@
     <string name="end_time">End Time</string>
     <string name="To">To</string>
     <string name="add">add</string>
+    <string name="every_time">every time</string>
+    <string name="every_week">every week</string>
+    <string name="every_moth">every moth</string>
+    <string name="Repeat">Repeat</string>
+    <string name="remind_time">Remind Time</string>
+    <string name="task_photos">photos</string>
+    <string name="task_files">Files</string>
+    <string name="task_cancel">Cancel</string>
 
 
 </resources>

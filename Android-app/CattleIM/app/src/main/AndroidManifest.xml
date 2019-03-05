@@ -87,12 +87,15 @@
         </receiver>
 
 
-        <activity
-            android:name=".activities.creators.TaskCreatorActivity"
-            android:theme="@style/AppTheme.AddCreator" />
+
+
         <activity
             android:name=".activities.creators.TimeCreatorActivity"
-            android:theme="@style/AppTheme.AddCreator" />
+            android:theme="@style/AppTheme.TimeLineCreate" />
+
+        <activity
+            android:name=".activities.creators.TaskCreatorActivity"
+            android:theme="@style/AppTheme.TaskCreator" />
 
 
 

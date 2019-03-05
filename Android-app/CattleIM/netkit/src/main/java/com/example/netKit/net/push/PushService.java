@@ -33,7 +33,7 @@ public class PushService extends Service implements PushClient.PushListener {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         // todo 获取intent的值，进行一个判断是否，应该开启，或者说是否应该断开
-        if (Account.isLogin()) {
+        if (Account.isLogin() & Account.isComplete()) {
             PushClient.getInstance().start(this);
         }
         return super.onStartCommand(intent, flags, startId);

@@ -44,7 +44,9 @@ def out(request):
 @login_required
 def bind_push_id(request, pushId):
     act = Account(request)
-    return HttpResponse(json.dumps(act.bind_push_id(pushId), ensure_ascii=False))
+    ret = json.dumps(act.bind_push_id(pushId), ensure_ascii=False)
+    print(ret)
+    return HttpResponse(ret)
 
 
 from android.contract import request_interface

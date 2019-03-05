@@ -26,6 +26,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.common.app.BaseActivity;
+import com.example.factory.contract.todo.TaskCreatorContract;
 import com.example.netKit.NetKit;
 import com.example.netKit.net.CattleNetWorker;
 import com.example.netKit.net.NetInterface;
@@ -113,9 +114,8 @@ public class MainActivity extends BaseActivity implements
         fbNotice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TaskCreatorActivity.class);
-                startActivity(intent);
                 closeAddMenu();
+                TaskCreatorActivity.show(MainActivity.this, TaskCreatorActivity.NOTICE);
             }
         });
 
@@ -123,8 +123,7 @@ public class MainActivity extends BaseActivity implements
             @Override
             public void onClick(View v) {
                 closeAddMenu();
-                Intent intent = new Intent(MainActivity.this, TaskCreatorActivity.class);
-                startActivity(intent);
+                TaskCreatorActivity.show(MainActivity.this, TaskCreatorActivity.TASK);
             }
         });
 
@@ -132,9 +131,7 @@ public class MainActivity extends BaseActivity implements
             @Override
             public void onClick(View v) {
                 closeAddMenu();
-                Intent intent = new Intent(MainActivity.this, TaskCreatorActivity.class);
-                startActivity(intent);
-
+                TaskCreatorActivity.show(MainActivity.this, TaskCreatorActivity.TOPIC);
             }
         });
 

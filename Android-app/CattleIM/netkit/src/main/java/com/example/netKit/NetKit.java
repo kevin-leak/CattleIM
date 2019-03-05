@@ -1,10 +1,13 @@
 package com.example.netKit;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.StringRes;
 
 import com.example.common.app.Application;
 import com.example.common.factory.data.DataSource;
+import com.example.netKit.db.AppDatabase;
 import com.example.netKit.db.User;
 import com.example.netKit.net.push.PushService;
 import com.example.netKit.persistence.Account;
@@ -33,7 +36,7 @@ import java.util.concurrent.Executors;
  * 1. 处理多线程网络请求问题
  * 2. 处理db初始化
  * 3. 处理状态码解码，已经回调
- * */
+ */
 public class NetKit {
 
 
@@ -66,11 +69,11 @@ public class NetKit {
         netKit.executor.execute(runnable);
     }
 
-    public static Application app(){
+    public static Application app() {
         return Application.getInstance();
     }
 
-    public static void initDb(){
+    public static void initDb() {
         // 初始化数据库
         FlowManager.init(new FlowConfig.Builder(app())
                 .openDatabasesOnInit(true) // 数据库初始化的时候就开始打开
@@ -82,8 +85,8 @@ public class NetKit {
     }
 
 
-    public static void decodeRep(RspPiece piece, DataSource.FailedCallback callback){
-        switch (piece.getStatus()){
+    public static void decodeRep(RspPiece piece, DataSource.FailedCallback callback) {
+        switch (piece.getStatus()) {
             case RspPiece.SUCCEED:
                 return;
             case RspPiece.ERROR_NET:
@@ -118,9 +121,9 @@ public class NetKit {
         }
     }
 
-    public static void  decodeRep(@StringRes final int resId,
-                                  final DataSource.FailedCallback callback){
-        if (callback != null){
+    public static void decodeRep(@StringRes final int resId,
+                                 final DataSource.FailedCallback callback) {
+        if (callback != null) {
             callback.onDataNotAvailable(resId);
         }
     }

@@ -74,8 +74,8 @@ ERROR_NET = 11001								# 网络错误
 
 ```json
 {
-  "phone":"18870742138",
-  "password": "199shadjfk",
+  "phone":"110",
+  "password": "199shadjfk"
 }
 ```
 
@@ -176,8 +176,8 @@ message_set = {
 
 可以为空(心跳包)，也可以是一个字符串(反馈),  正式通信如下：
 
-```python
-message_set['message'] = [{
+```json
+[{
 	"chatId": "",
 	"fromId": "",
 	"toId": "",
@@ -187,7 +187,7 @@ message_set['message'] = [{
 			"content": ""
 		},
 	"createTime": ""
-}，{}]
+},{}]
 ```
 
 chatId：指的是普通对话， tag，group，link
@@ -205,7 +205,7 @@ type
 	"4":"公告消息",
 	"5":"任务消息",
 	"6":"关联消息",
-    "7":"群消息",
+    "7":"群消息"
 }
 ```
 
@@ -225,11 +225,11 @@ category
 消息回送确认包
 
 ```json
-message_set['message'] = {
+{
 	"fromId": "",
 	"toId": "",
     "chatId":"",
-    "content": "ok",
+    "content": "ok"
 }
 ```
 

@@ -1,8 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="AppTheme.Base">
-    </style>
+    <style name="AppTheme" parent="AppTheme.Base"></style>
 
 
     <style name="AppTheme.TransStatusBar.Base" parent="AppTheme">
@@ -22,7 +21,7 @@
 
     </style>
 
-    <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base"/>
+    <style name="AppTheme.TransStatusBar" parent="AppTheme.TransStatusBar.Base" />
 
 
     <style name="AppTheme.MainActivity" parent="AppTheme.TransStatusBar">
@@ -56,22 +55,49 @@
     <style name="settingsTextStyle">
         <item name="android:layout_margin">10dp</item>
         <item name="android:drawablePadding">@dimen/len_12</item>
-        <item name="android:textColor" >@color/colorPrimary</item>
-        <item name="android:paddingTop" >@dimen/len_12</item>
-        <item name="android:textSize" >@dimen/font_20</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:paddingTop">@dimen/len_12</item>
+        <item name="android:textSize">@dimen/font_20</item>
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:gravity">center_vertical</item>
     </style>
 
 
+    <style name="AppTheme.TaskCreator" parent="AppTheme.TransStatusBar">
+        <item name="android:windowBackground">@color/colorWhiteDark</item>
+        <item name="android:textSize">@dimen/font_18</item>
+        <item name="android:textColorPrimary">@color/stepDialogBack</item>
+        <item name="android:editTextColor">@color/stepDialogBack</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
 
-    <style name="AppTheme.AddCreator" parent="AppTheme.TransStatusBar">
+        <item name="android:contextPopupMenuStyle" tools:targetApi="n">@android:style/Widget.Holo.Light.PopupMenu</item>
+
+        <item name="popupMenuStyle">@android:style/Widget.Holo.Light.PopupMenu</item>
+
+
+        <item name="android:datePickerDialogTheme" tools:targetApi="lollipop">
+            @style/MyDatePickerDialogTheme
+        </item>
+        <item name="android:timePickerDialogTheme" tools:targetApi="lollipop">
+            @style/MyDatePickerDialogTheme
+        </item>
+
+    </style>
+
+    <style name="AppTheme.TimeLineCreate" parent="AppTheme.TransStatusBar">
         <item name="android:windowBackground">@color/colorWhiteDark</item>
         <item name="android:textSize">@dimen/font_18</item>
         <item name="android:textColorPrimary">@color/stepDialogBack</item>
         <item name="android:editTextColor">@color/stepDialogBack</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">false</item>
         <item name="android:timePickerDialogTheme" tools:targetApi="lollipop">@style/MyDatePickerDialogTheme</item>
+        <item name="popupMenuStyle">@style/popMenu_style</item>
+    </style>
+
+    <style name="popMenu_style" parent="@android:style/Widget.Holo.Light.PopupMenu">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_centerInParent">true</item>
     </style>
 
     <style name="MyDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog" tools:targetApi="lollipop">
@@ -115,8 +141,7 @@
 
     </style>
 
-    <style name="AppTheme.Conversation" parent="AppTheme.TransStatusBar">
-    </style>
+    <style name="AppTheme.Conversation" parent="AppTheme.TransStatusBar"></style>
 
     <style name="TextAppearance.Title" parent="@style/TextAppearance.AppCompat.Title">
         <item name="android:textSize">?attr/toolbarTitleSize</item>

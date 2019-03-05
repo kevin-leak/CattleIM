@@ -1,26 +1,21 @@
 package com.example.thinkpad.cattleim.frags.main.todo;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.common.utils.DateTimeUtil;
-import com.example.common.utils.NotificationUtils;
 import com.example.common.widget.AvatarView;
 import com.example.common.widget.recycler.RecyclerAdapter;
 import com.example.factory.contract.todo.EventContract;
 import com.example.factory.presenter.todo.EventPresenter;
 import com.example.factory.view.BasePresenterFragment;
 import com.example.netKit.db.Event;
-import com.example.thinkpad.cattleim.App;
 import com.example.thinkpad.cattleim.R;
 import com.example.thinkpad.cattleim.activities.ConversationActivity;
 

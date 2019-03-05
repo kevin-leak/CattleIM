@@ -1,6 +1,7 @@
 package com.example.factory.presenter.account;
 
 import android.support.annotation.NonNull;
+import android.support.v4.app.AppOpsManagerCompat;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -69,7 +70,7 @@ public class AccountHelper {
             public void onResponse(Call<RspPiece<String>> call, Response<RspPiece<String>> response) {
                 RspPiece<String> body = response.body();
 
-                if (body != null && body.isSuccess()){
+                if (body != null && body.isSuccess()) {
                     Log.e(TAG, "onResponse: " + body.getResult());
                     callback.onDataLoaded(body.getResult());
                 } else {
@@ -81,7 +82,7 @@ public class AccountHelper {
 
             @Override
             public void onFailure(Call<RspPiece<String>> call, Throwable t) {
-                Log.e(TAG, "onFailure: " + "out----------" );
+                Log.e(TAG, "onFailure: " + "out----------");
             }
         });
 
@@ -137,20 +138,19 @@ public class AccountHelper {
                 Account.login(accountPiece);
 
                 // todo c这里需要对推送的id 进行一个绑定
-
-
-                // 判断绑定状态，是否绑定设备
-                if (accountPiece.isBind()) {
-                    // 设置绑定状态为True
-                    Account.setBind(true);
-                    // 然后返回
-                    if (callback != null)
-                        callback.onDataLoaded(user);
-                } else {
-                    if (Account.isComplete())
-                        // 进行绑定的唤起
+                // 判断是否是完成，没有完成，先完成
+                if (Account.isComplete()) {
+                    // 判断绑定状态，是否绑定设备
+                    if (accountPiece.isBind()) {
+                        // 设置绑定状态为True
+                        Account.setBind(true);
+                    } else {
                         bindPush(callback);
+                    }
                 }
+                // 不论如何都要回调
+                if (callback != null)
+                    callback.onDataLoaded(user);
             } else {
                 if (rspPiece != null) {
                     NetKit.decodeRep(rspPiece, callback);
@@ -161,7 +161,7 @@ public class AccountHelper {
 
         @Override
         public void onFailure(@NonNull Call<RspPiece<AccountModel>> call, @NonNull Throwable t) {
-            Log.e(TAG, "onFailure: " + "login----------" );
+            Log.e(TAG, "onFailure: " + "login----------");
             // 网络请求失败
             if (callback != null)
                 callback.onDataNotAvailable(R.string.data_network_error);

@@ -51,7 +51,6 @@ public class Factory{
         Factory.getConversationCenter().dispatch(models);
 
 
-
         // todo 对消息进行解码， 弄成一个model
         PushClient.getInstance().sendMessage(new PushPieces<String>("ok"));
     }

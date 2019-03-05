@@ -36,6 +36,7 @@ public class FriendsRepository extends BaseDbRepository<User> implements Contact
      */
     @Override
     public boolean isRequired(User user) {
+        // fixme 如果APP  没有卸载，导致数据依旧存在，当用户再次注册的时候，会加载到其他用户的数据
         return user.isFriend() && !Account.getUserId().equals(user.getId());
     }
 }

@@ -38,16 +38,24 @@ public class ConversationPieces {
     public ConversationPieces() {
     }
 
+    /**
+     * @return 如果是后台发过来的消息，现在本地查找，看能不能找到是不是已经建立对话
+     * 如果没有，则用推送过来的
+     */
     public String getChatId() {
 
-        if (chatId == null){
-            chatId = findChatIdFromLocal();
+        String chatIdFromLocal = findChatIdFromLocal();
+        if (chatIdFromLocal != null){
+            return chatIdFromLocal;
         }
 
         return chatId;
     }
 
 
+    /**
+     * 用来本地数据的查找
+     */
     private String findChatIdFromLocal() {
         if (!TextUtils.isEmpty(fromId) && !TextUtils.isEmpty(toId)) {
             Conversation conversation = SQLite.select()
@@ -56,6 +64,14 @@ public class ConversationPieces {
                             .and(Conversation_Table.receive.eq(toId))
                             .and(Conversation_Table.send.eq(fromId)))
                     .querySingle();
+            if (conversation == null){
+                conversation = SQLite.select()
+                        .from(Conversation.class)
+                        .where(OperatorGroup.clause()
+                                .and(Conversation_Table.receive.eq(fromId))
+                                .and(Conversation_Table.send.eq(toId)))
+                        .querySingle();
+            }
             if (conversation != null) {
                 Event event = SQLite.select()
                         .from(Event.class)

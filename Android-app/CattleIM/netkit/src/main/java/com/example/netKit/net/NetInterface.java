@@ -1,6 +1,7 @@
 package com.example.netKit.net;
 
 import com.example.netKit.model.FileModel;
+import com.example.netKit.model.TimeLineModel;
 import com.example.netKit.model.UserModel;
 import com.example.netKit.piece.FilePiece;
 import com.example.netKit.piece.RspPiece;
@@ -8,6 +9,7 @@ import com.example.netKit.model.AccountModel;
 import com.example.netKit.piece.account.AccountInfoPiece;
 import com.example.netKit.piece.account.LoginPiece;
 import com.example.netKit.piece.account.RegisterPiece;
+import com.example.netKit.piece.todo.TimeLinePiece;
 
 import java.util.List;
 
@@ -66,4 +68,9 @@ public interface NetInterface {
     // 当客户端接收到pushid 的时候，我们回送一条消息，进行一个绑定
     @GET("push_id/{pushId}/")
     Call<RspPiece<AccountModel>> accountBind(@Path("pushId") String pushId);
+
+
+    // 用来存储time line
+    @POST("save_time_line/")
+    Call<RspPiece<TimeLineModel>> saveTimeLine(@Body TimeLinePiece piece);
 }

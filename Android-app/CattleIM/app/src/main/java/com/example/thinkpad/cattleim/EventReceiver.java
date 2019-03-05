@@ -7,13 +7,12 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.common.utils.NotificationUtils;
+import com.example.common.utils.MessageNotificationUtils;
 import com.example.factory.Factory;
 import com.example.factory.presenter.account.AccountHelper;
 import com.example.netKit.net.push.contract.PushClientContract;
 import com.example.netKit.persistence.Account;
 import com.example.thinkpad.cattleim.activities.ConversationActivity;
-import com.example.thinkpad.cattleim.activities.creators.TaskCreatorActivity;
 
 /**
  * 此类来接收后端推送的消息
@@ -25,7 +24,7 @@ public class EventReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         Log.e(TAG, "onReceive: " + "kasdjfklajfm;lk");
 //        Log.e(TAG, "onReceive: " + intent.getExtras().getString(PushClientContract.MSG) );
-//        Intent sctivity = new Intent(context, TaskCreatorActivity.class);
+//        Intent sctivity = new Intent(context, TaskCreatorContract.class);
 //        context.startActivity(sctivity);
 
 
@@ -73,8 +72,13 @@ public class EventReceiver extends BroadcastReceiver {
     private void onMessageArrived(String message) {
         Log.e(TAG, "onMessageArrived: " + message );
 
+        MessageNotificationUtils notificationUtils = new
+                MessageNotificationUtils(
+                        App.getInstance().getApplicationContext(), R.mipmap.cattle, "消息", "有消息来喽");
+        notificationUtils.getBuilder().setLargeIcon(BitmapFactory
+                .decodeResource(App.getInstance().getResources(), R.mipmap.default_avatar)).build();
 
-
+        notificationUtils.notifyed();
         // 交给Factory处理
         Factory.dispatchPush(message, ConversationActivity.isOpen);
     }

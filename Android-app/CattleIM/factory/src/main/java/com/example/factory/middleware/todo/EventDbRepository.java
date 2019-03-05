@@ -1,13 +1,8 @@
 package com.example.factory.middleware.todo;
 
-import android.content.Context;
-import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import com.example.common.app.Application;
-import com.example.common.utils.NotificationUtils;
-import com.example.factory.R;
 import com.example.factory.contract.todo.EventDataSource;
 import com.example.factory.middleware.BaseDbRepository;
 import com.example.netKit.db.Event;
@@ -16,7 +11,6 @@ import com.raizlabs.android.dbflow.sql.language.SQLite;
 import com.raizlabs.android.dbflow.structure.database.transaction.QueryTransaction;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 public class EventDbRepository extends BaseDbRepository<Event> implements EventDataSource {

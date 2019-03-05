@@ -51,6 +51,7 @@ def wbskt(request):
         except Exception:
             return
         message_set = eval(message)
+        print("-----")
         print(message_set)
         user = User.objects.get(uid=request.session["userId"])
         # 有pushId 存在两种情况，1. 断开重新连接 2. 正常情况

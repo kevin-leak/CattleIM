@@ -53,7 +53,7 @@ public class Account {
     public static void login(AccountModel accountPiece) {
         Account.account = accountPiece.getAccount();
         Account.userId = accountPiece.getUser().getId();
-
+        Account.isBind = accountPiece.isBind();
         save(NetKit.app());
     }
 
@@ -174,5 +174,6 @@ public class Account {
         Account.isBind = isBind;
         Account.save(NetKit.app());
     }
+
 
 }

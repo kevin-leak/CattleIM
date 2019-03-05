@@ -72,6 +72,7 @@ class MessageFactory:
         :param message: 一个总的消息字典
         :return: 一个字典:
         """
+        print(message)
         if message is 'ok':
             print("-----push回送------")
             # 这里是push回送包
@@ -122,25 +123,26 @@ class MessageFactory:
         fromPushId = User.objects.get(uid=fromId).profile_id
         pushHistory = PushHistory.objects.filter(send_id=fromPushId, receive_id=toPushId).first()
         # 获取消息队列, entity，指的是一个会话里面的内容
-        entity = eval(pushHistory.entity)
-        # 建立conversation
-        # entity 是一个list
-        for e in entity:
-            info = e['info']
-            category = int(info['category'])
-            content = info['content']
-            # "0": "文本",
-            # "1": "图片",
-            # "2": "语音",
-            # "3": "文件"
-            # 建立event 对象
-            con = Conversation.objects.create(category=category, send_id=fromId,
-                                              receive_id=toId, content=content)
-            # 建立event 对象
-            Event.objects.create(conversation=con, chatId=msg['chatId'], type=e['type'])
-        # 清理 entity
-        pushHistory.entity = str(json.dumps([]))
-        pushHistory.save()
+        if pushHistory.entity is not None:
+            entity = eval(pushHistory.entity)
+            # 建立conversation
+            # entity 是一个list
+            for e in entity:
+                info = e['info']
+                category = int(info['category'])
+                content = info['content']
+                # "0": "文本",
+                # "1": "图片",
+                # "2": "语音",
+                # "3": "文件"
+                # 建立event 对象
+                con = Conversation.objects.create(category=category, send_id=fromId,
+                                                  receive_id=toId, content=content)
+                # 建立event 对象
+                Event.objects.create(conversation=con, chatId=msg['chatId'], type=e['type'])
+            # 清理 entity
+            pushHistory.entity = str(json.dumps([]))
+            pushHistory.save()
 
     @classmethod
     def save_push(cls, fromPushId, msg, toPushId):
@@ -157,6 +159,7 @@ class MessageFactory:
         if pushHistory:
             entity = pushHistory.entity
             entity = eval(entity)
+            print(entity)
             entity.append(msg)
             pushHistory.entity = str(json.dumps(entity))
             pushHistory.save()
