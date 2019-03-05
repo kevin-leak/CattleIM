@@ -92,7 +92,7 @@
 
 - 基本界面显示：用户信息填写，已经实现
 
-  <img src="/IMSoftData/images/launch.png" style="height:250px"><img src="/IMSoftData/images/account.png" style="height:250px"><img src="/IMSoftData/images/settings.png" style="height:250px"><img src="/IMSoftData/images/profile.png" style="height:250px">
+  <img src="/IMSoftData/images/launch.png" height="250px" style="height:250px;"><img src="/IMSoftData/images/account.png" height="250px" style="height:250px"><img src="/IMSoftData/images/settings.png" height="250px" style="height:250px"><img src="/IMSoftData/images/profile.png" height="250px" style="height:250px">
 
 - 2019/3/3
 
@@ -100,15 +100,15 @@
 
   - 加好友(多搜索)，与好友列表展示。
 
-    <img src="/IMSoftData/images/search_user.png" style="height:250px"><img src="/IMSoftData/images/friends.png" style="height:250px">
+    <img src="/IMSoftData/images/search_user.png" height="250px" style="height:250px"><img src="/IMSoftData/images/friends.png" style="height:250px">
 
   - 聊天，消息通知，消息列表
 
-    <img src="/IMSoftData/images/conversation_1.png" style="height:250px"><img src="/IMSoftData/images/conversation_2.jpeg" style="height:250px"><img src="/IMSoftData/images/message_remind.png" style="height:250px"><img src="/IMSoftData/images/chat.png" style="height:250px">
+    <img src="/IMSoftData/images/conversation_1.png" height="250px" style="height:250px"><img src="/IMSoftData/images/conversation_2.jpeg" height="250px" style="height:250px"><img src="/IMSoftData/images/message_remind.png" height="250px" style="height:250px"><img src="/IMSoftData/images/chat.png" height="250px" style="height:250px">
 
 - schedule 界面显示：**待完善**
 
-  <img src="/IMSoftData/images/schedule.jpeg" style="height:200px"><img src="/IMSoftData/images/link_create.png" style="height:200px"><img src="/IMSoftData/images/link.png" style="height:200px"><img src="/IMSoftData/images/calendar.png" style="height:200px">
+  <img src="/IMSoftData/images/schedule.jpeg" height="200px" style="height:200px"><img src="/IMSoftData/images/link_create.png" height="200px" style="height:200px"><img src="/IMSoftData/images/link.png"  height="200px" style="height:200px"><img src="/IMSoftData/images/calendar.png" height="200px" style="height:200px">
 
 ## 项目架构
 
@@ -122,7 +122,7 @@
 - common：发一些公用的资源，以及可以在其他项目中用到的包
 - lang、face_res：目前打算用来处理国际化，以及表情包的作用，后面遇到商城的页面还会添加一个js的包，看后面有没有时间写
 
-<img src="/IMSoftData/ArchitectureAnalysis/appArchitecture.png" style="height:250px">
+<img src="/IMSoftData/ArchitectureAnalysis/appArchitecture.png" height="250px" style="height:250px">
 
 
 
@@ -242,7 +242,7 @@
 
 附上一张图
 
-<img src="/IMSoftData/ProblemLogic/chat/chat_logic.png" style="width:500px">
+<img src="/IMSoftData/ProblemLogic/chat/chat_logic.png" width="500px" style="width:500px">
 
 ### 数据更新通知与缓存
 
@@ -280,13 +280,13 @@
 5. 派送员把物件存好，关上门，开始对数据进行监控(这物品的**listener**)
 6. 旁边的电脑就将对应得仓库信息加载到电脑(**观察容器**)，观察看到有信息来了就通知请求群可以去本地化的数据了。
 
-<img src="/IMSoftData/ArchitectureAnalysis/db/db_observer.png" style="width:400px">
+<img src="/IMSoftData/ArchitectureAnalysis/db/db_observer.png" width="400px" style="width:400px">
 
 附上一张好友信息列表的更新的流程图：
 
 这里处理数据的本地化，开启了子线程，需要注意的是在更新界面的时候要再UI线程
 
-<img src="/IMSoftData/ArchitectureAnalysis/db/dispatch_center.png" style="width:600px">
+<img src="/IMSoftData/ArchitectureAnalysis/db/dispatch_center.png"  width="600px" style="width:600px">
 
 
 
