@@ -100,7 +100,7 @@
 
   - 加好友(多搜索)，与好友列表展示。
 
-    <img src="/IMSoftData/images/search_user.png" height="250px" style="height:250px"><img src="/IMSoftData/images/friends.png"  width="250px" style="height:250px">
+    <img src="/IMSoftData/images/search_user.png" height="250px" style="height:250px"><img src="/IMSoftData/images/friends.png"  height="250px" style="height:250px">
 
   - 聊天，消息通知，消息列表
 
